@@ -1,0 +1,1111 @@
+<style>
+body {
+    padding-top: 60px;
+}
+
+* {
+    transition: all 0.3s;
+}
+
+li {
+    list-style: none;
+}
+
+.showMe1{
+    display: none;
+}
+
+/** Navbar **/
+.navbar-fixed-top {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.19), 0 0 11px rgba(0,0,0,0.1);
+}
+
+.navbar {    
+    z-index: 1000;  
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.navbar-bg {
+   	color: #e50000;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+  	font-size: 2.2em;
+    /*font-family: ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif;*/
+}
+
+.navbar-brand {
+    padding: 20px;
+    padding-bottom: 40px;
+    padding-left: 10px;
+    margin-bottom: -1px;
+    border-right: 1px solid #d5d5d5;
+}
+
+.navbar-bg:hover {
+   	color: #e50000;
+    background: #e1e1e1;
+}
+
+.navbar-brand img {
+    float: left;
+    margin-right: -5px;
+}
+
+#login-btn {
+    text-decoration: none;
+    background: #f1413e;
+    margin-top: 0px;
+    margin-bottom: -1px;
+    padding: 20px 35px;
+    color: #f1f1f1;
+    margin-right: 0px;
+}
+
+#login-btn:hover {
+    background: #cc0a06;
+}
+.navbar-fixed-top{
+    background-color:#ffffff;
+}
+.img-responsive{
+     margin-top: -15px;
+}
+
+
+#header {
+background: #ffffff;
+border-bottom: 1px rgba(0, 0, 0, 0.07) solid;
+z-index: 99;
+&.--not-top {
+box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+}
+* {
+transition-duration: 0.2s;
+}
+
+#top-shadow {
+position: fixed;
+top: 0;
+left: 20px;
+width: 100%;
+height: 60px;
+z-index: 999;
+-webkit-box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+-moz-box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+display: none;
+}
+
+.navbar.affix{  
+top:0; 
+width:100%;
+}
+
+
+.navbar{    
+z-index:1000;  
+}
+
+@media(max-width:767px){
+    
+    .bg1 .row_2 .col-sm-12{
+        margin-top: -30px;
+    }
+    
+    .login_ctrl{
+        position: absolute;
+        top: -8px;
+        right: 15px;
+    }
+    
+    nav{
+        position: relative;
+    }
+}
+
+.nav-button .sidebutton {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    font-size: 25px;
+    border-radius: 0;
+    background: #fff;
+    padding: 4px 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), 1px 1px 1px rgba(0,0,0,0.07);
+    cursor: pointer;
+    z-index: 11111119;
+}
+
+#content .userlist {
+/*    transform: translateX(200px);*/
+    transition: 1s;
+    background-color: #fff;
+    text-transform: capitalize;
+    width: 20%;
+    z-index: 11118;
+    position: fixed;
+    top: 60px;
+    padding-top: 46px;
+    height: 700px ;
+    left: 0;
+    margin: auto;
+    border-right: 1px solid #999 !important; 
+/*    display: none;*/
+}
+
+
+.userlist ul {
+    background: #fff;
+    margin-top: 8px;
+/*    box-shadow: 0 0 5px rgba(0,0,0,0.19), 0 0 11px rgba(0,0,0,0.1);*/
+}
+
+#content .userlist li{
+    padding: 12px 0px;
+    background: #fff;
+    border-bottom: 1px solid #e9e9e9;
+    text-align: center;
+}
+
+#content .userlist li:hover {
+    background: #f1f1f1;
+}
+
+#content .userlist ul li a{
+    color:#000000;
+    /* width: 112%; */
+    display: block;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    width: 100%;
+   
+/*padding : 0px 28%;*/
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+
+ul{
+    padding: 0px;
+margin: 0px;
+}
+
+
+.move{
+transform: translateX(-500px);
+transition: 1s;
+
+}
+
+
+.delivery-option {
+margin-top: 10px;
+margin-left:85px;
+}
+.delivery-option li{
+display: inline-block;
+padding-left: 28px;
+text-transform: capitalize;
+font-size:20px;
+color:#000000;
+font-family:"Sans",Verdana,"sans-serif";
+text-decoration:none;
+cursor:pointer;
+margin-left:15px;
+}
+
+
+.delivery-option li a{
+text-decoration: none;
+font-size:20px;
+color:#000000;
+cursor:pointer;
+font-family:"Sans",Verdana,"sans-serif";
+}
+.storelist li{
+display: block;
+padding: 0px;
+border-bottom: 1px solid #000000;
+}
+.storelist li a{
+color: #000000;
+ padding: 5px;
+display: block;
+font-size: 15px;
+}
+.storelist li:hover{
+background-color: red;
+}
+.delivery-option li:nth-child(2){
+position: relative;
+}
+.storelist{
+display: none;
+position: absolute;
+width: 54%;
+background-color: #f6f6f6;
+margin-left:89px;
+margin-top:10px;
+}
+.delivery-option .show{
+display: block;
+top: 37px;
+z-index: 5;
+left: 20px;
+
+}
+/*content media*/
+
+  #content .delivery-option li{
+    padding: 5px;
+}
+
+.cart-icon {
+    margin: 0;
+    position: fixed;
+    top: 70px;
+    right: 0px; 
+    z-index: 999;
+}
+
+@media(max-width: 767px) {
+    .cart-icon {
+        top: 70px;   
+    }
+}
+
+.cart-icon button {
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), -1px 1px 1px rgba(0,0,0,0.07);
+    padding: 10px 30px;
+    border-radius: 0;
+}
+
+.cart-icon i {
+    font-size: 20px;
+    color: #333;
+}
+
+.cart-icon span {
+    color: #333;
+    margin-left: 5px;
+}
+ 
+
+.unit{
+font-size: 17px;
+color: lightgrey;
+}
+.storename{
+    text-transform: uppercase;
+    font-family:"Sans",Verdana,"sans-serif";
+    text-decoration:none;
+    font-size: 20px;
+    margin-top:30px;
+    border: none;
+}
+
+.datasection{
+    text-align: center;
+}
+
+
+
+.datasection .addbutton button{
+    background-color: #fb641b;
+border: none;
+border-radius: 6px;
+padding: 8px 20px;
+margin-left: 20px;
+
+text-transform: uppercase;
+}
+.productmain{
+    margin-top: -70px;
+    margin-left: -50px;
+}
+
+.productmain ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productmain li {
+/*display: inline-block;*/
+    width: 277px;
+/*    margin: 20px;*/
+/*border: 1px solid #e1e1e1;*/
+height: 181px;
+padding: 15px;
+background-color:#fff;
+margin: 12px;
+border-radius: 2px;
+position:relative;
+margin-top:15px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+} 
+
+.productcat li {
+    border: 1px solid #eee;
+    height: 48px;
+    background-color: white;
+    margin: 4px;
+    text-align: center;
+    margin-top: 7px;
+    list-style: none;
+}
+
+    
+ 
+.counter-cart span{
+    border-bottom: 1px solid black;
+padding: 0px 50px;
+}
+
+.datasection li {
+    list-style: none;
+}
+
+.datasection li:hover img{
+
+/*    transform: scale(1.1);*/
+transform: translateY(-10px);
+transition: 1s;
+}
+.datasection li img:hover{
+transform: scale(1.1); 
+transition: 2s;
+}
+.datasection li .productimage img{
+width: 100%;
+transition: 1s;
+}
+.datasection .productdescription .productname{
+text-transform:capitalize;
+font-family:"Roboto", sans-serif;
+font-size:14px;
+color:#111;
+    text-align: left;
+text-decoration:none;
+position: absolute;
+left: 15px;
+top: 10px;
+    padding-right: 60px;
+}
+
+.datasection .productdescription .productprice{
+    position: absolute;
+    right: 22px;
+    top: 10px;
+}
+
+.fav-icon {
+    font-size: 22px;
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    color: #ee2222;
+    cursor: pointer;
+}
+
+
+
+.datasection .productdescription img{
+    width: 10%;
+    margin-left: 200px;
+    margin-top: 70px;
+}
+
+.datasection .productdescription .counter-cart{
+    margin-right: 75px;
+}
+ .btn-sm {
+    padding: 3px 6px;
+    font-size: 12px;
+    line-height: 1.5;
+     border-radius: 3px;
+}
+
+
+/*modal*/
+.modal-content .nextimage{
+text-align: center;
+}
+
+.modal-content .nextimage img{
+width: 65%;
+}
+.red{
+background-color:red;
+}
+.modal-content span{
+font-size: 22px;
+}
+.modal-content .unit{
+font-size: 17px;
+color: lightgrey;
+}
+.b1{
+
+/*position: relative;*/
+margin-bottom:0px;
+/*margin-top:10px;*/
+position: absolute;
+width: 100%;
+right: 0px;
+border-radius: 0px;
+bottom: 0px;
+    padding: 7px 10px;
+}
+
+.datasection{
+margin-top:10px;
+}
+.btn-sm{
+border-radius:40px;
+
+}
+
+.social:hover {
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+}
+.social {
+ -webkit-transform: scale(0.8);
+ -moz-transform: scale(0.8);
+ -o-transform: scale(0.8);
+ -webkit-transition-duration: 0.5s;
+ -moz-transition-duration: 0.5s;
+ -o-transition-duration: 0.5s;
+}
+
+#social-fb:hover {
+ color: #3B5998;
+}
+#social-tw:hover {
+ color: #4099FF;
+}
+#social-gp:hover {
+ color: #d34836;
+}
+#social-em:hover {
+ color: #f39c12;
+}
+.bg1{
+margin-top:50px;
+
+}
+.bg18{
+padding-top:20px;
+margin-top:90px;
+}
+
+.bg22{
+margin-left:60px;
+}
+
+.fa-shopping-cart{
+color:#ffffff;
+}
+.testt{
+color:#ffffff;
+width:5px;
+}
+
+.b23{
+margin-left:353px;
+}
+
+.pull-right{
+padding-right: 8px;
+margin-right: 20px;
+margin-top:10px;
+
+}
+.icon-bar{
+background:#d3d3d3;
+}
+.productcat .colorred{
+    background-color: #e50000;
+    cursor:pointer;
+    color:#ffffff;
+}
+
+ 
+.productcat ul{
+   
+/*  display:flex;*/
+/*  flex-wrap:wrap;*/
+  /*margin-left:33px;*/
+  margin-top:22px;
+   
+   
+}
+
+span.productfeature.ng-binding {
+    position: absolute;
+    margin-left: -115px;
+    margin-top: 37px;
+	color:#333;
+    text-align: left;
+}
+ 
+
+.row.row_feature {
+    color: black;
+    font-size: 12px;
+    margin-left: -30px;
+}
+
+/************************************/
+/**Shopping In**/
+#shopping-in {
+    padding: 20px;
+}
+
+#shopping-in img {
+    max-width: 60%;
+    max-height: 180px;
+    display: block;
+    margin: auto;
+}
+
+#shopping-in span {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    width: 60%;
+    font-size: 22px;
+    margin: auto;
+    margin-bottom: -20px;
+}
+
+/*************************************/
+/**Search Store**/
+#search-wrapper {
+    box-shadow: 0 0 12px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.35);   background: rgba(220,10,10,0.91);
+    padding: 50px 20px;
+}
+
+#search-wrapper h3 {
+    font-family: 'Titillium Web', sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#search-wrapper input {
+    height: 40px;
+    outline: none;
+    border-radius: 0;
+    color: #333;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+}
+
+#search-wrapper ul {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-top: none;
+    width: 100%;
+}
+
+#search-wrapper li {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#search-wrapper li:hover {
+    background: #f1f1f1;
+}
+
+#search-wrapper li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.productcat ul li {
+    border-radius: 3px;
+    padding: 0;
+    height: initial;
+    padding: 5px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #d5d5d5;
+}
+
+.productcat ul li:hover {
+    color: #fff;
+    background: rgba(220,10,10,0.91);
+}
+
+@media(max-width:767px){
+  #content .userlist {
+        width: 75%;
+    }
+}
+
+div.scrollmenu {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+div.scrollmenu li {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#product-list-wrapper {
+    margin-top: 50px;
+    margin-bottom: 150px;
+    padding-left: 3%;
+}
+
+.product-list {
+    display: inline-block;
+    width: 30%;
+    margin: 10px 15px;
+    overflow: auto;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12), 1px 1px 2px rgba(0,0,0,0.14);
+}
+
+@media(max-width: 1004px) {
+    .product-list {
+        width: 45%;
+    }
+}
+
+@media(max-width: 704px) {
+    .product-list {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+
+#product-list-wrapper {
+    padding-left: 0;
+}
+}
+
+@media(max-width: 476px) {
+    .product-list {
+        display: block;
+        width: 90%;
+    }
+}
+
+.product-list .product-name {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #222;
+    margin: 0;
+}
+
+.product-list .product-feature {
+    color: #333;
+    min-height: 65px;
+}
+
+.product-list .dark {
+    border-top: 1px solid #d9d9d9;
+}
+
+.product-list .fav {
+    color: #e52222;
+    float: right;
+    margin-top: -5px;
+    cursor: pointer;
+    font-size: 22px;
+    margin-right: 2px;
+}
+
+.product-list .product-image {
+    float: right;
+    height: 70px;
+    width: 70px;
+    border: 1px solid #e1e1e1;
+}
+
+.product-list .product-quantity {
+    padding: 5px 10px;
+    margin-top: 7px;
+    float: left;
+    background: #e8e8e8;
+    border-radius: 3px;
+}
+
+.product-list .product-quantity button {
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding:0; 
+}
+
+.product-list span.glyphicon {
+    cursor: pointer;
+}
+
+.product-list .p-quan {
+    padding: 0 25px;
+}
+
+.product-list .add-btn {
+    margin-top: 7px;
+    float: right;
+}
+
+.product-list .add-btn button {
+    border: none;
+    background: #d9534f;
+    color: #fff;
+    border-radius: 2px;
+    padding: 5px 15px;
+    outline: none;
+}
+.close1{
+    margin: 0 auto;
+    border-radius: 10px;
+    background: white;
+    margin-top: 180px;
+    width: 20%;
+    min-width: 200px;
+    z-index: 100000;
+}
+
+.close1 img{
+    padding: 50px;
+    width: 100%;
+    padding-bottom: 20px;
+    z-index: 100000;
+}
+
+.close1 h6{
+    text-align: center;
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.parent_close{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+</style>
+
+<!------------------------------>
+    <!--Search Product Starts Here-->
+    <div class="container-fluid" >
+        <div id="search-wrapper" class="row">
+            <h3>Search your products</h3>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div id="searchbox-wrapper">
+                    <input type="text" class="form-control" placeholder="Search your products" ng-change="search()" ng-model="enter">
+                     <ul ng-hide="showContent">
+                        <li ng-repeat="i in listdata track by $index" data-toggle="modal" data-target="#exampleModalLong" ng-click="getsearch(i);scrollDown(); ">
+                            <a href="">{{i._source.ProductName}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+    <!--Search Store Ends-->
+    <div class="parent_close" ng-hide="closedStore">
+<div class="close1">
+    <img src="../images/close.png" alt="">
+    <h6 ng-click="backToStore()">Back to Stores</h6>
+</div>
+</div>
+    <!--------------------------->
+    <!--Shopping In starts here-->
+    <div class="container-fluid" style="margin-bottom: -80px; background: #e9e9e9;">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" id="shopping-in">
+                <!--
+                <div class="delivery-option">
+                    <ul>
+                        <li>
+                            <a href="" ng-click="addstore()">shopping in</a>
+                            <div class="storelist" ng-class={"show":showclass}>
+                                <ul>
+                                    <li ng-repeat="store in storedata" ng-click="mystore(store.id)">
+                                        <a href="">{{store.StoreName}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                -->
+                <div class="datalogo">
+                    <img ng-src="{{StoreLogo}}" alt="">
+                </div>
+                <span class="storename">{{StoreName}}</span>
+            </div>
+            <div class="col-sm-4"></div>
+            </div>
+            <div class="row" style="text-align: center;">
+            <div class="col-sm-12">
+                 <div class="productcat scrollmenu" >
+                      <ul>
+                          <li ng-repeat="i in productcat track by $index" ng-click="catwise(i)" class="category">
+                              {{i}}
+                          </li>
+                      </ul>
+                  </div>
+            </div>
+        </div>    
+    </div>
+    <!--Shopping In ends-->
+        
+        <br>
+        <br><br>
+	                      
+	 <div id="content" name="toTop" id="toPos">
+	           <div class="container-fluid bg22" name="toTop" id="toPos">
+	               <div class="row">
+	                   <div class=" col-lg-3 col-md-3 col-sm-4 col-12">
+	                       <div class="nav-button" ng-hide="menu">
+	                           <span ng-click="addsidebar()" class="sidebutton" onclick="tg()"  ng-hide="menu">
+	                               <i class="fa fa-bars" aria-hidden="true"></i>
+	                         </span>
+	                       </div>
+	                       <div class="userlist" ng-class={"move":movex}>
+	                        <ul>
+	                            <li><a href="#/accounts">My Accounts</a></li>
+	                            <li><a href="#/orders">My Orders</a></li>
+	                            <li><a href="#/favourite">Favourites</a></li>
+	                            <li><a href="">Points</a></li>
+	                            <li><a href="">Notification</a></li>
+	                            
+	                            
+	                        </ul>
+	                       </div>
+	                   </div>
+	                       <div class="cart-icon">
+	                          <a href="#/cart">
+	                         <button type="button" class="btn btn-md b23"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+	<span ng-model = "counter" class="testt">{{counter}}</span>
+	                           </button>
+	                           </a>
+	                       </div>
+	               </div>
+	               <div class="row">
+	                   <div class="col-sm-12">
+	                       <div class="datalist">
+
+
+	 
+	<div class="datasection">
+
+	   
+	    <!-- <div class="productmain">
+	       
+	        <ul>
+	            <li ng-repeat="data in mydata" $parent.quantity= quantity data-toggle="modal" data-target="#exampleModalLong" ng-click="addmodal(data)">
+	           
+	             <div class="product" >    -->
+	<!--
+	             <div class="productimage" >
+	             <img ng-src="{{data.ProductImage}}"> 
+
+	              </div>
+	-->
+	              <!-- <div class="productdescription">
+	                  <span class="productname">{{data.ProductName}}</span>
+	                   
+	                <div class="row row_feature">
+	                  <span class="productfeature">{{data.Features}}</span>
+	                  </div>
+	                  <br>
+	                  <span class="productprice"><i class="fa fa-inr" aria-hidden="true"></i>{{data.Price}}</span>
+	                   <img src="images/Like-48%20(1).png"  ng-click="addfav(data)"   ng-class={"red":data.FavoriteField}  style="width:10%; visibility: hidden">
+                      <span class="glyphicon fav-icon" ng-click="addfav(data)"  ng-class="{'glyphicon-heart':data.FavoriteField, 'glyphicon-heart-empty':!data.FavoriteField}" onclick="togglec()"></span> -->
+<!-- <span class="	glyphicon glyphicon-heart fav-icon"></span>-->
+
+	                   <!-- <div class="counter-cart">
+	                       
+	                        <button ng-click="quantity = quantity-1" ng-disabled="quantity==1" class="btn btn-sm btn-danger btn-circle b22"><i class="glyphicon glyphicon-minus"></i></button>
+
+	                        <span  class="test" ng-model="quantity" ng-init="quantity=1">{{quantity}}</span>
+	                        <button ng-click="quantity = quantity+1" class="btn btn-danger btn-sm btn-circle b33" ><i class="glyphicon glyphicon-plus"></i></button>
+	         
+
+	                  
+	                         <button type="button" class="btn btn-md btn-danger b1" ng-click="addtocart(data,quantity)">Add to Cart</button>
+	              </div> -->
+	              </div>
+	              
+	              </div>
+	                            
+	               
+	            </li>
+	        </ul>
+
+	    </div>
+
+	</div>
+	 
+	</div>
+	                   </div>
+	               </div>
+	               
+	               
+	               
+	</div>
+           </div>
+           
+           <div id="product-list-wrapper" ng-hide="searched">
+                <div class="product-list" ng-repeat="data in mydata track by $index">
+                    <div class="product-head">
+                        <!-- <img class="product-image" src="{{data.ProductImage}}"> -->
+                        <!-- <img class="product-image" src="../images/homepage1.jpg"> -->
+                        <p class="product-name">{{data.ProductName}}</p> 
+                        <p class="product-feature">{{data.Features}}</p>
+                    </div>
+                    <div class="price">
+                        <p class="amount">Amount : <i class="fa fa-inr" aria-hidden="true"></i><span ng-class="{showMe1:data.MRP!=data.Price}"> {{data.MRP}}</span><span ng-class="{showMe1:data.MRP==data.Price}"><span style="text-decoration: line-through;">{{data.MRP}} </span> &nbsp; <i class="fa fa-inr" aria-hidden="true"></i>{{data.Price}}</span> 
+                            <span class="glyphicon fav" ng-click="addfav(data)" ng-class="{'glyphicon-heart':data.FavoriteField, 'glyphicon-heart-empty':!data.FavoriteField}" onclick="togglec()"></span></p>
+                    </div>
+                    <div class="dark">
+                        <div class="product-quantity">
+                            <button ng-click="quantity = quantity-1" ng-disabled="quantity==1"><span class="glyphicon glyphicon-minus"></span></button>
+                            <span class="p-quan" ng-model="quantity" ng-init="quantity=1">{{quantity}}</span>
+                            <span class="glyphicon glyphicon-plus" ng-click="quantity = quantity+1"></span>
+                        </div>
+                        <div class="add-btn"><button ng-click="addtocart(data,quantity)">Add To Cart</button></div>
+                    </div>
+                </div>
+            </div>
+
+<div id="product-list-wrapper1" ng-hide="searched1">
+                <div class="product-list" >
+                    <div class="product-head">
+                        <!-- <img class="product-image" src="{{data.ProductImage}}"> -->
+                        <!-- <img class="product-image" src="../images/homepage1.jpg"> -->
+                        <p class="product-name">{{data.ProductName}}</p> 
+                        <p class="product-feature">{{data.Features}}</p>
+                    </div>
+                    <div class="price">
+                        <p class="amount">Amount : <i class="fa fa-inr" aria-hidden="true"></i><span ng-class="{showMe1:data.MRP!=data.Price}"> {{data.MRP}}</span><span ng-class="{showMe1:data.MRP==data.Price}"><span style="text-decoration: line-through;">{{data.MRP}} </span> &nbsp; <i class="fa fa-inr" aria-hidden="true"></i>{{data.Price}}</span></p> 
+                            <span class="glyphicon fav" ng-click="addfav(data)" ng-class="{'glyphicon-heart':data.FavoriteField, 'glyphicon-heart-empty':!data.FavoriteField}" onclick="togglec()"></span></p>
+                    </div>
+                    <div class="dark">
+                        <div class="product-quantity">
+                            <button ng-click="quantity = quantity-1" ng-disabled="quantity==1"><span class="glyphicon glyphicon-minus"></span></button>
+                            <span class="p-quan" ng-model="quantity" ng-init="quantity=1">{{quantity}}</span>
+                            <span class="glyphicon glyphicon-plus" ng-click="quantity = quantity+1"></span>
+                        </div>
+                        <div class="add-btn"><button ng-click="addtocart(data,quantity)">Add To Cart</button></div>
+                    </div>
+                </div>
+            </div>
+
+<button class="btn btn-danger" style="display:block;margin:0 auto;" ng-click="loadMore()" ng-hide="loadbtn">Load More</button>
+<h5 ng-hide="nomore" style="text-align:center;">No more items</h5>
+
+	<script>
+	$(function(){
+
+
+	var stickyElement   = '.panel-affix',    
+	bottomElement   = '#fake-footer';  
+
+	if($( stickyElement ).length){
+	$( stickyElement ).each(function(){
+
+	   
+	  var fromTop = $( this ).offset().top, 
+	    
+	    fromBottom = $( document ).height()-($( this ).offset().top + $( this ).outerHeight()),
+	    
+	    stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height()); 
+
+	   
+	  if( (fromBottom-stopOn) > 200 ){
+	     
+	    $( this ).css('width', $( this ).width()).css('top', 0).css('position', '');
+	     
+	    $( this ).affix({
+	      offset: { 
+	        
+	        top: fromTop - 80,  
+	         
+	        bottom: stopOn
+	      }
+	    
+	    }).on('affix.bs.affix', function(){ $( this ).css('top', '80px').css('position', ''); });
+	  }
+	  
+	  $( window ).trigger('scroll'); 
+	}); 
+	}
+
+	});
+
+
+	$('body').scrollspy({
+	offset: 80
+	});
+
+
+	$(function() {
+	$('a[href*=#]:not([href=#])').click(function() {
+	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	var target = $(this.hash);
+	target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	if (target.length) {
+	$('html,body').animate({
+	  scrollTop: target.offset().top
+	}, 1000);
+	return false;
+	}
+	}
+	});
+	});
+        
+        tga = false;
+function tg() {
+    
+    if(!tga) {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-bars");
+        x[0].classList.add("fa-close");
+        tga = true;
+    } else {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-close");
+        x[0].classList.add("fa-bars");
+        tga = false;
+    }
+}
+
+
+    
+	</script>

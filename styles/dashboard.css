@@ -1,0 +1,45 @@
+.hxpa-dashboard * {
+    margin: 0;
+    padding: 0;
+}
+
+.hxpa-dashboard .dash-head {
+    margin-top: 30px;
+}
+
+.hxpa-dashboard .dash-head h2 {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+}
+
+.hxpa-dashboard .dash-head hr {
+    border: none;
+    border-top: 3px solid red;
+    margin-top: 10px;
+    width: 50px;
+}
+
+.order-table {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.hxpa-dashboard .nav-tabs {
+    margin-bottom: 20px;
+} 
+
+.hxpa-dashboard .o-stat {
+    text-align: center;
+}
+
+.hxpa-dashboard .table>tbody>tr>td {
+    min-width: 85px;
+}
+
+.o-pending {
+    color: red;
+}
+
+.o-done {
+    color: #1b9c1b;
+}
