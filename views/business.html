@@ -319,9 +319,9 @@
                         </div>
                         <div class="hxpa-input">
                             <label>Account Type</label>
-                            <select ng-model="hxpadata.BankAccountType">
-                                <option value="SA">Saving Account</option>
-                                <option value="CA">Current Account</option>
+                            <select ng-init="hxpadata.BankAccountType = 'Saving Account'">
+                                <option ng-click="AccountType('SA')" ng-selected="myAccount">Saving Account</option> 
+                                <option ng-click="AccountType('CA')" ng-selected="myAccount1">Current Account</option>
                             </select>
                         </div>
                         <div class="hxpa-input">
@@ -346,9 +346,9 @@
                         <div class="hxpa-input-wrap" ng-cloak>
                             <div class="hxpa-input" ng-hide="time" ng-repeat="hx in hxpadata.opening_hours">
                                 <label>{{hx.weekday}}</label>
-                                <input type="text" ng-model="hx.from_hour">
+                                <input type="text" disabled ng-model="hx.from_hour">
                                 <span>-</span>
-                                <input type="text" ng-model="hx.to_hour">
+                                <input type="text" disabled ng-model="hx.to_hour">
                             </div>
                             <div ng-show="time">
                             <div class="hxpa-input">
@@ -407,7 +407,9 @@
 </div>
 
 <script>
+   // var lat = $('[ng-controller="BusinessCtrl"]').scope().hxpadata.Latitude;
     function initMap() {
+        console.log("lat is bla bla",street_name);
         var uluru = {lat: 28.6139, lng: 77.2090};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
