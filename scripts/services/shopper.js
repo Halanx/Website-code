@@ -13,12 +13,12 @@ angular.module('halanxApp')
         callserver : function(obj){
             console.log(obj)
             var pr = $q.defer();
-				var url = "https://api.halanx.com/shoppers/";
+				var url = "https://api.halanx.com/shoppers/create/";
             console.log(obj);
 				$http.post(url,obj).then(function(data){
 					pr.resolve(data.data);
 					console.log("Data Posted",data);
-                    alert("success")
+                    
 				}
 					,function(err){
 					pr.reject(err);	

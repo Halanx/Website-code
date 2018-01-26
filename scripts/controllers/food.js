@@ -423,13 +423,13 @@ $scope.scrollDown = function(){
          $scope.nomore = true;
          flag = false;
          jquery();
-         
+         pageNumber = 1;
         
          console.log(food.load())
          var promise =  food.productserver(food.load());
          promise.then(function(data){
          console.log(data)
-         pageNumber=1;
+        //  pageNumber=1;
          if(cat=="All" && !allSelect){
              allSelect = true;
              category=""
@@ -441,12 +441,12 @@ $scope.scrollDown = function(){
          else if(cat!="All"){
               category = cat;
              allSelect = false;
-           
-             var owncat =  data1.filter(function(obj){
-                return obj.Category == cat;
-                    })
+             $scope.loadMore();
+            //  var owncat =  data1.filter(function(obj){
+            //     return obj.Category == cat;
+            //         })
         
-            $scope.mydata = owncat;
+            // $scope.mydata = owncat;
           
              }
       },function(err){

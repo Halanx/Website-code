@@ -201,14 +201,6 @@ angular
         controller: 'CareerCtrl',
         controllerAs: 'career'
       })
-      .when('/email-verification-success',{
-      templateUrl: 'views/email-verification-success.html'
-      
-      })
-       .when('/email-verification-failure',{
-      templateUrl: 'views/email-verification-failure.html'
-      
-      })
       .otherwise({
         redirectTo: '/login'
       });
@@ -231,3 +223,4 @@ angular
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+

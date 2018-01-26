@@ -221,6 +221,10 @@ $scope.addstore = ()=>{
             //     $scope.mydata.push(element);
             // }, this);
             // console.log($scope.mydata)
+        },(err)=>{
+                flag = true;
+                $scope.loadbtn = true;
+                $scope.nomore = false;
         })
     }
     }
@@ -398,11 +402,11 @@ $scope.addstore = ()=>{
                  category = cat;
                   allSelected = false;
                  $scope.loadMore();
-        var owncat =  data1.filter(function(obj){
-             return obj.Category ==cat;
-         })
+        // var owncat =  data1.filter(function(obj){
+        //      return obj.Category ==cat;
+        //  })
         // console.log(owncat)
-        $scope.mydata = owncat;
+        // $scope.mydata = owncat;
 //       $scope.mydata = data;
           
              }
