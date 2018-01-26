@@ -1,0 +1,1164 @@
+<style>
+#header {
+background: #ffffff;
+border-bottom: 1px rgba(0, 0, 0, 0.07) solid;
+z-index: 99;
+&.--not-top {
+box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+}
+* {
+transition-duration: 0.2s;
+}
+
+#top-shadow {
+position: fixed;
+top: 0;
+left: 20px;
+width: 100%;
+height: 60px;
+z-index: 999;
+-webkit-box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+-moz-box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+display: none;
+}
+
+.navbar.affix{  
+top:0; 
+width:100%;
+}
+
+
+.navbar{    
+z-index:1000;  
+}
+
+@media(max-width:767px){
+    
+    .bg1 .row_2 .col-sm-12{
+        margin-top: -30px;
+    }
+    
+    .login_ctrl{
+        position: absolute;
+        top: -8px;
+        right: 15px;
+    }
+    
+    nav{
+        position: relative;
+    }
+}
+
+ 
+
+#content .userlist {
+/*    transform: translateX(200px);*/
+    transition: 1s;
+    background-color: #f6f6f6;
+    text-transform: capitalize;
+    width: 20%;
+    z-index: 11118;
+    position: fixed;
+    top: 60px;
+    height: 700px ;
+    left: 0;
+    margin: auto;
+    border-right: 1px solid black !important; 
+/*    display: none;*/
+}
+
+#content .userlist ul {
+    background: #fff;
+    padding-top: 46px;
+}
+
+    
+.nav-button .sidebutton {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    font-size: 25px;
+    border-radius: 0;
+    background: #fff;
+    padding: 4px 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), 1px 1px 1px rgba(0,0,0,0.07);
+    cursor: pointer;
+    z-index: 11111119;
+}
+
+#content .userlist {
+/*    transform: translateX(200px);*/
+    transition: 1s;
+    background-color: #fff;
+    text-transform: capitalize;
+    width: 20%;
+    z-index: 11118;
+    position: fixed;
+    padding-top: 10px;
+    height: 700px ;
+    left: 0;
+    margin: auto;
+    border-right: 1px solid #999 !important; 
+/*    display: none;*/
+}
+
+
+.userlist ul {
+    background: #fff;
+    margin-top: -12px;
+/*    box-shadow: 0 0 5px rgba(0,0,0,0.19), 0 0 11px rgba(0,0,0,0.1);*/
+}
+
+#content .userlist li{
+    padding: 12px 0px;
+    background: #fff;
+    border-bottom: 1px solid #e9e9e9;
+    text-align: center;
+}
+
+#content .userlist li:hover {
+    background: #f1f1f1;
+}
+
+#content .userlist ul li a{
+    color:#000000;
+    /* width: 112%; */
+    display: block;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    width: 100%;
+   
+/*padding : 0px 28%;*/
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+
+ul{
+    padding: 0px;
+margin: 0px;
+}
+
+
+.move{
+transform: translateX(-500px);
+transition: 1s;
+
+}
+
+#storename {
+    margin-top: 50px;
+}
+
+#content .move{
+    transform: translateX(-550px);
+    transition: 1s;
+    
+}
+#content .delivery-option {
+    margin-top: 10px;
+    margin-left: 188px;
+    margin-top: -20px;
+}
+#content .delivery-option li{
+    display: inline-block;
+    padding-left: 69px;
+    text-transform: capitalize;
+    font-size:16px;
+    font-family:"Sans",Verdana,"sans-serif";
+    color:#000000;
+    font-weight:bold;
+}
+#content .delivery-option li a{
+    text-decoration: none;
+    font-size:16px;
+    font-family:"Sans",Verdana,"sans-serif";
+    color:#000000;
+
+}
+#content .storelist li{
+    display: block;
+    padding: 0px;
+    border-bottom: 1px solid white;
+  
+    
+}
+#content .storelist li a{
+    color: #000000;
+     padding: 5px;
+    display: block;
+    font-size: 15px;
+}
+#content .storelist li:hover{
+    background-color: white;
+}
+#content .storelist{
+    display: none;
+    position: absolute;
+    width: 39%;
+    background-color: #f6f6f6;
+      
+}
+@media(max-width:380px){
+    .storelist{
+        margin-left:-110px;
+    }
+}
+ 
+#content .delivery-option li:nth-child(2){
+    position: relative;
+}
+#content .delivery-option .show{
+    display: block;
+    top: 37px;
+    z-index: 5;
+    left: 214px;
+    
+}
+@media(max-width:992px){
+    #content .delivery-option li{
+        padding-left: 20px;
+    }
+}
+@media(max-width:767px){
+    #content .delivery-option li{
+        padding: 10px;
+    }
+    #content .delivery-option{
+        margin-left: -80px;
+        margin-top: 0px;
+    }
+   
+}
+@media(max-width:576px){
+    #content .delivery-option{
+        margin-left: -10px;
+    }
+}
+@media(max-width:380px){
+    #content .delivery-option{
+        margin-left: -10px;
+    }
+      #content .delivery-option li{
+        padding: 7px;
+    }
+    
+}
+@media(max-width:380px){
+    #content .delivery-option{
+        margin-left: 91px;
+        margin-top:-40px;
+    }
+}
+
+ 
+.datalogo{
+   
+       width: 23%;
+       margin-left: 39%;
+       margin-top: -8px;
+   
+}
+@media(max-width:380px){
+  #content .datalogo{
+    width:200px;
+    margin-left:81px;
+  }
+}
+
+/*
+#content .bigbazar{
+    background-color: #f7f7f7;
+}
+*/
+#content .datalogo img{
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+@media(max-width:380px){
+  #content .datalogo img{
+        margin-left: 18px;
+        margin-top: 26px;
+  }
+}
+#content .datasection li .productimage{
+/*    width: 70%;*/
+    width: 150px;
+    margin-left: 20px;;
+       
+}
+#content .unit{
+    font-size: 17px;
+    color: lightgrey;
+}
+#content .datasection span{
+    text-transform: uppercase;
+    font-family:"Sans",Verdana,"sans-serif";
+    font-size:20px;
+    color:#000000;
+    margin-top:2px;
+}
+@media(max-width:380px){
+  #content .datasection span{
+    font-size:15px;
+    color:#000000;
+    text-decoration:none;
+    margin-left:3px;
+  }
+}
+#content .datasection{
+    text-align: center;
+        
+    
+}
+#content .datasection .addbutton button{
+        background-color: #fb641b;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+    margin-left: 20px;
+    
+    text-transform: uppercase;
+}
+#content .productmain{
+    margin: 50px 0px;
+}
+.productmain ul{
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin-left:23px;
+}
+
+.datasection li {
+ width: 204px;
+ background-color: #fff;
+ margin: 5px;
+    padding: 10px;
+ border-radius: 2px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+#content .counter-cart span{
+        border-bottom: 1px solid black;
+    padding: 0px 65px;
+}
+#content .datasection li:hover{
+    border: 1px solid #ccc;
+}
+#content .datasection li:hover img{
+    
+/*    transform: scale(1.1);*/
+    transform: translateY(-10px);
+    transition: 1s;
+}
+#content .datasection li img:hover{
+   transform: scale(1.1); 
+    transition: 2s;
+}
+#content .datasection li .productimage img{
+    margin: auto;
+   transition: 1s;
+   height: 90px;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-left: -2px;
+}
+
+button.btn.btn-sm.btn-danger.btn-circle {
+    border-radius: 40px;
+}
+#content .datasection .productdescription span{
+    font-size: 16px;
+/*    margin-left: -80px;*/
+    color: #666;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+#content .datasection .productcat ul{
+  /* display:flex;
+  flex-wrap:wrap; */
+  /* margin-left: 33px; */
+  margin-top: 22px;
+}
+
+.productcat ul li:hover {
+    color: #fff;
+    background: rgba(220,10,10,0.91);
+}
+#content .datalist .productcat .colorred{
+background-color: #e50000;
+border: 2px solid #d3d3d3;
+cursor:pointer;
+color:#ffffff;
+}
+@media(max-width:380px){
+#content .datasection .productdescription span{
+font-size:15px;
+color:#000000;
+margin-left:20px;
+}
+}
+@media(max-width:380px){
+.bg3{
+/*margin-left:-90px;*/
+background:#000000;
+}
+}
+
+@media(max-width:1224px){
+#content .productmain ul li{
+width: 220px;
+}
+}
+.modal-title{
+  font-family:"Sans",Verdana,"sans-serif";
+  font-size:22px;
+  color:#000000;
+  margin-bottom:-30px;
+}
+.modal-content .nextimage{
+    text-align: center;
+}
+
+#content  .modal-content .nextimage img{
+    /*width: 65%;*/
+}
+#content .red{
+   background-color:red;
+}
+#content  .modal-content span{
+    font-size: 22px;
+}
+#content  .modal-content .unit{
+    font-size: 17px;
+    color: #000000;
+}
+.btn-circle{
+  border-radius:30px;
+}
+.close{
+  margin-top:-20px;
+}
+/*.bg1{
+  margin-left:40px;
+}*/
+
+
+ .social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+ 
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
+ .bg1{
+  margin-top:50px;
+   
+ }
+ .bg18{
+  padding-top:20px;
+  margin-top:90px;
+ }
+
+.col-md-2 a{
+/*  color:#000000;*/
+    color: white;
+ font-size: 15px;
+
+}
+.col-md-2 a:hover{
+  text-decoration:none;
+  color:#ff0000;
+
+}
+.pull-right{
+  padding-right: 8px;
+  margin-right: 20px;
+  margin-top:10px;
+
+}
+.bg22{
+  margin-left:60px;
+}
+.icon-bar{
+  background:#d6d6d6;
+}
+
+@media(max-width:380px){
+  .form-control{
+    margin-left:1px;
+     
+  }
+}
+.form-control{
+  border:2px solid #d3d3d3;
+  border-radius:4px;
+  margin-top:5px;
+  text-align:center;
+  font-family:"Sans",Verdana,"sans-serif";
+}
+.searchbox ul li{
+  color:#000000;
+  font-family:"Droid-Sans",serif;
+  text-decoration:none;
+  font-size:20px;
+  background:#f7f7f7;
+  border:1px solid #d3d3d3;
+  text-align:center;
+}
+.searchbox ul li a{
+  color:#000000;
+  font-family:"Droid-Sans",serif;
+  text-decoration:none;
+  text-align:center;
+}
+.searchbox ul li a:hover{
+  text-decoration:none;
+  text-align:center;
+}
+@media(max-width:380px){
+  .storename{
+    margin-left:20px;
+  }
+}
+ #content .datalist .productcat .colorred{
+        background-color: #e50000;
+        border: 2px solid #d3d3d3;
+         
+        cursor:pointer;
+        color:#ffffff;
+    }
+     
+    .productcat ul{
+       
+      display:flex;
+      flex-wrap:no-wrap;
+       
+       
+    }
+
+.cart-icon {
+    margin: 0;
+    position: fixed;
+    top: 70px;
+    right: 0px; 
+    z-index: 999;
+}
+
+@media(max-width: 767px) {
+    .cart-icon {
+        top: 70px;   
+    }
+}
+
+.cart-icon button {
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), -1px 1px 1px rgba(0,0,0,0.07);
+    padding: 10px 30px;
+    border-radius: 0;
+}
+
+.counter-cart span{
+    border-bottom: 1px solid black;
+padding: 0px 50px;
+}
+
+
+.cart-icon i {
+    font-size: 20px;
+    color: #333;
+}
+
+.cart-icon span {
+    color: #333;
+    margin-left: 5px;
+}
+
+.datasection .productdescription .counter-cart{
+    margin-top: -22px;
+    margin-right: 75px;
+}
+
+
+
+/*************************************/
+/**Search Store**/
+#search-wrapper {
+    box-shadow: 0 0 12px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.35);   background: rgba(220,10,10,0.91);
+    padding: 50px 20px;
+    padding-top: 30px;
+}
+
+#search-wrapper h3 {
+    font-family: 'Titillium Web', sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#search-wrapper input {
+    height: 40px;
+    outline: none;
+    border-radius: 0;
+    color: #333;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+}
+
+#search-wrapper ul {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-top: none;
+    width: 100%;
+}
+
+#search-wrapper li {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#search-wrapper li:hover {
+    background: #f1f1f1;
+}
+
+#search-wrapper li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.productcat ul li {
+    border-radius: 2px;
+    padding: 0;
+    height: initial;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+}
+
+#content .userlist {
+    background: none;
+}
+
+#product-list-wrapper {
+    margin-top: 50px;
+    margin-bottom: 150px;
+    padding-left: 3%;
+}
+
+.product-list {
+    display: inline-block;
+    width: 30%;
+    margin: 10px 15px;
+    overflow: auto;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12), 1px 1px 2px rgba(0,0,0,0.14);
+}
+
+@media(max-width: 1004px) {
+    .product-list {
+        width: 45%;
+    }
+}
+
+@media(max-width: 704px) {
+    .product-list {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+
+#product-list-wrapper {
+    padding-left: 0;
+}
+}
+
+@media(max-width: 476px) {
+    .product-list {
+        display: block;
+        width: 90%;
+    }
+}
+
+.product-list .product-name {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #222;
+    text-align: left;
+    margin: 0;
+    margin-top: 40px;
+}
+
+.product-list .product-feature {
+    color: #333;
+    min-height: 20px;
+    text-align: left;
+}
+
+.product-list .dark {
+    border-top: 1px solid #d9d9d9;
+}
+
+@media (max-width: 767px){
+
+.userlist {
+    width: 75% !important;
+}
+}
+
+.nextimage .fav {
+    color: #e52222 !important;
+    /*float: right !important;*/
+    margin-top: -5px !important;
+    cursor: pointer !important;
+    font-size: 22px !important;
+    margin-right: 2px !important;
+}
+
+.product-list .fav {
+    color: #e52222;
+    float: right;
+    margin-top: -5px;
+    cursor: pointer;
+    font-size: 22px;
+    margin-right: 2px;
+}
+
+.product-img-cont {
+    height: 120px;
+    /*width: 90px;*/
+    text-align: center;
+    margin: auto;
+}
+
+.product-list .product-image {
+    /*width: 100%;*/
+    display: block;
+    height: 100%;
+    /* border: 1px solid #e1e1e1; */
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.product-list .product-quantity {
+    padding: 5px 10px;
+    margin-top: 7px;
+    float: left;
+    background: #e8e8e8;
+    border-radius: 3px;
+}
+
+.product-list .product-quantity button {
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding:0; 
+}
+
+.product-list span.glyphicon {
+    cursor: pointer;
+}
+
+.product-list .p-quan {
+    padding: 0 25px;
+}
+
+.product-list .add-btn {
+    margin-top: 7px;
+    float: right;
+}
+
+.product-list .add-btn button {
+    border: none;
+    background: #d9534f;
+    color: #fff;
+    border-radius: 2px;
+    padding: 5px 15px;
+    outline: none;
+}
+
+#search-wrapper ul li {
+    list-style-type: none !important;
+}
+
+div.scrollmenu {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+div.scrollmenu li {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.showMe1{
+    display: none;
+}
+
+.close1{
+    margin: 0 auto;
+    border-radius: 10px;
+    background: white;
+    margin-top: 180px;
+    width: 20%;
+    min-width: 200px;
+    z-index: 100000;
+}
+
+.close1 img{
+    padding: 50px;
+    width: 100%;
+    padding-bottom: 20px;
+    z-index: 100000;
+}
+
+.close1 h6{
+    text-align: center;
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.parent_close{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+</style>
+
+<!------------------------------>
+    <!--Search Product Starts Here-->
+    <div class="parent_close" ng-hide="closedStore">
+<div class="close1">
+    <img src="../images/close.png" alt="">
+    <h6 ng-click="backToStore()">Back to Stores</h6>
+</div>
+</div>
+    <div class="container-fluid">
+        <div id="search-wrapper" class="row">
+            <h3>Search your products</h3>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div id="searchbox-wrapper">
+                    <input type="text" class="form-control" placeholder="Search your products" ng-change="search()" ng-model="enter">
+                     <ul ng-hide="should">
+                        <li ng-repeat="i in listdata" data-toggle="modal"  ng-click="getsearch(i)">
+                            <a href="">{{i._source.ProductName}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+    <!--Search Store Ends-->
+
+ <div id="content" name="toTop" id="toPos">
+           <div class="container-fluid bg1" name="toTop" id="toPos">
+               <div class="row">
+                   <div class=" col-lg-3 col-md-3 col-sm-4 col-12">
+                       <div class="nav-button" ng-hide="menu" onclick="tg()">
+                           <span ng-click="addsidebar()" class="sidebutton">
+                               <i class="fa fa-bars" aria-hidden="true"></i>
+                         </span>
+                       </div>
+                       <div id="menu_list" class="userlist" ng-class={"move":movex}>
+                        <ul style="height:inherit">
+                             <li><a href="#/accounts">My Accounts</a></li>
+	                            <li><a href="#/orders">My Orders</a></li>
+	                            <li><a href="#/favourite">Favourites</a></li>
+	                            <li><a href="">Points</a></li>
+	                            <li><a href="">Notification</a></li>
+	                            
+                             
+                        </ul>
+                       </div>
+                   </div>
+                   <div class="col-md-6 col-md-offset-0 col-sm-6 col-9">
+                       <div class="delivery-option">
+                           <ul>
+                               
+                              <li>
+<!--                                  <a href="" ng-click="addstore()">shopping in</a>-->
+                                <div class="storelist" ng-class={"show":showclass}>
+                                  <ul id="storename">
+                                  <li ng-repeat="store in storedata" ng-click="mystore(store.id)" >
+                                      <a href="">{{store.StoreName}}</a>
+                                  </li>
+
+                                      
+                                  </ul>
+
+                              </div>
+                              </li>
+                               
+                           </ul>
+                       </div>
+                   </div>
+                   <div class="" >
+                       <div class="cart-icon">
+                          <a href="#/cart">
+                   <button type="button" class="btn btn-md b78"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+<span ng-model = "counter">{{counter}}</span></button>
+                           </a>
+                           
+                       </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-sm-12">
+                       <div class="datalist">
+   <div class="datalogo">
+    <img ng-src="{{StoreLogo}}" alt="">
+    
+    
+</div>
+ 
+<div class="datasection">
+<div class="row">
+<div class="col-md-12 col-sm-12">
+<span class="storename">{{StoreName}}</span>
+   <div class="productcat scrollmenu">
+      <ul>
+          <li ng-repeat="i in productcat" ng-click="catwise(i)" class="category">
+              {{i}}
+          </li>
+      </ul>
+  </div>
+  </div>
+  </div>
+
+    <!-- <div class="productmain">
+        <ul>
+            <li ng-repeat="data in mydata track by $index" data-toggle="modal" data-target="#exampleModalLong" ng-click="addmodal(data)">
+           
+             <div class="product" >   
+             <div class="productimage" >
+             <img ng-src="{{data.ProductImage}}" class="responsive" height="120" width="150"> 
+
+              </div>
+              <div class="productdescription">
+                  <span class="productname">{{data.ProductName}}</span>
+                  
+                  <br>
+                  <span class="productprice"><i class="fa fa-inr" aria-hidden="true"></i>{{data.Price}}</span>
+              </div>
+              
+              </div>
+                            
+               
+            </li>
+        </ul> -->
+        <div class="col-sm-12">
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" >{{modal.ProductName}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class="nextimage" style="height: 250px; margin: auto;">
+           <img ng-hide="showImage" ng-src="{{modal.ProductImage}}" style="height:100%" class="responsive"> 
+            <!--<img src="images/Like-48%20(1).png"  ng-click="addfav(modal)"   ng-class={"red":modal.FavoriteField}  style="width:10%;">-->
+           <!--<span class="glyphicon glyphicon-heart"></span> -->
+            <!--<br>
+            <span class="glyphicon fav" ng-click="addfav(modal)" ng-class="{'glyphicon-heart':data.FavoriteField, 'glyphicon-heart-empty':!modal.FavoriteField}" onclick="togglec()"></span>-->
+            <br>
+            <span class="productprice"><i class="fa fa-inr" aria-hidden="true"></i><span ng-class="{showMe1:modal.MRP!=modal.Price}"> {{modal.MRP}}</span><span ng-class="{showMe1:modal.MRP==modal.Price}"><span style="text-decoration: line-through;">{{modal.MRP}} </span> &nbsp; <i class="fa fa-inr" aria-hidden="true"></i>{{modal.Price}}</span></span>
+       </div>
+
+       
+          <div class="counter-cart" style="margin-top: 80px;">
+          
+          <button ng-click="minus()" ng-disabled="quantity==1" class="btn btn-sm btn-danger btn-circle"><i class="glyphicon glyphicon-minus"></i></button>
+
+          <span ng-init="quantity=1">{{quantity}}</span>
+          <button ng-click="plus()" class="btn btn-danger btn-sm btn-circle" ><i class="glyphicon glyphicon-plus"></i></button>
+         
+         
+       </div>
+      </div>
+      <div class="modal-footer">
+       <center>
+        <button type="button" class="btn btn-md btn-danger b2" ng-click="addtocart(modal,quantity)" data-dismiss="modal">Add To Cart</button></center>
+      </div>
+    </div>
+  </div>
+</div> 
+    </div>
+<!-- </div> -->
+</div>
+                   </div>
+               </div>
+               
+               
+               
+</div>
+       </div>
+  </div>
+
+  <div id="product-list-wrapper" ng-hide="searched">
+    <div class="product-list" ng-repeat="data in mydata">
+        <div class="product-head" data-toggle="modal" data-target="#exampleModalLong" ng-click="addmodal(data)">
+            <!-- <img class="product-image" src="{{data.ProductImage}}"> -->
+            <div class="product-img-cont">
+                <img class="product-image" src="{{data.ProductImage}}">
+            </div>
+            <p class="product-name">{{data.ProductName}}</p> 
+            <p class="product-feature">{{data.Features}}</p>
+        </div>
+        <div class="price">
+            <p class="amount">Amount : <i class="fa fa-inr" aria-hidden="true"></i><span ng-class="{showMe1:data.MRP!=data.Price}"> {{data.MRP}}</span><span ng-class="{showMe1:data.MRP==data.Price}"><span style="text-decoration: line-through;">{{data.MRP}} </span> &nbsp; <i class="fa fa-inr" aria-hidden="true"></i>{{data.Price}}</span> 
+                <span class="glyphicon fav" ng-click="addfav(data)" ng-class="{'glyphicon-heart':data.FavoriteField, 'glyphicon-heart-empty':!data.FavoriteField}" onclick="togglec()"></span></p>
+        </div>
+        <div class="dark">
+            <div class="product-quantity">
+                <button ng-click="quantity = quantity-1" ng-disabled="quantity==1"><span class="glyphicon glyphicon-minus"></span></button>
+                <span class="p-quan" ng-model="quantity" ng-init="quantity=1">{{quantity}}</span>
+                <span class="glyphicon glyphicon-plus" ng-click="quantity = quantity+1"></span>
+            </div>
+            <div class="add-btn"><button ng-click="addtocart(data, quantity)">Add To Cart</button></div>
+        </div>
+    </div>
+</div>
+<!--searched data-->
+<div id="product-list-wrapper1" ng-hide="searched1">
+    <div class="product-list" >
+        <div class="product-head" data-toggle="modal" data-target="#exampleModalLong" ng-click="addmodal(data)">
+            <!-- <img class="product-image" src="{{data.ProductImage}}"> -->
+            <div class="product-img-cont">
+                <img class="product-image" src="{{data.ProductImage}}" ng-hide="data.showMe">
+            </div>
+            <p class="product-name">{{data.ProductName}}</p> 
+            <p class="product-feature">{{data.Features}}</p>
+        </div>
+        <div class="price">
+            <p class="amount">Amount : <i class="fa fa-inr" aria-hidden="true"></i> {{data.Price}} 
+                <span class="glyphicon fav" ng-click="addfav(data)" ng-class="{'glyphicon-heart':data.FavoriteField, 'glyphicon-heart-empty':!data.FavoriteField}" onclick="togglec()"></span></p>
+        </div>
+        <div class="dark">
+            <div class="product-quantity">
+                <button ng-click="quantity = quantity-1" ng-disabled="quantity==1"><span class="glyphicon glyphicon-minus"></span></button>
+                <span class="p-quan" ng-model="quantity" ng-init="quantity=1">{{quantity}}</span>
+                <span class="glyphicon glyphicon-plus" ng-click="quantity = quantity+1"></span>
+            </div>
+            <div class="add-btn"><button ng-click="addtocart(data, quantity)">Add To Cart</button></div>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-danger" style="display:block;margin:0 auto;" ng-click="loadMore()" ng-hide="loadbtn">Load More</button>
+<h5 ng-hide="nomore" style="text-align:center;">No more items</h5>
+
+
+<script>
+//var menus = document.getElementById("menu_list");
+//    menus.css('height','700px');
+$(function(){
+var stickyElement   = '.panel-affix',    
+bottomElement   = '#fake-footer';  
+if($( stickyElement ).length){
+$( stickyElement ).each(function(){
+   
+  var fromTop = $( this ).offset().top, 
+    
+    fromBottom = $( document ).height()-($( this ).offset().top + $( this ).outerHeight()),
+    
+    stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height()); 
+   
+  if( (fromBottom-stopOn) > 200 ){
+     
+    $( this ).css('width', $( this ).width()).css('top', 0).css('position', '');
+     
+    $( this ).affix({
+      offset: { 
+        
+        top: fromTop - 80,  
+         
+        bottom: stopOn
+      }
+    
+    }).on('affix.bs.affix', function(){ $( this ).css('top', '80px').css('position', ''); });
+  }
+  
+  $( window ).trigger('scroll'); 
+}); 
+}
+});
+$('body').scrollspy({
+offset: 80
+});
+$(function() {
+$('a[href*=#]:not([href=#])').click(function() {
+if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+var target = $(this.hash);
+target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+if (target.length) {
+$('html,body').animate({
+  scrollTop: target.offset().top
+}, 1000);
+return false;
+}
+}
+});
+});
+   
+tga = false;
+function tg() {
+    
+    if(!tga) {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-bars");
+        x[0].classList.add("fa-close");
+        tga = true;
+    } else {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-close");
+        x[0].classList.add("fa-bars");
+        tga = false;
+    }
+}
+</script>

@@ -1,0 +1,121 @@
+<style>
+    @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+body{margin-top:20px;}
+.fa-fw {width: 2em;}
+     .image-aboutus-banner {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/673649/pexels-photo-673649.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding-top: 110px;
+    /*padding-bottom:110px;*/
+ }
+ 
+ .cursor{
+     cursor: help;
+ }
+
+ .trial:first-child{
+     margin-top: 0px !important;
+ }
+
+ .cursor1{
+     cursor: default;
+ }
+
+  .image-aboutus-sm-banner {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/631008/pexels-photo-631008.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom:20px;
+ }
+.lg-text {
+    font-size:52px;
+    font-weight: 600;
+    text-transform: none;
+    color:#fff;
+}
+ .para1 {
+    color:#fff;
+    font-size: 18px !important;
+}
+
+.active{
+    color: white !important;
+    background: red !important;
+    border: 1px solid black !important;
+}
+
+.item{
+    color: black !important;
+    background: white !important;
+}
+
+@media (max-width:990px){
+    .try_me{
+        padding-left: 0px !important; 
+    }
+    .try_me1{
+        padding: 30px !important;
+    }
+}
+
+</style>
+<div class="image-aboutus-banner" style="margin-top:-20px;">
+<div class="container">
+    <div class="row" style="margin-bottom:20px;">
+        <div class="col-md-12">
+         <h1 class="lg-text">FAQ</h1>
+         <p class="para1">For Halanx customer support, call us at 011-2789 0252, write to us at support@halanx.com</p>
+       </div>
+    </div>
+</div>
+</div>
+<br>
+<div style="overflow:auto;">
+    <div class="row">
+        <h3 style="padding-right:0px;padding-left:37px;">Topics of Discussion</h3>
+        <div class="col-md-3 try_me" style="padding-right:0px;padding-left:25px;">
+           <div class="list-group try_me1">
+  <a  class="list-group-item" ng-class="{'active': {{topic.id}} == states1,item: {{topic.id}}!=states1}" ng-repeat="topic in categories" ng-click="showTopic(topic.slug,topic.id);">
+    {{topic.name}}
+  </a>
+  <!--<a  class="list-group-item">Dapibus ac facilisis in</a>
+  <a  class="list-group-item">Morbi leo risus</a>
+  <a  class="list-group-item">Porta ac consectetur ac</a>
+  <a  class="list-group-item">Vestibulum at eros</a>-->
+</div>
+        </div>
+        <div class="col-md-9">
+            <div ng-repeat="head in topic track by $index" style="margin:10px auto;width:90%;" class="panel panel-default trial">
+                <div class="cursor panel-heading" style="overflow:auto;">
+                    <h5 style="float:left;">{{head.text}}</h5>
+                    <span style="float:right;margin-top:8px;z-index:1000;" ng-show="showMe" ng-click="showMe=!showMe;"><i class="fa fa-plus" aria-hidden="true"></i>
+</span>
+<span style="float:right;margin-top:8px;z-index:1000;" ng-hide="showMe" ng-click="showMe=!showMe;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                </div>
+                <div class="panel-body" ng-hide="showMe">
+                    {{head.answer}}
+                </div>
+                
+            </div>
+            <!--<div ng-hide="hideMe" style="margin:10px auto;width:90%;" class="panel panel-default">
+                <div class="cursor1 panel-heading">
+                    <h5 >{{answer.text}}</h5>
+                </div>
+                <div class="panel-body">
+                    {{answer.answer}}
+                </div>
+                <div class="panel-heading" style="overflow:auto;">
+                    <h7 style="float:right;">Author: {{answer.created_by.first_name}}</h7>
+                    
+                </div>
+            </div>-->
+
+        </div>
+    </div>
+</div>
