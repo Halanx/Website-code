@@ -32,7 +32,7 @@ angular.module('halanxApp')
 				console.log(data);
 			},(err)=>{
 				
-				alert("error");
+				// alert("error");
 			})
        
     }
