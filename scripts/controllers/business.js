@@ -38,7 +38,8 @@ angular.module('halanxApp')
               })
         
         }
-         
+         $scope.myAccount1 = false;
+         $scope.myAccount = true;
         function showData (sid1){
             
             
@@ -49,6 +50,7 @@ angular.module('halanxApp')
                   console.log("aay yah pe");
                   console.log(data);
                   $scope.hxpadata = data.data;
+                //   $scope.myAccount = 
                   localStorage.setItem("lat_store",data.data.Latitude);
                   localStorage.setItem("lon_store",data.data.Longitude);
               },(err)=>{
@@ -136,6 +138,12 @@ angular.module('halanxApp')
 
 } 
 
+    $scope.AccountType = (val)=>{
+        $scope.hxpadata.BankAccountType = val;
+    }
+
+    
+
     $scope.submittimeform = ()=>{
       
           var obj2 = {};
@@ -209,7 +217,7 @@ angular.module('halanxApp')
         //   }
 
           console.log(obj2)
-         
+          
             var promise = business.dateTime(data_transfer,token);
             promise.then((data)=>{
                 if(data.result=="update successful"){
