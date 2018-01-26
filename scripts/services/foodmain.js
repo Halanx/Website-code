@@ -117,6 +117,7 @@ angular.module('halanxApp')
          return pr.promise
      },
      LoadMore:function(id,page_no,cat){
+        cat = cat.replace("&","%26");
         var url = "https://api.halanx.com/stores/"+id+"/products/?category="+cat+"&page="+page_no;
         var pr = $q.defer();
 
