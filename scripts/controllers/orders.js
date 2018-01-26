@@ -30,6 +30,7 @@ angular.module('halanxApp')
     $scope.movex = true;
     $scope.cancelMsg = "Are you sure, you want to cancel the order?";
     $scope.order_id;
+    $scope.flag= false;
     $scope.addsidebar = ()=>{
         $scope.movex = !$scope.movex;
     }
@@ -42,7 +43,13 @@ angular.module('halanxApp')
     $scope.toggleDeliver = true;
     $scope.toggleOnGo = true;
     $scope.toggleRec = true;
-
+    $scope.cancelOff = (id)=>{
+        if($scope.flag){
+            // $scope.flag = false; 
+       $scope.openCancel(id); 
+       
+        }
+    }
     $scope.trackyourOrder = (order)=>{
         $scope.loader = false;
         $scope.trackToggle = true;
@@ -192,14 +199,25 @@ $scope.$on('$viewContentLoaded', function(){
         }
         
     }
+}
+$scope.cancelMe = ()=>{
+    if($scope.flag){
+        $scope.openCancel($scope.cancel_id);
     }
+}
     //  $scope.myorder();
      $scope.openCancel = (id)=>{
+         $scope.cancel_id = id;
          if($scope.check1!=id){
+           
          $scope.check1 = id;
+         setTimeout(()=>{
+              $scope.flag = true; 
+         },200);
         }
         else{
             $scope.check1 = "0000000";
+            $scope.flag = false;
         }
         //  console.log($scope.cancel_order);
         //  $scope.cancel_order = !$scope.cancel_order;
