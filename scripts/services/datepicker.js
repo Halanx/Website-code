@@ -11,16 +11,16 @@ angular.module('halanxApp')
   .factory('datepicker', function () {
       var object = {
        desired : function(){
-            return ([{service:"as soon as possible",mark:true},{service:"schedule for later",mark:false}])
+            return ([{service:"as soon as possible",mark:false},{service:"schedule for later",mark:false}])
         },
-            check(search){
-  
+    check(search){
+  console.log(search);
   var get =  search.filter(function(check){
 
         return(check.mark ==true);
     })
  
-  console.log(get[0].mark);
+//   console.log(get[0].mark);
         
 get[0].mark = !get[0].mark;
   console.log(get)

@@ -42,14 +42,21 @@ if(mm<10) {
         }
        $scope.changeschedule = (i)=>{
            console.log(i.service);
-            datepicker.check($scope.desired)
+            i.mark = !i.mark;
+            datepicker.check($scope.desired);
             if(i.service=="schedule for later"){
+               $scope.desired[0].mark = false;
+                $scope.desired[1].mark = true;
+                
                 $scope.mytime = false;  
             }
            else{
+               $scope.desired[0].mark = true;
+                $scope.desired[1].mark = false;
             $scope.mytime = true;   
            }
-           i.mark = !i.mark;
+           console.log($scope.desired);
+           
        }
              $scope.timeadded=(i)=>{
            console.log("hello")
@@ -59,6 +66,11 @@ if(mm<10) {
           
        }
              $scope.postdata = ()=>{
+             var ele = $scope.desired.filter((ele)=>{
+                 return ele.mark == true;
+             })    
+
+             if(ele.length>0){
                 $scope.dateError = false;
                  
      var date = $("#hw_datepicker").val()
@@ -97,5 +109,5 @@ if(mm<10) {
                         $window.location.href = "#location";
              }
              }
-
+             }  
   });
