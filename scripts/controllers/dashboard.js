@@ -8,15 +8,22 @@
  * Controller of the halanxApp
  */
 angular.module('halanxApp')
-  .controller('DashboardCtrl', function ($scope,dashboard,$window) {
+  .controller('DashboardCtrl', function ($scope,dashboard,business,$window) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    var page_no=1;
+    $scope.edit_msg = "";
+    var sid;
+    var flag = true;
+    $scope.cancelBtn = true;
+    $scope.loadMore_c = false;
+    $scope.BTN = "Edit";
     var token = localStorage.getItem("store_token");
     var promise = dashboard.DashCall(token);
-
+    $scope.Pname = true;
     $scope.dashdata = [];
     $scope.payment = [];
     promise.then(function(data){
@@ -78,5 +85,97 @@ angular.module('halanxApp')
       // for(var i=0;i<20;i++){
       // $scope.payment.push({id: i, amount: 1000*i, paid_on: "2018-01-11T12:30:00Z", store: 78});
       // }
+    };
+function showMeData(){
+    var promise = business.callBusiness(token);
+          promise.then((data)=>{
+                 sid = data[0].id;
+                 $scope.categories = data[0].CategoriesAvailable;
+                 console.log(sid);
+          },(err)=>{
+            console.log(err);
+          });
+}  
+
+showMeData();
+
+    $scope.getProduct = ()=>{
+      var promise = dashboard.getProduct(sid,page_no);
+        promise.then((data)=>{
+        console.log(data);
+        if(data.next==null){
+          flag = false;
+          $scope.loadMore_c = true;
+        }
+       
+        for(var i =0;i<data.results.length;i++){
+          if(data.results[i].ProductImage == null){
+            data.results[i].ProductImage = data.results[i].Store.StoreLogo;
+            data.results[i].msg = "";
+          }
+          data.results[i].disable = true;
+        }
+         if(data.previous==null){
+        $scope.products = data.results;
+         }
+         else{
+           data.results.forEach(function(element) {
+             $scope.products.push(element);
+           }, this);
+         }
+        console.log($scope.products);
+      },(err)=>{
+        console.log("err");
+      });
     }
+
+    $scope.edit = (product)=>{
+      $scope.BTN = "Save";
+      product.disable = false;
+    }
+
+    $scope.cancelEdit = (product)=>{
+      product.disable = true;
+    }
+
+    $scope.save = (product)=>{
+      var obj = {
+        ProductName:product.ProductName,
+        MRP:product.MRP,
+        Price:product.Price,
+        Category:product.Category,
+        Features:product.Features,
+        Active:product.Active
+      }
+      dashboard.editProduct(obj,product.id,token).then((data)=>{
+        if(data.id){
+          product.msg = "Product saved.";
+          $scope.cancelEdit(product);
+        }
+        console.log(data);
+      })
+    };
+
+    loadMoreData();
+     function loadMoreData(){
+        window.angular.element($window).bind('scroll', function() {
+          if($(window).scrollTop() + $(window).height()== $(document).height()) {
+                 $scope.loadMore();
+               }
+            });
+          };
+
+     $scope.loadMore = ()=>{
+       if(flag){
+        page_no = page_no+1;
+        $scope.getProduct();
+       }
+      
+     }
+     
+     $scope.LoadMoreProducts = ()=>{
+       $scope.loadMore();
+     }       
+
+    
   });
