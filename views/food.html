@@ -781,9 +781,16 @@ div.scrollmenu li {
     border-radius: 10px;
     background: white;
     margin-top: 180px;
-    width: 20%;
-    min-width: 200px;
+    overflow: auto;
+    width: 25%;
+    min-width: 250px;
     z-index: 100000;
+}
+
+.close1 button{
+    display: block !important;
+    margin: 0 auto !important;
+    margin-bottom: 10px !important;
 }
 
 .close1 img{
@@ -838,7 +845,8 @@ div.scrollmenu li {
     <div class="parent_close" ng-hide="closedStore">
 <div class="close1">
     <img src="../images/close.png" alt="">
-    <h6 ng-click="backToStore()">Back to Stores</h6>
+    <h6 >Sorry, order can be delivered tomorrow, since {{StoreName}} is closed.</h6>
+    <button class="btn btn-warning" ng-click="closedStore=true;">Ok</button>
 </div>
 </div>
     <!--------------------------->
