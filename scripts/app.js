@@ -201,6 +201,12 @@ angular
         controller: 'CareerCtrl',
         controllerAs: 'career'
       })
+      .when('/shopper_agreement', {
+        templateUrl: 'views/shopper_agreement.html'
+      })
+      .when('/merchant_agreement', {
+        templateUrl: 'views/merchant_agreement.html'
+      })
       .otherwise({
         redirectTo: '/login'
       });
