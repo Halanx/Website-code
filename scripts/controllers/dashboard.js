@@ -18,6 +18,7 @@ angular.module('halanxApp')
     $scope.edit_msg = "";
     var sid;
     var flag = true;
+    $scope.lodRip = false;
     $scope.cancelBtn = true;
     $scope.loadMore_c = false;
     $scope.BTN = "Edit";
@@ -37,6 +38,8 @@ angular.module('halanxApp')
         data.data.items[i].dt = getDate(data.data.items[i].delivery_time)+" & "+formatAMPM(data.data.items[i].delivery_time);
       }
       $scope.dashdata = data.data.items;
+      $scope.storeName = data.data.store_name;
+      $scope.lodRip = true;
 
       
       console.log("data is:",data.data.items);
@@ -44,6 +47,25 @@ angular.module('halanxApp')
       console.log(err);
     })
 // DashCall
+
+setInterval(function(){
+  var promise = dashboard.DashCallRealTime(token);
+  promise.then(function(data){
+    // console.log(data);
+    $scope.paid = data.data.paid;
+    $scope.pending = data.data.pending;
+    localStorage.setItem("paid_amount",data.data.paid);
+    localStorage.setItem("pending_amount",data.data.pending);
+    for(var i=0;i<data.data.items.length;i++){
+      data.data.items[i].placing_time = getDate(data.data.items[i].placing_time)+" & "+formatAMPM(data.data.items[i].placing_time);
+      data.data.items[i].dt = getDate(data.data.items[i].delivery_time)+" & "+formatAMPM(data.data.items[i].delivery_time);
+    }
+    $scope.dashdata = data.data.items;
+  },function(err){
+    console.log(err);
+  })
+  }, 10000);
+
     $scope.visit = ()=>{
       $window.location.assign("#business");
       $window.location.reload();
@@ -116,7 +138,7 @@ showMeData();
           data.results[i].disable = true;
         }
          if(data.previous==null){
-        $scope.products = data.results;
+            $scope.products = data.results;
          }
          else{
            data.results.forEach(function(element) {
@@ -124,9 +146,33 @@ showMeData();
            }, this);
          }
         console.log($scope.products);
+        $scope.tempProducts = $scope.products;
       },(err)=>{
         console.log("err");
       });
+    }
+
+    $scope.searchProVal = "";
+    $scope.searchPro = () => {
+      var len = $scope.searchProVal.length;
+      $scope.productsSer = [];
+      if(len == 0) {
+        $scope.getProduct();
+        $scope.searchMsg = "";
+      } else {
+      $scope.tempProducts.forEach(element => {
+        if((element.ProductName.slice(0, len)).toLowerCase() == ($scope.searchProVal).toLowerCase()) {
+          $scope.productsSer.push(element); 
+          console.log(element.ProductName);
+        }
+      });
+      if($scope.productsSer.length == 0) {
+        $scope.searchMsg = "No Products found";
+      } else {
+        $scope.searchMsg = $scope.productsSer.length + " item(s) found.";
+      }
+    }
+      console.log($scope.searchProVal);
     }
 
     $scope.edit = (product)=>{
