@@ -224,9 +224,7 @@ $scope.scrollDown = function(){
      
      
      function datalogo(id){
-
-        var token= food.gettoken();
-           var promise = food.storeserver(id, token);
+           var promise = food.storeserver(id);
     promise.then(function(data){
         if(!data.IsOpen){
             $scope.closedStore = false;

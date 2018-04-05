@@ -174,22 +174,14 @@ textarea{
     border: 1px solid black;
 }
 
-.loadingRip {
-    text-align: center;
-}
 
- .loadingRip img {
-     z-index: 1000;
-     height: 70px;
-     width: 70px;
- }
 
  </style>   
 <div class="container hxpa-dashboard">
     <div class="row">
         <div class="col-sm-12">
             <div class="dash-head">
-                <h2>DashBoard - {{storeName}}</h2>
+                <h2>DashBoard</h2>
                 <hr>
             </div>
             <div class="order-table">
@@ -232,9 +224,6 @@ textarea{
                             </tr>
                         </tbody>
                     </table>
-                    <div class="loadingRip" ng-hide="lodRip">
-                            <img src="../images/ripple_loading.gif">
-                        </div>
                     </div>
                     <div id="menu1" class="tab-pane fade">
                         <h3>Payments</h3>
@@ -296,55 +285,7 @@ textarea{
                     </div>
                      <div id="menu2" class="tab-pane fade">
                         <h3>Products</h3>
-                        <input type="search" class="form-control" placeholder="search your products" ng-keyup="searchPro()" ng-model="searchProVal" style="margin-top: 10px; padding-left: 5px;">
-                        {{searchMsg}}
                         <br><br>
-                        <div class="row banner_prod" ng-repeat="product in productsSer">
-                            <div class="col-md-4 logo">
-                                <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
-                            </div>
-                            <div class="col-md-8 product_content">
-                                <label for="prdouct_name">Product Name</label>
-                                <input type="text" name="prdouct_name" class="form-control" ng-model="product.ProductName" ng-disabled="product.disable">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <label for="price">MRP (Rs.)</label>
-                                        <input type="number" name="price" class="form-control" ng-model="product.MRP" ng-disabled="product.disable">
-                                    </div>
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-5">
-                                        <label for="price">Selling Price (Rs.)</label>
-                                        <input type="number" name="price" class="form-control" ng-model="product.Price" ng-disabled="product.disable">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <label for="">Choose Category</label>
-                                    <select class="form-control" ng-model="product.Category" ng-disabled="product.disable">
-                                        <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
-                                    </select>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label for="">Description</label>
-                                        <textarea placeholder="Description" ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
-
-                                        </textarea>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <label>Available</label> <input  class="form-control check1" type="checkbox" ng-disabled="product.disable" ng-model="product.Active">
-                                    </div>
-                                </div>
-                                <h5 style="margin-bottom:-10px;color:red;" class="dont"  ng-class="{'show':product.disable==true}">{{product.msg}}</h5>
-                                <br>
-                                <button class="btn btn-prmiary" ng-click="edit(product)" ng-class="{'dont':product.disable==false}">Edit</button>
-                                <button class="btn btn-default dont" ng-click="save(product)"  ng-class="{'show':product.disable==false}">Save</button>
-                                <button class="btn btn-primiary dont" ng-click="cancelEdit(product)" ng-class="{'show':product.disable==false}">Cancel</button>
-                                
-                            </div>
-                        </div>
                         <div class="row banner_prod" ng-repeat="product in products">
                             <div class="col-md-4 logo">
                                 <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">

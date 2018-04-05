@@ -143,8 +143,7 @@ $scope.addstore = ()=>{
      
      
      function datalogo(id){
-        var token= foodmain.gettoken();
-           var promise = foodmain.storeserver(id, token);
+           var promise = foodmain.storeserver(id);
     promise.then(function(data){
         console.log(data)
         if(!data.IsOpen){
