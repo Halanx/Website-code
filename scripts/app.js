@@ -201,11 +201,15 @@ angular
         controller: 'CareerCtrl',
         controllerAs: 'career'
       })
-      .when('/shopper_agreement', {
-        templateUrl: 'views/shopper_agreement.html'
+      .when('/refundpolicy', {
+        templateUrl: 'views/refundpolicy.html',
+        controller: 'CareerCtrl',
+        controllerAs: 'career'
       })
-      .when('/merchant_agreement', {
-        templateUrl: 'views/merchant_agreement.html'
+      .when('/payment', {
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl',
+        controllerAs: 'payment'
       })
       .otherwise({
         redirectTo: '/login'
