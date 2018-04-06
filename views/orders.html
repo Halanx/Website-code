@@ -423,7 +423,7 @@ body{
  </div>
     <ul>
         <!--|orderBy:'PlacingTime':rev"-->
-<li class="orders" ng-repeat="i in orders|orderBy:'PlacingTime':rev" style="position:relative" ng-click="cancelOff(i.id)">
+<li class="orders" ng-repeat="i in orders" style="position:relative" ng-click="cancelOff(i.id)">
    
     <i class="fa fa-ellipsis-v" id="cc-{{i.id}}" ng-click="openCancel(i.id)" ng-hide="past" aria-hidden="true" style="position:  absolute;right: 2%;top: 50px;font-size: 28px;z-index:5"></i>
     <div class="menu_opt" data-toggle="modal" data-target="#myModal" ng-click="cancelOrder(i.id)" ng-class="{showMe:i.id==check1}" style="background:White;color:black;">
