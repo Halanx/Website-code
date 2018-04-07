@@ -1,0 +1,408 @@
+<link href="../styles/dashboard.css" rel="stylesheet">
+<style>
+
+
+@media(min-width:992px){
+    .table_scroll{
+        max-height: 480px;
+        overflow: scroll;
+        cursor: move;
+    }
+}
+
+textarea{
+    resize: none;
+}
+.ptb-50{
+    padding: 50px 50px;
+}
+
+.section_bg_gray {
+    background-color: #f3f5f7;
+}
+
+.single_what_we_do {
+    background-color: rgb(245,245,245);
+    text-align: center;
+    padding: 0 35px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.single_what_we_do:hover {
+    -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.single_what_we_do .top_line {
+    position: absolute;
+    top: 0;
+    left: 44%;
+    width: 12%;
+    height: 3px;
+}
+
+.top_line1{
+    background-color: red;
+}
+
+.top_line2{
+    background:  green;
+}
+
+.loadMore{
+    display: block;
+    margin: 0 auto;
+}
+
+.single_what_we_do .what_we_do_figure {
+    padding: 25px 0;
+}
+.single_what_we_do .what_we_do_figure img {
+    margin: 0 auto;
+}
+.single_what_we_do .what_we_do_title {
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 25px;
+    margin: 0;
+    color: #2b353a;
+}
+.single_what_we_do .what_we_do_content {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #2b353a;
+}
+
+@media(max-width:500px){
+    .check1{
+        width: 10% !important;
+    }
+}
+ .single_what_we_do .what_we_do_icon {
+    position: absolute;
+    bottom: -9px;
+    left: 47%;
+    color: #fff;
+    background-color: #8448ff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.single_what_we_do .what_we_do_icon i {
+    font-size: 24px;
+    text-align: center;
+    padding: 2px 3px 2px 5px;
+}
+
+.icon{
+    font-size: 28px;
+}
+
+.icon1{
+    color: red;
+}
+
+.icon2{
+    color: green;
+}
+
+.dont{
+    display: none;
+}
+
+.show{
+    display: inline-block !important;
+}
+
+@media(min-width:993px){
+    .img_prod{
+    margin-top: 140px !important;
+    height: 160px;
+    width: 280px;
+    }
+}
+
+@media(max-width:992px){
+    .img_prod{
+    margin-top: 20px !important;
+}
+}
+
+
+
+.form-control[disabled]{
+    background: white !important;
+}
+
+.img_prod{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.banner_prod{
+    background: rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.banner_prod:hover{
+    box-shadow: 2px 3px 10px grey;
+}
+
+.form-control{
+    margin-bottom: 8px !important;
+}
+
+.product_content{
+    padding: 20px;
+}
+
+.btn{
+    padding: 5px !important;
+    border: 1px solid black;
+}
+
+.loadingRip {
+    text-align: center;
+}
+
+ .loadingRip img {
+     z-index: 1000;
+     height: 70px;
+     width: 70px;
+ }
+
+ </style>   
+<div class="container hxpa-dashboard">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="dash-head">
+                <h2>DashBoard - {{storeName}}</h2>
+                <hr>
+            </div>
+            <div class="order-table">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" onclick="event.preventDefault()" href="#home">Deliveries</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault()" ng-click="openMe()" href="#menu1">Payments</a></li>
+                    <li><a ng-click="visit()">Business</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault()" ng-click="getProduct()" href="#menu2">Products</a></li>
+                    </ul>
+                    <div class="tab-content">
+                    <div id="home"  class="tab-pane fade in active table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>OrderId</th>
+                                <th>BatchId</th>
+                                <th>Placing Time</th>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Customer</th>
+                                <th>Shopper</th>
+                                <th>Total</th>
+                                <th>Delivery Time</th>
+                                <th class="o-stat">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in dashdata|orderBy:'delivery_time':true">
+                                <td>{{data.order_id}}</td>
+                                <td>{{data.batch_id}}</td>
+                                <td>{{data.placing_time}}</td>
+                                <td>{{data.product}}</td>
+                                <td>{{data.quantity}}</td>
+                                <td>{{data.customer}}</td>
+                                <td>{{data.shopper}}</td>
+                                <td>{{data.price}}</td>
+                                <td>{{data.dt}}</td>
+                                <td class="o-stat o-pending" ng-hide="data.is_delivered"><span class="glyphicon glyphicon-remove"></span></td>
+                                <td class="o-stat o-done" ng-hide="!data.is_delivered"><span class="glyphicon glyphicon-ok"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="loadingRip" ng-hide="lodRip">
+                            <img src="../images/ripple_loading.gif">
+                        </div>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>Payments</h3>
+                        <br><br>
+                        <div class="row">
+                            <div style="overflow:scroll;" class="col-md-7 col-sm-7  table_scroll">
+                                <table class="table table-striped" style="overflow:scroll">
+                                    <thead>
+                                        <tr>    
+                                            <th>S.No.</th>
+                                            <th>Date & Time of Payment</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Amount Paid</th>
+                                        </tr>    
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="data in payment track by $index">
+                                            <td>{{data.id}}</td>
+                                            <td>{{data.paid_on}}</td>
+                                            <td>{{data.from_date}}</td>
+                                            <td>{{data.to_date}}</td>
+                                            <td>{{data.amount}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>    
+                            </div>
+                            <div class="col-md-1 col-sm-1"></div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="row" style="margin-top:15%" id="try">
+                                    <div class="col-md-12 try">
+                                            <div class="single_what_we_do">
+							<div class="top_line top_line1"></div>
+							<div class="what_we_do_figure">
+								<i class="fa fa-exclamation icon icon1" aria-hidden="true"></i>
+							</div>
+							<h4 class="what_we_do_title">Amount Pending</h4>
+							<div class="what_we_do_content"><i class="fa fa-inr" aria-hidden="true"></i> {{pending}}</div>
+							
+						</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="single_what_we_do">
+							<div class="top_line top_line2"></div>
+							<div class="what_we_do_figure">
+								<i class="fa fa-check icon icon2" aria-hidden="true"></i>
+							</div>
+							<h4 class="what_we_do_title">Total Amount Paid till now</h4>
+							<div class="what_we_do_content"><i class="fa fa-inr" aria-hidden="true"></i> {{paid}}</div>
+							
+						</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div id="menu2" class="tab-pane fade">
+                        <h3>Products</h3>
+                        <input type="search" class="form-control" placeholder="search your products" ng-keyup="searchPro()" ng-model="searchProVal" style="margin-top: 10px; padding-left: 5px;">
+                        {{searchMsg}}
+                        <br><br>
+                        <div class="row banner_prod" ng-repeat="product in productsSer">
+                            <div class="col-md-4 logo">
+                                <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
+                            </div>
+                            <div class="col-md-8 product_content">
+                                <label for="prdouct_name">Product Name</label>
+                                <input type="text" name="prdouct_name" class="form-control" ng-model="product.ProductName" ng-disabled="product.disable">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label for="price">MRP (Rs.)</label>
+                                        <input type="number" name="price" class="form-control" ng-model="product.MRP" ng-disabled="product.disable">
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-5">
+                                        <label for="price">Selling Price (Rs.)</label>
+                                        <input type="number" name="price" class="form-control" ng-model="product.Price" ng-disabled="product.disable">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="">Choose Category</label>
+                                    <select class="form-control" ng-model="product.Category" ng-disabled="product.disable">
+                                        <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+                                    </select>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="">Description</label>
+                                        <textarea placeholder="Description" ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
+
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Available</label> <input  class="form-control check1" type="checkbox" ng-disabled="product.disable" ng-model="product.Active">
+                                    </div>
+                                </div>
+                                <h5 style="margin-bottom:-10px;color:red;" class="dont"  ng-class="{'show':product.disable==true}">{{product.msg}}</h5>
+                                <br>
+                                <button class="btn btn-prmiary" ng-click="edit(product)" ng-class="{'dont':product.disable==false}">Edit</button>
+                                <button class="btn btn-default dont" ng-click="save(product)"  ng-class="{'show':product.disable==false}">Save</button>
+                                <button class="btn btn-primiary dont" ng-click="cancelEdit(product)" ng-class="{'show':product.disable==false}">Cancel</button>
+                                
+                            </div>
+                        </div>
+                        <div class="row banner_prod" ng-repeat="product in products">
+                            <div class="col-md-4 logo">
+                                <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
+                            </div>
+                            <div class="col-md-8 product_content">
+                                <label for="prdouct_name">Product Name</label>
+                                <input type="text" name="prdouct_name" class="form-control" ng-model="product.ProductName" ng-disabled="product.disable">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label for="price">MRP (Rs.)</label>
+                                        <input type="number" name="price" class="form-control" ng-model="product.MRP" ng-disabled="product.disable">
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-5">
+                                        <label for="price">Selling Price (Rs.)</label>
+                                        <input type="number" name="price" class="form-control" ng-model="product.Price" ng-disabled="product.disable">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="">Choose Category</label>
+                                    <select class="form-control" ng-model="product.Category" ng-disabled="product.disable">
+                                        <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+                                    </select>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="">Description</label>
+                                        <textarea placeholder="Description" ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
+
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Available</label> <input  class="form-control check1" type="checkbox" ng-disabled="product.disable" ng-model="product.Active">
+                                    </div>
+                                </div>
+                                <h5 style="margin-bottom:-10px;color:red;" class="dont"  ng-class="{'show':product.disable==true}">{{product.msg}}</h5>
+                                <br>
+                                <button class="btn btn-prmiary" ng-click="edit(product)" ng-class="{'dont':product.disable==false}">Edit</button>
+                                <button class="btn btn-default dont" ng-click="save(product)"  ng-class="{'show':product.disable==false}">Save</button>
+                                <button class="btn btn-primiary dont" ng-click="cancelEdit(product)" ng-class="{'show':product.disable==false}">Cancel</button>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn-danger btn loadMore" ng-hide="loadMore_c" ng-click="LoadMoreProducts()">Load More</button>
+                                <h5 style="text-align:center;" ng-show="loadMore_c">No more products</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   
