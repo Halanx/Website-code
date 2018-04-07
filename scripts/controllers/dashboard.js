@@ -132,7 +132,8 @@ showMeData();
        
         for(var i =0;i<data.results.length;i++){
           if(data.results[i].ProductImage == null){
-            data.results[i].ProductImage = data.results[i].Store.StoreLogo;
+            console.log(data.results[i]);
+            // data.results[i].ProductImage = data.results[i].Store.StoreLogo;
             data.results[i].msg = "";
           }
           data.results[i].disable = true;
