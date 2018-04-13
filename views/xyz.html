@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <script>
+    
+      var app = angular.module("app",[]);
+      app.controller("control",function($scope,$q,$http){
+          var storeData = 'tshirt';
+//          ('txnid', 'amount', 'productinfo', 'firstname', 'email', 'user_credentials',
+//		'udf1', 'udf2', 'udf3', 'udf4', 'udf5', 'offerKey', 'cardBin')
+          var date = new Date();
+          var obj = {
+              txnid:date,
+              amount:"1213",
+              productinfo:storeData,
+              firstname:"mukul",
+              email:"mukul@gmail.com",
+              user_credentials:"f1tDUh:mukul@gmail.com",
+              udf1:"udf1",
+              udf2:"udf2",
+              udf3:"udf3",
+              udf4:"udf4",
+              udf5:"udf5",
+          };
+          var defer = $q.defer();
+          $http.post('https://api.halanx.com/transactions/generate_hash/',obj,{
+            headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  }}).then((data)=>{
+              var newObj = {
+                     hash:data.data.payment_hash,
+                    key:"gtKFFx",
+                     txniD:date,
+                     amount:1213.00,
+                     productinfo:storeData,
+                    firstname:"mukul",
+                  email:"mukul@gmail.com",
+                    phone:1111111111,
+                  surl:"http://127.0.0.1:51235/xyz.html" ,
+                  furl:"http://127.0.0.1:51235/xyz.html" ,
+                  service_provider:"payu_paisa"
+                 }; 
+               console.log(data);
+            $http.post('https://test.payu.in/_payment',newObj).then((data1)=>{
+                  console.log(data1);
+              },(err)=>{
+                  console.log(err);
+              })
+               },(err)=>{
+                     console.log(err);
+                     })
+          
+          $scope.callMe = ()=>{
+          console.log("done");
+      }
+          $scope.amount = 1232;
+      });
+      
+      
+      
+    </script>
+<body ng-app="app" ng-controller="control">
+    <form action="https://test.payu.in/_payment" method="post">
+       <input type="hidden" name="hash" value="769bbe52abfa9d8f254fa94dd37febe5ec2f1f9426cba40d204931e8cf4dce3f686fbefa7aea247680866a137779c923e9450c708e713d022abb8467d88822b4">
+        <input type="text" name="key" value="gtKFFx">
+        <input type="hidden" value="Fri Apr 13 2018 19:03:20 GMT+0530 (IST)" name="txnid" placeholder="txnid">
+        <input type="text" name="amount" ng-model="amount" placeholder="amount">
+        <input type="text" name="productinfo" placeholder="prodinfo">
+        <input type="text" name="firstname" placeholder="name">
+        <input type="email" name="email" placeholder="email">
+        <input type="number" name="phone" placeholder="phone">
+        <input type="text" name="surl" value="http://127.0.0.1:51235/xyz.html">
+        <input type="text" name="furl" value="http://127.0.0.1:51235/xyz.html">
+        <input type="hidden" name="service_provider" value="payu_paisa">
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

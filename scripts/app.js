@@ -21,6 +21,9 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+        .when('/xyz', {
+        templateUrl: 'views/xyz.html',
+      })
       .when('/aboutus', {
         templateUrl: 'views/aboutus.html',
         controller: 'AboutusCtrl',
