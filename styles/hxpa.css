@@ -148,6 +148,8 @@ body {
 }
 
 .hxpa-business .hxpa-form {
+    width: 50%;
+    margin: auto;
     margin-bottom: 40px;
 }
 

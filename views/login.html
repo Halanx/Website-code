@@ -1,11 +1,42 @@
 <style>
+
+    body {
+        padding-top: 0;
+    }
+
+    nav.navbar {
+        display: none;
+    }
+
     .login-wrapper {
     background: #fff;
-    box-shadow: 0 0 8px rgba(0,0,0,0.15), 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1), 0 2px 7px -1px rgba(0,0,0,0.2);
     border: none;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 1px;
 }
+    .logo-container {
+        text-align: center;
+    }
+    .logo-container a {
+        text-decoration: none;
+    }
+    .logo-container img {
+        height: 60px;
+        width: 60px;
+    }
 
+    .logo-container .brand-name {
+        font-family: "Titillium Web", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        position: relative;
+        left: -13px;
+        top: 7px;
+        color: #ed3833;
+    }
 @media(max-width: 767px) {
     .login-wrapper {
 
@@ -15,23 +46,60 @@
 
 .login-wrapper legend {
     padding-bottom: 10px;
-    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    color: #222;
+    border-bottom: none;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+}
+
+.login-wrapper legend .login-tag {
+    font-size: 16px;
+    color: #555;
+    font-weight: 400;
 }
 
 .login-wrapper label {
-    color: #333;
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    position: relative;
+    top: 30px;
+    left: 2px;
+    color: #999;
 }
 
 .login-wrapper input {
-    border-radius: 2px;
+    border-radius: 0px;
+    border: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e1e1e1;
+    box-shadow: none;
+    outline:  none;
+    padding-left: 2px;
+}
+
+.login-wrapper input:focus {
+    box-shadow: none;
+    outline:  none;
+    border-bottom: 2px solid #ed3833;
 }
 
 .login-wrapper input[type='submit'] {
-    border-radius: 2px;
-    padding: 7px 25px;
+    border-radius: 4px;
+    padding: 8px 30px;
+    background: #ed3833;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.49, 0.18, 0.29, 0.81);
 }
+
+.login-wrapper input[type='submit']:hover {
+    background: #ec4f4b;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.18), 0 3px 10px -5px rgba(0,0,0,0.16), 0 1px 15px 0 rgba(0,0,0,0.5);
+}
+
 
 .row a {
     color: #333;
@@ -42,71 +110,147 @@
     margin-top: 2px;
 }
 .bg1{
-	padding-top:150px;
+	padding-top:90px;
 	background:#e9e9e9;
-	padding-bottom:150px;
+	padding-bottom:70px;
 }
     
     #fbbtn-wrapper {
         text-align: center;
+        margin-bottom: 10px;
     }
     #fbloginbtn {
         background: #3b579c;
         border: none;
-        border-radius: 2px;
-        padding-right: 20px;
-        height: 36px;
+        border-radius: 4px;
+        padding-right: 30px;
+        height: 38px;
         margin-bottom: 10px;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+        transition: all 0.4s cubic-bezier(0.49, 0.18, 0.29, 0.81);
+    }
+
+    #fbloginbtn:hover {
+        box-shadow: 0 3px 4px 0 rgba(0,0,0,0.18), 0 3px 10px -5px rgba(0,0,0,0.16), 0 1px 15px 0 rgba(0,0,0,0.5);
     }
     
     #fbloginbtn img {
-        height: 34px;
+        height: 36px;
         float: left;
     }
     
     #fbloginbtn span {
         display: inline-block;
-        margin-top: 9px;
+        margin-top: 10px;
         color: #fff;
         font-family: 'Roboto', sans-serif;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 13px;
     }
 
     .err {
         color: red;
-    font-weight: 500;
+        font-weight: 500;
     }
+    .bg1 {
+        background: url("../images/loginbg4.jpg");
+        background-size: cover;
+        padding-top: 110px;
+        background-position: left bottom;
+    }
+    .forgot-pass {
+        padding-top: 10px;
+        color: #666;
+    }
+
+    footer {
+        margin-top: 0;
+    }
+
+    .submit-form {
+        margin-top: 35px;
+    }
+
+    .other-options {
+        margin-top: 30px;
+    }
+
+    .other-options .col-sm-6:last-child a {
+        position: relative;
+        top: 10px;
+    }
+
+    .row a.other-links {
+        color: #ec4f4b;
+    }
+
 </style>
-<div class="container-fluid bg1" style="background:rgb(241,241,241) !important">
+<div class="container-fluid bg1">
+
+    <!-- ================================ -->
+    <!-- Login Form -->
     <div class="row">
         <div class="col-md-4 col-md-offset-4 well container login-wrapper">
+            <!-- Brand Image -->
+            <div class="logo-container">
+                <a href="#/"><img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png"> <span class="brand-name">Halanx</span></a>
+            </div>
+            <!-- Form -->
             <form role="form"  method="post" name="loginform">
                 <fieldset>
-                    <legend>Login</legend>
 
+                    <!-- Form Heading -->
+                    <legend>Login <br><span class="login-tag">to order at Halanx</span></legend>
                     <p class="err" ng-show="mismatchError">Mobile Number/Password does not match</p>
-                    
+
+                    <!-- Enter Mobile Number -->
                     <div class="form-group">
-                        <label for="name">Mobile Number</label>
-                        <input type="text" name="mobilenumber" placeholder="Your Mobile Number" id="mobilenumber" class="form-control" ng-model="mobilenumber"/>
+                        <label for="mobilenumber" id="mobileLabel">Mobile Number</label>
+                        <input type="number" name="mobilenumber" placeholder="" id="mobilenumber" class="form-control" ng-model="mobilenumber" onFocus="mobLabelEffect()" onBlur="mobLabelEffect()"/>
                         <p class="err" ng-show="mobileError">Mobile number cannot be left empty</p>
                     </div>
 
+                    <!-- Enter Password -->
                     <div class="form-group">
-                        <label for="name">Password</label>
-                        <input type="password" name="password" placeholder="Your Password" id="password" class="form-control" ng-model="password"/>
+                        <label for="password" id="passLabel">Password</label>
+                        <input type="password" name="password" placeholder="" id="password" class="form-control" ng-model="password" onFocus="passLabelEffect()" onBlur="passLabelEffect()"/>
                         <p class="err" ng-show="passwordError">Password cannot be left empty</p>
                     </div>
 
-                    <div class="form-group">
-                        <center><input type="submit" name="login" ng-click="submitform()" value="Login" class="btn btn-danger" id="submit" /></center>
+                    <div class="form-group submit-form">
+                        <div class="row">
+                            <!-- Forgot Password Option -->
+                            <div class="col-sm-6 forgot-pass">
+                                 <a href="#/forgetpass" class="other-links">Forgot Password?</a>
+                            </div>
+                            <!-- Submit Login Data -->
+                            <div class="col-sm-6" style="text-align: right; padding-right: 15px;">
+                                <input type="submit" name="login" ng-click="submitform()" value="Login" class="btn btn-danger" id="submit" />
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="form-group other-options">
+                        <div class="row">
+                            <!-- Create Account -->
+                            <div class="col-sm-6">
+                                    Don't have an Account? <br><a href="#/register" class="other-links">Sign Up Here</a>
+                            </div>
+                            <!-- Login as Store -->
+                            <div class="col-sm-6" style="text-align:right;">
+                                    <a href="#/hxpalogin" class="other-links">Login as Store</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </fieldset>
             </form>
-             
         </div>
     </div>
+    <!-- Login Form Ends -->
+    <!-- =====xxxx===== -->
+
+
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4" id="fbbtn-wrapper">
@@ -114,26 +258,48 @@
         </div>
         <div class="col-md-4"></div>
     </div>
-    <div class="row">
-    <div class="col-md-4 col-md-offset-4 text-center">    
-        Don't have an Account? <a href="#/register">Sign Up Here</a>
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4 text-center">
-            Forgot Password? <a href="#/forgetpass">Click here</a>
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4 text-center">
-            Login as Store? <a href="#/hxpalogin">Click here</a>
-
-        </div>
-    </div>
 </div>
 <script>
 var mobilenumber=document.getElementById("mobilenumber");
 localStorage.setItem("mobilenumber",mobilenumber.value);
+
+mobileLabel = document.getElementById("mobileLabel");
+pass = document.getElementById("password");
+passLabel = document.getElementById("passLabel");
+
+mobCheck = false;
+passCheck = false;
+
+function mobLabelEffect() {
+    if(mobCheck == false) {
+        mobileLabel.style.top = "0";
+            mobileLabel.style.color = "#333";
+            mobileLabel.style.fontWeight = "500";
+        mobCheck = true;
+    } else {
+        if(mobilenumber.value== "") {
+            mobileLabel.style.top = "30px";
+        mobileLabel.style.color = "#999";
+        mobileLabel.style.fontWeight = "400";
+            mobCheck = false;
+        }
+    }
+}
+
+function passLabelEffect() {
+    if(passCheck == false) {
+        passLabel.style.top = "0";
+            passLabel.style.color = "#333";
+            passLabel.style.fontWeight = "500";
+        passCheck = true;
+    } else {
+        if(pass.value== "") {
+            passLabel.style.top = "30px";
+        passLabel.style.color = "#999";
+        passLabel.style.fontWeight = "400";
+            passCheck = false;
+        }
+    }
+}
+
 </script>

@@ -1,18 +1,18 @@
-<link href="https://fonts.googleapis.com/css?family=Acme|Lustria" rel="stylesheet">
+
 <style>
     h2{
-        font-family: 'Acme', sans-serif;
+        font-family: 'Titillium Web', sans-serif;
         text-align: center;
-        font-size: 45px;
-        font-weight: 700;
+        font-size: 35px;
+        font-weight: 600;
         color: black;
     }
 
     h3{
-        font-family: 'Acme', sans-serif;
+        font-family: 'Titillium Web', sans-serif;
         text-align: center;
-        font-weight: 700;
-        font-size: 30px;
+        font-weight: 600;
+        font-size: 25px;
         color: black;
     }
     .name{
@@ -131,6 +131,20 @@ iframe{
        font-weight: 500;
        font-size: 17px;
     }
+
+.jobs {
+    width: 45%;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+@media (max-width: 767px) {
+    .jobs {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+}
 
 </style>
 
@@ -325,7 +339,7 @@ the help of our logistics platform.</p>
   </section>
 
   <section class="opening container">
-      <h3>Current Openings</h3>
+      <h3 style="margin-bottom: 40px;">Current Openings</h3>
       <div class="jobs panel panel-default" ng-repeat="job in posting">
           <div class="panel-heading">
           <h4 style="text-align:center">{{job.name}}</h4> 

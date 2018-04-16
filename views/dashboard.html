@@ -22,21 +22,24 @@ textarea{
 }
 
 .single_what_we_do {
-    background-color: rgb(245,245,245);
+    background-color: #fff;
     text-align: center;
     padding: 0 35px;
-    border-radius: 10px;
+    border-radius: 2px;
     position: relative;
     margin-bottom: 30px;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    border: 1px solid #f8f8f8;
+    box-shadow: 0 5px 10px -2px rgba(0,0,0,0.15);
 }
-.single_what_we_do:hover {
+
+/* .single_what_we_do:hover {
     -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 
 .single_what_we_do .top_line {
     position: absolute;
@@ -70,6 +73,7 @@ textarea{
     font-size: 22px;
     padding-bottom: 25px;
     margin: 0;
+    font-family: "Titillium Web", sans-serif;
     color: #2b353a;
 }
 .single_what_we_do .what_we_do_content {
@@ -142,6 +146,7 @@ textarea{
 
 .form-control[disabled]{
     background: white !important;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .img_prod{
@@ -151,22 +156,44 @@ textarea{
 }
 
 .banner_prod{
-    background: rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.banner_prod:hover{
-    box-shadow: 2px 3px 10px grey;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    box-shadow: 0 5px 10px -2px rgba(0,0,0,0.15);
+    border-top: 3px solid #e63631;
 }
 
 .form-control{
     margin-bottom: 8px !important;
 }
 
+input.form-control,
+select.form-control,
+textarea.form-control {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #e1e1e1;
+    border-radius: 0;
+    padding-left: 5px;
+    border-bottom: 2px solid #e63631;
+}
+
+input.form-control:focus,
+select.form-control:focus,
+textarea.form-control:focus {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #e63631;
+} 
+
 .product_content{
     padding: 20px;
+}
+
+.product_content label {
+    color: #555;
+    margin-bottom: 5px;
 }
 
 .btn{
@@ -184,21 +211,149 @@ textarea{
      width: 70px;
  }
 
+ .dashboard-side-menu {
+     background: #323232;
+     height: 900px;
+    position: fixed;
+    left: 0px;
+    z-index: 3;
+    width: 16.66666%;
+     box-shadow: -3px 0 8px -4px rgba(0,0,0,0.3) inset, 8px 0 15px -6px rgba(0,0,0,0.21), 5px 0 5px -6px rgba(0,0,0,0.15);
+ }
+
+ .store-name-side {
+    padding: 40px 15px 30px;
+     color: #fafafa;
+     background: rgba(0,0,0,0.15);
+     margin-bottom: 25px;
+     box-shadow: 0 -2px 4px -3px rgba(0,0,0,0.15) inset;
+     font-family: 'Titillium Web', sans-serif;
+ }
+
+ .dashboard-side-menu ul li a {
+     display: block;
+     padding: 15px;
+     color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+ }
+
+.dashboard-side-menu ul li a[aria-expanded="true"] {
+    background: #fafafa;
+    color: #444;
+}
+
+.dashboard-side-menu ul li a[aria-expanded="true"]:hover {
+    background: #fafafa;
+    color: #444;
+}
+
+ .dashboard-side-menu ul li a:hover {
+     background: rgba(0,0,0,0.2);
+ }
+
+
+ .dashboard-side-menu ul li a i.fa {
+     font-size: 18px;
+     margin-right: 7px;
+ }
+
+ footer {
+     position: relative;
+     z-index: 100000;
+ }
+
+ #home {
+     min-height: 400px;
+ }
+
+.dashboard-side-menu ul li a i {
+    display: inline-block;
+    width: 20px;
+}
+
+.side-toggle-btn {
+    position: fixed;
+    display: none;
+    top: 3px;
+    left: 0;
+    z-index: 999999;
+    padding: 15px;
+}
+
+.side-toggle-btn i {
+    font-size: 25px;
+    color: #e63631;
+}
+
+.side-shadow {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.15);
+}
+
+@media(max-width: 767px) {
+
+.side-toggle-btn {
+    display: block;
+}
+.dashboard-side-menu {
+    left: -75%;
+    width: 70%;
+    transition: all 0.5s ease-in-out;
+    padding-top: 80px;
+}
+
+.hxpa-dashboard .dash-head {
+    top: 55px;
+    left: 0px;
+    width: 102%;
+}
+
+.banner_prod {
+    width: 95%;
+}
+
+.swwd1 {
+    margin-top: 50px;
+}
+}
+
  </style>   
-<div class="container hxpa-dashboard">
+<div class="container-fluid hxpa-dashboard">
+    <div class="side-toggle-btn" onclick="sidemenufunc()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
     <div class="row">
-        <div class="col-sm-12">
-            <div class="dash-head">
-                <h2>DashBoard - {{storeName}}</h2>
-                <hr>
+        <div class="col-sm-2">
+            <div class="dashboard-side-menu" id="sm-m">
+                <h3 class="store-name-side">{{storeName || "Loading..."}}</h3>
+                <ul>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); sidemenufunc(); setVal('Deliveries')" href="#home" id="clickexp"> <i class="fa fa-shopping-cart"></i> Deliveries</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); sidemenufunc(); setVal('Inventory')" ng-click="getProduct()" href="#menu2" id="inv"> <i class="fa fa-file-text-o"></i> Inventory</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); sidemenufunc(); setVal('Payments')" ng-click="openMe()" href="#menu1" id="paym"> <i class="fa fa-inr"></i> Payments</a></li>
+                    <li><a ng-click="visit()"> <i class="fa fa-suitcase"></i> Business</a></li>
+                </ul>
             </div>
-            <div class="order-table">
-                <ul class="nav nav-tabs">
+        </div>
+        <div class="col-sm-10">
+            <div class="side-shadow" id="hide-side-shadow" onclick="sidemenufunc()"></div>
+            <div class="dash-head">
+                <h2 id="head-data">Deliveries</h2>
+                <!-- <hr> -->
+            </div>
+            <div class="order-table" id="order-table">
+                <!-- <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" onclick="event.preventDefault()" href="#home">Deliveries</a></li>
                     <li><a data-toggle="tab" onclick="event.preventDefault()" ng-click="openMe()" href="#menu1">Payments</a></li>
                     <li><a ng-click="visit()">Business</a></li>
                     <li><a data-toggle="tab" onclick="event.preventDefault()" ng-click="getProduct()" href="#menu2">Products</a></li>
-                    </ul>
+                    </ul> -->
                     <div class="tab-content">
                     <div id="home"  class="tab-pane fade in active table-responsive">
                     <table class="table table-striped">
@@ -237,7 +392,7 @@ textarea{
                         </div>
                     </div>
                     <div id="menu1" class="tab-pane fade">
-                        <h3>Payments</h3>
+                        <!-- <h3>Payments</h3> -->
                         <br><br>
                         <div class="row">
                             <div style="overflow:scroll;" class="col-md-7 col-sm-7  table_scroll">
@@ -265,9 +420,9 @@ textarea{
                             </div>
                             <div class="col-md-1 col-sm-1"></div>
                             <div class="col-md-4 col-sm-4">
-                                <div class="row" style="margin-top:15%" id="try">
+                                <div class="row" id="try">
                                     <div class="col-md-12 try">
-                                            <div class="single_what_we_do">
+                                            <div class="single_what_we_do swwd1">
 							<div class="top_line top_line1"></div>
 							<div class="what_we_do_figure">
 								<i class="fa fa-exclamation icon icon1" aria-hidden="true"></i>
@@ -280,7 +435,7 @@ textarea{
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="single_what_we_do">
+                                        <div class="single_what_we_do swwd2">
 							<div class="top_line top_line2"></div>
 							<div class="what_we_do_figure">
 								<i class="fa fa-check icon icon2" aria-hidden="true"></i>
@@ -294,15 +449,22 @@ textarea{
                             </div>
                         </div>
                     </div>
-                     <div id="menu2" class="tab-pane fade">
-                        <h3>Products</h3>
+                    <div id="menu2" class="tab-pane fade">
+                       
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                    <h3 style="font-family:'Titillium Web',sans-serif;">Search</h3>
                         <input type="search" class="form-control" placeholder="search your products" ng-keyup="searchPro()" ng-model="searchProVal" style="margin-top: 10px; padding-left: 5px;">
                         {{searchMsg}}
+                        </div>
+                        <div class="col-sm-4"></div>
+                        </div>
                         <br><br>
                         <div class="row banner_prod" ng-repeat="product in productsSer">
-                                <div class="col-md-4 logo">
+                                <!-- <div class="col-md-4 logo">
                                     <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
-                                </div>
+                                </div> -->
                                 <div class="col-md-8 product_content">
                                     <label for="prdouct_name">Product Name</label>
                                     <input type="text" name="prdouct_name" class="form-control" ng-model="product.ProductName" ng-disabled="product.disable">
@@ -327,7 +489,7 @@ textarea{
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label for="">Description</label>
-                                            <textarea placeholder="Description" ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
+                                            <textarea ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
     
                                             </textarea>
                                         </div>
@@ -345,11 +507,11 @@ textarea{
                                     
                                 </div>
                             </div>
-                        <div class="row banner_prod" ng-repeat="product in products">
-                            <div class="col-md-4 logo">
+                        <div class="banner_prod" ng-repeat="product in products">
+                            <!-- <div class="col-md-4 logo">
                                 <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
-                            </div>
-                            <div class="col-md-8 product_content">
+                            </div> -->
+                            <div class="product_content">
                                 <label for="prdouct_name">Product Name</label>
                                 <input type="text" name="prdouct_name" class="form-control" ng-model="product.ProductName" ng-disabled="product.disable">
                                 <div class="row">
@@ -373,7 +535,7 @@ textarea{
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label for="">Description</label>
-                                        <textarea placeholder="Description" ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
+                                        <textarea ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
 
                                         </textarea>
                                     </div>
@@ -405,4 +567,74 @@ textarea{
 </div>
 
 
-   
+   <script>
+       clickexp = document.getElementById("clickexp");
+       clickexp.click();
+
+       function setVal(value) {
+            head_data = document.getElementById("head-data");
+           head_data.innerHTML = value;
+       }
+
+       togglecheck = false;
+       sizecheck = false;
+       sm = document.getElementById("sm-m");
+       order_table = document.getElementById("order-table");
+
+       side_shadow = document.getElementById("hide-side-shadow");
+
+       window.addEventListener("resize", function(){
+           if(window.innerWidth > 767) {
+                sm.style.left = "0px";
+                sizecheck=true;
+                side_shadow.style.display = "none";
+           } else if(window.innerWidth<767 && sizecheck==true) {
+                sm.style.left = "-75%";
+                sizecheck=false;
+                togglecheck = false;
+           }
+       });
+
+        function sidemenufunc() {
+            if(togglecheck == false) {
+                sm.style.left = "0px";
+                order_table.style.zIndex = "-1";
+                side_shadow.style.display = "block";
+                order_table.style.position = "relative";
+                togglecheck = true;
+            } else {
+                sm.style.left = "-75%";
+                side_shadow.style.display = "none";
+                setTimeout(function(){
+                    order_table.style.zIndex = "1";
+                    order_table.style.position = "static";
+                },501);
+                togglecheck = false;
+            } 
+        }
+
+        locvalcheck = localStorage.getItem("locvalcheck");
+        locval = localStorage.getItem("locval");
+
+        if(locvalcheck == "true") {
+            location.reload();
+            localStorage.removeItem("locvalcheck");
+        }
+
+        if(locval != null && locvalcheck != "true") {
+                if(locval == "menu1") {
+                    paym = document.getElementById("paym");
+                    paym.click();
+                    sidemenufunc();
+                } else if (locval == "menu2") {
+                    inv = document.getElementById("inv");
+                    inv.click();
+                    sidemenufunc();
+                }
+
+            localStorage.removeItem("locval");
+        }
+
+        console.log("========================", locval);
+
+   </script>
