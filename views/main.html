@@ -187,6 +187,11 @@
   font-size: 23px;
 }
 
+ .apple-p {
+        width: 168px !important;
+        margin-top: 84px !important;
+    }
+
 @media (max-width: 767px) {
     .textWrapper {
         height: 325px;
@@ -342,6 +347,19 @@
     box-shadow: 0 10px 100px rgba(0,0,0,0.5);
 }
 
+.coming-soon {
+    display: inline-block;
+    font-size: 10px;
+    background: yellow;
+    color: #555;
+    padding: 2px 5px;
+    position: relative;
+    top: -66px;
+    left: 137px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.35);
+    transform: rotateZ(38deg);
+}
+
 @media (max-width: 992px) {
     .play-heading {
         padding-top: 10px;
@@ -350,6 +368,24 @@
     .play-heading img {
         margin: auto;
     }
+
+    .play-heading img.apple-p {
+        margin-top: 0px !important;
+    }
+
+    .coming-soon {
+        display: inline-block;
+        font-size: 10px;
+        background: yellow;
+        color: #555;
+        padding: 2px 5px;
+        position: relative;
+        top: -43px;
+        left: 58.7%;
+        box-shadow: 0 0 15px rgba(0,0,0,0.35);
+        transform: rotateZ(45deg);
+    }
+    
 
     .app-phone7 {
         height:auto;
@@ -460,6 +496,9 @@ a:hover{
 /*.tryme::before{
     content:"";position:absolute; width:110%; height:100%;  background:url("https://static.pexels.com/photos/247599/pexels-photo-247599.jpeg") no-repeat 0 0; background-size:cover; filter: blur(10px); z-index:0; transform: scale(2);-ms-transform: scale(2); -webkit-transform: scale(2);
 }*/
+
+
+
 
     </style>
     <div id="slider-wrapper-bgg" style="margin-top: -20px" ng-cloak>
@@ -805,11 +844,19 @@ a:hover{
             <img class="play-ss" src="../images/downloadnew.png">
             <div class="play-shadow"></div>
         </div>
-        <div class="col-md-7 app-phone7">
+        <div class="col-md-3 app-phone7">
             <div class="play-heading">
                 <h2>Download App</h2>
                 <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp" target="_blank">
                     <img src="https://s3-us-west-2.amazonaws.com/halanx-web/en_badge_web_generic.png" class="img-responsive img1">
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 app-phone7">
+            <div class="play-heading">
+                <a href="#" target="_blank">
+                    <img src="../images/appstoreicon.png" style="height: 48px;" class="img-responsive img1 apple-p">
+                    <span class="coming-soon">coming soon</span>
                 </a>
             </div>
         </div>

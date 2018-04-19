@@ -297,7 +297,23 @@ textarea.form-control:focus {
     background: rgba(0,0,0,0.15);
 }
 
+.dash-mobile {
+        display: none;
+    }
+
+    .dash-desktop {
+        display: block;
+    }
+
 @media(max-width: 767px) {
+
+    .dash-mobile {
+        display: block;
+    }
+
+    .dash-desktop {
+        display: none;
+    }
 
 .side-toggle-btn {
     display: block;
@@ -333,7 +349,13 @@ textarea.form-control:focus {
         <div class="col-sm-2">
             <div class="dashboard-side-menu" id="sm-m">
                 <h3 class="store-name-side">{{storeName || "Loading..."}}</h3>
-                <ul>
+                <ul class="dash-desktop">
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Deliveries')" href="#home" id="clickexp"> <i class="fa fa-shopping-cart"></i> Deliveries</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Inventory')" ng-click="getProduct()" href="#menu2" id="inv"> <i class="fa fa-file-text-o"></i> Inventory</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Payments')" ng-click="openMe()" href="#menu1" id="paym"> <i class="fa fa-inr"></i> Payments</a></li>
+                    <li><a ng-click="visit()"> <i class="fa fa-suitcase"></i> Business</a></li>
+                </ul>
+                <ul class="dash-mobile">
                     <li><a data-toggle="tab" onclick="event.preventDefault(); sidemenufunc(); setVal('Deliveries')" href="#home" id="clickexp"> <i class="fa fa-shopping-cart"></i> Deliveries</a></li>
                     <li><a data-toggle="tab" onclick="event.preventDefault(); sidemenufunc(); setVal('Inventory')" ng-click="getProduct()" href="#menu2" id="inv"> <i class="fa fa-file-text-o"></i> Inventory</a></li>
                     <li><a data-toggle="tab" onclick="event.preventDefault(); sidemenufunc(); setVal('Payments')" ng-click="openMe()" href="#menu1" id="paym"> <i class="fa fa-inr"></i> Payments</a></li>
@@ -625,11 +647,15 @@ textarea.form-control:focus {
                 if(locval == "menu1") {
                     paym = document.getElementById("paym");
                     paym.click();
-                    sidemenufunc();
+                    // if(window.innerWidth <= 767) {
+                    //     sidemenufunc();
+                    // }
                 } else if (locval == "menu2") {
                     inv = document.getElementById("inv");
                     inv.click();
-                    sidemenufunc();
+                    // if(window.innerWidth <= 767) {
+                    //     sidemenufunc();
+                    // }
                 }
 
             localStorage.removeItem("locval");
