@@ -1,457 +1,457 @@
 <style>
-  body {
-      overflow-x: hidden;
-  }     
-  
-  #searchTextField{
-      display: block;
-      width: 100%;
-      height: 34px;
-      padding: 6px 12px;
-      font-size: 14px;
-      line-height: 1.42857143;
-      color: #555;
-      background-color: #fff;
-      background-image: none;
-      border: 1px solid #ccc;
+body {
+    overflow-x: hidden;
+}     
+
+#searchTextField{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+}
+
+.icon-bar{
+ background:#d6d6d6;
+}
+.legend{
+    margin-top: 2px;
+}
+.bg1{
+	padding-top:150px;
+	background:#e9e9e9;
+	padding-bottom:150px;
+}
+.col-md-2 a:hover{
+  text-decoration:none;
+  color:#ff0000;
+}
+.col-md-2 a{
+  color:#000000;
+  cursor:pointer;
+}
+.bg3{
+   width:100%;
+}
+.col-md-2{
+  color:#000000;
+   
+  font-family:'Droid Sans', sans-serif;
+  font-size:1.5em;
+  cursor:hand;
+}
+.col-md-2 a{
+  color: white;
+    font-size: 15px;
+}
+
+ #mapCanvas {
+    height: 300px;
+    margin-top:20px;
+    margin-left:-12px;
+     
   }
-  
-  .icon-bar{
-   background:#d6d6d6;
+
+@media(max-width:380px){
+  .bg18{
+    max-width:100%;
   }
-  .legend{
-      margin-top: 2px;
+}
+ #infoPanel {
+     margin-right: 10px;
+    margin-left: 10px;
+  }
+  #infoPanel div {
+    margin-bottom: 5px;
+  }
+  .new{
+  	font-family:"Sans",Verdana,"sans-serif";
+  	font-size:20px;
+  	text-align:center;
+
   }
   .bg1{
-    padding-top:150px;
-    background:#e9e9e9;
-    padding-bottom:150px;
-  }
-  .col-md-2 a:hover{
-    text-decoration:none;
-    color:#ff0000;
-  }
-  .col-md-2 a{
-    color:#000000;
-    cursor:pointer;
-  }
-  .bg3{
-     width:100%;
-  }
-  .col-md-2{
-    color:#000000;
+  	margin-top:100px;
+}
+.bg1{
+	border:2px solid #f6f6f6;
+	border-radius:10px;
+	 
+	 
+}
+ .row_11{
+    padding-top: 10px;
+    padding-bottom: 10px;
+/*  font-family: "Sans",Verdana,'sans-serif';*/
+/*  font-weight:bold;*/
      
-    font-family:'Droid Sans', sans-serif;
-    font-size:1.5em;
-    cursor:hand;
-  }
-  .col-md-2 a{
-    color: white;
-      font-size: 15px;
-  }
-  
-   #mapCanvas {
-      height: 300px;
-      margin-top:20px;
-      margin-left:-12px;
-       
-    }
-  
-  @media(max-width:380px){
-    .bg18{
-      max-width:100%;
-    }
-  }
-   #infoPanel {
-       margin-right: 10px;
-      margin-left: 10px;
-    }
-    #infoPanel div {
-      margin-bottom: 5px;
-    }
-    .new{
-      font-family:"Sans",Verdana,"sans-serif";
-      font-size:20px;
-      text-align:center;
-  
-    }
-    .bg1{
-      margin-top:100px;
-  }
-  .bg1{
-    border:2px solid #f6f6f6;
-    border-radius:10px;
-     
-     
-  }
-   .row_11{
-      padding-top: 10px;
-      padding-bottom: 10px;
-  /*  font-family: "Sans",Verdana,'sans-serif';*/
-  /*  font-weight:bold;*/
-       
-  /*  font-size:1.5em;*/
-  /*  background: #ffffff;*/
-      background: black;
-  }
-  
-  .panel-heading {
-      font-family: "Titillium Web", sans-serif;
-      font-weight: 600;
-      margin: 0;
-      background: #e63631 !important;
-      padding-top: 22px;
-      padding-bottom: 20px;
-      padding-left: 20px;
-      box-shadow: 0 -3px 5px -3px rgba(0,0,0,0.06) inset;
-  } 
-  
-  .enter-d-a{
-    border-top: 1px solid #e7e7e7;
-    padding-top: 20px;
-  }
-  
-  .panel-heading .panel-title {
-    font-size: 18px;
-      margin-left: 6px;
-  
-  }
-  
-  .cnt-btn {
-      border-radius: 4px;
-      padding: 8px 30px;
-      background: #ed3833;
-      border: none;
-      color: #fafafa;
-      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-      transition: all 0.4s cubic-bezier(0.49, 0.18, 0.29, 0.81);
-  }
-  
-  .cnt-btn:hover {
-    color: #fff;
-      background: #ec4f4b;
-      box-shadow: 0 3px 4px 0 rgba(0,0,0,0.18), 0 3px 10px -5px rgba(0,0,0,0.16), 0 1px 15px 0 rgba(0,0,0,0.5);
-  }
-  
-  .panel-info {
+/*  font-size:1.5em;*/
+/*  background: #ffffff;*/
+    background: black;
+}
+
+.panel-heading {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    margin: 0;
+    background: #e63631 !important;
+    padding-top: 22px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    box-shadow: 0 -3px 5px -3px rgba(0,0,0,0.06) inset;
+} 
+
+.enter-d-a{
+  border-top: 1px solid #e7e7e7;
+  padding-top: 20px;
+}
+
+.panel-heading .panel-title {
+  font-size: 18px;
+    margin-left: 6px;
+
+}
+
+.cnt-btn {
+    border-radius: 4px;
+    padding: 8px 30px;
+    background: #ed3833;
     border: none;
-      background-color: #fff;
-      border-radius: 3px;
-      box-shadow: 0 5px 10px rgba(0,0,0,.3);
-  }
-  
-  #searchTextField {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-      border-radius: 2px;
-      border: none;
-      height: 40px;
-  }
-  
-  .search-btn {
-    padding: 9px 12px;
-      margin-top: -1px;
-      background: #e52222;
-  }
-  
-  .search-btn i {
-    font-size: 18px;
-    color: #fff;
-  }
-  
-  .loc-input {
-    border-radius: 0px;
-      border: none;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #e1e1e1;
-      box-shadow: none;
-      outline:  none;
-      padding-left: 10px;
-  }
-  
-  .loc-input:focus {
-      box-shadow: none;
-      outline:  none;
-      border-bottom: 2px solid #ed3833;
-  }
-  
-  .loc-input-label {
-      min-width: 119px;
-      color: #555;
-      border: none !important;
-      background: #eee;
-      border-radius: 0;
-  }
-  
-  @media (max-width: 767px) {
-  
-      #login-btn {
-          margin-top: -2px;
-      }
-  }
-  
-  @media (max-width: 550px) {
-      #login-btn {
-          border-bottom: none;
-          padding-right: 40px;
-          padding-top: 22px;
-      }
-      .cnt-btn {
-          margin-right: -15px;
-      }
-  }
-  
-  
-  </style>
-      
-          <div class="container">    
-          <div id="loginbox" style="margin-top:65px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-              <div class="panel panel-info" >
-                      <div class="panel-heading">
-                          <div class="panel-title" style="color:white">Enter Delivery Location</div>
-                       </div>     
-                       <div id="infoPanel">
-                       <input id="info" type="hidden" size="50" value=""/>
-                      <div style="padding-top:30px" class="panel-body" >
-  
-                          <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                              <div class="form-group">
-                               
-                          <div id="loginform" class="form-horizontal" >
-                                      
-                              <div style="margin-bottom: 25px" class="input-group">
+    color: #fafafa;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.49, 0.18, 0.29, 0.81);
+}
+
+.cnt-btn:hover {
+  color: #fff;
+    background: #ec4f4b;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.18), 0 3px 10px -5px rgba(0,0,0,0.16), 0 1px 15px 0 rgba(0,0,0,0.5);
+}
+
+.panel-info {
+  border: none;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.3);
+}
+
+#searchTextField {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    border-radius: 2px;
+    border: none;
+    height: 40px;
+}
+
+.search-btn {
+  padding: 9px 12px;
+    margin-top: -1px;
+    background: #e52222;
+}
+
+.search-btn i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.loc-input {
+  border-radius: 0px;
+    border: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e1e1e1;
+    box-shadow: none;
+    outline:  none;
+    padding-left: 10px;
+}
+
+.loc-input:focus {
+    box-shadow: none;
+    outline:  none;
+    border-bottom: 2px solid #ed3833;
+}
+
+.loc-input-label {
+    min-width: 119px;
+    color: #555;
+    border: none !important;
+    background: #eee;
+    border-radius: 0;
+}
+
+@media (max-width: 767px) {
+
+    #login-btn {
+        margin-top: -2px;
+    }
+}
+
+@media (max-width: 550px) {
+    #login-btn {
+        border-bottom: none;
+        padding-right: 40px;
+        padding-top: 22px;
+    }
+    .cnt-btn {
+        margin-right: -15px;
+    }
+}
+
+
+</style>
+    
+        <div class="container">    
+        <div id="loginbox" style="margin-top:65px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title" style="color:white">Enter Delivery Location</div>
+                     </div>     
+                     <div id="infoPanel">
+                     <input id="info" type="hidden" size="50" value=""/>
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            <div class="form-group">
+                             
+                        <div id="loginform" class="form-horizontal" >
+                                    
+                            <div style="margin-bottom: 25px" class="input-group">
+                                 
                                    
-                                     
-                                  <input id="searchTextField" class="form-control" type="text" placeholder="Enter Delivery Location" ng-model="one">
-             <span class="input-group-btn">
-             <button class="btn search-btn btn-md" type="button">
-             <i class="glyphicon glyphicon-search"></i>
-             </button>
-             </span>
-                                     </div>
-                                     </div>
-                                      </div>
-                                  
-                              <div style="margin-bottom: 25px; width:103%;" class="input-group container">
-                              <div id="mapCanvas"></div>
-  
-                                      </div>
-                             <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnunhscL2jKBg62KkqAhJwSMXhDoN9DE&libraries=places"></script>
-      <script>
-      var geocoder = new google.maps.Geocoder();       
-  
-              function geocodePosition(pos) {
-                  geocoder.geocode({
-                      latLng: pos
-                  }, function(responses) {
-                      if (responses && responses.length > 0) {
-                          updateMarkerAddress(responses[0].formatted_address.replace(", Delhi","").split(", ").splice(-1,1));
-                      } else {
-                          updateMarkerAddress('Update!');
-                      }
-                  });
-              }
-  
-  
-              function updateMarkerPosition(latLng) {
-                  document.getElementById('info').value = [
-                      latLng.lat(),
-                      latLng.lng()
-                  ].join(', ');
-                   
-                 var obj={"Latitude":latLng.lat(),"Longitude":latLng.lng()};
-                 localStorage.setItem("obj",JSON.stringify(obj));
-                 console.log(localStorage.getItem("obj"));
-              }
-  
-              function updateMarkerAddress(str) {
-                  document.getElementById('searchTextField').value = str;
-              }
-  
-              function initialize() {
-                  var latLng = new google.maps.LatLng(28.6139,77.2090);
-                  var map = new google.maps.Map(document.getElementById('mapCanvas'), {
-                      zoom: 6,
-                      center: latLng,
-                      mapTypeId: google.maps.MapTypeId.ROADMAP,
-                      streetViewControl: false,
-                      mapTypeControl: false
-                     
-                  });
-                  var marker = new google.maps.Marker({
-                      position: latLng,
-                      map: map,
-                      draggable: true,
-                      title:"Drag marker to set position"
-                  });
-                  
-                  var input = document.getElementById('searchTextField');
-          var autocomplete = new google.maps.places.Autocomplete(input);
-  
-          autocomplete.bindTo('bounds', map);
-  
-                  // Update current position info.
-                  updateMarkerPosition(latLng);
-                  //geocodePosition(latLng);
-  
-                  // Add dragging event listeners.
-                  google.maps.event.addListener(marker, 'dragstart', function() {
-                      updateMarkerAddress('Dragging...');
-                  });
-  
-                  google.maps.event.addListener(marker, 'drag', function() {
-                      updateMarkerPosition(marker.getPosition());
-                  });
-  
-                  google.maps.event.addListener(marker, 'dragend', function() {
-                      geocodePosition(marker.getPosition());
-                  });
-                  
-                  google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                      input.className = '';
-            var place = autocomplete.getPlace();
-            if (!place.geometry) {
-              // Inform the user that the place was not found and return.
-              input.className = 'notfound';
-              return;
-            }
-  
-            // If the place has a geometry, then present it on a map.
-            if (place.geometry.viewport) {
-              map.fitBounds(place.geometry.viewport);
-            } else {
-              map.setCenter(place.geometry.location);
-              map.setZoom(17);  // Why 17? Because it looks good.
-            }
-              marker.setPosition(place.geometry.location);
-  updateMarkerPosition(marker.getPosition());
-  //geocodePosition(marker.getPosition());
-           
-          });
-              }
-  
-              // Onload handler to fire off the app.
-              google.maps.event.addDomListener(window, 'load', initialize);
-      </script>
-  
-                              
-  <!--                              <div class="panel-heading">-->
-                          <div class="panel-title enter-d-a">Enter Delivery Address: </div>
-  <!--                     </div>  -->
-                              <br>
-                              <!--action="https://www.halanx.com/halanx-final/new1big-kfc/summary/summary.html"-->
-                              <form method="post" >                            
-                              <div style="margin-bottom: 25px" class="input-group">
-                              
-                                         
-                                          <span class="input-group-addon loc-input-label">House Number</span>
-                                          <input type="text" class="form-control loc-input" id="flatnumber"  ng-model="two">
-                                      </div>
-                              <div style="margin-bottom: 25px" class="input-group">
-                              
-                                         
-                                          <span class="input-group-addon loc-input-label">Locality</span>
-                                          <input type="text" class="form-control loc-input" id="area" size="50"  required ng-model="three">
-                                      </div>
-                              <div style="margin-bottom: 25px" class="input-group">
-                              
-                                         
-                                          <span class="input-group-addon loc-input-label">City</span>
-                                          <input type="text" class="form-control loc-input" id="city"  size="50" required  ng-model="four">
-                                      </div> 
-                                                             
-                               <div class="col-sm-12 controls" style="text-align:Center">
-                                      
-                                        <button type="submit" class="btn btn-md b1 cnt-btn" id="submit" ng-click="postreq()">Continue</button>
-                                        <br>
-                                        <span style="color:red !important;">{{message}}</span>
-                              </div>    
-                              </form>    
-                               
-                              </div>     
-  
-  
-  
-                          </div>                     
-                      </div>  
-          </div>
-       </div>
-     <script>
-       $(document).ready(function(){
-       $("#submit").click(function(){
-  
-        var Address= new Object();
-        Address.Flatno=$('#flatnumber').val();
-        Address.Area=$('#area').val();
-        Address.city=$('#city').val();
-         
-        localStorage.setItem("Address",JSON.stringify(Address));
-       });
-     });
-  
-       </script>            
+                                <input id="searchTextField" class="form-control" type="text" placeholder="Enter Delivery Location" ng-model="one">
+   				<span class="input-group-btn">
+   				<button class="btn search-btn btn-md" type="button">
+   				<i class="glyphicon glyphicon-search"></i>
+   				</button>
+   				</span>
+                                   </div>
+                                   </div>
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px; width:103%;" class="input-group container">
+                            <div id="mapCanvas"></div>
+
+                                    </div>
+                           <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnunhscL2jKBg62KkqAhJwSMXhDoN9DE&libraries=places"></script>
     <script>
-  $(function(){
-  
-    // name your elements here
-    var stickyElement   = '.panel-affix',   // the element you want to make sticky
-      bottomElement   = '#fake-footer'; // the bottom element where you want the sticky element to stop (usually the footer) 
-  
-    // make sure the element exists on the page before trying to initalize
-    if($( stickyElement ).length){
-      $( stickyElement ).each(function(){
-  
-        // let's save some messy code in clean variables
-        // when should we start affixing? (the amount of pixels to the top from the element)
-        var fromTop = $( this ).offset().top, 
-          // where is the bottom of the element?
-          fromBottom = $( document ).height()-($( this ).offset().top + $( this ).outerHeight()),
-          // where should we stop? (the amount of pixels from the top where the bottom element is)
-          // also add the outer height mismatch to the height of the element to account for padding and borders
-          stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height()); 
-  
-        // if the element doesn't need to get sticky, then skip it so it won't mess up your layout
-        if( (fromBottom-stopOn) > 200 ){
-          // let's put a sticky width on the element and assign it to the top
-          $( this ).css('width', $( this ).width()).css('top', 0).css('position', '');
-          // assign the affix to the element
-          $( this ).affix({
-            offset: { 
-              // make it stick where the top pixel of the element is
-              top: fromTop - 80,  
-              // make it stop where the top pixel of the bottom element is
-              bottom: stopOn
+    var geocoder = new google.maps.Geocoder();       
+
+            function geocodePosition(pos) {
+                geocoder.geocode({
+                    latLng: pos
+                }, function(responses) {
+                    if (responses && responses.length > 0) {
+                        updateMarkerAddress(responses[0].formatted_address.replace(", Delhi","").split(", ").splice(-1,1));
+                    } else {
+                        updateMarkerAddress('Update!');
+                    }
+                });
             }
-          // when the affix get's called then make sure the position is the default (fixed) and it's at the top
-          }).on('affix.bs.affix', function(){ $( this ).css('top', '80px').css('position', ''); });
-        }
-        // trigger the scroll event so it always activates 
-        $( window ).trigger('scroll'); 
-      }); 
-    }
-  
-  });
-  
-  //Offset scrollspy height to highlight li elements at good window height
-  $('body').scrollspy({
-    offset: 80
-  });
-  
-  //Smooth Scrolling For Internal Page Links
-  $(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-      $('html,body').animate({
-        scrollTop: target.offset().top
-      }, 1000);
-      return false;
+
+
+            function updateMarkerPosition(latLng) {
+                document.getElementById('info').value = [
+                    latLng.lat(),
+                    latLng.lng()
+                ].join(', ');
+                 
+               var obj={"Latitude":latLng.lat(),"Longitude":latLng.lng()};
+               localStorage.setItem("obj",JSON.stringify(obj));
+               console.log(localStorage.getItem("obj"));
+            }
+
+            function updateMarkerAddress(str) {
+                document.getElementById('searchTextField').value = str;
+            }
+
+            function initialize() {
+                var latLng = new google.maps.LatLng(28.6139,77.2090);
+                var map = new google.maps.Map(document.getElementById('mapCanvas'), {
+                    zoom: 6,
+                    center: latLng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    streetViewControl: false,
+                    mapTypeControl: false
+                   
+                });
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    draggable: true,
+                    title:"Drag marker to set position"
+                });
+                
+                var input = document.getElementById('searchTextField');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.bindTo('bounds', map);
+
+                // Update current position info.
+                updateMarkerPosition(latLng);
+                //geocodePosition(latLng);
+
+                // Add dragging event listeners.
+                google.maps.event.addListener(marker, 'dragstart', function() {
+                    updateMarkerAddress('Dragging...');
+                });
+
+                google.maps.event.addListener(marker, 'drag', function() {
+                    updateMarkerPosition(marker.getPosition());
+                });
+
+                google.maps.event.addListener(marker, 'dragend', function() {
+                    geocodePosition(marker.getPosition());
+                });
+                
+                google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                    input.className = '';
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            // Inform the user that the place was not found and return.
+            input.className = 'notfound';
+            return;
+          }
+
+          // If the place has a geometry, then present it on a map.
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);  // Why 17? Because it looks good.
+          }
+            marker.setPosition(place.geometry.location);
+updateMarkerPosition(marker.getPosition());
+//geocodePosition(marker.getPosition());
+         
+        });
+            }
+
+            // Onload handler to fire off the app.
+            google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+                            
+<!--                              <div class="panel-heading">-->
+                        <div class="panel-title enter-d-a">Enter Delivery Address: </div>
+<!--                     </div>  -->
+                            <br>
+                            <!--action="https://www.halanx.com/halanx-final/new1big-kfc/summary/summary.html"-->
+                            <form method="post" >                            
+                            <div style="margin-bottom: 25px" class="input-group">
+                            
+                                       
+                                        <span class="input-group-addon loc-input-label">House Number</span>
+                                        <input type="text" class="form-control loc-input" id="flatnumber"  ng-model="two">
+                                    </div>
+                            <div style="margin-bottom: 25px" class="input-group">
+                            
+                                       
+                                        <span class="input-group-addon loc-input-label">Locality</span>
+                                        <input type="text" class="form-control loc-input" id="area" size="50"  required ng-model="three">
+                                    </div>
+                            <div style="margin-bottom: 25px" class="input-group">
+                            
+                                       
+                                        <span class="input-group-addon loc-input-label">City</span>
+                                        <input type="text" class="form-control loc-input" id="city"  size="50" required  ng-model="four">
+                                    </div> 
+                                                           
+                             <div class="col-sm-12 controls" style="text-align:Center">
+                                    
+                                      <button type="submit" class="btn btn-md b1 cnt-btn" id="submit" ng-click="postreq()">Continue</button>
+                                      <br>
+                                      <span style="color:red !important;">{{message}}</span>
+                            </div>    
+                            </form>    
+                             
+                            </div>     
+
+
+
+                        </div>                     
+                    </div>  
+        </div>
+     </div>
+   <script>
+     $(document).ready(function(){
+     $("#submit").click(function(){
+
+      var Address= new Object();
+      Address.Flatno=$('#flatnumber').val();
+      Address.Area=$('#area').val();
+      Address.city=$('#city').val();
+       
+      localStorage.setItem("Address",JSON.stringify(Address));
+     });
+   });
+
+     </script>            
+  <script>
+$(function(){
+
+  // name your elements here
+  var stickyElement   = '.panel-affix',   // the element you want to make sticky
+    bottomElement   = '#fake-footer'; // the bottom element where you want the sticky element to stop (usually the footer) 
+
+  // make sure the element exists on the page before trying to initalize
+  if($( stickyElement ).length){
+    $( stickyElement ).each(function(){
+
+      // let's save some messy code in clean variables
+      // when should we start affixing? (the amount of pixels to the top from the element)
+      var fromTop = $( this ).offset().top, 
+        // where is the bottom of the element?
+        fromBottom = $( document ).height()-($( this ).offset().top + $( this ).outerHeight()),
+        // where should we stop? (the amount of pixels from the top where the bottom element is)
+        // also add the outer height mismatch to the height of the element to account for padding and borders
+        stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height()); 
+
+      // if the element doesn't need to get sticky, then skip it so it won't mess up your layout
+      if( (fromBottom-stopOn) > 200 ){
+        // let's put a sticky width on the element and assign it to the top
+        $( this ).css('width', $( this ).width()).css('top', 0).css('position', '');
+        // assign the affix to the element
+        $( this ).affix({
+          offset: { 
+            // make it stick where the top pixel of the element is
+            top: fromTop - 80,  
+            // make it stop where the top pixel of the bottom element is
+            bottom: stopOn
+          }
+        // when the affix get's called then make sure the position is the default (fixed) and it's at the top
+        }).on('affix.bs.affix', function(){ $( this ).css('top', '80px').css('position', ''); });
       }
+      // trigger the scroll event so it always activates 
+      $( window ).trigger('scroll'); 
+    }); 
+  }
+
+});
+
+//Offset scrollspy height to highlight li elements at good window height
+$('body').scrollspy({
+  offset: 80
+});
+
+//Smooth Scrolling For Internal Page Links
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+    $('html,body').animate({
+      scrollTop: target.offset().top
+    }, 1000);
+    return false;
     }
-    });
+  }
   });
-  
-  
-  
-   </script>
+});
+
+
+
+ </script>
