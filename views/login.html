@@ -184,6 +184,16 @@
         color: #ec4f4b;
     }
 
+@media (max-width: 767px) {
+    .login-wrapper input[type='submit'] {
+        margin-top: -30px;
+    }
+
+    .other-options .col-sm-6:last-child a {
+        top: -20px;
+    }
+}
+
 </style>
 <div class="container-fluid bg1">
 
@@ -260,17 +270,18 @@
     </div>
 </div>
 <script>
-var mobilenumber=document.getElementById("mobilenumber");
 localStorage.setItem("mobilenumber",mobilenumber.value);
 
-mobileLabel = document.getElementById("mobileLabel");
-pass = document.getElementById("password");
-passLabel = document.getElementById("passLabel");
+
 
 mobCheck = false;
 passCheck = false;
 
 function mobLabelEffect() {
+    mobileLabel = document.getElementById("mobileLabel");
+    var mobilenumber=document.getElementById("mobilenumber");
+    pass = document.getElementById("password");
+    passLabel = document.getElementById("passLabel");
     if(mobCheck == false) {
         mobileLabel.style.top = "0";
             mobileLabel.style.color = "#333";
@@ -287,6 +298,10 @@ function mobLabelEffect() {
 }
 
 function passLabelEffect() {
+    mobileLabel = document.getElementById("mobileLabel");
+    var mobilenumber=document.getElementById("mobilenumber");
+    pass = document.getElementById("password");
+    passLabel = document.getElementById("passLabel");
     if(passCheck == false) {
         passLabel.style.top = "0";
             passLabel.style.color = "#333";

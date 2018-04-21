@@ -1,0 +1,523 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<style>
+    .searchbar {
+        position: relative;
+        top: 100px;
+        margin: 0 20px;
+    }
+
+    #cur-loc {
+        position: relative;
+        top: 65px;
+        z-index: 3;
+        left: 70%;
+        border-left: 1px solid #e1e1e1;
+        background: red;
+        display: inline-block;
+    }
+
+    #slider-wrapper {
+  display: inline-block;
+  height: 550px;
+  width: 100%;
+  background: url('../images/homepage1.jpg');
+  transition: all 0.8s;
+  background-size: cover;
+  background-position: center;
+}
+#slider-shadow {
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+#slider-heading,
+#slider-tag {
+  color: #fff;
+}
+#slider-heading {
+  position: relative;
+  top: 57%;
+  text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 400;
+}
+.head_anim {
+  animation-name: head_anim;
+  animation-duration: 1s;
+}
+@keyframes head_anim {
+  from {top:100%;}
+  to {top:57%;}
+}
+#slider-tag {
+  position: relative;
+  top: 60%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+.tag_anim {
+  animation-name: tag_anim;
+  animation-duration: 1.5s;
+}
+@keyframes tag_anim {
+  from{top: 110%}
+  to{top:60%;}
+}
+
+    .phoneSection {
+        height: 455px;
+        overflow: hidden;
+        border-bottom: 1px solid #e1e1e1;
+        margin: 0 50px;
+    }
+
+    @media(max-width: 767px) {
+        .phoneSection {
+            height: auto;
+            border-bottom: none;
+        }
+        .phoneContainer {
+            float:  none !important;
+            margin: 10px auto 0px !important;
+        }
+
+        .textWrapper {
+
+    margin-top: -210px !important;
+    margin-bottom: 30px !important;
+
+        }
+    }
+        .iphoneImg {
+            height: 500px;
+        }
+        
+        .phoneContainer {
+            float: right;
+            margin-right: 60px;
+            margin-top: 30px;
+        }
+        .textWrapper {
+            height: 350px;
+            margin-top: -40px;
+        }
+         #slider-wrapper1 {
+  display: inline-block;
+  height: 380px;
+  width: 216px;
+             
+  background: url('../images/homepage1.jpg');
+  transition: all 0.8s;
+  background-size: cover;
+  background-position: center;
+             position: relative;
+             top:79px;
+             left: 14px;
+}
+#slider-heading1,
+#slider-tag1 {
+  color: #333;
+}
+#slider-heading1 {
+  font-family: 'Roboto Slab', serif;  
+  position: relative;
+  top: 63%;
+  /*font-family: 'Roboto Slab', sans-serif;*/
+  font-weight: 400;
+}
+.head_anim1 {
+  animation-name: head_anim1;
+  animation-duration: 1s;
+}
+@keyframes head_anim1 {
+  from {top:100%;}
+  to {top:63%;}
+}
+#slider-tag1 {
+  font-family: 'Roboto Slab', serif;
+  position: relative;
+  top: 65%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 23px;
+}
+.tag_anim1 {
+  animation-name: tag_anim1;
+  animation-duration: 1.5s;
+}
+@keyframes tag_anim1 {
+  from{top: 110%}
+  to{top:65%;}
+}
+
+/*****************************************/
+/** Cards **/
+.card {
+    width: 85%;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 20px;
+    box-shadow: 0 0 6px -1px rgba(0,0,0,0.5);
+    background: #333;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px -1px rgba(0,0,0,0.4);
+}
+
+.col-sm-4:nth-child(2) .card .card-content {
+    padding-bottom: 28px;
+}
+
+.col-sm-4:nth-child(2) .card h3 {
+    margin-bottom: 28px;
+}
+
+.card img {
+    display: block;
+    width: 220px;
+    margin: 20px auto;
+    margin-top: 0;
+}
+
+#app-dwn {
+    width: 160px;
+}
+
+.card-content {
+    background: #fff;
+    padding-bottom: 10px;
+/*    background: #333;*/
+    border-bottom: 3px solid rgba(255,0,0,0.85);
+}
+
+.card h3 {
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 15px;
+    background: rgba(255,0,0,0.85);
+    padding: 10px;
+    color: #f1f1f1;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card h4 {
+    color: #333;
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 7px;
+    line-height: 25px;
+}
+
+.card h4 img {
+    width: 170px;
+    margin-bottom: -10px;
+}
+
+.hover_red:hover{
+    color: red !important;
+}
+
+/*.tryme::before{
+    content:"";position:absolute; width:110%; height:100%;  background:url("https://static.pexels.com/photos/247599/pexels-photo-247599.jpeg") no-repeat 0 0; background-size:cover; filter: blur(10px); z-index:0; transform: scale(2);-ms-transform: scale(2); -webkit-transform: scale(2);
+}*/
+
+    </style>
+
+        <div id="slider-wrapper" style="margin-top: -20px">
+            <div id="slider-shadow">
+                <div class="row row_3 searchbar">
+             <div class="col-md-8 col-md-offset-1">
+            <div id="custom-search-input">
+                <div class="input-group col-md-offset-3">
+                    <span id="pac-container">
+                        <input type="text" id="txtPlaces" ng-model="location" class="form-control input-md" placeholder="Enter your location" />
+                    </span>
+                    <span class="input-group-btn">
+                        <!--<center id="cur-loc">
+            <!--<span onclick="getLocation()">Detect current location</span>-->
+                        <!--<span class="glyphicon glyphicon-screenshot" onclick="getLocation()" data-toggle="modal" data-target="#myModal"></span>
+                     </center>-->
+                      <button class="btn btn-danger btn-md" style="border-radius: 0;" type="button" id="search" onclick="getLocation()" data-toggle="modal" data-target="#myModal">
+                            <span class="glyphicon glyphicon-screenshot"></span>
+                        </button>
+                    </span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger btn-md" type="button" id="search" ng-click="checkLocation()">
+                            Find Stores
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<p id="cur-loc-wrapper">
+        <center id="cur-loc">
+            <!--<span onclick="getLocation()">Detect current location</span>-->
+            <!--<span class="glyphicon glyphicon-screenshot" onclick="getLocation()" data-toggle="modal" data-target="#myModal"></span>
+        </center>
+    </p>-->
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header" style="color:white">Your Location
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div id="mapholder" style="height: 300px;"></div>
+                    </div>
+                    <button type="button" style="display: block; margin:10px auto 0;" class="btn btn-md btn-danger class1" id="class1" onclick="savedata()">Confirm Location</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                <h1 id="slider-heading"> Know your neighborhood happenings </h1>
+                <h3 id="slider-tag"> Like crime & safety alerts, news, events, lost pets, local service recommendations, and more </h3>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+	var slider = document.getElementById('slider-wrapper');
+	var slider_shadow = document.getElementById('slider-shadow');
+	var height = innerHeight;
+	slider.style.height = height+"px";
+	slider_shadow.style.height = height+"px";
+	var heading = document.getElementById('slider-heading');
+	var tag = document.getElementById('slider-tag');
+	var slider_duration = 5000;
+	var counter=0;
+
+	var backgrounds = ['images/homepage1.jpg',
+					   'images/homepage2.jpg',
+					   'images/homepage3.jpg'];
+	
+
+	var headings = [" Know your neighborhood happenings ", 
+					 "Order from neighborhood businesses ",
+					 "Spread happiness"
+					 ];
+
+					 
+	var tags  = ["Like crime & safety alerts, news, events, lost pets, local service recommendations, and more", 
+			 	 "Like grocery stores, restaurants, and more, and get delivered in as little as an hour", 
+				 "By answering fun polls about friends, and know what they like about you"
+			 	];
+			 	
+
+	heading.className = "head_anim";
+	tag.className = "tag_anim";
+	setTimeout(function(){
+		heading.classList.remove("head_anim");
+	},1000);
+	setTimeout(function(){
+		tag.classList.remove("tag_anim");
+	},1500);
+	setInterval(function(){
+		if(counter==backgrounds.length-1) {
+			counter=0;
+		} else {
+			counter++;
+		}
+		slider.style.background = "#fff url('"+backgrounds[counter]+"')";
+		slider.style.backgroundSize = "cover";
+		slider.style.backgroundPosition = "center";
+		heading.innerHTML = headings[counter];
+		tag.innerHTML = tags[counter];
+		heading.className = "head_anim";
+		tag.className = "tag_anim";
+		setTimeout(function(){
+			heading.classList.remove("head_anim");
+		},1000);
+		setTimeout(function(){
+			tag.classList.remove("tag_anim");
+		},1500);
+	},slider_duration);
+
+    window.onload =function() {
+        sliderW = document.getElementById('slider-wrapper');
+        sliderW.style.height = (window.innerHeight-37) + "px";
+        slider_shadow.style.height = (height-37)+"px";
+    }
+
+    window.fbAsyncInit = function () {
+    FB.init({
+      appId: '305219616568944',
+      xfbml: true,
+      version: 'v2.6'
+    });
+  };
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+	
+</script>
+
+<div class="phoneSection">
+  <div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-6 textWrapper">
+  <h1 id="slider-heading1"> Newsfeed </h1>
+                <h3 id="slider-tag1"> Read news and happenings of neighborhood, and connect to your neighbors </h3>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+        <div class="phoneContainer" style="background:url('../images/iphone.png'); width:240px; height: 500px; background-size: cover;">
+    <div id="slider-wrapper1" style="margin-top: -20px">
+        </div>
+    </div>
+    </div>
+</div>
+   
+    </div>
+
+     <script type="text/javascript">
+	var slider1 = document.getElementById('slider-wrapper1');
+//	var slider_shadow = document.getElementById('slider-shadow');
+	var height1 = innerHeight;
+//	slider.style.height = height+"px";
+//	slider_shadow.style.height = height+"px";
+	var heading1 = document.getElementById('slider-heading1');
+	var tag1 = document.getElementById('slider-tag1');
+	var slider_duration1 = 5000;
+	var counter1=0;
+
+	var backgrounds1 = ['../images/homepage1.jpg',
+					   '../images/homepage2.jpg',
+					   '../images/homepage3.jpg',
+                       "../images/homepage2.jpg"];
+	
+
+	var headings1 = ["Newsfeed", 
+					 "Subscription",
+					 "Group order",
+                     "Fun polls"
+					 ];
+
+					 
+	var tags1  = ["Read news and happenings of neighborhood, and connect to your neighbors", 
+			 	 "Automate delivery of frequently needed products like milk, bread etc", 
+				 "Order in group for giving treat to friends and family, and earn H-Cash to save more",
+                 "Know what people like about you, and answer polls to let them know theirs"
+			 	];
+			 	
+
+	heading1.className = "head_anim1";
+	tag1.className = "tag_anim1";
+	setTimeout(function(){
+		heading1.classList.remove("head_anim1");
+	},1000);
+	setTimeout(function(){
+		tag1.classList.remove("tag_anim1");
+	},1500);
+	setInterval(function(){
+		if(counter1==backgrounds1.length-1) {
+			counter1=0;
+		} else {
+			counter1++;
+		}
+		slider1.style.background = "#fff url('"+backgrounds1[counter]+"')";
+		slider1.style.backgroundSize = "cover";
+		slider1.style.backgroundPosition = "center";
+		heading1.innerHTML = headings1[counter];
+		tag1.innerHTML = tags1[counter];
+		heading1.className = "head_anim1";
+		tag1.className = "tag_anim1";
+		setTimeout(function(){
+			heading1.classList.remove("head_anim1");
+		},1000);
+		setTimeout(function(){
+			tag1.classList.remove("tag_anim1");
+		},1500);
+	},slider_duration1);
+
+//    window.onload =function() {
+//        sliderW = document.getElementById('slider-wrapper1');
+//        sliderW.style.height = window.innerHeight + "px";
+//    }
+
+    window.fbAsyncInit = function () {
+    FB.init({
+      appId: '305219616568944',
+      xfbml: true,
+      version: 'v2.6'
+    });
+  };
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+	
+</script>
+
+<div class="container-fluid">
+    <div class="row tryme">
+        <!--<div class="col-sm-1"></div>-->
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="../images/mapicon.png">
+                <div class="card-content">
+                    <h3 >AREAS WE SERVE</h3>
+                    <h4 class="hover_red">Delhi</h4>
+                    <h4 class="hover_red">Noida</h4>
+                    <h4 class="hover_red">Gurgaon</h4>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-sm-5"></div>-->
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="../images/moneyicon.png">
+                <div class="card-content" style="padding-bottom:29px">
+                    <h3>MAKE MONEY WITH US</h3>
+                    <a href="#/shopper" ><h4 class="hover_red">Become a Shopper</h4></a>
+                    <a href="#/store"><h4 class="hover_red">Get Your Store Listed</h4></a>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-sm-1"></div>-->
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="../images/download%20app.gif" id="app-dwn">
+                <div class="card-content">
+                    <h3>DOWNLOAD APP</h3>
+                    <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp"><h4 class="hover_red">Android App on PlayStore</h4></a>
+                    <h4>
+                        <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp">
+                            <center>
+                                <img src="https://s3-us-west-2.amazonaws.com/halanx-web/en_badge_web_generic.png" class="img-responsive img1" height="90" width="100">
+                            </center>
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div style="display: inline-block;z-index: 5; position:fixed; bottom:20px;right:20px">
+      <a  href="https://m.me/halanxtech?ref=Welcome%20message" style="display: inline-block;background: orange;padding: 9px;border-radius:5px;">
+          <i class="fa fa-comments" aria-hidden="true" style="font-size: 30px;color: white;"></i>
+      </a>
+  </div>
+
+
+<div class="fb-messengermessageus" messenger_app_id="305219616568944" page_id="XYZ" color="blue" >
+  </div>

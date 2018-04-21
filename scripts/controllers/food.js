@@ -45,7 +45,8 @@ angular.module('halanxApp')
     
      $scope.mystore= function(id){
          food.saveid(id);
-         var promise =  food.productserver(id);
+         var token = food.gettoken();
+         var promise =  food.productserver(id, token);
          promise.then(function(data){
         console.log(data)
 

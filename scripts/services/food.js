@@ -63,13 +63,18 @@ angular.module('halanxApp')
         //   var mytoken=JSON.parse(token)
           return token; 
         },
-       storeserver : function(id){
+       storeserver : function(id, key){
            console.log(id)
          var pr = $q.defer();
          var url = "https://api.halanx.com/stores/"+id;
         
                 console.log(url)
-         $http.get(url).then(function(data){
+         $http.get(url, {
+            //                withCredentials: true,
+                            headers: {
+                                'Authorization': 'Token ' + key 
+                            }
+                        }).then(function(data){
              pr.resolve(data.data)
              console.log("success")
            
@@ -82,12 +87,17 @@ angular.module('halanxApp')
          )
          return pr.promise
      },
-        productserver : function(id){
+        productserver : function(id, key){
          var pr = $q.defer();
          var url = "https://api.halanx.com/stores/"+id+"/products";
         
                 
-         $http.get(url).then(function(data){
+         $http.get(url,{
+            //                withCredentials: true,
+                            headers: {
+                                'Authorization': 'Token ' + key 
+                            }
+                        }).then(function(data){
              pr.resolve(data.data)
              console.log("success")
            

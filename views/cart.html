@@ -539,18 +539,18 @@ return false;
 });
 });
 
-shadow = document.getElementById("s-m-s");
-
 tga = false;
 function tg() {
     
     if(!tga) {
+shadow = document.getElementById("s-m-s");
         var x = document.getElementsByClassName("fa");
         x[0].classList.remove("fa-bars");
         x[0].classList.add("fa-close");
         shadow.style.display = "block";
         tga = true;
     } else {
+shadow = document.getElementById("s-m-s");
         var x = document.getElementsByClassName("fa");
         x[0].classList.remove("fa-close");
         x[0].classList.add("fa-bars");

@@ -18,6 +18,11 @@ angular.module('halanxApp')
     if(JSON.parse(localStorage.getItem("isLogin")) ==true || (localStorage.getItem("isLocated")!=null && localStorage.getItem("isLocated")==true)){
      $window.location.assign("#landing");
     }
+
+
+    if(JSON.parse(localStorage.getItem("storeLogin"))==true){
+      $window.location.assign("#dashboard");
+    }
     
     $scope.checkLocation = ()=>{
       if($scope.location!=undefined && $scope.location!=null){

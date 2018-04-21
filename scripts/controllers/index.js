@@ -37,7 +37,6 @@ angular.module('halanxApp')
   // }
   
     $scope.$watch(function(){return common.isLogin}, function (newValue, oldValue) {
-         
     if( localStorage.getItem("isLogin") !=null){
       if(localStorage.getItem("isLogin").length>0){
       common.isLogin = JSON.parse(localStorage.getItem("isLogin"));
@@ -102,4 +101,9 @@ angular.module('halanxApp')
       // $window.location.reload();
       
     }
+
+    $scope.checkDash = () => {
+      
+    }
+
   });

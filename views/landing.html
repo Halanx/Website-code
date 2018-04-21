@@ -486,6 +486,16 @@ nav.navbar {
     .navbar-brand {
         margin-left: 45px !important;
     }
+    .cart-icon i {
+        font-size: 26px;
+    }
+    .cart-icon button {
+        padding: 14.5px 15px;
+    }
+    .cart-icon span {
+        position: relative;
+        top: -3px;
+    }
 }
 
 .testt {
@@ -531,7 +541,7 @@ nav.navbar {
                         </div>
                         <div class="userlist" ng-class={"move":movex}>
                          <ul>
-                             <li><a href="#/accounts"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+                             <li><a href="#/accounts"><i class="far fa-user"></i> My Account</a></li>
                              <li><a href="#/orders"><i class="fa fa-file-text-o" aria-hidden="true"></i> My Orders</a></li>
                              <li><a href="#/favourite"><i class="fa fa-heart-o" aria-hidden="true"> </i> Favourites</a></li>
                              <li><a href=""><i class="fa fa-star-o" aria-hidden="true"> </i> Points</a></li>
@@ -545,7 +555,7 @@ nav.navbar {
                     <div class="cart-icon">
                         <a href="#/cart">
                        <button type="button" class="btn btn-md b23"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                       <span ng-model = "counter" class="testt">{{counter}}</span>
+                       <span ng-model = "counter" class="testt" ng-if="counter!=0">{{counter}}</span>
                          </button>
                          </a>
                      </div>

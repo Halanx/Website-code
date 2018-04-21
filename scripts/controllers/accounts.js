@@ -35,6 +35,7 @@ angular.module('halanxApp')
     promise.then(function(data){
     console.log(data);
     console.log(data.FirstName)
+    
     $scope.FirstName = data.user.first_name;
     localStorage.setItem('firstname',$scope.FirstName);
     $scope.LastName = data.user.last_name;
@@ -43,6 +44,11 @@ angular.module('halanxApp')
     $scope.Phoneno = data.PhoneNo;
     localStorage.setItem('mobilenumber',$scope.Phoneno);
     $scope.password = data.password
+    data.pictures.forEach(element => {
+      if(element.isProfilePic == true) {
+        $scope.profilePic = element.image;
+      }
+    });
     }
       ,function(err){
            

@@ -218,10 +218,13 @@ left: 20px;
 
 .cart-icon {
     margin: 0;
+    display: inline-block;
     position: fixed;
     top: 0px;
+    width: 50%;
     right: 0px;
     z-index: 999999;
+    text-align: right;
 }
 
 #login-btn {
@@ -249,6 +252,15 @@ left: 20px;
     color: #333;
     margin-left: 5px;
 }
+
+.testt {
+    display: inline-block;
+    border-radius: 50%;
+    background: #e63631;
+    height: 20px;
+    width: 20px;
+    color: #fff !important;
+ }
 
 nav.navbar {
     height: 60px;
@@ -470,14 +482,6 @@ margin-left:60px;
 .fa-shopping-cart{
 color:#ffffff;
 }
-.testt {
-    display: inline-block;
-    border-radius: 50%;
-    background: #e63631;
-    height: 20px;
-    width: 20px;
-    color: #fff !important;
- }
 
 .b23{
 margin-left:353px;
@@ -745,7 +749,7 @@ div.scrollmenu li {
 
 .product-list .add-btn button {
     border: none;
-    background: #d9534f;
+    background: #ed3833;
     color: #fff;
     border-radius: 2px;
     padding: 5px 15px;
@@ -791,6 +795,16 @@ div.scrollmenu li {
 @media (max-width: 767px) {
     .navbar-brand {
         margin-left: 45px !important;
+    }
+    .cart-icon i {
+        font-size: 26px;
+    }
+    .cart-icon button {
+        padding: 14.5px 15px;
+    }
+    .cart-icon span {
+        position: relative;
+        top: -3px;
     }
 }
 
@@ -893,7 +907,7 @@ div.scrollmenu li {
 	                       <div class="userlist" ng-class={"move":movex}>
 	                        <ul>
 	                            
-                                    <li><a href="#/accounts"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+                                    <li><a href="#/accounts"><i class="far fa-user"></i> My Account</a></li>
                                     <li><a href="#/orders"><i class="fa fa-file-text-o" aria-hidden="true"></i> My Orders</a></li>
                                     <li><a href="#/favourite"><i class="fa fa-heart-o" aria-hidden="true"> </i>Favourites</a></li>
                                     <li><a href=""><i class="fa fa-star-o" aria-hidden="true"> </i> Points</a></li>
@@ -904,8 +918,8 @@ div.scrollmenu li {
 	                   </div>
 	                       <div class="cart-icon">
 	                          <a href="#/cart">
-	                         <button type="button" class="btn btn-md b23"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-	<span ng-model = "counter" class="testt">{{counter}}</span>
+	                         <button type="button" class="btn btn-md"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+	<span ng-model = "counter" class="testt" ng-if="counter != 0">{{counter}}</span>
 	                           </button>
 	                           </a>
 	                       </div>
@@ -1025,6 +1039,27 @@ div.scrollmenu li {
 <h5 ng-hide="nomore" style="text-align:center;">No more items</h5>
 
 	<script>
+
+tga = false;
+function tg() {
+    
+    if(!tga) {
+    shadow = document.getElementById("s-m-s");
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-bars");
+        x[0].classList.add("fa-close");
+        shadow.style.display = "block";
+        tga = true;
+    } else {
+    shadow = document.getElementById("s-m-s");
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-close");
+        x[0].classList.add("fa-bars");
+        shadow.style.display = "none";
+        tga = false;
+    }
+}
+
 	$(function(){
 
 
@@ -1083,26 +1118,6 @@ div.scrollmenu li {
 	}
 	});
 	});
-        
-    shadow = document.getElementById("s-m-s");
-
-tga = false;
-function tg() {
-    
-    if(!tga) {
-        var x = document.getElementsByClassName("fa");
-        x[0].classList.remove("fa-bars");
-        x[0].classList.add("fa-close");
-        shadow.style.display = "block";
-        tga = true;
-    } else {
-        var x = document.getElementsByClassName("fa");
-        x[0].classList.remove("fa-close");
-        x[0].classList.add("fa-bars");
-        shadow.style.display = "none";
-        tga = false;
-    }
-}
 
 
     

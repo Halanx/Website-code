@@ -313,20 +313,17 @@ transition: 1s;
     color: lightgrey;
 }
 #content .datasection span{
-    text-transform: uppercase;
-    font-family:"Sans",Verdana,"sans-serif";
-    font-size:20px;
-    color:#000000;
-    margin-top:2px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    width: 60%;
+    font-size: 22px;
+    margin: auto;
+    margin-bottom: -20px;
 }
-@media(max-width:380px){
-  #content .datasection span{
-    font-size:15px;
-    color:#000000;
-    text-decoration:none;
-    margin-left:3px;
-  }
-}
+
 #content .datasection{
     text-align: center;
         
@@ -366,9 +363,7 @@ transition: 1s;
         border-bottom: 1px solid black;
     padding: 0px 65px;
 }
-#content .datasection li:hover{
-    border: 1px solid #ccc;
-}
+
 #content .datasection li:hover img{
     
 /*    transform: scale(1.1);*/
@@ -398,22 +393,55 @@ button.btn.btn-sm.btn-danger.btn-circle {
     font-weight: 500;
     text-transform: capitalize;
 }
-#content .datasection .productcat ul{
-  /* display:flex;
-  flex-wrap:wrap; */
-  /* margin-left: 33px; */
-  margin-top: 22px;
+.productcat ul{
+  margin-top:22px;
+    padding-bottom: 10px;
+}
+
+.productcat li {
+    border: 1px solid #eee;
+    background-color: white;
+    margin: 4px;
+    text-align: center;
+    margin-top: 7px;
+    list-style: none;
+}
+
+.productcat ul li {
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 3px;
+    width: auto;
+    border: none;
+    background: #e52222;
+    font-weight: 500;
+    box-shadow: 3px 3px 17px -2px rgba(0,0,0,0.5);
+    color: #fafafa;
 }
 
 .productcat ul li:hover {
-    color: #fff;
-    background: rgba(220,10,10,0.91);
+    background: #ec4f4b;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.18), 0 3px 10px -5px rgba(0,0,0,0.16), 0 1px 15px 0 rgba(0,0,0,0.5);
 }
-#content .datalist .productcat .colorred{
-background-color: #e50000;
-border: 2px solid #d3d3d3;
-cursor:pointer;
-color:#ffffff;
+.productcat .colorred{
+    background-color: #e50000;
+    cursor:pointer;
+    color:#ffffff;
+}
+
+div.scrollmenu {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+div.scrollmenu li {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
 }
 @media(max-width:380px){
 #content .datasection .productdescription span{
@@ -631,7 +659,6 @@ nav.navbar {
 #search-wrapper {
     box-shadow: 0 0 12px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.35);   background: rgba(220,10,10,0.91);
     padding: 50px 20px;
-    padding-top: 30px;
 }
 
 #search-wrapper h3 {
@@ -644,25 +671,40 @@ nav.navbar {
 #search-wrapper input {
     height: 40px;
     outline: none;
-    border-radius: 0;
+    border-radius: 2px;
     color: #333;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.23);
+    border: none;
+    position: relative;
 }
+
+#search-wrapper input:focus {
+    border: none;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.27);
+}
+
 
 #search-wrapper ul {
     background: #fff;
-    border: 1px solid #e8e8e8;
-    border-top: none;
     width: 100%;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.27);
+    border-radius: 3px;
 }
 
 #search-wrapper li {
     padding: 7px 12px;
-    border-bottom: 1px solid #e8e8e8;
+}
+
+#search-wrapper li:nth-child(even) {
+    background: #f6f6f6;
+}
+
+#search-wrapper li:first-child {
+    padding-top: 20px;
 }
 
 #search-wrapper li:hover {
-    background: #f1f1f1;
+    background: #efefef;
 }
 
 #search-wrapper li a {
@@ -670,14 +712,6 @@ nav.navbar {
     color: #333;
 }
 
-.productcat ul li {
-    border-radius: 2px;
-    padding: 0;
-    height: initial;
-    padding: 5px;
-    background: #fff;
-    border: 1px solid #d5d5d5;
-}
 
 #content .userlist {
     background: none;
@@ -816,7 +850,7 @@ nav.navbar {
 
 .product-list .add-btn button {
     border: none;
-    background: #d9534f;
+    background: #ed3833;
     color: #fff;
     border-radius: 2px;
     padding: 5px 15px;
@@ -886,6 +920,16 @@ div.scrollmenu li {
     .navbar-brand {
         margin-left: 45px !important;
     }
+    .cart-icon i {
+        font-size: 26px;
+    }
+    .cart-icon button {
+        padding: 14.5px 15px;
+    }
+    .cart-icon span {
+        position: relative;
+        top: -3px;
+    }
 }
 
   .side-menu-shadow {
@@ -950,14 +994,12 @@ div.scrollmenu li {
                        </div>
                        <div id="menu_list" class="userlist" ng-class={"move":movex}>
                         <ul style="height:inherit">
-                                <li><a href="#/accounts"><i class="fa fa-user" aria-hidden="true"></i> My Account</a></li>
+                                <li><a href="#/accounts"><i class="far fa-user"></i> My Account</a></li>
                                 <li><a href="#/orders"><i class="fa fa-file-text-o" aria-hidden="true"></i> My Orders</a></li>
                                 <li><a href="#/favourite"><i class="fa fa-heart-o" aria-hidden="true"> </i> Favourites</a></li>
                                 <li><a href=""><i class="fa fa-star-o" aria-hidden="true"> </i> Points</a></li>
                                 <li><a href=""><i class="fa fa-bell-o" aria-hidden="true"> </i> Notification</a></li>
                                 <li><a href="#/logout" ng-click="logout()"><i class="fa fa-power-off" aria-hidden="true"> </i> Logout</a></li>
-	                            
-                             
                         </ul>
                        </div>
                    </div>
@@ -986,7 +1028,7 @@ div.scrollmenu li {
                        <div class="cart-icon">
                           <a href="#/cart">
                    <button type="button" class="btn btn-md b78"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span ng-model = "counter" class="testt">{{counter}}</span></button>
+<span ng-model = "counter" class="testt" ng-if="counter != 0">{{counter}}</span></button>
                            </a>
                            
                        </div>
@@ -1193,18 +1235,19 @@ return false;
 });
 });
    
-shadow = document.getElementById("s-m-s");
 
 tga = false;
 function tg() {
     
     if(!tga) {
+shadow = document.getElementById("s-m-s");
         var x = document.getElementsByClassName("fa");
         x[0].classList.remove("fa-bars");
         x[0].classList.add("fa-close");
         shadow.style.display = "block";
         tga = true;
     } else {
+shadow = document.getElementById("s-m-s");
         var x = document.getElementsByClassName("fa");
         x[0].classList.remove("fa-close");
         x[0].classList.add("fa-bars");

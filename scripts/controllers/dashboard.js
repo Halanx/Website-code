@@ -114,8 +114,8 @@ function showMeData(){
                  sid = data[0].id;
                  $scope.categories = data[0].CategoriesAvailable;
                  console.log(sid);
-                 $scope.openMe();
-                $scope.getProduct();
+            $scope.openMe();
+            $scope.getProduct();
           },(err)=>{
             console.log(err);
           });

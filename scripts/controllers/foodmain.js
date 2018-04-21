@@ -143,7 +143,7 @@ $scope.addstore = ()=>{
      
      
      function datalogo(id){
-        var token= foodmain.gettoken();
+         var token = foodmain.gettoken();
            var promise = foodmain.storeserver(id, token);
     promise.then(function(data){
         console.log(data)
