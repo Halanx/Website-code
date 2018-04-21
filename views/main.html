@@ -90,9 +90,6 @@
     #slider-heading {
         font-size: 25px;
     }
-    #login-btn {
-        border: none !important;
-    }
     #slider-tag {
         font-size: 20px;
         position: relative;
@@ -311,18 +308,7 @@
     width: 189px;
     box-shadow: 0 10px 100px rgba(0,0,0,0.5);
 }
-.coming-soon {
-    display: inline-block;
-    font-size: 10px;
-    background: yellow;
-    color: #555;
-    padding: 2px 5px;
-    position: relative;
-    top: -66px;
-    left: 137px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.35);
-    transform: rotateZ(38deg);
-}
+
 @media (max-width: 992px) {
     .play-heading {
         padding-top: 10px;
@@ -332,18 +318,6 @@
     }
     .play-heading img.apple-p {
         margin-top: 0px !important;
-    }
-    .coming-soon {
-        display: inline-block;
-        font-size: 10px;
-        background: yellow;
-        color: #555;
-        padding: 2px 5px;
-        position: relative;
-        top: -43px;
-        left: 58.7%;
-        box-shadow: 0 0 15px rgba(0,0,0,0.35);
-        transform: rotateZ(45deg);
     }
     
     .app-phone7 {
@@ -575,13 +549,13 @@ a:hover{
         slider_shadow.style.height = (window.innerHeight-37)+"px";
     }
 
-    window.onresize =function() {
-        sliderW = document.getElementById('slider-wrapper');
-        sliderW.style.height = (window.innerHeight-37) + "px";
-        sliderBg.style.height = (window.innerHeight-37) + "px";
-        sliderBgg.style.height = (window.innerHeight-37) + "px";
-        slider_shadow.style.height = (window.innerHeight-37)+"px";
-    }
+    // window.onresize =function() {
+    //     sliderW = document.getElementById('slider-wrapper');
+    //     sliderW.style.height = (window.innerHeight-37) + "px";
+    //     sliderBg.style.height = (window.innerHeight-37) + "px";
+    //     sliderBgg.style.height = (window.innerHeight-37) + "px";
+    //     slider_shadow.style.height = (window.innerHeight-37)+"px";
+    // }
 
     window.fbAsyncInit = function () {
     FB.init({
@@ -799,7 +773,6 @@ a:hover{
             <div class="play-heading">
                 <a href="#" target="_blank">
                     <img src="../images/appstoreicon.png" style="height: 48px;" class="img-responsive img1 apple-p">
-                    <span class="coming-soon">coming soon</span>
                 </a>
             </div>
         </div>
