@@ -53,7 +53,7 @@ angular.module('halanxApp')
     if(localStorage.getItem("amount") !=null && localStorage.getItem("amount")>0 && $scope.cost.Total != undefined){
        var doPayment= true;
        localStorage.setItem('doPayment',doPayment);
-      $window.location.href = "/payment.php";
+      $window.location.assign('#payment');
     }
     else{
       $window.location.href= "#landing";

@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 
 $MERCHANT_KEY = "f1tDUh";  
 $hash_string = '';
@@ -317,4 +317,4 @@ return false;
 }
 });
 });
-</script>
+</script>-->

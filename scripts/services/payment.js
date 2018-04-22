@@ -8,16 +8,39 @@
  * Factory in the halanxApp.
  */
 angular.module('halanxApp')
-  .factory('payment', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
+  .factory('payment', function ($http,$q) {
+   
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      createHash: function(obj,key){
+        var url = "https://api.halanx.com/transactions/payu/generate_hash/";
+        var defer = $q.defer();
+        $http.post(url,obj,{
+           headers: {
+                    'Content-Type':'application/json',
+                    'Authorization': 'Token ' + key 
+                }
+            }).then((data)=>{
+              defer.resolve(data.data);
+            },(err)=>{
+              defer.reject(err);
+            });
+
+            return defer.promise;
+      },
+      cod: function (obj,key) {
+        var defer = $q.defer();
+        var url = "https://api.halanx.com/orders/";
+        $http.post(url,obj,{
+                headers: {
+                    'Content-Type':'application/json',
+                    'Authorization': 'Token ' + key 
+                }
+            }).then((data)=>{
+              defer.resolve(data.data);
+            },(err)=>{
+              defer.reject(err);
+            });
+        return defer.promise;    
       }
     };
   });

@@ -117,7 +117,7 @@ angular
         controllerAs: 'store'
       })
       .when('/payment', {
-        templateUrl: 'views/payment.php',
+        templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl',
         controllerAs: 'payment'
       })
@@ -205,6 +205,11 @@ angular
         templateUrl: 'views/refundpolicy.html',
         controller: 'CareerCtrl',
         controllerAs: 'career'
+      })
+      .when('/payment', {
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl',
+        controllerAs: 'payment'
       })
       .when('/payment', {
         templateUrl: 'views/payment.html',
