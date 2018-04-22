@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 
 $MERCHANT_KEY = "f1tDUh";  
 $hash_string = '';
@@ -219,18 +219,6 @@ var app = angular.module("myapp",[]);
 
 <input type="hidden" class="form-control" name="productinfo" value="null">
 
-
-    
-
-     
-      
-    
-
-
-
-
- 
-
  
 <script>
 
@@ -329,4 +317,4 @@ return false;
 }
 });
 });
-</script>
+</script>-->

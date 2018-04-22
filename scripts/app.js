@@ -21,9 +21,6 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-        .when('/xyz', {
-        templateUrl: 'views/xyz.html',
-      })
       .when('/aboutus', {
         templateUrl: 'views/aboutus.html',
         controller: 'AboutusCtrl',
@@ -120,7 +117,7 @@ angular
         controllerAs: 'store'
       })
       .when('/payment', {
-        templateUrl: 'views/payment.php',
+        templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl',
         controllerAs: 'payment'
       })
@@ -204,16 +201,20 @@ angular
         controller: 'CareerCtrl',
         controllerAs: 'career'
       })
-      .when('/shopper_agreement', {
-        templateUrl: 'views/shopper_agreement.html'
-      })
-      .when('/merchant_agreement', {
-        templateUrl: 'views/merchant_agreement.html'
-      })
       .when('/refundpolicy', {
         templateUrl: 'views/refundpolicy.html',
         controller: 'CareerCtrl',
         controllerAs: 'career'
+      })
+      .when('/payment', {
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl',
+        controllerAs: 'payment'
+      })
+      .when('/payment', {
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl',
+        controllerAs: 'payment'
       })
       .otherwise({
         redirectTo: '/login'

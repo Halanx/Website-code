@@ -1,0 +1,29 @@
+<div class="container" style="min-height:500px"> 
+<div class="row">
+  <h2 style="text-align:center; margin-top:160px">Payment Option</h2>
+</div>
+<form action="https://secure.payu.in/_payment/" method="post">
+                                     <input type="text" style="display:none;" ng-model="hashData.hash" name="hash" >
+                                    <input type="text" style="display:none;"  name="key" ng-model="hashData.key">
+                                    <input type="text" style="display:none;" name="txnid" ng-model="hashData.txnid"  placeholder="txnid">
+                                    <input type="text" style="display:none;" name="amount" ng-model="hashData.amount"  placeholder="amount">
+                                    <input type="text"  style="display:none;" name="productinfo" ng-model="hashData.productinfo" placeholder="prodinfo">
+                                    <input type="text" style="display:none;"  name="firstname" ng-model="hashData.firstname" placeholder="name">
+                                    <input type="email" style="display:none;"   name="email" ng-model="hashData.email" placeholder="email">
+                                     <input type="number" style="display:none;"  name="phone" ng-model="hashData.phone" placeholder="phone">
+                                     <input type="text" style="display:none;" name="service_provider" ng-model="hashData.service_provider">
+                                    <input type="text" style="display:none;"  name="surl" ng-model="hashData.surl">
+                                    <input type="text" style="display:none;" name="furl" ng-model="hashData.surl">
+        <br><br>
+        
+        <div class="row">
+        <input type="submit" class="btn btn-danger col-sm-6 col-xs-8 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 col-sm-offset-3 col-xs-offset-2" value="Online Payment">
+        </div>
+    </form>
+
+    <br>
+    <div class="row">
+        <button class="btn btn-primary col-sm-6 col-xs-8 col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4 col-sm-offset-3 col-xs-offset-2" ng-click="cod()">Cash On Delivery</button>
+        </div>
+
+</div>        
