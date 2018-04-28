@@ -177,6 +177,66 @@ angular.module('halanxApp')
             console.log(this.arr)
             this.savedata(this.arr)
         },
+        addproductonserver : function(modal, q, key) {
+
+            var obj = {};
+          obj.Item = modal.id;
+          obj.Quantity = q;
+          obj.Notes = "";
+
+          console.log(obj);
+
+          var url = "https://api.halanx.com/carts/items/";
+          var pr = $q.defer();
+          
+          $http.post(url,obj, {
+//             withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' +key,
+                    'Content-Type' : 'application/json'
+                }
+            }).then(function(data){
+              // console.log(data);
+              pr.resolve(data.data);
+          },function(err){
+              pr.reject(err);
+          })
+  
+          return pr.promise;
+
+          
+
+          
+       },
+       updateproductonserver:function(modal, q, key){
+
+            var obj = {};
+        obj.Quantity = q;
+
+        console.log(obj);
+
+        var url = "https://api.halanx.com/carts/product/"+modal.id+"/";
+        var pr = $q.defer();
+        
+        $http.patch(url,obj, {
+    //             withCredentials: true,
+                headers: {
+                    'Authorization': 'Token ' +key,
+                    'Content-Type' : 'application/json'
+                }
+            }).then(function(data){
+            // console.log(data);
+            pr.resolve(data.data);
+        },function(err){
+            pr.reject(err);
+        })
+
+        return pr.promise;
+
+        
+
+        
+    },
         check: function (modal) {
             console.log("modal" + modal)
 

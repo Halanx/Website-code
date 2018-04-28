@@ -11,11 +11,26 @@ angular.module('halanxApp')
   .factory('cart', function ($http,$q) {
   var object = {
         
-             load : function(){
-          var usedata = localStorage.getItem("storedata")
-              console.log(usedata)
-          var pushdata=JSON.parse(usedata)
-          return pushdata;
+             load : function(key){
+        //   var usedata = localStorage.getItem("storedata")
+        //       console.log(usedata)
+        //   var pushdata=JSON.parse(usedata)
+        //   return pushdata;
+            var url = "https://api.halanx.com/carts/active/";
+            var pr = $q.defer();
+            
+            $http.get(url, {
+                headers: {
+                    'Authorization': 'Token ' + key
+                }
+            }).then(function(data){
+                console.log(data);
+                pr.resolve(data.data);
+            },function(err){
+                pr.reject(err);
+            })
+
+            return pr.promise;
      },
         filterfunction : function(filterlist){
             console.log(filterlist)
@@ -43,7 +58,7 @@ angular.module('halanxApp')
         calculatetotal : function(productarr){
             var sum=0
             for(var i=0;i<productarr.length;i++){
-              sum = sum + (productarr[i].Price*productarr[i].quantity)  
+              sum = sum + (productarr[i].Item.Price*productarr[i].Quantity)  
             }
             return sum
         },
@@ -93,6 +108,61 @@ angular.module('halanxApp')
          )
          return pr.promise
     },
+    updateproductonserver:function(list, key){
+
+        var obj = {};
+    obj.Quantity = list.Quantity;
+
+    console.log(obj);
+
+    var url = "https://api.halanx.com/carts/product/"+list.Item.id+"/";
+    var pr = $q.defer();
+    
+    $http.patch(url,obj, {
+//             withCredentials: true,
+            headers: {
+                'Authorization': 'Token ' +key,
+                'Content-Type' : 'application/json'
+            }
+        }).then(function(data){
+        // console.log(data);
+        pr.resolve(data.data);
+    },function(err){
+        pr.reject(err);
+    })
+
+    return pr.promise;
+
+    
+
+    
+},
+deleteproductserver : function(list, key) {
+
+        var obj = {};
+    obj.RemovedFromCart = true;
+
+    console.log(obj);
+
+    var url = "https://api.halanx.com/carts/items/"+list.id+"/";
+    var pr = $q.defer();
+    
+    $http.patch(url,obj, {
+//             withCredentials: true,
+            headers: {
+                'Authorization': 'Token ' +key,
+                'Content-Type' : 'application/json'
+            }
+        }).then(function(data){
+        // console.log(data);
+        pr.resolve(data.data);
+    },function(err){
+        pr.reject(err);
+    })
+
+    return pr.promise;
+
+},
 
         callserver : function(obj,key){
         console.log(obj)

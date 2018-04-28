@@ -174,6 +174,15 @@ $scope.addstore = ()=>{
    
        if(match.length==1){
         //   alert("already present in cart")
+        var token = foodmain.gettoken();
+
+        var promise = foodmain.updateproductonserver(modal, quantity, token);
+         promise.then(function(data){
+             console.log("updated on server");
+         
+         },function(err){
+             console.log("error while updating on server"); 
+         } );
        }
         else{
         
@@ -189,6 +198,16 @@ $scope.addstore = ()=>{
                 icon : "images/success.png"
             });
            },1000);
+
+           var token = foodmain.gettoken();
+
+           var promise = foodmain.addproductonserver(modal, quantity, token);
+            promise.then(function(data){
+                console.log("added on server");
+            
+            },function(err){
+                console.log("error while saving on server"); 
+            } );
         }
 
         

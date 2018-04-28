@@ -13,6 +13,16 @@ angular.module('halanxApp')
      $window.location.href = "#login";
     }
          if(localStorage.token){
+
+          var token = summary.gettoken();
+
+            var promise =   summary.cartdataserver(token);
+            promise.then(function(data){
+            console.log(data);
+            $scope.billdataserver = data;
+        },function(err){
+            console.log("error loading cart items");
+    } )  
 //     ordersummary();
 //      }
 //     function ordersummary(){
@@ -22,19 +32,19 @@ angular.module('halanxApp')
                     var promise = summary.bill(token)
                           promise.then(function(data){
                     console.log(data);
-                    var totalwithex = JSON.parse(localStorage.getItem("amount"))+parseInt(data.data.DeliveryCharges)+ JSON.parse(localStorage.getItem("tax"))- JSON.parse(data.hcash).toPrecision(2);
+                    var totalwithex = 0;
+                    // JSON.parse(localStorage.getItem("amount"))+parseInt(data.data.DeliveryCharges)+ JSON.parse(localStorage.getItem("tax"))- JSON.parse(data.hcash).toPrecision(2);
                     var hcash= JSON.parse(data.hcash).toFixed(2);
                     localStorage.setItem('hcash',hcash);
                     localStorage.setItem('totalamount',totalwithex);
                   var value_amt = parseFloat(totalwithex);
-                  value_amt = value_amt.toFixed(2);          
+                  value_amt = value_amt.toFixed(2);   
+                  localStorage.setItem("totalamount",data.data.TotalWithExtras);       
                   $scope.cost = {
-                  Total:localStorage.getItem("amount"),
-                  DeliveryCharges:data.data.DeliveryCharges,
-                  Taxes:localStorage.getItem("tax"),
-                  TotalWithExtras:value_amt,
-                    
-                   
+                  Total:data.data.Total,
+                  DeliveryCharges:data.data.EstimatedDeliveryCharges,
+                  Taxes:data.data.Taxes,
+                  TotalWithExtras:data.data.TotalWithExtras,
             }
 
                $scope.cost1 = {

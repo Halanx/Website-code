@@ -258,9 +258,20 @@ $scope.scrollDown = function(){
         
 //        else{
        var match =  food.check(modal)
+
+       console.log("--=====================--", modal);
    
        if(match.length==1){
         //   alert("already present in cart")
+            var token = food.gettoken();
+
+           var promise = food.updateproductonserver(modal, q, token);
+            promise.then(function(data){
+                console.log("updated on server");
+            
+            },function(err){
+                console.log("error while updating on server"); 
+            } );
        }
         else{
         modal.quantity = q;
@@ -274,6 +285,16 @@ $scope.scrollDown = function(){
                 icon : "images/success.png"
             });
            },1000);
+
+           var token = food.gettoken();
+
+           var promise = food.addproductonserver(modal, q, token);
+            promise.then(function(data){
+                console.log("added on server");
+            
+            },function(err){
+                console.log("error while saving on server"); 
+            } );
         }
 
         

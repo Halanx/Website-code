@@ -34,6 +34,23 @@ angular.module('halanxApp')
          )
          return pr.promise
         },
+        cartdataserver: function(key) {
+            var url = "https://api.halanx.com/carts/active/";
+            var pr = $q.defer();
+            
+            $http.get(url, {
+                headers: {
+                    'Authorization': 'Token ' + key
+                }
+            }).then(function(data){
+                console.log(data);
+                pr.resolve(data.data);
+            },function(err){
+                pr.reject(err);
+            })
+
+            return pr.promise;
+        },
          gettoken : function(){
          var token = localStorage.getItem("token")
            

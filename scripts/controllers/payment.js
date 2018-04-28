@@ -14,7 +14,18 @@ angular.module('halanxApp')
       'AngularJS',
       'Karma'
     ];
-
+    var totalAmount = 0;
+    function getAmount(){
+      var key = localStorage.getItem("token");
+      var promise = payment.bill(key);
+      promise.then((data)=>{
+         totalAmount = data.data.TotalWithExtras;
+         makeObj();
+      },(err)=>{
+        console.log(err);
+      })
+    }
+    getAmount();
     var token = localStorage.getItem("token");
     var obj = {};
     var hashObj = {};
@@ -29,7 +40,7 @@ angular.module('halanxApp')
    }
 
    function createHash(){
-    hashObj.amount = parseFloat(localStorage.getItem("totalamount")).toFixed(2);
+    hashObj.amount = parseFloat(totalAmount).toFixed(2);
      payment.createHash(hashObj,token).then((data)=>{
        console.log(data);
        $scope.hashData = data;
@@ -44,9 +55,8 @@ angular.module('halanxApp')
      })
    }
 
-   if(localStorage.getItem("totalamount")){
-     makeObj();
-   }
+   
+     
 
    function makeObj(){
      obj.isASAP = localStorage.getItem("AsSoonAsPossible") || false;
@@ -59,7 +69,7 @@ angular.module('halanxApp')
      obj.latitude = direction.Latitude;
      obj.longitude = direction.Longitude;
      obj.tras_id = d;
-     obj.total = parseFloat(localStorage.getItem("totalamount")).toFixed(2);
+     obj.total = parseFloat(totalAmount).toFixed(2);
      obj.cod = true;
      createHash();
    }
