@@ -14,6 +14,8 @@ angular.module('halanxApp')
       'AngularJS',
       'Karma'
     ];
+
+    localStorage.setItem("counter",0);
     
     if(JSON.parse(localStorage.getItem("isLogin")) ==true || (localStorage.getItem("isLocated")!=null && localStorage.getItem("isLocated")==true)){
      $window.location.assign("#landing");

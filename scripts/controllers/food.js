@@ -275,10 +275,15 @@ $scope.scrollDown = function(){
        }
         else{
         modal.quantity = q;
+
+        // *******************
+        // not login check here
          food.addproduct(modal)
        
-        $scope.counter = food.arrlength();
-            food.savecounter($scope.counter)
+        // $scope.counter = food.arrlength();
+            // food.savecounter($scope.counter)
+            localStorage.setItem("counter", $scope.counter+1);
+        $scope.counter += 1;
          Notification.requestPermission(function(){
             var n = new Notification("Halanx", {
                 body : "ADDED TO CART",

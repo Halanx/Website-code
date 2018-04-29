@@ -59,18 +59,18 @@ angular.module('halanxApp')
      
 
    function makeObj(){
-     obj.isASAP = localStorage.getItem("AsSoonAsPossible") || false;
-     obj.addressDetails = localStorage.getItem("address");
-     obj.date = localStorage.getItem("DeliveryDate");
-     obj.starttime = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
-     obj.endtime = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
-     obj.notes = null;
+     obj.AsSoonAsPossible = localStorage.getItem("AsSoonAsPossible") || false;
+     obj.DeliveryAddress = localStorage.getItem("address");
+     obj.DeliveryDate = localStorage.getItem("DeliveryDate");
+     obj.StartTime = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+     obj.EndTime = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+     obj.Notes = null;
      var direction = JSON.parse(localStorage.getItem("obj"));
-     obj.latitude = direction.Latitude;
-     obj.longitude = direction.Longitude;
-     obj.tras_id = d;
-     obj.total = parseFloat(totalAmount).toFixed(2);
-     obj.cod = true;
+     obj.Latitude = direction.Latitude;
+     obj.Longitude = direction.Longitude;
+     obj.TransactionID = $scope.hashData.txnid;
+     obj.Total = parseFloat(totalAmount).toFixed(2);
+     obj.CashOnDelivery = true;
      createHash();
    }
 

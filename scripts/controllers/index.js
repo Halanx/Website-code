@@ -97,6 +97,8 @@ angular.module('halanxApp')
       localStorage.setItem("storeLogin",common.isLogin);
       localStorage.removeItem("token");
       localStorage.removeItem("store_token");
+      localStorage.setItem("counter", 0);
+      localStorage.removeItem("storedata");
       // localStorage.removeItem()
       // $window.location.reload();
       

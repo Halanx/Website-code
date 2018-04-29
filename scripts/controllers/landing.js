@@ -30,12 +30,52 @@ angular.module('halanxApp')
           
         }
 
+        console.log("islogin ==============", localStorage.getItem("isLogin"));
+
+        var token = localStorage.getItem("token");
+        if(token!=undefined){
+            var promise =   landing.getcartitemserver(token);
+            promise.then(function(data){
+            console.log(data);
+            localStorage.setItem("counter", data.length);
+            $scope.counter = data.length;
+        },function(err){
+            console.log("error loading cart items");
+    } );
+        }
+
         if(localStorage.getItem("storedata")!=null){
+            var token = localStorage.getItem("token");
+            var storeD = JSON.parse(localStorage.getItem("storedata"));
+            console.log("isinside ==============", storeD.length);
             var counter_length = JSON.parse(localStorage.getItem("storedata")).length;
-            $scope.counter = counter_length
+            console.log(storeD);
+            storeD.forEach(element => {
+                var promise = landing.addproductonserver(element.Item, token);
+                promise.then(function(data){
+                    console.log("added on server");
+                    var promise =   landing.getcartitemserver(token);
+                        promise.then(function(data){
+                        console.log(data);
+                        localStorage.setItem("counter", data.length);
+                        $scope.counter = data.length;
+                    },function(err){
+                        console.log("error loading cart items");
+                } );
+                },function(err){
+                    console.log("error while saving on server"); 
+                } );
+            });
+            localStorage.removeItem("storedata");
         }
          else{
-            $scope.counter = 0;
+            if(localStorage.getItem("storedata")!=null) {
+                var storeD = JSON.parse(localStorage.getItem("storedata"));
+                localStorage.setItem("counter", storeD.length);
+            }
+            localStorage.setItem("counter", 0);
+            $scope.counter = localStorage.getItem("counter");
+            console.log(localStorage.getItem("counter"), "counter");
         }
     storename();
 

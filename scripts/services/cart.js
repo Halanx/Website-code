@@ -62,6 +62,14 @@ angular.module('halanxApp')
             }
             return sum
         },
+        calculatetotallocal : function(productarr){
+            console.log(productarr);
+            var sum=0
+            for(var i=0;i<productarr.length;i++){
+              sum = sum + (productarr[i].Item.Price*productarr[i].Item.quantity)  
+            }
+            return sum
+        },
         calculatetax : function(productarr){
             var tax=0
             for(var i=0;i<productarr.length;i++){
