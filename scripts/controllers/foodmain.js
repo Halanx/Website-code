@@ -188,9 +188,10 @@ $scope.addstore = ()=>{
         
         modal.quantity = quantity;
         console.log("modal wala: " +  modal.quantity);
-         foodmain.addproduct(modal)
+        //  foodmain.addproduct(modal)
        
-        $scope.counter = foodmain.arrlength();
+         localStorage.setItem("counter", $scope.counter+1);
+         $scope.counter += 1;
             foodmain.savecounter($scope.counter)
          Notification.requestPermission(function(){
             var n = new Notification("Halanx", {

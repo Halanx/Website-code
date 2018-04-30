@@ -59,6 +59,7 @@ angular.module('halanxApp')
      
 
    function makeObj(){
+     createHash();
      obj.AsSoonAsPossible = localStorage.getItem("AsSoonAsPossible") || false;
      obj.DeliveryAddress = localStorage.getItem("address");
      obj.DeliveryDate = localStorage.getItem("DeliveryDate");
@@ -71,7 +72,7 @@ angular.module('halanxApp')
      obj.TransactionID = $scope.hashData.txnid;
      obj.Total = parseFloat(totalAmount).toFixed(2);
      obj.CashOnDelivery = true;
-     createHash();
+     
    }
 
    

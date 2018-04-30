@@ -44,7 +44,7 @@ angular.module('halanxApp')
     } );
         }
 
-        if(localStorage.getItem("storedata")!=null){
+        if(localStorage.getItem("storedata")!=null && common.isLogin==true){
             var token = localStorage.getItem("token");
             var storeD = JSON.parse(localStorage.getItem("storedata"));
             console.log("isinside ==============", storeD.length);
