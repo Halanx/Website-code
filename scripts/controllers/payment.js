@@ -77,13 +77,17 @@ $scope.complete = false;
    }
 
    
+   $scope.lodRip = true;
 
    $scope.cod = ()=>{
+
+    $scope.lodRip = false;
      
      var promise = payment.cod(obj,token);
      promise.then((data)=>{
        if(data.msg == "Successfully ordered!"){
          $scope.complete = true;
+         $scope.lodRip = false;
           setTimeout(function(){
 			      $window.location.assign("#landing");
             localStorage.removeItem("storedata");

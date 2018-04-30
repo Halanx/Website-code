@@ -42,6 +42,24 @@ angular.module('halanxApp')
         },function(err){
             console.log("error loading cart items");
     } );
+
+    var promise = landing.info(token);
+    promise.then(function(data){
+    console.log(data.Latitude);
+    console.log(data.Longitude);
+    if(data.Latitude != undefined && data.Longitude != undefined && data.Latitude != null && data.Longitude != null) {
+        var obj1 = {
+            "Latitude": data.Latitude,
+            "Longitude" : data.Longitude
+        }
+        var json = JSON.stringify(obj1);
+        localStorage.setItem('obj1',json);
+    }
+    console.log(localStorage.getItem("obj1"));
+    
+    },function(err){
+           
+    } )
         }
 
         if(localStorage.getItem("storedata")!=null && common.isLogin==true){
@@ -139,7 +157,10 @@ angular.module('halanxApp')
         if($scope.store.length<1){
             $scope.store_list = true; 
         }
-       var promise =  landing.storelist($scope.store)
+
+        var lat = JSON.parse(localStorage.getItem("obj1")).Latitude;
+        var lon = JSON.parse(localStorage.getItem("obj1")).Longitude;
+       var promise =  landing.storelist($scope.store, lat, lon)
            promise.then(function(data){
         console.log(data);
                $scope.store_list = false; 

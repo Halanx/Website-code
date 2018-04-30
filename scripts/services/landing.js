@@ -56,10 +56,14 @@ angular.module('halanxApp')
             console.log(json);
             localStorage.setItem('storeid', json);
         },
-        storelist: function (store) {
+        storelist: function (store, lat, lon) {
             var pr = $q.defer();
-            var url = "https://api.halanx.com/stores/search/"+store;
-
+            if(lat==null || lon==null || lat==undefined || lon==undefined) {
+                var url = "https://api.halanx.com/stores/search/"+store;
+            } else {
+                var url = "https://api.halanx.com/stores/search/"+store+"/?lat="+lat+"&lng="+lon;
+            }
+            console.log(url);
 
             $http.get(url).then(function (data) {
                     pr.resolve(data.data.hits.hits)
@@ -122,6 +126,29 @@ angular.module('halanxApp')
 
             return pr.promise;
      },
+     info : function(key){
+        var pr = $q.defer();
+      var url = "https://api.halanx.com/users/detail/";
+     
+             
+      $http.get(url,{
+//                withCredentials: true,
+             headers: {
+                 'Authorization': 'Token ' + key 
+             }
+         }).then(function(data){
+          pr.resolve(data.data);
+          console.log(data.data);
+        
+      },
+                          function(err){
+          pr.reject(err)
+          console.log("error")
+          
+      }
+      )
+      return pr.promise
+   } 
     }
 
     return object;
