@@ -8,7 +8,7 @@
  * Controller of the halanxApp
  */
 angular.module('halanxApp')
-  .controller('FoodmainCtrl', function ($scope,foodmain,$window) {
+  .controller('FoodmainCtrl', function ($scope,foodmain, common,$window) {
      if((localStorage.getItem("isLogin") === null || JSON.parse(localStorage.getItem("isLogin"))==false)&&(localStorage.getItem("isLocated")==null || localStorage.getItem("isLocated")==false)){
      $window.location.href = "#login";
     }
@@ -187,11 +187,16 @@ $scope.addstore = ()=>{
         else{
         
         modal.quantity = quantity;
+
+         // *******************
+        // not login check here
+        if(common.isLogin==false) {
+            foodmain.addproduct(modal)
+        } else {
+
         console.log("modal wala: " +  modal.quantity);
-        //  foodmain.addproduct(modal)
        
-         localStorage.setItem("counter", $scope.counter+1);
-         $scope.counter += 1;
+         
             foodmain.savecounter($scope.counter)
          Notification.requestPermission(function(){
             var n = new Notification("Halanx", {
@@ -210,8 +215,10 @@ $scope.addstore = ()=>{
                 console.log("error while saving on server"); 
             } );
         }
+    }
 
-        
+    localStorage.setItem("counter", $scope.counter+1);
+    $scope.counter += 1;
         
     }
 

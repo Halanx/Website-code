@@ -37,6 +37,16 @@ angular.module('halanxApp')
  {
 
         var token = cart.gettoken();
+
+        if(localStorage.token==null){
+            $scope.menu=true;
+             console.log("no")
+        }
+        else{
+               $scope.menu=false;
+             console.log("yes")
+        }
+
         if(token!=undefined){
             var promise =   cart.load(token);
             promise.then(function(data){

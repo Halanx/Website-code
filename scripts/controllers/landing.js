@@ -73,7 +73,7 @@ angular.module('halanxApp')
                 var storeD = JSON.parse(localStorage.getItem("storedata"));
                 localStorage.setItem("counter", storeD.length);
             }
-            localStorage.setItem("counter", 0);
+            // localStorage.setItem("counter", 0);
             $scope.counter = localStorage.getItem("counter");
             console.log(localStorage.getItem("counter"), "counter");
         }
