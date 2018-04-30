@@ -44,7 +44,7 @@ angular.module('halanxApp')
                   Total:data.data.Total,
                   DeliveryCharges:data.data.EstimatedDeliveryCharges,
                   Taxes:data.data.Taxes,
-                  TotalWithExtras:data.data.TotalWithExtras,
+                  TotalWithExtras:(data.data.TotalWithExtras - data.hcash).toFixed(2),
             }
 
                $scope.cost1 = {

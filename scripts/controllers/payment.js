@@ -55,6 +55,7 @@ angular.module('halanxApp')
      })
    }
 
+$scope.complete = false;
    
      
 
@@ -82,8 +83,12 @@ angular.module('halanxApp')
      var promise = payment.cod(obj,token);
      promise.then((data)=>{
        if(data.msg == "Successfully ordered!"){
-          $window.location.assign("#landing");
-          localStorage.removeItem("storedata");
+         $scope.complete = true;
+          setTimeout(function(){
+			      $window.location.assign("#landing");
+            localStorage.removeItem("storedata");
+		      },1200);
+          
 
        }
      })
