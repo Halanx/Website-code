@@ -843,12 +843,15 @@ div.scrollmenu li {
         </div>
     </div>
     <!--Search Store Ends-->
-    <!-- <div class="parent_close" ng-hide="closedStore">
-<div class="close1">
-    <img src="../images/close.png" alt="">
-    <h6 ng-click="backToStore()">Back to Stores</h6>
+    <div class="parent_close" ng-hide="closedStore">
+        <div class="close1">
+            <img src="../images/close.png" alt="">
+            <h6 >{{StoreName}} is closed now. Your order will be delivered once it opens.</h6>
+            <div style="text-align:center">
+              <button class="btn" style="background: #e60000; margin-bottom: 10px; color: #fff;" ng-click="closedStore=true;">Ok</button>
+            </div>
+        </div>
 </div>
-</div> -->
     <!--------------------------->
     <!--Shopping In starts here-->
     <div class="container-fluid" style="margin-bottom: -80px; background: #e9e9e9;">

@@ -967,10 +967,13 @@ div.scrollmenu li {
 <!------------------------------>
     <!--Search Product Starts Here-->
     <div class="parent_close" ng-hide="closedStore">
-<div class="close1">
-    <img src="../images/close.png" alt="">
-    <h6 ng-click="backToStore()">Back to Stores</h6>
-</div>
+        <div class="close1">
+            <img src="../images/close.png" alt="">
+            <h6 >{{StoreName}} is closed now. Your order will be delivered once it opens.</h6>
+            <div style="text-align:center">
+            <button class="btn" style="background: #e60000; margin-bottom: 10px;  color: #fff;" ng-click="closedStore=true;">Ok</button>
+            </div>
+        </div>
 </div>
     <div class="container-fluid">
 
