@@ -67,12 +67,7 @@ angular.module('halanxApp')
             var url = "https://api.halanx.com/stores/" + id;
 
             console.log(url)
-            $http.get(url, {
-                //                withCredentials: true,
-                                headers: {
-                                    'Authorization': 'Token ' + key 
-                                }
-                            }).then(function (data) {
+            $http.get(url).then(function (data) {
                     pr.resolve(data.data)
                     console.log("success")
 
