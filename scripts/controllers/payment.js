@@ -14,8 +14,11 @@ angular.module('halanxApp')
       'AngularJS',
       'Karma'
     ];
+    var  deliveryadd = "";
     var totalAmount = 0;
+    $scope.hashData = {};
     function getAmount(){
+       deliveryadd = localStorage.getItem("Address");
       var key = localStorage.getItem("token");
       var promise = payment.bill(key);
       promise.then((data)=>{
@@ -48,8 +51,9 @@ angular.module('halanxApp')
        if(!($scope.hashData.amount.toString().includes("."))){
          $scope.hashData.amount = $scope.hashData.amount.toFixed(1);
        }
+       console.log(obj.DeliveryAddress);
        $scope.hashData.phone = parseInt($scope.hashData.phone);
-       $scope.hashData.surl = "https://www.halanx.com/vTransactionEvent?token="+token+"&isASAP="+obj.isASAP+"&address="+obj.addressDetails+"&deliverydate="+obj.date+"&starttime="+obj.starttime+"&lat="+obj.latitude+"&long="+obj.longitude;
+       $scope.hashData.surl = "https://www.halanx.com/vTransactionEvent?token="+token+"&isASAP="+obj.AsSoonAsPossible+"&address="+obj.DeliveryAddress+"&deliverydate="+obj.DeliveryDate+"&starttime="+obj.StartTime+"&lat="+obj.Latitude+"&long="+obj.Longitude;
      },(err)=>{
        console.log(err);
      })
@@ -60,9 +64,9 @@ $scope.complete = false;
      
 
    function makeObj(){
-     createHash();
+     
      obj.AsSoonAsPossible = localStorage.getItem("AsSoonAsPossible") || false;
-     obj.DeliveryAddress = localStorage.getItem("address");
+     obj.DeliveryAddress = deliveryadd;
      obj.DeliveryDate = localStorage.getItem("DeliveryDate");
      obj.StartTime = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
      obj.EndTime = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
@@ -73,7 +77,9 @@ $scope.complete = false;
      obj.TransactionID = $scope.hashData.txnid;
      obj.Total = parseFloat(totalAmount).toFixed(2);
      obj.CashOnDelivery = true;
-     
+     createHash();
+    //  
+     console.log($scope.hashData);
    }
 
    
