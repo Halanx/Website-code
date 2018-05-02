@@ -19,7 +19,7 @@ angular.module('halanxApp')
       var key = localStorage.getItem("token");
       var promise = payment.bill(key);
       promise.then((data)=>{
-         totalAmount = data.data.TotalWithExtras;
+         totalAmount = data.data.TotalWithExtras - data.hcash.toFixed(2);
          makeObj();
       },(err)=>{
         console.log(err);
