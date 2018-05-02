@@ -18,7 +18,10 @@ angular.module('halanxApp')
     var totalAmount = 0;
     $scope.hashData = {};
     function getAmount(){
-       deliveryadd = localStorage.getItem("Address");
+       var deliveryadd1 = JSON.parse(localStorage.getItem("Address"));
+       Object.values(deliveryadd1).forEach(ele=>{
+	        deliveryadd += ele+",";
+      });
       var key = localStorage.getItem("token");
       var promise = payment.bill(key);
       promise.then((data)=>{
