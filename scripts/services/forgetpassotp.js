@@ -21,7 +21,7 @@ angular.module('halanxApp')
                     console.log(key);
               		 localStorage.setItem('key1',key);
 
-                    $window.location.href='#/forgetpassnew';
+                    $window.location.href='#/change-password';
                      
 				}
 					,function(err){
