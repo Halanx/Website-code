@@ -66,7 +66,7 @@ angular
         controller: 'ShopperCtrl',
         controllerAs: 'shopper'
       })
-      .when('/datepicker', {
+      .when('/delivery-time', {
         templateUrl: 'views/datepicker.html',
         controller: 'DatepickerCtrl',
         controllerAs: 'datepicker'
@@ -96,22 +96,22 @@ angular
         controller: 'FoodmainCtrl',
         controllerAs: 'foodmain'
       })
-      .when('/landing', {
+      .when('/stores', {
         templateUrl: 'views/landing.html',
         controller: 'LandingCtrl',
         controllerAs: 'landing'
       })
-      .when('/summary', {
+      .when('/order-details', {
         templateUrl: 'views/summary.html',
         controller: 'SummaryCtrl',
         controllerAs: 'summary'
       })
-      .when('/location', {
+      .when('/delivery-location', {
         templateUrl: 'views/location.html',
         controller: 'LocationCtrl',
         controllerAs: 'location'
       })
-      .when('/store', {
+      .when('/merchant', {
         templateUrl: 'views/store.html',
         controller: 'StoreCtrl',
         controllerAs: 'store'
@@ -146,7 +146,7 @@ angular
         controller: 'ForgetpassotpCtrl',
         controllerAs: 'forgetpassotp'
       })
-      .when('/forgetpassnew', {
+      .when('/change-password', {
         templateUrl: 'views/forgetpassnew.html',
         controller: 'ForgetpassnewCtrl',
         controllerAs: 'forgetpassnew'
@@ -201,7 +201,7 @@ angular
         controller: 'CareerCtrl',
         controllerAs: 'career'
       })
-      .when('/refundpolicy', {
+      .when('/refund', {
         templateUrl: 'views/refundpolicy.html',
         controller: 'CareerCtrl',
         controllerAs: 'career'

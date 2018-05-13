@@ -28,7 +28,7 @@ get[0].mark = !get[0].mark;
  
     },
            time : function(){
-            return ([{timing:"9:30pm-10:00pm",mark:true},{timing:"9:45pm-10:15pm",mark:false},{timing:"10:00pm-10:30pm",mark:false},{timing:"10:15pm-10:45pm",mark:false},{timing:"10:30pm-11:00pm",mark:false},{timing:"10:45pm-11:15pm",mark:false},{timing:"11:00pm-11:30pm",mark:false},{timing:"11:15pm-11:45pm",mark:false},{timing:"11:30pm-12:00am",mark:false}])
+            return ([{timing:"06:00-08:00",mark:true},{timing:"08:00-12:00",mark:false},{timing:"12:00-14:00",mark:false},{timing:"14:00-18:00",mark:false},{timing:"18:00-20:00",mark:false},{timing:"20:00-22:00",mark:false}])
         },
       gettrue(search){
           var get = search.filter(function(check){

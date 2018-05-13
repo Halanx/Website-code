@@ -94,7 +94,7 @@ if(mm<10) {
         
 //                  console.log( obj.schedule)
                 $window.location.reload();  
-                 $window.location.href = "#location";
+                 $window.location.href = "#delivery-location";
                   }
                  else{
                      
@@ -106,7 +106,7 @@ if(mm<10) {
                       localStorage.setItem('StartTime',StartTime)
                 //    $window.location.href = "https://www.halanx.com/halanx-final/new1big-kfc/Maps-master/cart.html"
                          $window.location.reload();  
-                        $window.location.href = "#location";
+                        $window.location.href = "#delivery-location";
              }
              }
              }  

@@ -45,7 +45,7 @@ angular.module('halanxApp')
                  localStorage.setItem("isLogin",common.isLogin);
 
                    // $window.location.href = "https://www.halanx.com/halanx-final/new1big-kfc/frontpage/login.html";
-                  $window.location.assign("#landing");
+                  $window.location.assign("#stores");
             },(err)=>{
                 
                 alert("error");

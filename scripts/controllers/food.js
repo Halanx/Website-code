@@ -485,7 +485,7 @@ $scope.scrollDown = function(){
      }
 
      $scope.backToStore = ()=>{
-         $window.location.assign("#landing");
+         $window.location.assign("#stores");
      }
    
     

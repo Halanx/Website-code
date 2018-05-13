@@ -35,7 +35,7 @@ $scope.addstore = ()=>{
      }
 
    $scope.postreq = ()=>{
-       $window.location.assign("#summary");
+       $window.location.assign("#order-details");
    }  
 
   });

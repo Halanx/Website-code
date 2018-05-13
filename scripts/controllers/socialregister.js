@@ -45,7 +45,7 @@ angular.module('halanxApp')
           console.log(data);
           common.isLogin=true;
           localStorage.setItem("isLogin",common.isLogin);
-          $window.location.assign("#landing");
+          $window.location.assign("#stores");
        },(err)=>{
          console.log(err);
           $scope.otperror = true;

@@ -66,7 +66,7 @@ angular.module('halanxApp')
       $window.location.assign('#payment');
     }
     else{
-      $window.location.href= "#landing";
+      $window.location.href= "#stores";
     }
   }
   });

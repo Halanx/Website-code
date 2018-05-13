@@ -98,7 +98,7 @@ $scope.complete = false;
          $scope.complete = true;
          $scope.lodRip = false;
           setTimeout(function(){
-			      $window.location.assign("#landing");
+			      $window.location.assign("#stores");
             localStorage.removeItem("storedata");
 		      },1200);
           

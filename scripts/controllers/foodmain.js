@@ -443,7 +443,7 @@ $scope.addstore = ()=>{
     // } )
      }
      $scope.backToStore = ()=>{
-         $window.location.assign("#landing");
+         $window.location.assign("#stores");
      }
     
   });

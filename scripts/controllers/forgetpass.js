@@ -8,8 +8,8 @@ angular.module('halanxApp')
     
         var obj = {};
         
-        obj.FirstName=$scope.firstname;
-        obj.username =$scope.mobilenumber;
+        obj.FirstName=$scope.mobilenumber;
+        obj.username =$scope.password;
         
          
         console.log(obj)

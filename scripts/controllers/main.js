@@ -18,7 +18,7 @@ angular.module('halanxApp')
     localStorage.setItem("counter",0);
     
     if(JSON.parse(localStorage.getItem("isLogin")) ==true || (localStorage.getItem("isLocated")!=null && localStorage.getItem("isLocated")==true)){
-     $window.location.assign("#landing");
+     $window.location.assign("#stores");
     }
 
 
@@ -31,7 +31,7 @@ angular.module('halanxApp')
           if($scope.location!=""){
             console.log($scope.location);
               localStorage.setItem("isLocated",true);
-              $window.location.assign("#landing");
+              $window.location.assign("#stores");
               $window.location.reload();
           }
       }

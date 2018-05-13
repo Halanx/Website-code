@@ -255,7 +255,7 @@ if(localStorage.token=="null"|| localStorage.token==null){
                          if(i==$scope.cartproductlist.length){
                         //   alert("Your Order is Ready!");
             $window.location.reload();             
-            $window.location.assign("#datepicker"); 
+            $window.location.assign("#delivery-time"); 
                           
                      
            }

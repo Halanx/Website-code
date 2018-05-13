@@ -19,7 +19,7 @@ angular.module('halanxApp')
     $window.location.assign("#hxpalogin");
   }
   else if(common.isLogin == true){
-    $window.location.assign("#landing");
+    $window.location.assign("#stores");
   }   
 
 
@@ -71,13 +71,13 @@ angular.module('halanxApp')
                       console.log(common.isLocated);
                       if(common.isLocated == true){
                          localStorage.setItem("isLocated",false);
-                         $window.location.href="#landing";
+                         $window.location.href="#stores";
                          $window.location.reload();
                            }
 
                            
                        else{
-                          $window.location.href="#landing";
+                          $window.location.href="#stores";
                        }    
                       
                       
@@ -118,7 +118,7 @@ angular.module('halanxApp')
 
                            
                        else{
-                          $window.location.href="#landing";
+                          $window.location.href="#stores";
                        }    
            }
          },function(err){
