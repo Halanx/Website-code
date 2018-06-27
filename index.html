@@ -36,11 +36,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-    
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet">
+
+    <!-- Angular datepicker  -->
+    <!-- <script src="../node_modules/angular-pickadate/dist/angular-pickadate.min.js"></script> -->
+    <script src="bower_components/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
+    <link rel="stylesheet" href="bower_components/angularjs-datepicker/dist/angular-datepicker.css">
 
     <!-- StyleSheets -->
     <!--<link rel="stylesheet" href="bower_components/fakeLoader/demo/css/fakeLoader.css">-->
@@ -52,6 +56,22 @@
     <link rel="stylesheet" href="styles/hw.datepicker.css">
     <link rel="stylesheet" href="styles/index.css">
     
+    <!-- JQUERY UI -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- JQUERY UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+    <!-- File Upload -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-file-upload/2.5.0/angular-file-upload.min.js"></script>
+
+    <!-- Star Rating -->
+    <script src="../bower_components/angular-input-stars-directive/angular-input-stars.js"></script>
+    <link rel="stylesheet" href="../bower_components/angular-input-stars-directive/angular-input-stars.css">
+
     <!-- Start of Async Drift Code -->
 <script>
     
@@ -183,6 +203,9 @@ drift.load('sw29mc3p226z');
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/fakeLoader/fakeLoader.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/angularjs-datepicker/dist/angular-datepicker.js"></script>
+    <script src="bower_components/angular-input-stars-directive/angular-input-stars.js"></script>
     <!-- endbower -->
    
     
@@ -271,7 +294,7 @@ drift.load('sw29mc3p226z');
     <script src="scripts/controllers/career.js?ver=1.1"></script>
     <script src="scripts/controllers/finalize.js"></script>
     <!-- Halanx Factories Ends -->
-    
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>    
     <!-- Google Maps API -->
      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnunhscL2jKBg62KkqAhJwSMXhDoN9DE&libraries=places"></script>
     <script>
@@ -458,7 +481,7 @@ updateMarkerPosition(marker.getPosition());
             // var array=[lat,lon];
             // localStorage.setItem('obj',array);
             console.log(obj);
-            window.location="#/landing";
+            window.location="#/stores";
             location.reload();
         }
     </script>     

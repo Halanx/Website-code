@@ -98,6 +98,7 @@ body {
 /**Footer**/
 footer {
     margin-top: 30px;
+    z-index: -1 !important;
 }
 
 footer .row_11 {
