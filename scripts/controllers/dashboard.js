@@ -227,7 +227,162 @@ showMeData();
      
      $scope.LoadMoreProducts = ()=>{
        $scope.loadMore();
-     }       
+     }      
+     
+     $scope.getVouchers = ()=>{ //ye function load kb kr rha h?  voucher pr click ok
+      getVoucherStats();
+      getVoucherOffers();
+      $scope.nodat=true;
+      $scope.nooff=true;
+       var pr = dashboard.getVoucher();
+       pr.then(success,fail);
+       function success(data){
+         if(data.data.length==0){
+          $scope.nodat = true;
+          }
+         else{
+          $scope.nodat = false;
+          data.data[0].is_redeemed=false;
+          console.log(data.data);
+         $scope.result = data.data;
+       }
+      }
+       function fail(err){
+         $scope.error=err;
+       }
+     };
 
+     function getVoucherOffers(){
+      var pr = dashboard.getVoucherOffers();
+      pr.then(success,fail);
+      function success(data){
+        if(data.data.length==0){
+          $scope.nooff = true;
+          }
+         else{
+          $scope.nooff = false;
+         $scope.offers = data.data;
+       }
+      }
+      function fail(err){
+        $scope.erroff = err;
+      }
+     }
+
+     function getVoucherStats(){
+      var pr = dashboard.getVoucherStats();
+      pr.then(success,fail);
+      function success(data){
+        $scope.stats = data.data;
+      }
+      function fail(err){
+        $scope.errstats = err;
+      }
+     };
+
+     $scope.checkCode=()=>{
+       if($scope.voucherCode){
+        var pr = dashboard.getVoucherRedeemed($scope.voucherCode);
+        pr.then(success,fail);
+        function success(data){
+          $score.cantRedeem=false;
+          angular.element(document.querySelector('.redeeming')).attr('data-toggle', 'modal');
+          angular.element(document.querySelector('.redeeming')).attr('data-target', '#myModal');
+          console.log("----------------------"+data.data+"-----------------------");
+          $scope.redeemIt=data.data;
+        }
+        function fail(err){
+          $scope.errredeem = err;
+          if(err.data.error="voucher item does not exist"){
+            $scope.cantRedeem=true;
+          }
+          console.log("----------------------"+JSON.stringify(err)+"-----------------------")
+        }
+       }
+     };    
+
+
+
+     $scope.getProfile = ()=>{
+       getPlaceMenu();
+       getTimings();
+       getPics();
+      var pr = dashboard.getOutletDetails();
+      pr.then(success,fail);
+      function success(data){
+        $scope.prof = data.data;
+        console.log(data.data);
+      }
+      function fail(err){
+        $scope.errprof = err;
+      }
+     };
+
+     function getPlaceMenu(){
+      var pr = dashboard.getPlaceMenu();
+      pr.then(success,fail);
+      function success(data){
+        $scope.prof = data.data;
+        console.log(data.data);
+      }
+      function fail(err){
+        $scope.errprof = err;
+      }
+     };
+
+     function getTimings(){
+      var pr = dashboard.getTimings();
+      pr.then(success,fail);
+      function success(data){
+        $scope.time = data.data;
+        console.log(data.data);
+        console.log(data);
+      }
+      function fail(err){
+        $scope.errtime = err;
+      }
+     };
+
+     function getPics(){
+      var pr = dashboard.getPics();
+      pr.then(success,fail);
+      function success(data){
+        $scope.pics = data.data;
+        console.log(data);
+      }
+      function fail(err){
+        $scope.errpics = err;
+      }
+     }
+
+     $scope.addImage=()=>{
+      var pr = dashboard.addImage();
+      pr.then(success,fail);
+      function success(data){
+        $scope.pics = data.data;
+        console.log(data);
+      }
+      function fail(err){
+        $scope.errpics = err;
+      }
+      
+      getPics();
+     }
+
+     $scope.editDetails = () =>{
+      var pr = dashboard.editOutletDetails();
+      pr.then(success,fail);
+      function success(data){
+        $scope.prof = data.data;
+        console.log(data.data);
+      }
+      function fail(err){
+        $scope.errprof = err;
+      }
+     };
+
+
+
+     
     
   });
