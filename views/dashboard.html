@@ -362,7 +362,7 @@ textarea.form-control:focus {
                 <h3 class="store-name-side">{{storeName || "Loading..."}}</h3>
                 <ul class="dash-desktop">
 
-                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Home')" ng-click="getProfile();loadStoreDetails()" href="#menu6" id="hom"> <i class="fa fa-home"></i> Home</a></li>
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Home')"  ng-click="getProfile();loadStoreDetails()" href="#menu6" id="hom"> <i class="fa fa-home"></i> Home</a></li>
                         <!-- <li><a ng-click="visit()"> <i class="fa fa-suitcase"></i> Business</a></li> -->
                     <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Business')" ng-click="getBusiness()" href="#menu7" id="bus"> <i class="fa fa-suitcase"></i> Business</a></li>
                     <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Vouchers')" ng-click="getVouchers()" href="#menu3" id="vou"> <i class="fa fa-file-text-o"></i> Vouchers</a></li>
@@ -1455,8 +1455,8 @@ textarea.form-control:focus {
 
 
    <script>
-       clickexp = document.getElementById("clickexp");
-       clickexp.click();
+       hom = document.getElementById("hom");
+       hom.click();
 
        function setVal(value) {
             head_data = document.getElementById("head-data");
