@@ -11,7 +11,10 @@
 angular
   .module('halanxApp', [
     'ngAnimate',
-    'ngRoute'
+    'ngRoute',
+    'ngFileUpload',
+    'angular-input-stars',
+    '720kb.datepicker'
   ])
   .config(function ($routeProvider,$locationProvider) {
     $locationProvider.hashPrefix('');
