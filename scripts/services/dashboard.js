@@ -13,7 +13,7 @@ angular.module('halanxApp')
     return {
       DashCall(key){
         var pr = $q.defer();
-				var url = "https://api.halanx.com/stores/cart-items/";
+				var url = "http://35.154.255.124:8000/stores/cart-items/";
             // console.log(obj);
 				$http.get(url, {
             headers: {
@@ -31,7 +31,7 @@ angular.module('halanxApp')
       },
       DashCallRealTime(key){
         var pr = $q.defer();
-				var url = "https://api.halanx.com/stores/cart-items/";
+				var url = "http://35.154.255.124:8000/stores/cart-items/";
             // console.log(obj);
 				$http.get(url, {
             headers: {
@@ -49,7 +49,7 @@ angular.module('halanxApp')
       },
       PaymentCall(key){
         var pr = $q.defer();
-				var url = "https://api.halanx.com/stores/payments/";
+				var url = "http://35.154.255.124:8000/stores/payments/";
             // console.log(obj);
 				$http.get(url, {
             headers: {
@@ -70,7 +70,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/";
         $http.get(url, {
           headers: {
-              'Authorization': 'Token ' + '0d82010691295e6a779560dd06e9213eebaaed15'
+              'Authorization': 'Token ' + token
           }
         }).then((data)=>{
           pr.resolve(data.data);
@@ -83,7 +83,7 @@ angular.module('halanxApp')
       },
       getProduct(id,page_no){
         var pr = $q.defer();
-        var url = "https://api.halanx.com/stores/"+id+"/products/?category=&page="+page_no;
+        var url = "http://35.154.255.124:8000/stores/"+id+"/products/?category=&page="+page_no;
         $http.get(url).then((data)=>{
           pr.resolve(data.data);
           console.log(data.data);
@@ -95,7 +95,7 @@ angular.module('halanxApp')
       },
       editProduct(product,id,token){
         var pr = $q.defer();
-        var url = "https://api.halanx.com/products/"+id+"/";
+        var url = "http://35.154.255.124:8000/products/"+id+"/";
         $http.patch(url,product,{
           headers:{
             'Authorization':'Token '+token
@@ -114,7 +114,7 @@ angular.module('halanxApp')
         var url = 'http://35.154.255.124:8000/vouchers/items/store/';
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -130,7 +130,7 @@ angular.module('halanxApp')
         var url = 'http://35.154.255.124:8000/vouchers/store/stats/';
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token  
           }
         }).then(success,fail);
         function success(data){
@@ -146,7 +146,7 @@ angular.module('halanxApp')
         var url = 'http://35.154.255.124:8000/vouchers/store/';
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -162,7 +162,7 @@ angular.module('halanxApp')
         var url ="http://35.154.255.124:8000/vouchers/items/"+"30569471"+"/verify/";
         $http.post(url,value,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -178,7 +178,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/places/place/"+store+"/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -195,7 +195,7 @@ angular.module('halanxApp')
         // console.log("Value"+value);
         $http.patch(url,value,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -212,7 +212,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/places/place/"+store+"/openinghours/";
         $http.patch(url,value,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -228,7 +228,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/places/place/"+store+"/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -244,7 +244,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/places/place/"+store+"/openinghours/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -260,7 +260,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/places/place/"+store+"/menu/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -276,7 +276,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/places/place/"+store+"/menu/";
         $http.post(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -287,12 +287,12 @@ angular.module('halanxApp')
         }
         return pr.promise;
       },
-      getMembers(token){
+      getMembers(store,token){
         var pr = $q.defer();
         var url = "http://35.154.255.124:8000/stores/team/members/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -308,7 +308,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/places/place/"+store+"/checkins/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -324,7 +324,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/places/store/stats/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -340,7 +340,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/wallet/statement/?from_date=2018-05-01&to_date=2018-07-07";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -356,7 +356,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/wallet/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -372,7 +372,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/notifications/";
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -388,7 +388,7 @@ angular.module('halanxApp')
         // var url = url;
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -404,7 +404,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/dashboard/plots/?sales=true&from_date="+from+"&to_date="+to;
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -420,7 +420,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/dashboard/plots/?visits=true&checkins=false&receipts=false&cart_items=false&from_date="+from+"&to_date="+to;
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -431,12 +431,12 @@ angular.module('halanxApp')
         }
         return pr.promise;
       },
-      getOrdersBar(toke,from,to){
+      getOrdersBar(token,from,to){
         var pr = $q.defer();
         var url = "http://35.154.255.124:8000/stores/dashboard/plots/?visits=false&checkins=false&receipts=false&cart_items=true&from_date="+from+"&to_date="+to;
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -452,7 +452,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/team/members/";
         $http.post(url,member,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -468,7 +468,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/team/members/"+id+"/";
         $http.patch(url,data,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -484,7 +484,7 @@ angular.module('halanxApp')
         var url = "http://35.154.255.124:8000/stores/wallet/statement/?from_date=2018-"+month+"-01&to_date=2018-"+month+"-"+date;
         $http.get(url,{
           headers:{
-            'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+            'Authorization':'Token '+token
           }
         }).then(success,fail);
         function success(data){
@@ -501,7 +501,7 @@ angular.module('halanxApp')
       //   var url = "http://35.154.255.124:8000/stores/team/members/"+store+"/";
       //   $http.get(url,{
       //     headers:{
-      //       'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15'
+      //       'Authorization':'Token '+token
       //     }
       //   }).then(success,fail);
       //   function success(data){
