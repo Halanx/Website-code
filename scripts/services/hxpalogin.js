@@ -12,7 +12,7 @@ angular.module('halanxApp')
     var object =  {
         callserver : function(obj){
             var pr = $q.defer();
-				var url = "https://api.halanx.com/rest-auth/login/";
+				var url = "http://35.154.255.124:8000/rest-auth/login/";
             console.log(obj);
 				$http.post(url,obj).then(function(data){
 					pr.resolve(data);
