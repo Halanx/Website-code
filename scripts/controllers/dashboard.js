@@ -17,6 +17,8 @@ angular.module('halanxApp')
       ,'ngFileUpload',
       '720kb.datepicker'
     ];  
+    var token = localStorage.getItem("store_token");
+    console.log("TOken is--------",token);
     // $scope.memv;
     $scope.spopost='Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum enim at, obcaecati tenetur soluta magnam commodi prov.';
     $scope.monthly = 'June';
@@ -699,7 +701,7 @@ var itemsmonth2;
     $scope.cancelBtn = true;
     $scope.loadMore_c = false;
     $scope.BTN = "Edit";
-    var token = localStorage.getItem("store_token");
+
     var promise = dashboard.DashCall(token);
     $scope.Pname = true;
     $scope.dashdata = [];
@@ -905,6 +907,7 @@ showMeData();
      }      
      
      $scope.getVouchers = ()=>{ //ye function load kb kr rha h?  voucher pr click ok
+      console.log("TOKEN YEHI H",token);
       getVoucherStats();
       getVoucherOffers();
       $scope.nodat=true;
@@ -956,6 +959,7 @@ showMeData();
      }
 
      function getVoucherStats(){
+
       var pr = dashboard.getVoucherStats(token);
       pr.then(success,fail);
       function success(data){
@@ -1303,17 +1307,19 @@ showMeData();
       }
      };
 
-
+$scope.showedit=false;
      $scope.Verify=()=>{
       
       if(!$scope.mem.name || $scope.mem.name.length<4)
       {
-        alert("Name is not valid");
+        $scope.errorinedit="Name is not valid";
+        $scope.showedit=true;
         return;
       }
       if(!$scope.mem.role)
       {
-        alert("Please specify the Role");
+        $scope.errorinedit="Please specify the Role";
+        $scope.showedit=true;
         return;
       }
       if(!$scope.mem.phone || $scope.mem.phone.length!=10 || !$scope.mem.phone.match(/^\d{10}$/))
@@ -1321,12 +1327,14 @@ showMeData();
         // console.log($scope.phonev);
         // console.log($scope.phonev.length);
         // console.log($scope.phonev.match(/^\d{10}$/));
-        alert("Phone Number is not valid");
+        $scope.errorinedit="Phone Number is not valid";
+        $scope.showedit=true;
         return;
       }
       if(!$scope.mem.email || !$scope.mem.email.includes("@") || !$scope.mem.email.includes("."))
       {
-        alert("Email is not valid");
+        $scope.errorinedit="Email is not valid";
+        $scope.showedit=true;
         return;
       }
       // console.log($scope.memv);

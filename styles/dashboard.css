@@ -1003,9 +1003,9 @@ font-size: 18px;
 }
 
 .hxpa-dashboard #menu7 div.box p.roi{
-    font-size: 100px;
+    font-size: 50px;
     text-align: center;
-    margin-top: 4%;
+    margin-top: 10%;
 }
 
 .hxpa-dashboard #menu7 .angular-input-stars > li{
