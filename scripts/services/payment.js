@@ -28,6 +28,7 @@ angular.module('halanxApp')
             return defer.promise;
       },
       cod: function (obj,key) {
+        console.log(obj);
         obj.CashOnDelivery = true;
         var defer = $q.defer();
         var url = "https://api.halanx.com/orders/";
