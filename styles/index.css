@@ -124,12 +124,24 @@ footer .row_13 {
 }
 
 footer .row_13 {
-    padding: 5px 0 20px;
+    padding: 5px 0;
 }
 
 footer .row_13 a {
     text-decoration: none;
     color: #fff;
+}
+
+footer .row p {
+    color: #fff;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.fhp {
+    font-size: 2rem!important;
 }
 
 .social {
@@ -184,4 +196,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 .sk-cube {
     background: #e63631 !important;
+}
+
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    } 
+    
+    footer .row {
+        padding: 12px 0;
+    }
 }
