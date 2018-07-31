@@ -14,7 +14,8 @@ angular
     'ngRoute',
     'ngFileUpload',
     'angular-input-stars',
-    '720kb.datepicker'
+    '720kb.datepicker',
+    'ngMaterial'
   ])
   .config(function ($routeProvider,$locationProvider) {
     $locationProvider.hashPrefix('');

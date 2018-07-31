@@ -13,7 +13,7 @@ angular.module('halanxApp')
     return {
       DashCall(key){
         var pr = $q.defer();
-				var url = "http://35.154.255.124:8000/stores/cart-items/";
+				var url = "httpss://api.halanx.com/stores/cart-items/";
             // console.log(obj);
 				$http.get(url, {
             headers: {
@@ -31,7 +31,7 @@ angular.module('halanxApp')
       },
       DashCallRealTime(key){
         var pr = $q.defer();
-				var url = "http://35.154.255.124:8000/stores/cart-items/";
+				var url = "httpss://api.halanx.com/stores/cart-items/";
             // console.log(obj);
 				$http.get(url, {
             headers: {
@@ -49,7 +49,7 @@ angular.module('halanxApp')
       },
       PaymentCall(key){
         var pr = $q.defer();
-				var url = "http://35.154.255.124:8000/stores/payments/";
+				var url = "httpss://api.halanx.com/stores/payments/";
             // console.log(obj);
 				$http.get(url, {
             headers: {
@@ -67,7 +67,7 @@ angular.module('halanxApp')
       },
       loadStore(token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/";
+        var url = "https://api.halanx.com/stores/";
         $http.get(url, {
           headers: {
               'Authorization': 'Token ' + token
@@ -83,7 +83,7 @@ angular.module('halanxApp')
       },
       getProduct(id,page_no){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/"+id+"/products/?category=&page="+page_no;
+        var url = "httpss://api.halanx.com/stores/"+id+"/products/?category=&page="+page_no;
         $http.get(url).then((data)=>{
           pr.resolve(data.data);
           console.log(data.data);
@@ -95,7 +95,7 @@ angular.module('halanxApp')
       },
       editProduct(product,id,token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/products/"+id+"/";
+        var url = "httpss://api.halanx.com/products/"+id+"/";
         $http.patch(url,product,{
           headers:{
             'Authorization':'Token '+token
@@ -111,7 +111,7 @@ angular.module('halanxApp')
       }, //basic structure ready krde sbka aage ka m api ka btadnga   ha iska to hogya bs data na aye vo rkdeta hu
       getVoucher(token){//chl gya data nhi a rha h pche s khali h as chechlga le if data.data.message = not found aye screen pr msg show krdio no transacion found   thek h
         var pr = $q.defer();
-        var url = 'http://35.154.255.124:8000/vouchers/items/store/';
+        var url = 'https://api.halanx.com/stores/vouchers/items/';
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -127,7 +127,7 @@ angular.module('halanxApp')
       },
       getVoucherStats(token){
         var pr = $q.defer();
-        var url = 'http://35.154.255.124:8000/vouchers/store/stats/';
+        var url = 'https://api.halanx.com/stores/vouchers/items/stats/';
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token  
@@ -143,7 +143,7 @@ angular.module('halanxApp')
       },
       getVoucherOffers(token){
         var pr = $q.defer();
-        var url = 'http://35.154.255.124:8000/vouchers/store/';
+        var url = 'https://api.halanx.com/stores/vouchers/';
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -159,7 +159,7 @@ angular.module('halanxApp')
       },
       getVoucherRedeemed(value,token){
         var pr=$q.defer();
-        var url ="http://35.154.255.124:8000/vouchers/items/"+"30569471"+"/verify/";
+        var url ="https://api.halanx.com/vouchers/items/"+"30569471"+"/verify/";
         $http.post(url,value,{
           headers:{
             'Authorization':'Token '+token
@@ -175,7 +175,7 @@ angular.module('halanxApp')
       },
       getOutletDetails(store,token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/place/"+store+"/";
+        var url = "https://api.halanx.com/places/place/"+store+"/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -191,7 +191,7 @@ angular.module('halanxApp')
       },
       editOutletDetails(value,store,token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/place/"+store+"/";
+        var url = "https://api.halanx.com/places/place/"+store+"/";
         // console.log("Value"+value);
         $http.patch(url,value,{
           headers:{
@@ -207,9 +207,9 @@ angular.module('halanxApp')
         return pr.promise;
       },
       editTime(value,store,token){
-        console.log(value);
+        console.log("Store is",store);
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/place/"+store+"/openinghours/";
+        var url = "https://api.halanx.com/places/place/"+store+"/openinghours/";
         $http.patch(url,value,{
           headers:{
             'Authorization':'Token '+token
@@ -225,7 +225,7 @@ angular.module('halanxApp')
       },
       getPlaceMenu(store,token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/place/"+store+"/";
+        var url = "https://api.halanx.com/places/place/"+store+"/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -241,7 +241,7 @@ angular.module('halanxApp')
       },
       getTimings(store,token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/place/"+store+"/openinghours/";
+        var url = "https://api.halanx.com/places/place/"+store+"/openinghours/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -257,7 +257,7 @@ angular.module('halanxApp')
       },
       getPics(store,token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/place/"+store+"/menu/";
+        var url = "https://api.halanx.com/places/place/"+store+"/menu/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -273,7 +273,7 @@ angular.module('halanxApp')
       },
       addImage(store,token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/place/"+store+"/menu/";
+        var url = "https://api.halanx.com/places/place/"+store+"/menu/";
         $http.post(url,{
           headers:{
             'Authorization':'Token '+token
@@ -288,8 +288,9 @@ angular.module('halanxApp')
         return pr.promise;
       },
       getMembers(store,token){
+        console.log("Store is",store);
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/team/members/";
+        var url = "https://api.halanx.com/stores/team/members/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -304,8 +305,9 @@ angular.module('halanxApp')
         return pr.promise;
       },
       getStats(token,store){
+        console.log("Store is",store);
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/place/"+store+"/checkins/";
+        var url = "https://api.halanx.com/places/place/"+store+"/checkins/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -321,7 +323,7 @@ angular.module('halanxApp')
       },
       getStoreStats(token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/places/store/stats/";
+        var url = "https://api.halanx.com/places/store/stats/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -337,7 +339,39 @@ angular.module('halanxApp')
       },
       getROI(token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/wallet/statement/?from_date=2018-05-01&to_date=2018-07-07";
+        var url = "https://api.halanx.com/stores/wallet/statement/?from_date=2018-05-01&to_date=2018-07-07";
+        $http.get(url,{
+          headers:{
+            'Authorization':'Token '+token
+          }
+        }).then(success,fail);
+        function success(data){
+          pr.resolve(data);
+        }
+        function fail(err){
+          pr.reject(err);
+        }
+        return pr.promise;
+      },
+      getTop(token){
+        var pr = $q.defer();
+        var url = "https://api.halanx.com/stores/top/";
+        $http.get(url,{
+          headers:{
+            'Authorization':'Token '+token
+          }
+        }).then(success,fail);
+        function success(data){
+          pr.resolve(data);
+        }
+        function fail(err){
+          pr.reject(err);
+        }
+        return pr.promise;
+      },
+      getTopUrl(url,token){
+        var pr = $q.defer();
+        // var url = "https://api.halanx.com/stores/top/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -353,7 +387,7 @@ angular.module('halanxApp')
       },
       getWalletAmt(token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/wallet/";
+        var url = "https://api.halanx.com/stores/wallet/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -369,7 +403,7 @@ angular.module('halanxApp')
       },
       getNot(token){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/notifications/";
+        var url = "https://api.halanx.com/stores/notifications/";
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -400,8 +434,9 @@ angular.module('halanxApp')
         return pr.promise;
       },
       getSalesBar(token,from,to){
+        console.log("INSIDE SERVICE SALES",from,to,"DATES");
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/dashboard/plots/?sales=true&from_date="+from+"&to_date="+to;
+        var url = "https://api.halanx.com/stores/dashboard/plots/?sales=true&from_date="+from+"&to_date="+to;
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -417,7 +452,7 @@ angular.module('halanxApp')
       },
       getVisitsBar(token,from,to){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/dashboard/plots/?visits=true&checkins=false&receipts=false&cart_items=false&from_date="+from+"&to_date="+to;
+        var url = "https://api.halanx.com/stores/dashboard/plots/?visits=true&checkins=false&receipts=false&cart_items=false&from_date="+from+"&to_date="+to;
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -433,7 +468,7 @@ angular.module('halanxApp')
       },
       getOrdersBar(token,from,to){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/dashboard/plots/?visits=false&checkins=false&receipts=false&cart_items=true&from_date="+from+"&to_date="+to;
+        var url = "https://api.halanx.com/stores/dashboard/plots/?visits=false&checkins=false&receipts=false&cart_items=true&from_date="+from+"&to_date="+to;
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -449,7 +484,7 @@ angular.module('halanxApp')
       },
       AddMember(token,member){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/team/members/";
+        var url = "https://api.halanx.com/stores/team/members/";
         $http.post(url,member,{
           headers:{
             'Authorization':'Token '+token
@@ -465,7 +500,7 @@ angular.module('halanxApp')
       },
       EditTeam(token,id,data){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/team/members/"+id+"/";
+        var url = "https://api.halanx.com/stores/team/members/"+id+"/";
         $http.patch(url,data,{
           headers:{
             'Authorization':'Token '+token
@@ -481,7 +516,7 @@ angular.module('halanxApp')
       },
       getWalletSumm(token,month,date){
         var pr = $q.defer();
-        var url = "http://35.154.255.124:8000/stores/wallet/statement/?from_date=2018-"+month+"-01&to_date=2018-"+month+"-"+date;
+        var url = "https://api.halanx.com/stores/wallet/statement/?from_date=2018-"+month+"-01&to_date=2018-"+month+"-"+date;
         $http.get(url,{
           headers:{
             'Authorization':'Token '+token
@@ -498,7 +533,7 @@ angular.module('halanxApp')
       // ,
       // gettodBar(token,from,to){
       //   var pr = $q.defer();
-      //   var url = "http://35.154.255.124:8000/stores/team/members/"+store+"/";
+      //   var url = "https://api.halanx.com/stores/team/members/"+store+"/";
       //   $http.get(url,{
       //     headers:{
       //       'Authorization':'Token '+token

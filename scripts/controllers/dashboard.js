@@ -15,15 +15,40 @@ angular.module('halanxApp')
       'Karma',
       'angular-input-stars'
       ,'ngFileUpload',
-      '720kb.datepicker'
+      '720kb.datepicker',
+      'ngMaterial'
     ];  
     var token = localStorage.getItem("store_token");
     console.log("TOken is--------",token);
+    // $interval(()=>{
+    //   console.log($scope.prof.highlights);
+    // },1000);
+    $scope.getTChange= () =>{
+      console.log($scope.prof.highlights);
+      $scope.editHighlights();
+    }
     // $scope.memv;
-    $scope.spopost='Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum enim at, obcaecati tenetur soluta magnam commodi prov.';
+    //$scope.spopost='Write about any offer or something which can attract your customers';
     $scope.monthly = 'June';
+    $scope.editable = false;
     // $scope.mem.role = 'Employee';
-
+    $(window).resize(function(){
+      console.log("CALLED RESIZE DATE");
+      if($window.innerWidth>768){
+        $scope.chartwidth=$window.innerWidth-300;
+      }
+      else if($window.innerWidth<768 && $window.innerWidth>500){
+        $scope.chartwidth=$window.innerWidth-150;
+      }
+      else{
+        $scope.chartwidth=$window.innerWidth-100;
+      }
+      console.log($scope.mindates,$scope.maxdates,$scope.minvisitdates,$scope.maxvisitdates,$scope.minorderdates,$scope.maxorderdates);
+    $scope.getSalesBarValue($scope.mindates,$scope.maxdates);
+    $scope.getVisitsBarValue($scope.minvisitdates,$scope.maxvisitdates);
+    $scope.getOrdersBarValue($scope.minorderdates,$scope.maxorderdates);
+    console.log("Inside chartwidth",$scope.chartwidth);
+    });
     $scope.loadStore=()=>{
       console.log("CAlLEDASDKNANDJNDKN");
       var pr = dashboard.loadStore(token);
@@ -110,10 +135,11 @@ var itemsmonth2;
       $scope.maxvisitdates = itemsmonth+'/'+itemsdate+'/'+itemsyear;
           $scope.minorderdates= itemsmonth2+'/'+itemsdate2+'/'+itemsyear;
           $scope.maxorderdates = itemsmonth+'/'+itemsdate+'/'+itemsyear;
-          $scope.mintoddates= itemsmonth2+'/'+itemsdate2+'/'+itemsyear;
-          $scope.maxtoddates = itemsmonth+'/'+itemsdate+'/'+itemsyear;
-          // console.log("Mindatess is is is "+$scope.mindates);
-          // console.log("Maxdatess is is is "+$scope.maxdates);          
+          // $scope.mintoddates= itemsmonth2+'/'+itemsdate2+'/'+itemsyear;
+          // $scope.maxtoddates = itemsmonth+'/'+itemsdate+'/'+itemsyear;
+          console.log("Mindatess is is is "+$scope.mindates);
+          console.log("Maxdatess is is is "+$scope.maxdates); 
+          console.log("ALL DATES",$scope.minvisitdates,$scope.maxvisitdates,$scope.minorderdates,$scope.maxorderdates);         
     }
 
     $scope.getDatesForGraphs();
@@ -151,9 +177,12 @@ var itemsmonth2;
       else{
         $scope.chartwidth=$window.innerWidth-100;
       }
+      console.log($scope.chartwidth,"chartwidth");
     }
     findChartWidth();
     $scope.getSalesBarValue=(mindate,maxdate)=>{
+      if(mindate.includes('/') && maxdate.includes('/')){
+      console.log("MINDATE",mindate,"MAXDATE",maxdate);
       var min = mindate.split('/');
       var date1=min[1];
       var month1=min[0];
@@ -164,18 +193,25 @@ var itemsmonth2;
       var month2=max[0];
       var year2=max[2]; 
       var to = year2+'-'+month2+'-'+date2;
+      console.log(from,"FROM",to,"TO");
       var pr = dashboard.getSalesBar(token,from,to);
       pr.then(success,fail);
       function success(data){
         $scope.salesbar = data.data.sales;
+        console.log($scope.salesbar);
         $scope.getSalesbar(mindate,maxdate);
       }
       function fail(err){
         $scope.errsb = err;
-      } 
+      }
+    } 
     };
     $scope.getSalesbar=(mind,maxd)=>{
-
+      $scope.mindates = mind;
+      console.log("ISNIDE CHART DRAWOING",mind,maxd);
+      
+      
+      console.log(mind,maxd,"MINDATE && MAXDATE ON SCREEN =>",$scope.mindates,$scope.maxdates);
       google.charts.load('current', {packages: ['corechart', 'bar']});
       google.charts.setOnLoadCallback(drawBasic);
 
@@ -188,7 +224,7 @@ var itemsmonth2;
       // console.log("Mind is   ",mind);
       // console.log("Maxd is   ",maxd);
       function drawBasic() {
-      
+        $scope.maxdates = maxd;
             var data = new google.visualization.DataTable();
             data.addColumn('date', 'Date');
             data.addColumn('number', 'Sales');
@@ -208,6 +244,7 @@ var itemsmonth2;
               title: '',
               hAxis: {
                 title: '',
+                gridlines: { count: 4 } ,
                 viewWindow: {
                   // min: new Date(itemsyear, itemsmonth2-1, itemsdate2),
                   // max: new Date(itemsyear, itemsmonth-1, itemsdate)
@@ -230,6 +267,7 @@ var itemsmonth2;
       
             chart.draw(data, options);
           }
+          $scope.maxdates = maxd;
     }
 
 
@@ -351,6 +389,7 @@ var itemsmonth2;
 
     $scope.getVisitbar=(mind,maxd)=>{
       // $scope.getVisitsBarValue(mind,maxd);
+      $scope.minvisitdates = mind;
       google.charts.load('current', {packages: ['corechart', 'bar']});
       google.charts.setOnLoadCallback(drawBasic);
 
@@ -406,6 +445,7 @@ var itemsmonth2;
               title: '',
               hAxis: {
                 title: '',
+                gridlines: { count: 4 } ,
                 viewWindow: {
                   min: new Date(mind),
                   max: new Date(maxd)
@@ -426,7 +466,7 @@ var itemsmonth2;
       
             chart.draw(data, options);
           }
-
+          $scope.maxvisitdates = maxd;
     }
 
 
@@ -463,7 +503,7 @@ var itemsmonth2;
 
 
     $scope.getOrderbar=(mind,maxd)=>{
-
+      $scope.minorderdates = mind;
       google.charts.load('current', {packages: ['corechart', 'bar']});
       google.charts.setOnLoadCallback(drawBasic);
 
@@ -495,7 +535,7 @@ var itemsmonth2;
 
       // $scope.getOrdersBarValue(mind,maxd);
       function drawBasic() {
-      
+        $scope.maxorderdates = maxd;
             var data = new google.visualization.DataTable();
             data.addColumn('date', 'Date');
             data.addColumn('number', 'Orders');
@@ -517,6 +557,7 @@ var itemsmonth2;
               title: '',
               hAxis: {
                 title: '',
+                gridlines: { count: 4 } ,
                 viewWindow: {
                   min: new Date(mind),
                   max: new Date(maxd)
@@ -537,6 +578,7 @@ var itemsmonth2;
       
             chart.draw(data, options);
           }
+          $scope.maxorderdates = maxd;
     }
 
     $scope.getOrdersBarValue($scope.minorderdates,$scope.maxorderdates);
@@ -620,7 +662,7 @@ var itemsmonth2;
 //               bar: {
 //                 groupWidth: 15
 //             },
-//               'width': $scope.chartwidth,
+//               'width':
 //               'height': 250
 //             };
       
@@ -641,49 +683,12 @@ var itemsmonth2;
 
 
 
-  //   function resizeGraphs(){
-  //   setTimeout(function () {
-  //     $scope.$apply(function () {
-  //       if($window.innerWidth>992){
-  //         $scope.chartwidth=$window.innerWidth-400;
-  //         console.log("Chart widht is   ",$scope.chartwidth);
-  //       }
-  //       else if($window.innerWidth>768){
-  //         $scope.chartwidth=$window.innerWidth-500;
-  //         console.log("Chart widht is   ",$scope.chartwidth);
-  //       }
-  //       else if($window.innerWidth>576){
-  //         $scope.chartwidth=$window.innerWidth-300;
-  //         console.log("Chart widht is   ",$scope.chartwidth);
-  //       }
-  //       else{
-  //         $scope.chartwidth=$window.innerWidth-150;
-  //         console.log("Chart widht is   ",$scope.chartwidth);
-  //       }
-  //     });
-  // }, 10);
-
-  //   }
       
     
 // 
       // resizeGraphs();
 
-    $(window).resize(function(){
-      if($window.innerWidth>768){
-        $scope.chartwidth=$window.innerWidth-300;
-      }
-      else if($window.innerWidth<768 && $window.innerWidth>500){
-        $scope.chartwidth=$window.innerWidth-150;
-      }
-      else{
-        $scope.chartwidth=$window.innerWidth-100;
-      }
-
-    $scope.getSalesBarValue($scope.mindates,$scope.maxdates);
-    $scope.getVisitsBarValue($scope.minvisitdates,$scope.maxvisitdates);
-    $scope.getOrdersBarValue($scope.minorderdates,$scope.maxorderdates);
-    });
+    
 
   //   angular.element($window).bind('resize', function(){
   //     if($window.innerWidth>768){
@@ -915,7 +920,7 @@ showMeData();
        var pr = dashboard.getVoucher(token);
        pr.then(success,fail);
        function success(data){
-         if(data.data.length==0){
+         if(data.data.results.length==0){
           $scope.nodat = true;
           }
          else{
@@ -928,15 +933,15 @@ showMeData();
         //   element.timestamp=getDate(element.timestamp);
         // });
 
-        for(let i=0;i<data.data.length;i++){
-          data.data[i].timestamp=getDate(data.data[i].timestamp);
+        for(let i=0;i<data.data.results.length;i++){
+          data.data.results[i].timestamp=getDate(data.data.results[i].timestamp);
         }
         $scope.result=data.data;
+        console.log("----",data.data,"-----",);
        }
-       console.log("---------------",data);
+      //  console.log("---------------",data);
       }
        function fail(err){
-         console.log("--------------------",Errororor);
          $scope.error=err;
        }
      };
@@ -945,12 +950,13 @@ showMeData();
       var pr = dashboard.getVoucherOffers(token);
       pr.then(success,fail);
       function success(data){
-        if(data.data.length==0){
+        if(data.data.results.length==0){
           $scope.nooff = true;
           }
          else{
           $scope.nooff = false;
          $scope.offers = data.data;
+         console.log("VOICHER OFFERS",data.data);
        }
       }
       function fail(err){
@@ -990,21 +996,31 @@ showMeData();
        }
      };    
 
-
+     function initMap(lati,long) {
+      // The location of Uluru
+      var uluru = {lat: lati, lng: long};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 15, center: uluru});
+      // The marker, positioned at Uluru
+      var marker = new google.maps.Marker({position: uluru, map: map});
+    }
 
      $scope.getProfile = ()=>{
-
+      console.log("Inside getprofile");
     // loadStore();
-       getPlaceMenu();
-       getTimings();
-       getPics();
-       getMembers();
-       getPlaceStats();
-       console.log("--------------"+$scope.store);
+       getPlaceMenu($scope.store);
+       getTimings($scope.store);
+       getPics($scope.store);
+       getMembers($scope.store);
+       getPlaceStats($scope.store);
+       //console.log("--------------"+$scope.store);
       var pr = dashboard.getOutletDetails($scope.store,token);
       pr.then(success,fail);
       function success(data){
         $scope.prof = data.data;
+
+    initMap($scope.prof.latitude,$scope.prof.longitude);
         console.log("Profile is this",$scope.prof)
         $scope.tophome=data.data;
         $scope.coverpic = data.data.cover_pic_url;
@@ -1015,58 +1031,88 @@ showMeData();
       }
      };
 
-     setTimeout(function(){
+     $scope.getTopProfileLoad = (id)=>{
+      console.log("inside profile load",id);
+      // loadStore();
+         getPlaceMenu(id);
+         getTimings(id);
+         getPics(id);
+         getMembers(id);
+         getPlaceStats(id);
+        var pr = dashboard.getOutletDetails(id,token);
+        pr.then(success,fail);
+        function success(data){
+          $scope.prof = data.data;
+  
+      initMap($scope.prof.latitude,$scope.prof.longitude);
+          console.log("Profile is this",$scope.prof)
+          $scope.tophome=data.data;
+          $scope.coverpic = data.data.cover_pic_url;
+        }
+        function fail(err){
+          $scope.errprof = err;
+          $scope.errth=err;
+        }
+       };
+
+
+
+     $timeout(function(){
         $scope.getProfile();
         $scope.loadStoreDetails();
      }, 1000);
 
-     function getPlaceMenu(){
-      var pr = dashboard.getPlaceMenu($scope.store,token);
+     function getPlaceMenu(store){
+      var pr = dashboard.getPlaceMenu(store,token);
       pr.then(success,fail);
       function success(data){
         $scope.prof = data.data;
+        console.log("Profile",$scope.prof);
       }
       function fail(err){
         $scope.errprof = err;
       }
      };
 
-     function getTimings(){
-      var pr = dashboard.getTimings($scope.store,token);
+     function getTimings(store){
+      var pr = dashboard.getTimings(store,token);
       pr.then(success,fail);
       function success(data){
         $scope.time = data.data;
+        console.log("time",$scope.time);
       }
       function fail(err){
         $scope.errtime = err;
       }
      };
 
-     function getPics(){
-      var pr = dashboard.getPics($scope.store,token);
+     function getPics(store){
+      var pr = dashboard.getPics(store,token);
       pr.then(success,fail);
       function success(data){
         $scope.pics = data.data;
+        console.log("Pics",$scope.pics);
       }
       function fail(err){
         $scope.errpics = err;
       }
      }
 
-     function getMembers(){
-      var pr = dashboard.getMembers($scope.store,token);
+     function getMembers(store){
+      var pr = dashboard.getMembers(store,token);
       pr.then(success,fail);
       function success(data){
         $scope.members = data.data;
+        console.log("members",$scope.members);
       }
       function fail(err){
         $scope.errmem = err;
       }
      }
 
-     function getPlaceStats(){
+     function getPlaceStats(store){
        console.log("I am getting called");
-      var pr = dashboard.getStats(token,$scope.store);
+      var pr = dashboard.getStats(token,store);
       pr.then(success,fail);
       function success(data){
         for(let i=0;i<data.data.results.length;i++){
@@ -1099,6 +1145,21 @@ showMeData();
 
      $scope.detailsChanged=false;
      $scope.timeChanged=false;
+     $scope.highChanged=false;
+     $scope.editHighlights = () =>{
+       var obj = {};
+       obj.highlights = $scope.prof.highlights;
+       var pr = dashboard.editOutletDetails(obj,$scope.store,token);
+       pr.then(success,fail);
+       function success(data){
+         $scope.highChanged = true;
+         $scope.highChangedval = "Successfully done";
+       }
+       function fail(err){
+         $scope.highChanged=true;
+         $scope.highChangedval = "Error in Editing, Please try again"; 
+       }
+     }
 
      $scope.editDetails = () =>{
       //  var value = [$scope.prof];
@@ -1145,6 +1206,8 @@ showMeData();
      }
 
      $scope.loadStoreDetails=()=>{
+       console.log("inside loadstore");
+       $scope.getTopProfiles();
       var pr = dashboard.loadStore(token);
       pr.then(success,fail);
       function success(data){
@@ -1155,6 +1218,57 @@ showMeData();
         $scope.errsd = err;
       }
      };
+$scope.topone;
+     $scope.getTopProfiles=()=>{
+      //  console.log("Inside top profiles");
+
+      var pr = dashboard.getTop(token);
+      pr.then(success,fail);
+      function success(data){
+        // 
+        // if($scope.topProfiles.length!=data.data.results.length){
+
+        $scope.topProfiles = data.data.results;
+        console.log("INSIDE TOP PROFILE ISNIDE DOUBLE",$scope.topProfiles.length,data.data.results.length);
+      
+        // }
+        console.log("inside top profiles",$scope.topProfiles);
+        if(!$scope.topone){
+          $scope.topone = $scope.topProfiles[0];
+        }
+        // console.log($scope.topProfiles);
+        // $scope.topProfiles.push($scope.topProfiles);
+        // console.log($scope.topProfiles);
+        // if(data.data.next)
+
+        // if(data.data.next){
+        //   getTopUrl(data.data.next);
+        // }
+        angular.element(document.querySelector('.activate'))[0].classList.add('active');
+      }
+      function fail(err){
+        $scope.errtp = err;
+      }
+     }
+
+    //  function getTopUrl(url){
+    //   var pr= dashboard.getTopUrl(url,token);
+    //   pr.then(success,fail);
+    //   function success(data){
+    //     // $scope.topProfiles.push(data.data.results);
+    //     for(let i =0;i<data.data.results.length;i++){
+    //       $scope.topProfiles.push(data.data.results[i]);
+    //     }
+    //     console.log('This is top profile',$scope.topProfiles);
+    //     if(data.data.next){
+    //       getTopUrl(data.data.next);
+    //     }
+    //   }
+    //   function fail(err){
+    //     $scope.errtpu=err;
+    //   }
+
+    //  }
 
      $scope.getBusiness=()=>{
        getROI();
@@ -1231,7 +1345,6 @@ showMeData();
         else{
           $scope.v5=$scope.p5;
           $scope.p5=$scope.p5+"%";
-          $scope.v5=$scope.p5;
         }
         
      }
@@ -1357,6 +1470,31 @@ $scope.showedit=false;
         $scope.whathpn = "Please Try Again";
       } 
     };
+
+    $scope.dateConvert = (date)=>{
+      var dates = date.split('/');
+      var day = dates[0];
+      var month = dates[1];
+      var year = dates[2];
+      var d = new Date();
+      var y = d.getFullYear();
+      var m = d.getMonth();
+      var da = d.getDate();
+      var ye = y>year?y-year:year-y;
+      if(ye){
+        return ye +' year(s) ago';
+      }
+      // d.setMonth(d.getMonth() - 1);
+      var mo = m>month?m-month:month-m;
+      if(mo){
+        return mo + ' month(s) ago';
+      }
+      var dat = da>day?da-day:day-da;
+      if(dat){
+        return dat + ' day(s) ago';
+      }
+
+    }
 
   //   $scope.add = function() {
   //     var f = document.getElementById('file').files[0],
@@ -1606,4 +1744,13 @@ if($scope.monthly=="Jan"){
           }
 }
     
+  $scope.callActive=()=>{
+    angular.element(document.querySelector('#profile'))[0].parentElement.classList.add('active');
+    angular.element(document.querySelector('#profile'))[0].setAttribute("aria-expanded", "true");
+    // console.log("THIS IS ACTIVE",angular.element(document.querySelector('#profile')));
+    angular.element(document.querySelector('#hom'))[0].parentElement.classList.remove('active');
+    angular.element(document.querySelector('#hom'))[0].removeAttribute("aria-expanded");
+    
+  };
+
   });
