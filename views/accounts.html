@@ -1,0 +1,407 @@
+<style>
+
+
+.right{
+	margin-top:8px;
+}
+#content{
+    /*margin-top: 80px;*/
+}
+.bg3{
+  margin-top:250px;
+  width:100%;
+}
+
+    footer.bg3 {
+        margin-top: 50px;
+    }
+    
+.col-md-2{
+	color:#000000;
+	font-family:ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif;
+	font-size:1em;
+	cursor:hand;
+ text-decoration:none;
+}
+.col-md-2 a{
+	color:#000000;
+}
+.col-md-2 a:hover{
+	text-decoration:none;
+	color:#ff0000;
+}
+.col-md-2 a{
+/*	color:#000000;*/
+    color: white;
+    font-size: 15px;
+	cursor:pointer;
+}
+
+#head {
+    font-family: 'Titillium Web', sans-serif;
+    margin-top: -15px;
+    color: #222;
+    font-weight: 600;
+}
+
+.head-content {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: #222;
+}
+
+@media (max-width: 767px){
+#content .userlist {
+    width: 75% !important;
+}
+}
+
+.new{
+  font-size: 15px;
+  font-family:"Roboto", sans-serif;
+    color: #333;
+}
+
+.table td {
+    font-family: "Roboto", sans-serif;
+}
+
+.table td:nth-child(odd) {
+    display: inline-block;
+    width: 120%;
+    font-weight: 500;
+}
+
+.img-wrapper {
+    margin-top: 30px;
+    /* margin: 8% 0 13.5% 0; */
+}
+
+@media (max-width: 992px) {
+    .panel-body .user-pic {
+        width: 30%;
+        display: block;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    .img-wrapper {
+        margin: 7% 0 7% 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .panel-body .user-pic {
+        width: 55%;
+    }
+}
+
+
+@media(max-width:420px){
+    
+    .img-circle{
+      max-width: 60% !important;
+    }
+
+}
+
+
+.cart-icon {
+    margin: 0;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 999999;
+}
+
+#login-btn {
+    display: none;
+}
+
+.cart-icon button {
+    outline: none;
+    padding: 17.5px 23px;
+    border-radius: 0;
+    background: #fff;
+}
+
+
+.cart-icon button:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.cart-icon i {
+    font-size: 20px;
+    color: #333;
+}
+
+.cart-icon span {
+    color: #333;
+    margin-left: 5px;
+}
+
+nav.navbar {
+    height: 60px;
+}
+
+.nav-button .sidebutton {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        font-size: 25px;
+        border-radius: 0;
+        background: #fff;
+        padding: 12px 23px;
+        /* box-shadow: 0 0 5px rgba(0,0,0,0.2), 1px 1px 1px rgba(0,0,0,0.07); */
+        cursor: pointer;
+        z-index: 111119;
+       color: #e63631;
+    }
+
+.userlist {
+/*    transform: translateX(200px);*/
+    transition: 1s;
+    background-color: #fff;
+    text-transform: capitalize;
+    width: 20%;
+    z-index: 11118;
+    position: fixed;
+    top: 60px;
+    padding-top: 5px;
+    height: 700px ;
+    left: 0;
+    margin: auto;
+    box-shadow: 8px 0 15px -6px rgba(0,0,0,0.21), 5px 0 5px -6px rgba(0,0,0,0.15);
+/*    display: none;*/
+}
+
+
+.userlist ul {
+    background: #fff;
+    padding: 0;
+    padding-top: 10px;
+    text-align: left;
+/*    box-shadow: 0 0 5px rgba(0,0,0,0.19), 0 0 11px rgba(0,0,0,0.1);*/
+}
+
+ .userlist li{
+     margin: 0;
+     display: block !important;
+     border-radius: 0 !important;
+    padding: 0;
+    background: #fff;
+    border: none !important;
+    width: 100% !important;
+}
+ .userlist li:first-child {
+    border-top: 1px solid #e9e9e9;
+}
+
+ .userlist li:hover {
+    background: #f1f1f1;
+}
+
+ .userlist ul li a{
+    color:#222;
+    display: block !important;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    width: 100%;
+    padding: 13px 22px !important;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+ .userlist ul li a:hover {
+     color: #e63631;
+ }
+
+.userlist ul li a i {
+    margin-right: 9px;
+}
+
+
+
+ul{
+    padding: 0px;
+margin: 0px;
+}
+
+
+.move{
+transform: translateX(-500px);
+transition: 1s;
+
+}
+
+.user-img-container {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.user-profile-img {
+    height: 180px;
+    width: 180px;
+    margin: auto;
+}
+
+.account-wrapper {
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 3px;
+    box-shadow: 0 0 20px -3px rgba(0,0,0,0.2), 0 0 8px -1px rgba(0,0,0,0.12);
+}
+
+.account-wrapper .table>tbody>tr>td {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.my-account-text {
+    text-align:center;
+    font-size:30px;
+    font-weight:600;
+    font-family: "Titillium Web", sans-serif;
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+        margin-left: 45px !important;
+    }
+    .cart-icon i {
+        font-size: 26px;
+    }
+    .cart-icon button {
+        padding: 14.5px 15px;
+    }
+    .cart-icon span {
+        position: relative;
+        top: -3px;
+    }
+}
+
+.testt {
+    display: inline-block;
+    border-radius: 50%;
+    background: #e63631;
+    height: 20px;
+    width: 20px;
+    color: #fff !important;
+ }
+
+ .side-menu-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background: rgba(0,0,0,0.15);
+    display: none;
+}
+
+</style> 
+<!--style="margin-top:100px;"-->
+<div class="panel-body container" >
+
+        <div class="side-menu-shadow" id="s-m-s" onclick="tg()" ng-click="addsidebar()"></div>
+    <div id="content">
+        <div class="row">
+                <div class=" col-lg-3 col-md-3 col-sm-4 col-12">
+                    <div class="nav-button" ng-hide="menu">
+                        <span ng-click="addsidebar()" class="sidebutton" onclick="tg()"  ng-hide="menu">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                    <div class="userlist" ng-class={"move":movex}>
+                     <ul>
+                            <li><a href="#/accounts"><i class="far fa-user"></i> My Account</a></li>
+                            <li><a href="#/orders"><i class="fa fa-file-text-o" aria-hidden="true"></i> My Orders</a></li>
+                            <li><a href="#/favourite"><i class="fa fa-heart-o" aria-hidden="true"> </i>Favourites</a></li>
+                            <li><a href=""><i class="fa fa-star-o" aria-hidden="true"> </i> Points</a></li>
+                            <li><a href=""><i class="fa fa-bell-o" aria-hidden="true"> </i> Notification</a></li>
+                            <li><a href="#/logout" ng-click="logout()"><i class="fa fa-power-off" aria-hidden="true"> </i> Logout</a></li>
+                            
+                         
+                     </ul>
+                    </div>
+                </div>
+                    <div class="cart-icon">
+                       <a href="#/cart">
+                      <button type="button" class="btn btn-md b23"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+<span ng-model = "counter" class="testt" ng-if="counter">{{counter}}</span>
+                        </button>
+                        </a>
+                    </div>
+            </div>
+            </div>
+                       <table><h3 class="my-account-text">My Account</h3></table>
+                        <div class="row img-wrapper">
+                            <div class="col-md-4 col-lg-4"></div>
+                            <div class="col-md-4 col-lg-4 account-wrapper"> 
+                                <div class="user-img-container">
+                                <img alt="User Pic" ng-hide="profilePic" src="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png" class="img-circle img-responsive user-profile-img">
+                                <img alt="User Pic" ng-hide="!profilePic" src="{{profilePic}}" class="img-circle img-responsive user-profile-img"> 
+                                </div>
+                                <!-- </div> -->
+
+
+                            <!-- <div class=" col-md-9 col-lg-9 well"> -->
+                                <table class="table table-user-information ">
+                                    <tbody>
+                                        
+                                        <tr>
+
+                                            <td style="border-top:0px">First name</td>
+                                            <td style="border-top:0px">{{FirstName}}</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Last Name</td>
+
+                                            <td>{{LastName}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td>{{EmailId}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile</td>
+                                            <td>{{Phoneno}}</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+
+                                
+                            </div>
+                            <div class="col-md-4 col-lg-4"></div>
+                        </div>
+                    </div>
+<!-- </div>-->
+<script>
+tga = false;
+function tg() {
+    
+    if(!tga) {
+shadow = document.getElementById("s-m-s");
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-bars");
+        x[0].classList.add("fa-close");
+        shadow.style.display = "block";
+        tga = true;
+    } else {
+shadow = document.getElementById("s-m-s");
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-close");
+        x[0].classList.add("fa-bars");
+        shadow.style.display = "none";
+        tga = false;
+    }
+}
+</script>

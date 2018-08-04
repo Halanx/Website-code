@@ -1,0 +1,827 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<style>
+    .searchbar {
+        position: relative;
+        top: 170px;
+        margin: 0 20px;
+    }
+
+    #cur-loc {
+        position: relative;
+        top: 65px;
+        z-index: 3;
+        left: 70%;
+        border-left: 1px solid #e1e1e1;
+        background: red;
+        display: inline-block;
+    }
+
+ 
+#slider-wrapper-bg {
+  display: inline-block;
+  height: 550px;
+  width: 100%;
+  background: url('../images/halanx home page 2.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+
+#slider-wrapper-bgg {
+  display: inline-block;
+  height: 550px;
+  width: 100%;
+  background: url('../images/Halanx Home page 3.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+#slider-wrapper {
+  display: inline-block;
+  height: 550px;
+  width: 100%;
+  background: url('../images/Halanx home page 1.jpg');
+  transition: all 0.7s;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+
+#slider-shadow {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0),rgba(0,0,0,0), rgba(0,0,0,0.8));
+  /* background: rgba(0,0,0,0.6); */
+  overflow: hidden;
+  position: absolute;
+  top: 37px;
+}
+#slider-heading,
+#slider-tag {
+  color: #fff;
+}
+#slider-heading {
+  position: relative;
+  top: 57%;
+  text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 400;
+}
+.head_anim {
+  animation-name: head_anim;
+  animation-duration: 1s;
+}
+@keyframes head_anim {
+  from {top:100%;}
+  to {top:57%;}
+}
+
+
+
+#slider-tag {
+  position: relative;
+  top: 60%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-align: center;
+    padding: 0 20px;
+}
+.tag_anim {
+  animation-name: tag_anim;
+  animation-duration: 1.5s;
+}
+@keyframes tag_anim {
+  from{top: 110%}
+  to{top:60%;}
+}
+
+@media (max-width: 767px) {
+    #slider-heading {
+        font-size: 25px;
+    }
+    #slider-tag {
+        font-size: 20px;
+        position: relative;
+        padding: 0 20px;
+        top: 58%;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+    .phoneSection {
+        height: 455px;
+        overflow: hidden;
+        border-bottom: 1px solid #e1e1e1;
+        margin: 0 50px;
+    }
+
+    @media(max-width: 767px) {
+        .phoneSection {
+            height: auto;
+            border-bottom: none;
+        }
+        .phoneContainer {
+            float:  none !important;
+            margin: 10px auto 0px !important;
+        }
+
+        .textWrapper {
+
+    margin-top: -210px !important;
+    margin-bottom: 30px !important;
+    text-align: center;
+
+        }
+    }
+        .iphoneImg {
+            height: 500px;
+        }
+        
+        .phoneContainer {
+            float: right;
+            margin-right: 60px;
+            margin-top: 30px;
+        }
+        .textWrapper {
+            height: 350px;
+            margin-top: -40px;
+            
+        }
+         #slider-wrapper1 {
+            display: inline-block;
+            height: 347px;
+            width: 195px;
+            background: url(../images/newsfeed.png);
+            transition: all 0.8s;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            top: 93px;
+            left: 41px;
+        }
+#slider-heading1,
+#slider-tag1 {
+  color: #333;
+}
+#slider-heading1 {
+  font-family: 'Roboto Slab', serif;  
+  position: relative;
+  top: 63%;
+  /*font-family: 'Roboto Slab', sans-serif;*/
+  font-weight: 400;
+}
+.head_anim1 {
+  animation-name: head_anim1;
+  animation-duration: 1s;
+}
+@keyframes head_anim1 {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+#slider-tag1 {
+  font-family: 'Roboto Slab', serif;
+  position: relative;
+  top: 62%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 23px;
+}
+
+@media (max-width: 767px) {
+    .textWrapper {
+        height: 325px;
+    }
+
+    #slider-heading1 {
+        font-size: 27px;
+        top: 68%;
+    }
+
+    #slider-tag1 {
+        font-size: 20px;
+        top: 67%;
+    }
+}
+
+.tag_anim1 {
+  animation-name: tag_anim1;
+  animation-duration: 1.5s;
+}
+@keyframes tag_anim1 {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/*****************************************/
+/** Cards **/
+.card {
+    width: 85%;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 20px;
+    box-shadow: 0 0 6px -1px rgba(0,0,0,0.5);
+    background: #333;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px -1px rgba(0,0,0,0.4);
+}
+
+.col-sm-4:nth-child(2) .card .card-content {
+    padding-bottom: 28px;
+}
+
+.col-sm-4:nth-child(2) .card h3 {
+    margin-bottom: 28px;
+}
+
+.card img {
+    display: block;
+    width: 220px;
+    margin: 20px auto;
+    margin-top: 0;
+}
+
+#app-dwn {
+    width: 160px;
+}
+
+.card-content {
+    background: #fff;
+    padding-bottom: 10px;
+/*    background: #333;*/
+    border-bottom: 3px solid rgba(255,0,0,0.85);
+}
+
+.card h3 {
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 15px;
+    background: rgba(255,0,0,0.85);
+    padding: 10px;
+    color: #f1f1f1;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card h4 {
+    color: #333;
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 7px;
+    line-height: 25px;
+}
+
+.card h4 img {
+    width: 170px;
+    margin-bottom: -10px;
+}
+
+.hover_red:hover{
+    color: red !important;
+}
+
+.play-phone {
+    height: 430px;
+    width: 415px;
+    position: absolute;
+    top: -150px;
+    z-index: 2;
+}
+
+.app-phone7 {
+    height:300px;
+}
+
+.play-heading {
+    padding-top: 60px;
+}
+
+.play-heading img {
+    margin: 20px;
+    height: 70px;
+    width: 190px;
+    cursor: pointer;
+}
+
+.play-heading h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin-left: 32px;
+    color: #444;
+    margin-top: 10px;
+}
+
+.play-heading h2 {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    margin-left: 32px;
+}
+
+.play-ss {
+    height: 317px;
+    border-radius: 2px;
+    width: 177px;
+    position: absolute;
+    z-index: 2;
+    left: 76px;
+    top: -101px;
+}
+
+.play-shadow {
+    left: 150px;
+    height: 62px;
+    position: relative;
+    top: 214px;
+    width: 189px;
+    box-shadow: 0 10px 100px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 992px) {
+    .play-heading {
+        padding-top: 10px;
+    }
+
+    .play-heading img {
+        margin: auto;
+    }
+
+    .app-phone7 {
+        height:auto;
+    }
+    .play-phone {
+        height: 430px;
+        width: 415px;
+        position: absolute;
+        top: 40px;
+        z-index: 2;
+    }
+    .play-ss {
+        height: 317px;
+        border-radius: 2px;
+        width: 177px;
+        position: absolute;
+        z-index: 2;
+        left: 76px;
+        top: 87px;
+    }
+    .app-phone {
+        height: 363px;
+        overflow: hidden;
+        width: 337px;
+        margin: auto;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .play-heading h2 {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .play-shadow {
+        display: none;
+    }
+    .about-container {
+        padding-top: 10px !important;
+        padding-bottom: 30px;
+    }
+
+    .about-content {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width:625px) {
+    .about-content {
+        width: 95%;
+        text-align: left;
+    }
+}
+
+.about-container {
+  background: #222;
+  background-size: cover;
+  margin-top: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /* text-align: center; */
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+.about-content {
+    /* border: 1px solid white; */
+    padding: 10px 20px;
+    border-left: 3px solid red;
+    height: 240px;
+}
+
+.about-content img {
+  height: 90px;
+  width: 90px;
+}
+
+.ac2 img {
+    height: 80px;
+    width: 80px;
+}
+
+.about-content .about-text {
+    color: #fff;
+}
+
+.about-content .about-text h3 {
+    font-family: "Titillium Web", sans-serif;
+    margin-bottom: 10px;
+    font-weight: 700;
+    /*border-bottom: 1px solid #999;*/
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.about-content .about-text h4 {
+    color: #f5f5f5;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 5px;
+}
+
+/*.tryme::before{
+    content:"";position:absolute; width:110%; height:100%;  background:url("https://static.pexels.com/photos/247599/pexels-photo-247599.jpeg") no-repeat 0 0; background-size:cover; filter: blur(10px); z-index:0; transform: scale(2);-ms-transform: scale(2); -webkit-transform: scale(2);
+}*/
+
+    </style>
+    <div id="slider-wrapper-bgg" style="margin-top: -20px" ng-cloak>
+    <div id="slider-wrapper-bg">
+        <div id="slider-wrapper">
+            
+            
+        </div>
+    </div>
+    <div id="slider-shadow">
+            <div class="row row_3 searchbar">
+         <div class="col-md-8 col-md-offset-1">
+        <div id="custom-search-input">
+            <div class="input-group col-md-offset-3">
+                <span id="pac-container">
+                    <input style="height: 42px;" type="text" id="txtPlaces" ng-model="location" class="form-control input-md" placeholder="Enter your location" />
+                </span>
+                <span class="input-group-btn">
+                    <!--<center id="cur-loc">
+        <!--<span onclick="getLocation()">Detect current location</span>-->
+                    <!--<span class="glyphicon glyphicon-screenshot" onclick="getLocation()" data-toggle="modal" data-target="#myModal"></span>
+                 </center>-->
+                  <button style="height: 42px; border-radius: 0px; background:rgb(255,29,33)" class="btn btn-danger btn-md" style="border-radius: 0;" type="button" id="search" onclick="getLocation()" data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-screenshot"></span>
+                    </button>
+                </span>
+                <span class="input-group-btn">
+                    <button style="height: 42px;background:rgb(255,29,33)" class="btn btn-danger btn-md" type="button" id="search" ng-click="checkLocation()">
+                        Find Stores
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<p id="cur-loc-wrapper">
+    <center id="cur-loc">
+        <!--<span onclick="getLocation()">Detect current location</span>-->
+        <!--<span class="glyphicon glyphicon-screenshot" onclick="getLocation()" data-toggle="modal" data-target="#myModal"></span>
+    </center>
+</p>-->
+
+<div class="modal fade" id="myModal" role="dialog" ng-cloak>
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header" style="color:white">Your Location
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <div id="mapholder" style="height: 300px;"></div>
+                </div>
+                <button type="button" style="display: block; margin:10px auto 0;background:#f1413e" class="btn btn-md btn-danger class1" id="class1" onclick="savedata()">Confirm Location</button>
+            </div>
+        </div>
+    </div>
+</div>
+            <h1 id="slider-heading"> Know your neighborhood happenings </h1>
+            <h3 id="slider-tag"> Like crime & safety alerts, news, events, lost pets, local service recommendations, and more </h3>
+        </div>
+</div>
+        <script type="text/javascript">
+	var slider = document.getElementById('slider-wrapper');
+	var sliderBg = document.getElementById('slider-wrapper-bg');
+	var sliderBgg = document.getElementById('slider-wrapper-bgg');
+	var slider_shadow = document.getElementById('slider-shadow');
+	var height = innerHeight-37;
+	slider.style.height = height+"px";
+	sliderBg.style.height = height+"px";
+	sliderBgg.style.height = height+"px";
+	slider_shadow.style.height = height+"px";
+	var heading = document.getElementById('slider-heading');
+	var tag = document.getElementById('slider-tag');
+	var slider_duration = 8000;
+	var counter=0;
+
+	var headings = [" Know your neighborhood happenings ", 
+					 "Order from neighborhood businesses ",
+					 "Spread happiness"
+					 ];
+
+					 
+	var tags  = ["Like crime & safety alerts, news, events, lost pets, local service recommendations, and more", 
+			 	 "Like grocery stores, restaurants, and more, and get delivered in as little as an hour", 
+				 "By answering fun polls about friends, and know what they like about you"
+			 	];
+			 	
+
+	heading.className = "head_anim";
+	tag.className = "tag_anim";
+	setTimeout(function(){
+		heading.classList.remove("head_anim");
+	},1000);
+	setTimeout(function(){
+		tag.classList.remove("tag_anim");
+	},1500);
+	setInterval(function(){
+		if(counter==headings.length-1) {
+			counter=0;
+		} else {
+			counter++;
+        }
+        console.log(counter);
+        if(counter==0) {
+            slider.style.opacity = 1;
+            setTimeout(function(){sliderBg.style.opacity = 1},500);
+        } else if(counter==1) {
+            slider.style.opacity = 0;
+            sliderBg.style.opacity = 1;
+        } else if(counter==2) {
+            slider.style.opacity = 0;
+            sliderBg.style.opacity = 0;
+        }
+		heading.innerHTML = headings[counter];
+		tag.innerHTML = tags[counter];
+		heading.className = "head_anim";
+		tag.className = "tag_anim";
+		setTimeout(function(){
+			heading.classList.remove("head_anim");
+		},1000);
+		setTimeout(function(){
+			tag.classList.remove("tag_anim");
+		},1500);
+	},slider_duration);
+
+    window.onload =function() {
+        sliderW = document.getElementById('slider-wrapper');
+        sliderW.style.height = (window.innerHeight-37) + "px";
+        sliderBg.style.height = (window.innerHeight-37) + "px";
+        sliderBgg.style.height = (window.innerHeight-37) + "px";
+        slider_shadow.style.height = (window.innerHeight-37)+"px";
+    }
+
+    window.onresize =function() {
+        sliderW = document.getElementById('slider-wrapper');
+        sliderW.style.height = (window.innerHeight-37) + "px";
+        sliderBg.style.height = (window.innerHeight-37) + "px";
+        sliderBgg.style.height = (window.innerHeight-37) + "px";
+        slider_shadow.style.height = (window.innerHeight-37)+"px";
+    }
+
+    window.fbAsyncInit = function () {
+    FB.init({
+      appId: '305219616568944',
+      xfbml: true,
+      version: 'v2.6'
+    });
+  };
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+	
+</script>
+
+<div class="phoneSection">
+  <div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-6 textWrapper">
+  <h1 id="slider-heading1"> Newsfeed </h1>
+        <h3 id="slider-tag1"> Read news and happenings of neighborhood, and connect to your neighbors </h3>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+        <div class="phoneContainer" style="background:url('../images/android2.png'); width:260px; height: 477px; background-size: cover;">
+    <div id="slider-wrapper1" style="margin-top: -20px">
+        </div>
+    </div>
+    </div>
+</div>
+   
+    </div>
+
+     <script type="text/javascript">
+	var slider1 = document.getElementById('slider-wrapper1');
+//	var slider_shadow = document.getElementById('slider-shadow');
+	var height1 = innerHeight;
+//	slider.style.height = height+"px";
+//	slider_shadow.style.height = height+"px";
+	var heading1 = document.getElementById('slider-heading1');
+	var tag1 = document.getElementById('slider-tag1');
+	var slider_duration1 = 8500;
+	var counter1=0;
+
+	var backgrounds1 = ['../images/newsfeed.png',
+					   '../images/iphone2.png',
+					   '../images/grouporder.jpg',
+                       "../images/iphone4.png",
+                       ];
+	
+
+	var headings1 = ["Newsfeed", 
+					 "Subscription",
+					 "Group order",
+                     "Fun polls"
+					 ];
+
+
+                     console.log(headings1.length);
+
+					 
+	var tags1  = ["Read news and happenings of neighborhood, and connect to your neighbors", 
+			 	 "Automate delivery of frequently needed products like milk, bread etc", 
+				 "Order in group for giving treat to friends and family, and earn H-Cash to save more",
+                 "Know what people like about you, and answer polls to let them know theirs"
+			 	];
+			 	
+
+	heading1.className = "head_anim1";
+	tag1.className = "tag_anim1";
+	setTimeout(function(){
+		heading1.classList.remove("head_anim1");
+	},1000);
+	setTimeout(function(){
+		tag1.classList.remove("tag_anim1");
+	},1500);
+	setInterval(function(){
+        //console.log(counter1);
+		if(counter1==backgrounds1.length-1) {
+			counter1=0;
+		} else {
+			counter1++;
+		}
+		slider1.style.background = "#fff url('"+backgrounds1[counter1]+"')";
+		slider1.style.backgroundSize = "cover";
+		slider1.style.backgroundPosition = "center";
+		heading1.innerHTML = headings1[counter1];
+		tag1.innerHTML = tags1[counter1];
+        // console.log(headings1[counter]);
+		heading1.className = "head_anim1";
+		tag1.className = "tag_anim1";
+		setTimeout(function(){
+			heading1.classList.remove("head_anim1");
+		},1000);
+		setTimeout(function(){
+			tag1.classList.remove("tag_anim1");
+		},1500);
+	},slider_duration1);
+
+//    window.onload =function() {
+//        sliderW = document.getElementById('slider-wrapper1');
+//        sliderW.style.height = window.innerHeight + "px";
+//    }
+
+    window.fbAsyncInit = function () {
+    FB.init({
+      appId: '305219616568944',
+      xfbml: true,
+      version: 'v2.6'
+    });
+  };
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+	
+</script>
+
+<!-- <div class="container-fluid">
+    <div class="row tryme">
+        <!--<div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="../images/mapicon.png">
+                <div class="card-content">
+                    <h3 >AREAS WE SERVE</h3>
+                    <h4 class="hover_red">Delhi</h4>
+                    <h4 class="hover_red">Noida</h4>
+                    <h4 class="hover_red">Gurgaon</h4>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-sm-5"></div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="../images/moneyicon.png">
+                <div class="card-content" style="padding-bottom:29px">
+                    <h3>MAKE MONEY WITH US</h3>
+                    <a href="#/shopper" ><h4 class="hover_red">Become a Shopper</h4></a>
+                    <a href="#/store"><h4 class="hover_red">Get Your Store Listed</h4></a>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="../images/download%20app.gif" id="app-dwn">
+                <div class="card-content">
+                    <h3>DOWNLOAD APP</h3>
+                    <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp"><h4 class="hover_red">Android App on PlayStore</h4></a>
+                    <h4>
+                        <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp">
+                            <center>
+                                <img src="https://s3-us-west-2.amazonaws.com/halanx-web/en_badge_web_generic.png" class="img-responsive img1" height="90" width="100">
+                            </center>
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container-fluid about-container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="about-content">
+                <img src="../images/mapicon1.png">
+                <div class="about-text">
+                    <h3>AREAS WE SERVE</h3>
+                    <h4 class="hover_red">Delhi</h4>
+                    <h4 class="hover_red">Noida</h4>
+                    <h4 class="hover_red">Gurgaon</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="about-content .ac2">
+                <img src="../images/moneyicon1.png">
+                <div class="about-text">
+                    <h3>MAKE MONEY WITH US</h3>
+                    <a href="#/shopper" ><h4 class="hover_red">Become a Shopper</h4></a>
+                    <a href="#/store"><h4 class="hover_red">Get Your Store Listed</h4></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row play-app">
+        <div class="col-md-5 app-phone">
+            <img class="play-phone" src="../images/android.png">
+            <img class="play-ss" src="../images/downloadnew.png">
+            <div class="play-shadow"></div>
+        </div>
+        <div class="col-md-7 app-phone7">
+            <div class="play-heading">
+                <h2>Download App</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp" target="_blank">
+                    <img src="https://s3-us-west-2.amazonaws.com/halanx-web/en_badge_web_generic.png" class="img-responsive img1">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--<div style="display: inline-block;z-index: 5; position:fixed; bottom:20px;right:20px">
+      <a  href="https://m.me/halanxtech?ref=Welcome%20message" style="display: inline-block;background: orange;padding: 9px;border-radius:5px;">
+          <i class="fa fa-comments" aria-hidden="true" style="font-size: 30px;color: white;"></i>
+      </a>
+  </div>-->
+
+
+<div class="fb-messengermessageus" messenger_app_id="305219616568944" page_id="XYZ" color="blue" >
+  </div>

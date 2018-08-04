@@ -1,0 +1,65 @@
+<link href="../styles/hxpa.css" rel="stylesheet">
+<div class="container hxpa">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="hxpa-form hxpa-time-form">
+                <div class="hxpa-form-head">
+                    <label>Choose Store Location</label>
+                    <select></select>
+                </div>
+                <div class="hxpa-block">
+                        <h4>Set timing for which this particular location is operating (in 24 hour format)</h4>
+                        <div class="hxpa-input-wrap">
+                            <div class="hxpa-input">
+                                <label>Monday</label>
+                                <input type="time" ng-model="MondayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="MondayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Tuesday</label>
+                                <input type="time" ng-model="TuesdayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="TuesdayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Wednesday</label>
+                                <input type="time" ng-model="WednesdayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="WednesdayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Thursday</label>
+                                <input type="time" ng-model="ThursdayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="ThursdayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Friday</label>
+                                <input type="time" ng-model="FridayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="FridayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Saturday</label>
+                                <input type="time" ng-model="SaturdayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="SaturdayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Sunday</label>
+                                <input type="time" ng-model="SundayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="SundayClosingTime">
+                            </div>
+                        </div>
+                    </div>
+                <div class="hxpa-continue">
+                    <button ng-click="submittimeform()">Continue</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>

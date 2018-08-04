@@ -1,0 +1,224 @@
+<link href="../styles/dashboard.css" rel="stylesheet">
+<style>
+
+
+@media(min-width:992px){
+    .table_scroll{
+        max-height: 480px;
+        overflow: scroll;
+        cursor: move;
+    }
+}
+
+
+.ptb-50{
+    padding: 50px 50px;
+}
+
+.section_bg_gray {
+    background-color: #f3f5f7;
+}
+
+.single_what_we_do {
+    background-color: rgb(245,245,245);
+    text-align: center;
+    padding: 0 35px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.single_what_we_do:hover {
+    -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.single_what_we_do .top_line {
+    position: absolute;
+    top: 0;
+    left: 44%;
+    width: 12%;
+    height: 3px;
+}
+
+.top_line1{
+    background-color: red;
+}
+
+.top_line2{
+    background:  green;
+}
+
+.single_what_we_do .what_we_do_figure {
+    padding: 25px 0;
+}
+.single_what_we_do .what_we_do_figure img {
+    margin: 0 auto;
+}
+.single_what_we_do .what_we_do_title {
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 25px;
+    margin: 0;
+    color: #2b353a;
+}
+.single_what_we_do .what_we_do_content {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #2b353a;
+}
+ .single_what_we_do .what_we_do_icon {
+    position: absolute;
+    bottom: -9px;
+    left: 47%;
+    color: #fff;
+    background-color: #8448ff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.single_what_we_do .what_we_do_icon i {
+    font-size: 24px;
+    text-align: center;
+    padding: 2px 3px 2px 5px;
+}
+
+.icon{
+    font-size: 28px;
+}
+
+.icon1{
+    color: red;
+}
+
+.icon2{
+    color: green;
+}
+
+
+
+ </style>   
+<div class="container hxpa-dashboard">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="dash-head">
+                <h2>DashBoard</h2>
+                <hr>
+            </div>
+            <div class="order-table">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" onclick="event.preventDefault()" href="#home">Deliveries</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault()" ng-click="openMe()" href="#menu1">Payments</a></li>
+                    <li><a ng-click="visit()">Business</a></li>
+                    </ul>
+                    <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>OrderId</th>
+                                <th>BatchId</th>
+                                <th>Placing Time</th>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Customer</th>
+                                <th>Shopper</th>
+                                <th>Total</th>
+                                <th>Delivery Time</th>
+                                <th class="o-stat">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in dashdata|orderBy:'delivery_time':true">
+                                <td>{{data.order_id}}</td>
+                                <td>{{data.batch_id}}</td>
+                                <td>{{data.placing_time}}</td>
+                                <td>{{data.product}}</td>
+                                <td>{{data.quantity}}</td>
+                                <td>{{data.customer}}</td>
+                                <td>{{data.shopper}}</td>
+                                <td>{{data.price}}</td>
+                                <td>{{data.dt}}</td>
+                                <td class="o-stat o-pending" ng-hide="data.is_delivered"><span class="glyphicon glyphicon-remove"></span></td>
+                                <td class="o-stat o-done" ng-hide="!data.is_delivered"><span class="glyphicon glyphicon-ok"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>Payments</h3>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-7 table_scroll">
+                                <table class="table table-striped" style="overflow:scroll">
+                                    <thead>
+                                        <tr>    
+                                            <th>S.No.</th>
+                                            <th>Date & Time of Payment</th>
+                                            <th>Amount Paid</th>
+                                        </tr>    
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="data in payment track by $index">
+                                            <td>{{data.id}}</td>
+                                            <td>{{data.paid_on}}</td>
+                                            <td>{{data.amount}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>    
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-4">
+                                <div class="row" style="margin-top:15%" id="try">
+                                    <div class="col-md-12 try">
+                                            <div class="single_what_we_do">
+							<div class="top_line top_line1"></div>
+							<div class="what_we_do_figure">
+								<i class="fa fa-exclamation icon icon1" aria-hidden="true"></i>
+							</div>
+							<h4 class="what_we_do_title">Amount Pending</h4>
+							<div class="what_we_do_content"><i class="fa fa-inr" aria-hidden="true"></i> {{pending}}</div>
+							
+						</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="single_what_we_do">
+							<div class="top_line top_line2"></div>
+							<div class="what_we_do_figure">
+								<i class="fa fa-check icon icon2" aria-hidden="true"></i>
+							</div>
+							<h4 class="what_we_do_title">Total Amount Paid till now</h4>
+							<div class="what_we_do_content"><i class="fa fa-inr" aria-hidden="true"></i> {{paid}}</div>
+							
+						</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<script>
+    $(window).scroll(function () {
+
+        var scroll = $(window).scrollTop();
+            if ($(window).scrollTop() > 200) {
+              $("#try").css("margin-top",scroll);   
+            }
+        });
+</script>-->

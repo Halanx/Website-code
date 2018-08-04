@@ -1,0 +1,604 @@
+<style>
+
+#content .favlist{
+padding:80px 0px;
+}
+#content .favlist li img{
+    width: 90px;
+    height: 90px;
+    margin-top: -20px;
+}
+#content .favlist ul{
+display: flex;
+flex-wrap:wrap;
+}
+#content .favlist{
+text-align:center;
+}
+
+#content .favlist li{
+display:inline-block;
+border: 1px solid #eee;
+height: 200px;
+    width: 220px;
+padding: 35px;
+background-color: #f7f7f7;
+margin: 5px;
+border-radius: 2px;
+position:relative;
+}
+
+@media(max-width:380px){
+  #content .favlist li{
+    display:inline-block;
+    width:200px;
+    margin-left:30px;
+    border:2px solid #d3d3d3;
+    margin-top:10px;
+  }
+}
+#content .favlist li button{
+position: absolute;
+bottom: 0px;
+width: 100%;
+right: 0px;
+    border-radius: 0px;
+}
+#content{
+margin-top:10px;
+}
+.new{
+font-family:ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif;
+font-size:30px;
+font-weight:bold;
+color:#000000;
+}
+
+@media(max-width:1224px){
+#content .productmain ul li{
+width:320px;
+}
+}
+.b1{
+position:relative;
+margin-bottom:0px;
+margin-top:10px;
+white-space:nowrap;
+vertical-align:middle;
+cursor:pointer;
+}
+
+
+.bg3{
+
+width:100%;
+}
+.col-md-2{
+color:#000000;
+
+font-family:ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif;
+font-size:1.5em;
+cursor:hand;
+}
+.col-md-2 a{
+color: white;
+font-size: 15px;
+}
+
+.row_12{
+background-color: #000000;
+color:#ffffff;
+font-size:15px;
+
+font-family:ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif;
+text-align: center;
+padding-top:10px;
+}
+
+.row_11{
+padding-top:10px;
+padding-bottom:10px;
+ 
+background-color: #000000;
+
+}
+
+.social:hover {
+-webkit-transform: scale(1.1);
+-moz-transform: scale(1.1);
+-o-transform: scale(1.1);
+}
+.social {
+-webkit-transform: scale(0.8);
+-moz-transform: scale(0.8);
+-o-transform: scale(0.8);
+-webkit-transition-duration: 0.5s;
+-moz-transition-duration: 0.5s;
+-o-transition-duration: 0.5s;
+}
+.bg18{
+margin-top:450px;
+}
+
+.datasection li:hover img{
+
+/*    transform: scale(1.1);*/
+transform: translateY(-10px);
+transition: 1s;
+}
+.datasection li img:hover{
+transform: scale(1.1); 
+transition: 2s;
+}
+.datasection li .productimage img{
+    width: 250px;
+    transition: 1s;
+}
+.datasection .productdescription .productname{
+text-transform:capitalize;
+font-family:"Roboto", sans-serif;
+font-size:14px;
+color:#111;
+    letter-spacing: -0.5px;
+    text-align: left;
+text-decoration:none;
+position: absolute;
+left: 15px;
+top: 10px;
+    padding-right: 60px;
+}
+
+.datasection .productdescription .productprice{
+    position: absolute;
+    right: 22px;
+    top: 10px;
+}
+
+.fav-icon {
+    font-size: 22px;
+    position: absolute;
+    top: 87px;
+    right: 20px;
+    color: #ee3322;
+}
+
+.datasection .productdescription img{
+    width: 10%;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+.datasection .productdescription .counter-cart{
+    margin-top: -22px;
+    margin-right: 75px;
+}
+ .btn-sm {
+    padding: 3px 6px;
+    font-size: 12px;
+    line-height: 1.5;
+     border-radius: 3px;
+}
+
+.favlist ul li {
+    background: #fff;
+}
+
+#product-list-wrapper {
+    margin-top: 50px;
+    margin-bottom: 150px;
+    padding-left: 3.5%;
+}
+
+.product-list {
+    display: inline-block;
+    width: 30%;
+    margin: 10px 15px;
+    overflow: auto;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12), 1px 1px 2px rgba(0,0,0,0.14);
+}
+
+@media(max-width: 1004px) {
+    .product-list {
+        width: 45%;
+    }
+}
+
+@media(max-width: 704px) {
+    .product-list {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    #product-list-wrapper {
+        padding: 0;
+    }
+}
+
+@media(max-width: 476px) {
+    .product-list {
+        display: block;
+        width: 85%;
+    }
+}
+
+.product-list .product-name {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #222;
+    margin: 0;
+}
+
+.product-list .product-feature {
+    color: #333;
+    min-height: 65px;
+}
+
+.product-list .dark {
+    border-top: 1px solid #d9d9d9;
+}
+
+.product-list .fav {
+    color: #e52222;
+    float: right;
+    margin-top: -5px;
+    cursor: pointer;
+    font-size: 22px;
+    margin-right: 2px;
+}
+
+.product-list .product-image {
+    float: right;
+    height: 70px;
+    width: 70px;
+    border: 1px solid #e1e1e1;
+}
+
+.product-list .product-quantity {
+    padding: 5px 10px;
+    margin-top: 7px;
+    float: left;
+    background: #e8e8e8;
+    border-radius: 3px;
+}
+
+.product-list .product-quantity button {
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding:0; 
+}
+
+.product-list span.glyphicon {
+    cursor: pointer;
+}
+
+.product-list .p-quan {
+    padding: 0 25px;
+}
+
+.product-list .add-btn {
+    margin-top: 7px;
+    float: right;
+}
+
+.product-list .add-btn button {
+    border: none;
+    background: #d9534f;
+    color: #fff;
+    border-radius: 2px;
+    padding: 5px 15px;
+    outline: none;
+}
+
+#fav-head {
+    background: rgba(220,10,10,0.91);
+    padding: 50px 20px; 
+}
+
+#fav-head h1 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+}
+
+.nav-button .sidebutton {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    font-size: 25px;
+    background: #fff;
+    padding: 5px 15px;
+    padding: 4px 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), 1px 1px 1px rgba(0,0,0,0.07);
+    border-top: none;
+    border-left: none;
+    cursor: pointer;
+    z-index: 11111119;
+}
+
+ .userlist {
+/*    transform: translateX(200px);*/
+    transition: 1s;
+    background-color: #fff;
+    text-transform: capitalize;
+    width: 20%;
+    z-index: 11118;
+    position: fixed;
+    top: 58px;
+    padding-top: 46px;
+    height: 700px ;
+    left: 0;
+    margin: auto;
+    border-right: 1px solid #999 !important; 
+/*    display: none;*/
+}
+
+
+.userlist ul {
+    background: #fff;
+    padding: 0;
+    margin-top: 8px;
+}
+
+ .userlist li{
+     display: block !important;
+     border-radius: 0 !important;
+    padding: 12px 0px !important;
+    background: #fff;
+    border: none !important;
+    border-bottom: 1px solid #e9e9e9 !important;
+    text-align: center;
+    width: 100% !important;
+}
+ .userlist li:first-child {
+    border-top: 1px solid #e9e9e9;
+}
+
+ .userlist li:hover {
+    background: #f1f1f1;
+}
+
+ .userlist ul li a{
+    color:#000000;
+    /* width: 112%; */
+    display: block !important;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    width: 100%;
+   
+/*padding : 0px 28%;*/
+    font-size: 16px;
+    text-decoration: none;
+}
+
+@media(max-width:767px){
+   .userlist {
+        width: 75%;
+    }
+}
+.move{
+transform: translateX(-500px);
+transition: 1s;
+
+}
+
+.cart-icon {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 70px;
+    right: 0; 
+    z-index: 999;
+}
+
+@media(max-width: 767px) {
+    .cart-icon {
+        top: 70px;   
+    }
+}
+
+.cart-icon button {
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), -1px 1px 1px rgba(0,0,0,0.07);
+    padding: 10px 30px;
+    border-radius: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.cart-icon i {
+    font-size: 20px;
+    color: #333;
+}
+
+.cart-icon span {
+    color: #333;
+    margin-left: 5px;
+}
+
+#no-fav {
+    text-align: center;
+    padding: 70px 20px;
+    padding-top: 0;
+    margin-top: -50px;
+    color: #222;
+    font-family: "Titillium Web", sans-serif;
+}
+#no-fav h1 {
+    margin-bottom: 30px;
+}
+</style>
+
+<div id="fav-head">
+        <div class=" col-lg-3 col-md-3 col-sm-4 col-12">
+                <div class="nav-button" ng-hide="menu">
+                    <span ng-click="addsidebar()" class="sidebutton" onclick="tg()"  ng-hide="menu">
+                        <i class="fa fa-bars" aria-hidden="true" ></i>
+                  </span>
+                </div>
+                <div class="userlist" ng-class={"move":movex}>
+                 <ul>
+                     <li><a href="#/accounts">My Accounts</a></li>
+                     <li><a href="#/orders">My Orders</a></li>
+                     <li><a href="#/favourite">Favourites</a></li>
+                     <li><a href="">Points</a></li>
+                     <li><a href="">Notification</a></li>
+                     
+                     
+                 </ul>
+                </div>
+            </div>
+    <h1>Favourites</h1>
+    <div class="cart-icon">
+            <a href="#/cart">
+           <button type="button" class="btn btn-md b23"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+<span ng-model = "counter" class="testt">{{counter}}</span>
+             </button>
+             </a>
+         </div>
+</div>
+
+<div id="product-list-wrapper">
+    <div class="product-list" ng-repeat="i in arr">
+        <div class="product-head" style="min-height:110px">
+            <img class="product-image" src="{{i.ProductImage}}" ng-class="{'hide':i.ProductImage==null}">
+            <p class="product-name">{{i.ProductName}}</p> 
+            <p class="product-feature">{{i.Features}}</p>
+        </div>
+        <div class="price">
+            <p class="amount">Amount : <i class="fa fa-inr" aria-hidden="true"></i> {{i.Price}} 
+                <span class="glyphicon fav" ng-click="addfav(i)" ng-class="{'glyphicon-heart':!i.FavoriteField, 'glyphicon-heart-empty':i.FavoriteField}"></span></p>
+        </div>
+        <div class="dark">
+            <div class="product-quantity">
+                <button ng-click="quantity = quantity-1" ng-disabled="quantity==1"><span class="glyphicon glyphicon-minus"></span></button>
+                <span class="p-quan" ng-model="quantity" ng-init="quantity=1">{{quantity}}</span>
+                <span class="glyphicon glyphicon-plus" ng-click="quantity = quantity+1"></span>
+            </div>
+            <div class="add-btn"><button ng-click="add(i,quantity)">Add To Cart</button></div>
+        </div>
+    </div>
+</div>
+
+<div id="no-fav" ng-hide="checkFav">
+    <img src="../images/nofav.png" height="150">
+    <h1>Your Favourites is empty</h1>
+</div>
+
+<!-- <div id="container">  
+<div id="content" name="toTop" id="toPos">
+    <div class="container-fluid" name="toTop" id="toPos">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="favlist">
+                    <h1 class="new">Favourites</h1>
+                    <ul>
+                        <li ng-repeat="i in arr">
+                           
+                            <img ng-src="{{i.ProductImage}}" alt="" height="50" width="250" class="responsive">
+                            <br>
+                            <span>{{i.ProductName}}</span>
+                            <span>{{i.Price}}</span>
+                            <span class="glyphicon fav-icon" ng-click="addfav(i)"  ng-class="{'glyphicon-heart':!i.FavoriteField, 'glyphicon-heart-empty':i.FavoriteField}" onclick="togglec()"></span>
+                            <br>
+                            <button ng-click="add(i)" class="btn btn-md btn-danger b1">Add to Cart</button>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ </div> -->
+
+    
+<script>
+
+$(function(){
+
+  // name your elements here
+  var stickyElement   = '.panel-affix',   // the element you want to make sticky
+    bottomElement   = '#fake-footer'; // the bottom element where you want the sticky element to stop (usually the footer) 
+
+  // make sure the element exists on the page before trying to initalize
+  if($( stickyElement ).length){
+    $( stickyElement ).each(function(){
+
+      // let's save some messy code in clean variables
+      // when should we start affixing? (the amount of pixels to the top from the element)
+      var fromTop = $( this ).offset().top, 
+        // where is the bottom of the element?
+        fromBottom = $( document ).height()-($( this ).offset().top + $( this ).outerHeight()),
+        // where should we stop? (the amount of pixels from the top where the bottom element is)
+        // also add the outer height mismatch to the height of the element to account for padding and borders
+        stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height()); 
+
+      // if the element doesn't need to get sticky, then skip it so it won't mess up your layout
+      if( (fromBottom-stopOn) > 200 ){
+        // let's put a sticky width on the element and assign it to the top
+        $( this ).css('width', $( this ).width()).css('top', 0).css('position', '');
+        // assign the affix to the element
+        $( this ).affix({
+          offset: { 
+            // make it stick where the top pixel of the element is
+            top: fromTop - 80,  
+            // make it stop where the top pixel of the bottom element is
+            bottom: stopOn
+          }
+        // when the affix get's called then make sure the position is the default (fixed) and it's at the top
+        }).on('affix.bs.affix', function(){ $( this ).css('top', '80px').css('position', ''); });
+      }
+      // trigger the scroll event so it always activates 
+      $( window ).trigger('scroll'); 
+    }); 
+  }
+
+});
+
+//Offset scrollspy height to highlight li elements at good window height
+$('body').scrollspy({
+  offset: 80
+});
+
+//Smooth Scrolling For Internal Page Links
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+    $('html,body').animate({
+      scrollTop: target.offset().top
+    }, 1000);
+    return false;
+    }
+  }
+  });
+});
+
+
+tga = false;
+function tg() {
+    
+    if(!tga) {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-bars");
+        x[0].classList.add("fa-close");
+        tga = true;
+    } else {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-close");
+        x[0].classList.add("fa-bars");
+        tga = false;
+    }
+}
+
+
+ </script>

@@ -1,0 +1,524 @@
+<style>
+.body{
+    background:#ffffff;
+} 
+ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+ 
+#content{
+    margin-top: 100px;
+     
+}
+
+#content .myproducts li{
+    position: relative;
+    list-style: none;
+    margin: 12px auto;
+        border: 1px solid #e1e1e1;
+    padding: 10px 10px;
+        background: white;
+    border-radius: 2px;
+    width: 50%;
+}
+
+@media (max-width: 767px) {
+    #content .myproducts li{
+        width: 95%;
+    }
+}
+
+#content .myproducts li .product .productimage{
+    width: 20%;
+    margin-right: 20px;
+}
+
+@media(max-width: 400px) {
+    #content .myproducts li .product .productimage{
+        display: none;
+    }
+}
+
+#content .myproducts li .product .productimage img{
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+}
+
+#content .myproducts li .product{
+    display: flex;
+}
+
+#content .myproducts li .product button{
+        border-radius:30px;
+    border: none;
+    /* padding: 5px; */
+    font-size: 20px;
+    /* border: 1px solid lightgrey; */ 
+}
+
+.form-group{
+    border: 1px solid #d1d1d1;
+    text-align:center;
+    font-family:"Sans",Verdana,"sans-serif";
+
+}
+
+#content .myproducts li .product button:focus{
+outline: none;
+}
+
+#content .myproducts li .product .deleteimage{
+      position: absolute;
+    right: 12px;
+    top: 11px;
+}
+
+#content .myproducts li .product .deleteimage img{
+    width: 55%;
+}
+
+#content .myproducts li .productdescription{
+/*    margin-left: 30px;*/
+}
+
+#content .form{
+        margin-top: 50px;
+}
+
+#content .form input[type="submit"]{
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #d3d3d3;
+    padding: 5px 10px;
+    background:#e50000;
+}
+
+#content .amount{
+    margin-right: 50px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding-bottom:90px;
+    padding-top:5px;     
+}
+
+.form{
+    color:#ffffff;
+}
+#content .empty{
+    text-transform: capitalize;
+    color: red;
+    text-align: center;
+    
+}
+
+#product-list-wrapper {
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+.product-list {
+    width: 30%;
+    margin: 10px auto;
+    overflow: auto;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12), 1px 1px 2px rgba(0,0,0,0.14);
+}
+
+@media(max-width: 1004px) {
+    .product-list {
+        width: 45%;
+    }
+}
+
+@media(max-width: 704px) {
+    .product-list {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media(max-width: 476px) {
+    .product-list {
+        display: block;
+        width: 85%;
+    }
+}
+
+.product-list .product-name {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #222;
+    margin: 0;
+}
+
+.product-list .product-feature {
+    color: #333;
+    min-height: 65px;
+}
+
+.product-list .dark {
+    border-top: 1px solid #d9d9d9;
+}
+
+.product-list .fav {
+    color: #222;
+    float: right;
+    margin-top: -2px;
+    cursor: pointer;
+    font-size: 22px;
+    margin-right: 2px;
+}
+
+.product-list .product-image {
+    float: right;
+    height: 70px;
+    width: 70px;
+    border: 1px solid #e1e1e1;
+}
+
+.product-list .product-quantity {
+    padding: 5px 10px;
+    margin: auto;
+    width: 160px;
+    margin-top: 7px;
+    background: #e8e8e8;
+    border-radius: 3px;
+}
+
+.product-list .product-quantity button {
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding:0; 
+}
+
+.product-list span.glyphicon {
+    cursor: pointer;
+}
+
+.product-list .p-quan {
+    padding: 0 40px;
+}
+
+.product-list .add-btn {
+    margin-top: 7px;
+    float: right;
+}
+
+.product-list .add-btn button {
+    border: none;
+    background: #d9534f;
+    color: #fff;
+    border-radius: 2px;
+    padding: 5px 15px;
+    outline: none;
+}
+
+.nav-button .sidebutton {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    font-size: 25px;
+    background: #fff;
+    padding: 5px 15px;
+    padding: 4px 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), 1px 1px 1px rgba(0,0,0,0.07);
+    border-top: none;
+    border-left: none;
+    cursor: pointer;
+    z-index: 11111119;
+}
+
+ .userlist {
+/*    transform: translateX(200px);*/
+    transition: 1s;
+    background-color: #fff;
+    text-transform: capitalize;
+    width: 20%;
+    z-index: 11118;
+    position: fixed;
+    top: 58px;
+    padding-top: 46px;
+    height: 700px ;
+    left: 0;
+    margin: auto;
+    border-right: 1px solid #999 !important; 
+/*    display: none;*/
+}
+
+
+.userlist ul {
+    background: #fff;
+    padding: 0;
+    margin-top: 8px;
+}
+
+ .userlist li{
+     display: block !important;
+     border-radius: 0 !important;
+    padding: 12px 0px !important;
+    background: #fff;
+    border: none !important;
+    border-bottom: 1px solid #e9e9e9 !important;
+    text-align: center;
+    width: 100% !important;
+}
+ .userlist li:first-child {
+    border-top: 1px solid #e9e9e9;
+}
+
+ .userlist li:hover {
+    background: #f1f1f1;
+}
+
+ .userlist ul li a{
+    color:#000000;
+    /* width: 112%; */
+    display: block !important;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    width: 100%;
+   
+/*padding : 0px 28%;*/
+    font-size: 16px;
+    text-decoration: none;
+}
+
+@media(max-width:767px){
+   .userlist {
+        width: 75%;
+    }
+}
+.move{
+transform: translateX(-500px);
+transition: 1s;
+
+}
+
+#cart-head {
+    text-align: center;
+    background: rgba(220,10,10,0.91);
+    padding: 50px 20px; 
+}
+
+#cart-head h1 {
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+}
+
+#cart-head input {
+    background: #f1f1f1;
+    border-radius: 2px;
+    padding: 7px 30px;
+    margin-top: 10px;
+    border: none;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 70px 20px;
+    color: #222;
+    font-family: "Titillium Web", sans-serif;
+}
+.empty-cart h1 {
+    margin-bottom: 30px;
+}
+
+.hide {
+    display: none;
+}
+</style>
+
+<div id="cart-head">
+        <div class=" col-lg-3 col-md-3 col-sm-4 col-12">
+                <div class="nav-button" ng-hide="menu">
+                    <span ng-click="addsidebar()" class="sidebutton" onclick="tg()"  ng-hide="menu">
+                        <i class="fa fa-bars" aria-hidden="true" ></i>
+                  </span>
+                </div>
+                <div class="userlist" ng-class={"move":movex}>
+                 <ul>
+                     <li><a href="#/accounts">My Accounts</a></li>
+                     <li><a href="#/orders">My Orders</a></li>
+                     <li><a href="#/favourite">Favourites</a></li>
+                     <li><a href="">Points</a></li>
+                     <li><a href="">Notification</a></li>
+                    
+                     
+                 </ul>
+                </div>
+            </div>
+    <h1>Sub Total : <i class="fa fa-inr" aria-hidden="true"></i> {{totalamount}}</h1>
+    <form  method="post" ng-submit="submitcart()" >
+        <input type="submit" value="Continue" ng-hide="cartclass">
+    </form>
+</div>
+
+
+<div id="product-list-wrapper" ng-hide="cartclass">
+        <div class="product-list" ng-repeat="list in cartproductlist track by $index">
+            <div class="product-head">
+                <img class="product-image" src="{{list.ProductImage}}" ng-class="{'hide':list.ProductImage==null}">
+                <p class="product-name">{{list.ProductName}}</p> 
+                <p class="product-feature">{{list.Features}}</p>
+            </div>
+            <div class="price">
+                <p class="amount">Amount : <i class="fa fa-inr" aria-hidden="true"></i> {{list.Price}} 
+                    <span class="glyphicon glyphicon-trash fav" ng-click="deleteproduct(list)"></span></p>
+            </div>
+            <div class="dark">
+                <div class="product-quantity">
+                    <button ng-click="updateminus(list)" ng-disabled="list.quantity==1"><span class="glyphicon glyphicon-minus"></span></button>
+                    <span class="p-quan" ng-model="list.quantity">{{list.quantity}}</span>
+                    <span class="glyphicon glyphicon-plus" ng-click="updateplus(list)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="empty-cart" ng-hide="emptyclass">
+        <div class="row empty">
+            <div class="col-sm-12">
+                <img src="images/emcart.png" height="150" alt="">
+                <h1>Your Shopping bag is empty</h1>
+            </div>
+        </div>
+    </div>
+
+<!-- <div id="content"> -->
+         <!-- <div class="container-fluid bg1" style="padding : 0px" name="toTop" id="toPos"> -->
+           <!-- <div class="row" ng-hide="cartclass"> -->
+              
+              <!-- <div class="col-sm-12">
+                <div class="myproducts">
+                  <ul>
+        <li ng-repeat="list in cartproductlist track by $index">
+           <div class="product">
+           <div class="productimage">
+            <img ng-src="{{list.ProductImage}}">
+            </div>
+            <div class="productdescription">
+                <span>{{list.ProductName}}</span>
+                <br>
+                <span><i class="fa fa-inr" aria-hidden="true"></i>{{list.Price}}</span>
+                 <br>
+                  <button ng-click="updateminus(list)" ng-disabled="list.quantity==1" class="btn btn-xs btn-danger btn-circle" ><span class="glyphicon glyphicon-minus"></span></button>
+            <input type="text" class="form-group" ng-model="list.quantity"   min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            <button ng-click="updateplus(list)"  ng-model="hello" class="btn btn-xs btn-danger btn-circle"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+          <div class="deleteimage"> -->
+<!--            <img src="images/Delete-48.png" ng-click="deleteproduct(list)" >-->
+              <!-- <span class="glyphicon glyphicon-trash delete-icon" ng-click="deleteproduct(list)"></span>
+            </div>
+            </div>
+        </li>
+        
+    </ul> 
+                      </div>
+                  </div> -->
+                  <!-- <div class="col-sm-12">
+                    <div class="amount">
+                   
+        <h1 class="new">Your Amount</h1> -->
+<!--
+        <ul>
+            <li ng-repeat="i in cartproductlist">
+             <span>{{i.ProductName}}</span>
+              <span>{{i.Price}}*{{i.count}}</span>  
+            </li>
+        </ul>
+-->
+        <!-- <span>Total Amount: {{totalamount}}</span> -->
+      <!-- <div class="form">
+                          <form  method="post" ng-submit="submitcart()" >
+                              <input type="submit" value="Continue" >
+                          </form>
+                      </div> -->
+        
+    <!-- </div>   -->
+                  <!-- </div> -->
+              <!-- </div> -->
+              <!-- <div class="row empty" ng-hide="emptyclass">
+                  <div class="col-sm-12">
+                      <h1>Your Shopping bag is empty</h1>
+                      <img src="images/shopping-cart-2(shopping).png" alt="">
+                  </div>
+              </div> -->
+          
+           <!-- </div>
+       </div> -->
+<script>
+
+$(function(){
+var stickyElement   = '.panel-affix',    
+bottomElement   = '#fake-footer';  
+if($( stickyElement ).length){
+$( stickyElement ).each(function(){
+   
+  var fromTop = $( this ).offset().top, 
+    
+    fromBottom = $( document ).height()-($( this ).offset().top + $( this ).outerHeight()),
+    
+    stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height()); 
+   
+  if( (fromBottom-stopOn) > 200 ){
+     
+    $( this ).css('width', $( this ).width()).css('top', 0).css('position', '');
+     
+    $( this ).affix({
+      offset: { 
+        
+        top: fromTop - 80,  
+         
+        bottom: stopOn
+      }
+    
+    }).on('affix.bs.affix', function(){ $( this ).css('top', '80px').css('position', ''); });
+  }
+  
+  $( window ).trigger('scroll'); 
+}); 
+}
+});
+$('body').scrollspy({
+offset: 80
+});
+$(function() {
+$('a[href*=#]:not([href=#])').click(function() {
+if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+var target = $(this.hash);
+target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+if (target.length) {
+$('html,body').animate({
+  scrollTop: target.offset().top
+}, 1000);
+return false;
+}
+}
+});
+});
+
+tga = false;
+function tg() {
+    
+    if(!tga) {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-bars");
+        x[0].classList.add("fa-close");
+        tga = true;
+    } else {
+        var x = document.getElementsByClassName("fa");
+        x[0].classList.remove("fa-close");
+        x[0].classList.add("fa-bars");
+        tga = false;
+    }
+}
+ </script>

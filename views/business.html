@@ -1,0 +1,645 @@
+<style>
+        body {
+            overflow-x: hidden;
+        }     
+        
+        #searchTextField{
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+        }
+        
+        .icon-bar{
+         background:#d6d6d6;
+        }
+        .legend{
+            margin-top: 2px;
+        }
+        .bg1{
+            padding-top:150px;
+            background:#e9e9e9;
+            padding-bottom:150px;
+        }
+        .col-md-2 a:hover{
+          text-decoration:none;
+          color:#ff0000;
+        }
+        .col-md-2 a{
+          color:#000000;
+          cursor:pointer;
+        }
+        .bg3{
+           width:100%;
+        }
+        .col-md-2{
+          color:#000000;
+           
+          font-family:'Droid Sans', sans-serif;
+          font-size:1.5em;
+          cursor:hand;
+        }
+        .col-md-2 a{
+          color: white;
+            font-size: 15px;
+        }
+        
+         #mapCanvas {
+            height: 300px;
+            margin-top:20px;
+            margin-left:-12px;
+             
+          }
+        
+        @media(max-width:380px){
+          .bg18{
+            max-width:100%;
+          }
+        }
+         #infoPanel {
+             
+            margin-left: 10px;
+          }
+          #infoPanel div {
+            margin-bottom: 5px;
+          }
+          .new{
+              font-family:"Sans",Verdana,"sans-serif";
+              font-size:20px;
+              text-align:center;
+        
+          }
+          .bg1{
+              margin-top:100px;
+        }
+        .bg1{
+            border:2px solid #f6f6f6;
+            border-radius:10px;
+             
+             
+        }
+         .row_11{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        /*  font-family: "Sans",Verdana,'sans-serif';*/
+        /*  font-weight:bold;*/
+             
+        /*  font-size:1.5em;*/
+        /*  background: #ffffff;*/
+            background: black;
+        }
+        
+                
+                
+        .dashboard-side-menu {
+     background: #323232;
+     height: 900px;
+    position: fixed;
+    left: 0px;
+    margin-top: -20px;
+    z-index: 3;
+    width: 16.66666%;
+     box-shadow: -3px 0 8px -4px rgba(0,0,0,0.3) inset, 8px 0 15px -6px rgba(0,0,0,0.21), 5px 0 5px -6px rgba(0,0,0,0.15);
+ }
+
+ .store-name-side {
+    padding: 40px 15px 30px;
+     color: #fafafa;
+     background: rgba(0,0,0,0.15);
+     margin-bottom: 25px;
+     box-shadow: 0 -2px 4px -3px rgba(0,0,0,0.15) inset;
+     font-family: 'Titillium Web', sans-serif;
+ }
+
+
+ .dashboard-side-menu ul {
+     padding: 0;
+ }
+
+ .dashboard-side-menu ul li a {
+     display: block;
+     padding: 15px;
+     color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+ }
+
+
+ .dashboard-side-menu ul li a.active {
+     background: #fafafa;
+     color: #444;
+ }
+
+
+ .dashboard-side-menu ul li a:hover {
+     background: rgba(0,0,0,0.2);
+ }
+
+ .dashboard-side-menu ul li a.active:hover {
+        background: #fafafa;
+     color: #444;
+ }
+
+
+ .dashboard-side-menu ul li a i.fa {
+     font-size: 18px;
+     margin-right: 7px;
+ }
+      
+ .hxpa-business {
+     /* background: #fafafa; */
+     margin-right: -15px;
+     margin-top: 0px !important;
+ }
+
+ .hxpa-business .dash-head {
+    background: #e63631;
+    margin-right: -15px;
+    margin-left: -18px;
+    margin-top: 3px;
+    padding: 32px 30px 28px;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+.hxpa-business .dash-head h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    color: #fafafa;
+}
+.hxpa-input input:focus, 
+.hxpa-input select:focus {
+    border-bottom: 2px solid #e63631;
+}
+
+.side-toggle-btn {
+    position: fixed;
+    display: none;
+    top: 3px;
+    left: 0;
+    z-index: 999999;
+    padding: 15px;
+}
+
+.side-toggle-btn i {
+    font-size: 25px;
+    color: #e63631;
+}
+
+.side-shadow {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.15);
+}
+
+@media(max-width: 767px) {
+
+.side-toggle-btn {
+    display: block;
+}
+
+.hxpa-business .dash-head {
+    margin-top: 0;
+}
+
+.dashboard-side-menu {
+    left: -75%;
+    width: 70%;
+    margin-top: -30px;
+    transition: all 0.5s ease-in-out;
+    padding-top: 0;
+    z-index: 99999;
+}
+
+#login-btn {
+    border: none;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.hxpa-dashboard .dash-head {
+    top: 55px;
+    left: 0px;
+    width: 102%;
+}
+
+.banner_prod {
+    width: 95%;
+}
+
+.swwd1 {
+    margin-top: 50px;
+}
+
+.hxpa-business .hxpa-form {
+    width: 95% !important;
+    margin-left: 5px !important;
+}
+
+}
+
+.dashboard-side-menu ul li a i {
+    display: inline-block;
+    width: 20px;
+}
+        </style>
+<link href="../styles/hxpa.css" rel="stylesheet">
+<div class="container-fluid hxpa-business">
+        <div class="side-toggle-btn" onclick="sidemenufunc()">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+   <!-- <div style="text-align:center;">
+    <button class="btn-danger" style="padding:10px;"><a href="#/dashboard" style="color:white;font-size:15px">Dashboard</a></button>
+    </div>
+    <br> -->
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="dashboard-side-menu" id="sm-m">
+                <h3 class="store-name-side">{{hxpadata.StoreName || "Loading..."}}</h3>
+                <ul>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); changeloc('home');" href="#home"> <i class="fa fa-shopping-cart"></i> Dashboard</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); changeloc('menu2');" ng-click="getProduct()" href="#menu2"> <i class="fa fa-file-text-o"></i> Inventory</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); changeloc('menu1');" ng-click="openMe()" href="#menu1"> <i class="fa fa-inr"></i> Payments</a></li>
+                    <li><a ng-click="visit()" class="active"> <i class="fa fa-suitcase"></i> Business</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-10">
+
+                <div class="side-shadow" id="hide-side-shadow" onclick="sidemenufunc()"></div>
+                <div class="dash-head">
+                        <h2 id="head-data">Business</h2>
+                        <!-- <hr> -->
+                    </div>
+            <br>
+            <br><br><br><br><br><br><br>
+            <div class="hxpa-form">
+                <div class="hxpa-form-head">
+                    <h3>Halanx Business</h3>
+                </div>
+                <div class="hxpa-block">
+                    <h4>About You</h4>
+                    <div class="hxpa-input-wrap">
+                        <div class="hxpa-input">
+                            <label>First Name</label>
+                            <input type="text" ng-model="hxpadata.Dealer_FirstName">
+                        </div>
+                        <div class="hxpa-input">
+                            <label>Last Name</label>
+                            <input type="text" ng-model="hxpadata.Dealer_LastName">
+                        </div>
+                        <div class="hxpa-input">
+                            <label>Your Designation</label>
+                            <input type="text" ng-model="hxpadata.Dealer_Designation">
+                        </div>
+                        <div class="hxpa-input">
+                            <label>Contact Number</label>
+                            <input type="text" ng-model="hxpadata.Dealer_ContactNo">
+                        </div>
+                        <div class="hxpa-input">
+                            <label>Email</label>
+                            <input type="email" ng-model="hxpadata.Dealer_EmailId" readonly>
+                        </div>
+                        <!--<div class="hxpa-input">
+                            <label>Password</label>
+                            <input type="password" ng-model="hxpadata.Dealer_password">
+                        </div>-->
+                    </div>
+                </div>
+                <!--<div class="hxpa-continue">
+                    <button ng-click="submitform()">Save</button>
+                </div>-->
+            </div>
+            <div class="hxpa-form hxpa-about-form">
+                    <div class="hxpa-form-head">
+                        <h3>About Your Organisation</h3>
+                    </div>
+                    <div class="hxpa-block">
+                        <div class="hxpa-input-wrap">
+                            <div class="hxpa-input">
+                                <label>Provide your legal organisation name</label>
+                                <input type="text" ng-model="hxpadata.CompanyLegalName ">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Provide the name to be shown in Website/App</label>
+                                <input type="text" ng-model="hxpadata.StoreName ">
+                            </div>
+                            <div class="hxpa-input">
+                                <div id="infoPanel">
+                         <input id="info" type="hidden" size="50" value=""/>
+                        <div style="padding-top:30px" class="panel-body" >
+                                <div class="form-group">
+                                 
+                            <div id="loginform" class="form-horizontal" >
+                                        
+                                <div style="margin-bottom: 25px" class="input-group">
+                                     
+                                       
+                                    <input id="searchTextField" class="form-control" type="text" placeholder="Enter Store Location" ng-model="one" value="{{hxpadata.StoreAddress}}">
+                       <span class="input-group-btn">
+                       <button class="btn btn-danger btn-md" type="button">
+                       <i class="glyphicon glyphicon-search"></i>
+                       </button>
+                       </span>
+                                       </div>
+                                       </div>
+                                        </div>
+                                    
+                                <div style="margin-bottom: 25px; width:100%;" class="input-group container">
+                                <div id="mapCanvas"></div>
+    
+                                        </div>
+                        </div>
+                         </div>
+                <!--</div>
+            </div>
+     </div>  -->
+                               <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnunhscL2jKBg62KkqAhJwSMXhDoN9DE&libraries=places"></script>
+        <script>
+        var geocoder = new google.maps.Geocoder();       
+    
+                function geocodePosition(pos) {
+                    geocoder.geocode({
+                        latLng: pos
+                    }, function(responses) {
+                        if (responses && responses.length > 0) {
+                            updateMarkerAddress(responses[0].formatted_address.replace(", Delhi","").split(", ").splice(-1,1));
+                        } else {
+                            updateMarkerAddress('Update!');
+                        }
+                    });
+                }
+    
+    
+                function updateMarkerPosition(latLng) {
+                    document.getElementById('info').value = [
+                        latLng.lat(),
+                        latLng.lng()
+                    ].join(', ');
+                     
+                   var obj={"Latitude":latLng.lat(),"Longitude":latLng.lng()};
+                   localStorage.setItem("storeLocation",JSON.stringify(obj));
+                   console.log(localStorage.getItem("storeLocation"));
+                }
+    
+                function updateMarkerAddress(str) {
+                    document.getElementById('searchTextField').value = str;
+                }
+    
+                function initialize() {
+                    var latLng = new google.maps.LatLng(28.6139,77.2090);
+                    var map = new google.maps.Map(document.getElementById('mapCanvas'), {
+                        zoom: 12,
+                        center: latLng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        streetViewControl: false,
+                        mapTypeControl: false
+                       
+                    });
+                    var marker = new google.maps.Marker({
+                        position: latLng,
+                        map: map,
+                        draggable: true,
+                        title:"Drag marker to set position"
+                    });
+                    
+                    var input = document.getElementById('searchTextField');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+    
+            autocomplete.bindTo('bounds', map);
+    
+                    // Update current position info.
+                    updateMarkerPosition(latLng);
+                    //geocodePosition(latLng);
+    
+                    // Add dragging event listeners.
+                    google.maps.event.addListener(marker, 'dragstart', function() {
+                        updateMarkerAddress('Dragging...');
+                    });
+    
+                    google.maps.event.addListener(marker, 'drag', function() {
+                        updateMarkerPosition(marker.getPosition());
+                    });
+    
+                    google.maps.event.addListener(marker, 'dragend', function() {
+                        geocodePosition(marker.getPosition());
+                    });
+                    
+                    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                        input.className = '';
+              var place = autocomplete.getPlace();
+              if (!place.geometry) {
+                // Inform the user that the place was not found and return.
+                input.className = 'notfound';
+                return;
+              }
+    
+              // If the place has a geometry, then present it on a map.
+              if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+              } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);  // Why 17? Because it looks good.
+              }
+                marker.setPosition(place.geometry.location);
+    updateMarkerPosition(marker.getPosition());
+    //geocodePosition(marker.getPosition());
+             
+            });
+                }
+    
+                // Onload handler to fire off the app.
+                google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+                            </div>
+                            <div class="hxpa-input">
+                                <label>PAN Number</label>
+                                <input type="text" ng-model="hxpadata.PANNumber">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hxpa-continue">
+                        <button ng-click="submitaboutform()">Save</button>
+                    </div>
+                </div>
+            <div class="hxpa-form hxpa-bank-form">
+                <div class="hxpa-form-head">
+                    <h3>Bank Account</h3>
+                </div>
+                <div class="hxpa-block">
+                    <h4>This is the account in which payments will be done</h4>
+                    <div class="hxpa-input-wrap">
+                        <div class="hxpa-input">
+                            <label>Bank Name</label>
+                            <input type="text" ng-model="hxpadata.BankName">
+                        </div>
+                        <div class="hxpa-input">
+                            <label>Bank Branch</label>
+                            <input type="text" ng-model="hxpadata.BankBranchAddress">
+                        </div>
+                        <div class="hxpa-input">
+                            <label>IFSC</label>
+                            <input type="text" ng-model="hxpadata.IFSCCode">
+                        </div>
+                        <div class="hxpa-input">
+                            <label>Account Type</label>
+                            <select ng-init="hxpadata.BankAccountType = 'Saving Account'">
+                                <option ng-click="AccountType('SA')" ng-selected="myAccount">Saving Account</option> 
+                                <option ng-click="AccountType('CA')" ng-selected="myAccount1">Current Account</option>
+                            </select>
+                        </div>
+                        <div class="hxpa-input">
+                            <label>Account Number</label>
+                            <input type="text" ng-model="hxpadata.BankAccountNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="hxpa-continue">
+                    <button ng-click="submitbankform()">Save</button>
+                </div>
+            </div>
+            <div class="hxpa-form hxpa-time-form">
+                    <!--<div class="hxpa-form-head">
+                        <label>Choose Store Location</label>
+                        <select>
+                            <option value="hxpadata.StoreAddress">{{hxpadata.StoreAddress}}</option>
+                        </select>
+                    </div>-->
+                    <div class="hxpa-block">
+                        <h4>Set timing for which this particular location is operating</h4>
+                        <div class="hxpa-input-wrap" ng-cloak>
+                            <div class="hxpa-input" ng-hide="time" ng-repeat="hx in hxpadata.opening_hours">
+                                <label>{{hx.weekday}}</label>
+                                <input type="text" disabled ng-model="hx.from_hour">
+                                <span>-</span>
+                                <input type="text" disabled ng-model="hx.to_hour">
+                            </div>
+                            <div ng-show="time">
+                            <div class="hxpa-input">
+                                <label>Monday</label>
+                                <input type="time" ng-model="hxpadata.MondayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="hxpadata.MondayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Tuesday</label>
+                                <input type="time" ng-model="hxpadata.TuesdayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="hxpadata.TuesdayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Wednesday</label>
+                                <input type="time" ng-model="hxpadata.WednesdayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="hxpadata.WednesdayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Thursday</label>
+                                <input type="time" ng-model="hxpadata.ThursdayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="hxpadata.ThursdayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Friday</label>
+                                <input type="time" ng-model="hxpadata.FridayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="hxpadata.FridayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Saturday</label>
+                                <input type="time" ng-model="hxpadata.SaturdayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="hxpadata.SaturdayClosingTime">
+                            </div>
+                            <div class="hxpa-input">
+                                <label>Sunday</label>
+                                <input type="time" ng-model="hxpadata.SundayOpeningTime">
+                                <span>-</span>
+                                <input type="time" ng-model="hxpadata.SundayClosingTime">
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hxpa-continue">
+                        <button ng-click="edit()" ng-hide="time">Edit</button>
+                        <button ng-click="submittimeform()" ng-show="time">Save</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<script>
+   // var lat = $('[ng-controller="BusinessCtrl"]').scope().hxpadata.Latitude;
+    function initMap() {
+        console.log("lat is bla bla",street_name);
+        var uluru = {lat: 28.6139, lng: 77.2090};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            title:"You are here!",
+            draggable: true,
+            animation: google.maps.Animation.DROP
+        });
+    }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnunhscL2jKBg62KkqAhJwSMXhDoN9DE&callback=initMap&libraries=places">
+</script>
+
+<script>
+    togglecheck = false;
+       sizecheck = false;
+       sm = document.getElementById("sm-m");
+       order_table = document.getElementById("order-table");
+
+       side_shadow = document.getElementById("hide-side-shadow");
+
+       window.addEventListener("resize", function(){
+           if(window.innerWidth > 767) {
+                sm.style.left = "0px";
+                sizecheck=true;
+                side_shadow.style.display = "none";
+           } else if(window.innerWidth<767 && sizecheck==true) {
+                sm.style.left = "-75%";
+                sizecheck=false;
+                togglecheck = false;
+           }
+       });
+
+        function sidemenufunc() {
+            if(togglecheck == false) {
+                sm.style.left = "0px";
+                side_shadow.style.display = "block";
+                togglecheck = true;
+            } else {
+                sm.style.left = "-75%";
+                side_shadow.style.display = "none";
+                togglecheck = false;
+            } 
+        }
+
+        function changeloc(locval) {
+            localStorage.setItem("locval", locval);
+            localStorage.setItem("locvalcheck", "true");
+            window.location = "#/dashboard";
+        }
+</script>

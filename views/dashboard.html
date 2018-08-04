@@ -1,0 +1,1685 @@
+<link href="../styles/dashboard.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="../../node_modules/angular-pickadate/dist/angular-pickadate.css">
+<style>
+
+
+
+@media(min-width:992px){
+    .table_scroll{
+        max-height: 480px;
+        overflow: scroll;
+        cursor: move;
+    }
+}
+
+textarea{
+    resize: none;
+}
+.ptb-50{
+    padding: 50px 50px;
+}
+
+.section_bg_gray {
+    background-color: #f3f5f7;
+}
+
+.single_what_we_do {
+    background-color: #fff;
+    text-align: center;
+    padding: 0 35px;
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1px solid #f8f8f8;
+    box-shadow: 0 5px 10px -2px rgba(0,0,0,0.15);
+}
+
+/* .single_what_we_do:hover {
+    -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+} */
+
+.single_what_we_do .top_line {
+    position: absolute;
+    top: 0;
+    left: 44%;
+    width: 12%;
+    height: 3px;
+}
+
+.top_line1{
+    background-color: red;
+}
+
+.top_line2{
+    background:  green;
+}
+
+.loadMore{
+    display: block;
+    margin: 0 auto;
+}
+
+.single_what_we_do .what_we_do_figure {
+    padding: 25px 0;
+}
+.single_what_we_do .what_we_do_figure img {
+    margin: 0 auto;
+}
+.single_what_we_do .what_we_do_title {
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 25px;
+    margin: 0;
+    font-family: "Titillium Web", sans-serif;
+    color: #2b353a;
+}
+.single_what_we_do .what_we_do_content {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #2b353a;
+}
+
+@media(max-width:500px){
+    .check1{
+        width: 10% !important;
+    }
+}
+ .single_what_we_do .what_we_do_icon {
+    position: absolute;
+    bottom: -9px;
+    left: 47%;
+    color: #fff;
+    background-color: #8448ff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.single_what_we_do .what_we_do_icon i {
+    font-size: 24px;
+    text-align: center;
+    padding: 2px 3px 2px 5px;
+}
+
+.icon{
+    font-size: 28px;
+}
+
+.icon1{
+    color: red;
+}
+
+.icon2{
+    color: green;
+}
+
+.dont{
+    display: none;
+}
+
+.show{
+    display: inline-block !important;
+}
+
+@media(min-width:993px){
+    .img_prod{
+    margin-top: 140px !important;
+    height: 160px;
+    width: 280px;
+    }
+}
+
+@media(max-width:992px){
+    .img_prod{
+    margin-top: 20px !important;
+}
+}
+
+
+
+.form-control[disabled]{
+    background: white !important;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.img_prod{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.banner_prod{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    box-shadow: 0 5px 10px -2px rgba(0,0,0,0.15);
+    border-top: 3px solid #e63631;
+}
+
+.form-control{
+    margin-bottom: 8px !important;
+}
+
+input.form-control,
+select.form-control,
+textarea.form-control {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #e1e1e1;
+    border-radius: 0;
+    padding-left: 5px;
+    border-bottom: 2px solid #e63631;
+}
+
+input.form-control:focus,
+select.form-control:focus,
+textarea.form-control:focus {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #e63631;
+} 
+
+.product_content{
+    padding: 20px;
+}
+
+.product_content label {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.btn{
+    padding: 5px !important;
+    border: 1px solid black;
+}
+
+.loadingRip {
+    text-align: center;
+}
+
+ .loadingRip img {
+     z-index: 1000;
+     height: 70px;
+     width: 70px;
+ }
+
+ .dashboard-side-menu {
+     background: #323232;
+     height: 900px;
+    position: fixed;
+    left: 0px;
+    z-index: 3;
+    width: 16.66666%;
+     box-shadow: -3px 0 8px -4px rgba(0,0,0,0.3) inset, 8px 0 15px -6px rgba(0,0,0,0.21), 5px 0 5px -6px rgba(0,0,0,0.15);
+ }
+
+ .store-name-side {
+    padding: 40px 15px 30px;
+     color: #fafafa;
+     background: rgba(0,0,0,0.15);
+     margin-bottom: 25px;
+     box-shadow: 0 -2px 4px -3px rgba(0,0,0,0.15) inset;
+     font-family: 'Titillium Web', sans-serif;
+ }
+
+ .dashboard-side-menu ul li a {
+     display: block;
+     padding: 15px;
+     color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+ }
+
+.dashboard-side-menu ul li a[aria-expanded="true"] {
+    background: #fafafa;
+    color: #444;
+}
+
+.dashboard-side-menu ul li a[aria-expanded="true"]:hover {
+    background: #fafafa;
+    color: #444;
+}
+
+ .dashboard-side-menu ul li a:hover {
+     background: rgba(0,0,0,0.2);
+ }
+
+
+ .dashboard-side-menu ul li a i.fa {
+     font-size: 18px;
+     margin-right: 7px;
+ }
+
+ footer {
+     position: relative;
+     z-index: 100000;
+ }
+
+ #home {
+     min-height: 400px;
+ }
+
+.dashboard-side-menu ul li a i {
+    display: inline-block;
+    width: 20px;
+}
+
+.side-toggle-btn {
+    position: fixed;
+    display: none;
+    top: 3px;
+    left: 0;
+    z-index: 999999;
+    padding: 15px;
+}
+
+.side-toggle-btn i {
+    font-size: 25px;
+    color: #e63631;
+}
+
+.side-shadow {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.15);
+}
+
+.dash-mobile {
+        display: none;
+    }
+
+    .dash-desktop {
+        display: block;
+    }
+
+@media(max-width: 767px) {
+
+    .dash-mobile {
+        display: block;
+    }
+
+    .dash-desktop {
+        display: none;
+    }
+
+.side-toggle-btn {
+    display: block;
+}
+.dashboard-side-menu {
+    left: -75%;
+    width: 70%;
+    margin-top: -10px;
+    transition: all 0.5s ease-in-out;
+    padding-top: 0px;
+    z-index: 99999;
+}
+
+#login-btn {
+    border-bottom: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.hxpa-dashboard .dash-head {
+    top: 55px;
+    left: 0px;
+    width: 102%;
+}
+
+.banner_prod {
+    width: 95%;
+}
+
+.swwd1 {
+    margin-top: 50px;
+}
+}
+
+ </style>   
+<div class="container-fluid hxpa-dashboard">
+    <div class="side-toggle-btn" onclick="sidemenufunc()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="dashboard-side-menu" id="sm-m">
+                <h3 class="store-name-side">{{storeName || "Loading..."}}</h3>
+                <ul class="dash-desktop">
+
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Home')"  ng-click="getProfile();loadStoreDetails()" href="#menu6" id="hom"> <i class="fa fa-home"></i> Home</a></li>
+                        <!-- <li><a ng-click="visit()"> <i class="fa fa-suitcase"></i> Business</a></li> -->
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Business')" ng-click="getBusiness()" href="#menu7" id="bus"> <i class="fa fa-suitcase"></i> Business</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Vouchers')" ng-click="getVouchers()" href="#menu3" id="vou"> <i class="fa fa-file-text-o"></i> Vouchers</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Deliveries')" href="#home" id="clickexp"> <i class="fa fa-shopping-cart"></i> Deliveries</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Inventory')" ng-click="getProduct()" href="#menu2" id="inv"> <i class="fa fa-file-text-o"></i> Inventory</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Payments')" ng-click="openMe()" href="#menu1" id="paym"> <i class="fa fa-inr"></i> Payments</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Profile')" ng-click="getProfile()" href="#menu5" id="profile"> <i class="fa fa-user"></i> Profile</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Notifications')" ng-click="getNot()" href="#menu8" id="not"> <i class="fa fa-bell-o"></i> Notifications</a></li>
+                    </ul>
+                <ul class="dash-mobile">
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Home')" ng-click="getProfile();loadStoreDetails()" href="#menu6" id="hom"> <i class="fa fa-home"></i> Home</a></li>
+                        <!-- <li><a ng-click="visit()"> <i class="fa fa-suitcase"></i> Business</a></li> -->
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Business')" ng-click="getBusiness()" href="#menu7" id="bus"> <i class="fa fa-suitcase"></i> Business</a></li>
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Vouchers')" ng-click="getVouchers()" href="#menu3" id="vou"> <i class="fa fa-file-text-o"></i> Vouchers</a></li>
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Deliveries')" href="#home" id="clickexp"> <i class="fa fa-shopping-cart"></i> Deliveries</a></li>
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Inventory')" ng-click="getProduct()" href="#menu2" id="inv"> <i class="fa fa-file-text-o"></i> Inventory</a></li>
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Payments')" ng-click="openMe()" href="#menu1" id="paym"> <i class="fa fa-inr"></i> Payments</a></li>
+
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Profile')" ng-click="getProfile()" href="#menu5" id="profile"> <i class="fa fa-user"></i> Profile</a></li>
+                        <li><a data-toggle="tab" onclick="event.preventDefault(); setVal('Notifications')" ng-click="getNot()" href="#menu8" id="not"> <i class="fa fa-bell-o"></i> Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="side-shadow" id="hide-side-shadow" onclick="sidemenufunc()"></div>
+            <div class="dash-head">
+                <h2 id="head-data">Deliveries</h2>
+                <!-- <hr> -->
+            </div>
+            <div class="order-table" id="order-table">
+                <!-- <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" onclick="event.preventDefault()" href="#home">Deliveries</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault()" ng-click="openMe()" href="#menu1">Payments</a></li>
+                    <li><a ng-click="visit()">Business</a></li>
+                    <li><a data-toggle="tab" onclick="event.preventDefault()" ng-click="getProduct()" href="#menu2">Products</a></li>
+                    </ul> -->
+                    <div class="tab-content">
+                    <div id="home"  class="tab-pane fade in active table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>OrderId</th>
+                                <th>BatchId</th>
+                                <th>Placing Time</th>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Customer</th>
+                                <th>Shopper</th>
+                                <th>Total</th>
+                                <th>Delivery Time</th>
+                                <th class="o-stat">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="data in dashdata|orderBy:'delivery_time':true">
+                                <td>{{data.order_id}}</td>
+                                <td>{{data.batch_id}}</td>
+                                <td>{{data.placing_time}}</td>
+                                <td>{{data.product}}</td>
+                                <td>{{data.quantity}}</td>
+                                <td>{{data.customer}}</td>
+                                <td>{{data.shopper}}</td>
+                                <td>{{data.price}}</td>
+                                <td>{{data.dt}}</td>
+                                <td class="o-stat o-pending" ng-hide="data.is_delivered"><span class="glyphicon glyphicon-remove"></span></td>
+                                <td class="o-stat o-done" ng-hide="!data.is_delivered"><span class="glyphicon glyphicon-ok"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="loadingRip" ng-hide="lodRip">
+                            <img src="../images/ripple_loading.gif">
+                        </div>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <!-- <h3>Payments</h3> -->
+                        <br><br>
+                        <div class="row">
+                            <div style="overflow:scroll;" class="col-md-7 col-sm-7  table_scroll">
+                                <table class="table table-striped" style="overflow:scroll">
+                                    <thead>
+                                        <tr>    
+                                            <th>S.No.</th>
+                                            <th>Date & Time of Payment</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Amount Paid</th>
+                                        </tr>    
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="data in payment track by $index">
+                                            <td>{{data.id}}</td>
+                                            <td>{{data.paid_on}}</td>
+                                            <td>{{data.from_date}}</td>
+                                            <td>{{data.to_date}}</td>
+                                            <td>{{data.amount}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>    
+                            </div>
+                            <div class="col-md-1 col-sm-1"></div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="row" id="try">
+                                    <div class="col-md-12 try">
+                                            <div class="single_what_we_do swwd1">
+							<div class="top_line top_line1"></div>
+							<div class="what_we_do_figure">
+								<i class="fa fa-exclamation icon icon1" aria-hidden="true"></i>
+							</div>
+							<h4 class="what_we_do_title">Amount Pending</h4>
+							<div class="what_we_do_content"><i class="fa fa-inr" aria-hidden="true"></i> {{pending}}</div>
+							
+						</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="single_what_we_do swwd2">
+							<div class="top_line top_line2"></div>
+							<div class="what_we_do_figure">
+								<i class="fa fa-check icon icon2" aria-hidden="true"></i>
+							</div>
+							<h4 class="what_we_do_title">Total Amount Paid till now</h4>
+							<div class="what_we_do_content"><i class="fa fa-inr" aria-hidden="true"></i> {{paid}}</div>
+							
+						</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                       
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                    <h3 style="font-family:'Titillium Web',sans-serif;">Search</h3>
+                        <input type="search" class="form-control" placeholder="search your products" ng-keyup="searchPro()" ng-model="searchProVal" style="margin-top: 10px; padding-left: 5px;">
+                        {{searchMsg}}
+                        </div>
+                        <div class="col-sm-4"></div>
+                        </div>
+                        <br><br>
+                        <div class="row banner_prod" ng-repeat="product in productsSer">
+                                <!-- <div class="col-md-4 logo">
+                                    <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
+                                </div> -->
+                                <div class="col-md-8 product_content">
+                                    <label for="prdouct_name">Product Name</label>
+                                    <input type="text" name="prdouct_name" class="form-control" ng-model="product.ProductName" ng-disabled="product.disable">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="price">MRP (Rs.)</label>
+                                            <input type="number" name="price" class="form-control" ng-model="product.MRP" ng-disabled="product.disable">
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-5">
+                                            <label for="price">Selling Price (Rs.)</label>
+                                            <input type="number" name="price" class="form-control" ng-model="product.Price" ng-disabled="product.disable">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label for="">Choose Category</label>
+                                        <select class="form-control" ng-model="product.Category" ng-disabled="product.disable">
+                                            <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+                                        </select>
+    
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="">Description</label>
+                                            <textarea ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
+    
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label>Available</label> <input  class="form-control check1" type="checkbox" ng-disabled="product.disable" ng-model="product.Active">
+                                        </div>
+                                    </div>
+                                    <h5 style="margin-bottom:-10px;color:red;" class="dont"  ng-class="{'show':product.disable==true}">{{product.msg}}</h5>
+                                    <br>
+                                    <button class="btn btn-prmiary" ng-click="edit(product)" ng-class="{'dont':product.disable==false}">Edit</button>
+                                    <button class="btn btn-default dont" ng-click="save(product)"  ng-class="{'show':product.disable==false}">Save</button>
+                                    <button class="btn btn-primiary dont" ng-click="cancelEdit(product)" ng-class="{'show':product.disable==false}">Cancel</button>
+                                    
+                                </div>
+                            </div>
+                        <div class="banner_prod" ng-repeat="product in products">
+                            <!-- <div class="col-md-4 logo">
+                                <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
+                            </div> -->
+                            <div class="product_content">
+                                <label for="prdouct_name">Product Name</label>
+                                <input type="text" name="prdouct_name" class="form-control" ng-model="product.ProductName" ng-disabled="product.disable">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label for="price">MRP (Rs.)</label>
+                                        <input type="number" name="price" class="form-control" ng-model="product.MRP" ng-disabled="product.disable">
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-5">
+                                        <label for="price">Selling Price (Rs.)</label>
+                                        <input type="number" name="price" class="form-control" ng-model="product.Price" ng-disabled="product.disable">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="">Choose Category</label>
+                                    <select class="form-control" ng-model="product.Category" ng-disabled="product.disable">
+                                        <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
+                                    </select>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="">Description</label>
+                                        <textarea ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
+
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Available</label> <input  class="form-control check1" type="checkbox" ng-disabled="product.disable" ng-model="product.Active">
+                                    </div>
+                                </div>
+                                <h5 style="margin-bottom:-10px;color:red;" class="dont"  ng-class="{'show':product.disable==true}">{{product.msg}}</h5>
+                                <br>
+                                <button class="btn btn-prmiary" ng-click="edit(product)" ng-class="{'dont':product.disable==false}">Edit</button>
+                                <button class="btn btn-default dont" ng-click="save(product)"  ng-class="{'show':product.disable==false}">Save</button>
+                                <button class="btn btn-primiary dont" ng-click="cancelEdit(product)" ng-class="{'show':product.disable==false}">Cancel</button>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn-danger btn loadMore" ng-hide="loadMore_c" ng-click="LoadMoreProducts()">Load More</button>
+                                <h5 style="text-align:center;" ng-show="loadMore_c">No more products</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="menu3">
+                        
+                        <div class="row top">
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="box">
+                                <h4>Enter Voucher Code</h4>
+                                <div>
+                                    <input type="text" placeholder="Enter voucher" ng-model="voucherCode">
+                                    <button type="submit" ng-click="checkCode()" class="btn-danger redeeming">Redeem</button>
+                                    <!--   data-toggle="modal"   data-target="#myModal"   -->
+                                    <p class="redeemed" ng-show="cantRedeem">This Voucher Code is not valid</p>
+                                </div>
+
+                            </div>
+                        </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="box">
+                                    <h4>Vouchers Redeemed : {{vstats.redeemed_count}}</h4>
+                                    <hr>
+                                    <br>
+                                    <h4>Total Earned : &#8377; {{vstats.total_earning}}</h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="bottomest">
+                            <div class="bottomest2">
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-6 bottom" ng-class="!showOffer?'removed':''" ng-click="showOffer=false">
+
+                                <h3>Transaction</h3>
+
+                            </div>
+
+                            <div class="col-sm-6 col-xs-6 bottom" ng-class="showOffer?'removed':''" ng-click="showOffer=true">
+
+                                <h3>Offers</h3>
+
+                            </div>
+                        </div>
+                        <div class="downside">
+                            <div class="trans row" ng-show="!showOffer">
+
+                                    <div ng-repeat="data in result" class="col-sm-6 col-6" ng-show="!nodat">
+                                            <div class="transoffers">
+                                            <div class="top row">
+                                            <img ng-src="{{data.customer.profile_pic_url}}" class="col-sm-2 col-2" alt="Img">
+                                            <h6 class="col-sm-10 col-10">{{data.customer.user.first_name}} {{data.customer.user.last_name}}</h6>
+                                            <h6 class="col-sm-10 col-10 date">{{data.timestamp}}</h6>
+                                            </div>
+                                            <p class="linebelow">{{data.voucher.name}}</p>
+                                            <p>Code : {{data.code}}</p>
+                                        </div>
+                                    </div>
+
+
+
+                            <div class="col-sm-12 col-12" ng-show="nodat">
+                                <h6 class="col-sm-12 col-12">No Transactions have been done.</h6>
+                               
+                        </div>
+
+                            </div>
+
+                            <div class="trans row" ng-show="showOffer">
+                                    <div class="col-sm-6 col-6" ng-repeat="data in offers" ng-show="!nooff">
+                                            <div class="transoffers">
+                                            <div class="top row">
+                                            <h6 class="col-sm-10 col-10" style="width: 100%"> <b>{{data.name}}</b> : <span style="width: 100%">{{data.description}}</span></h6>
+                                            <!-- <p>{{data.description}}</p>   -->
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-12" ng-show="nooff">
+                                            <h6 class="col-sm-12 col-12">No Offers are available.</h6>
+                                           
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                        <!-- MODAL -->
+
+                        <div class="modal fade" ng-show="!cantRedeem" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <h4 class="modal-title" id="myModalLabel">Voucher</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="flexible">
+                                            <h6><b>Code</b> : </h6>
+                                            <h6>{{redeemIt.code}}</h6>
+                                        </div>
+                                        <div class="flexible">
+                                                <h6><b>Sub Total</b> : </h6>
+                                                <h6>{{redeeming.sub_total}}</h6>
+                                            </div>
+                                                <div class="flexible">
+                                                        <h6><b>Status</b> : </h6>
+                                                        <h6>{{redeemIt.status}}</h6>
+                                                    </div>
+                                                    <div class="flexible">
+                                                        <h6><b>Tax</b> : </h6>
+                                                        <h6>{{redeemIt.tax}}</h6>
+                                                    </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+
+                    </div>
+
+
+                    <div class="tab-pane fade" id="menu4">
+                        <div class="wallettop">
+                        <h3>Monthly Wallet Statement</h3>
+                        <select name="" id="" ng-model="monthly" ng-change="getWalletSummary()">
+                            <option value="June"selected>June 18</option>
+                            <option value="May" >May 18</option>
+                            <option value="April" >April 18</option>
+                            <option value="Mar" >Mar 18</option>
+                            <option value="Feb" >Feb 18</option>
+                            <option value="Jan" >Jan 18</option>
+                        </select>
+                    </div>
+                        <div class="wallet">
+                            <div class="walletline linebelow">
+                                <p class="left">Opening Balance</p>
+                                <p class="right">&#8377; {{wallet.opening_balance}}</p>
+                            </div>
+                            <div class="walletline">
+                                <p class="left">Total Cashback Commission</p>
+                                <p class="right negative">- &#8377; {{wallet.cashback_commission}}</p>
+                            </div>
+                            <div class="walletline">
+                                <p class="left">Total Voucher Sale Amount</p>
+                                <p class="right positive">+ &#8377; {{wallet.voucher_sales_amount}}</p>
+                            </div>
+                            <div class="walletline">
+                                <p class="left">Total Voucher Commission</p>
+                                <p class="right negative">- &#8377; {{wallet.voucher_commission}}</p>
+                            </div>
+                            <div class="walletline linebelow">
+                                <p class="left">GST</p>
+                                <p class="right negative">- &#8377; {{wallet.tax}}</p>
+                            </div>
+                            <div class="walletline linebelow">
+                                <p class="left finalval">Closing Balance</p>
+                                <p class="right">&#8377; {{wallet.closing_balance}}</p>
+                            </div>
+                            <div class="lastbutton">
+                                <button class="add">Add Money</button>
+                                <button class="withdraw">Withdraw</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="menu5">
+
+                            <div class="coverpic" style="background-image : url({{coverpic}})">
+                                    <div class="info">
+                                        <img ng-src="{{tophome.profile_pic_url}}" alt="Logo">
+                                        
+                                        <div class="heads">
+                                            <h3>{{tophome.name}}</h3>
+                                            <!-- <br> -->
+                                            <h3>{{tophome.city}}</h3>
+                                        </div>
+                                        <!-- <div class="change2">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        <h5>Edit</h5>
+                                    </div> -->
+                                    <h5>Change</h5>
+                                    </div>
+
+                                    <div class="change">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        <h5>Edit</h5>
+                                    </div>
+                                </div>
+
+                            <div class="box">
+
+                                <h3 class="borderbottom">Outlet Details</h3>
+                                <p class="upborder"><b>Outlet Name</b></p>
+                                
+                                
+                                <div class="editing">
+                                <b>Name:</b> 
+                                <input ng-model="prof.name" type="text">
+                                <br>
+                                <b>About:</b>
+                                <input type="text" ng-model="prof.about"> 
+                                <br> 
+                                <b>Phone Number:</b>
+                                <input type="text" ng-model="prof.phone_no">
+                                <br>
+                                <b>Address:</b>
+                                <input type="text" ng-model="prof.street_address">
+                                <br>
+                                <b>Pincode:</b>
+                                <input type="text" ng-model="prof.pincode">
+                                <br>
+                                <b>City:</b>
+                                <input type="text" ng-model="prof.city">
+                                <br>
+                                <b>State:</b>
+                                <input type="text" ng-model="prof.state">
+                                <br>
+                            </div>
+                                <div class="editIt">
+                                    <button ng-click="editDetails()">Edit</button>
+                                </div>
+
+                                <p class="lastp" style="color: red;" ng-show="detailsChanged">{{detailsChangedval}}</p>
+
+
+                            </div>
+
+                            <div class="box">
+
+                                <h3 class="borderbottom">Timings</h3>
+
+                                <table>
+                                    <tr>
+                                        <th class="day">Day</th>
+                                        <th class="opentime">Opening Time</th>
+                                        <th class="closetime">Closing Time</th>
+                                    </tr>
+                                    <tr ng-repeat="data in time">
+                                        <td class="day">{{data.weekday}}</td>
+                                        <td class="opentime"><input type="text" ng-model="data.from_hour"></td>
+                                        <td class="closetime"><input type="text" ng-model="data.to_hour"></td>
+                                        <td class="editIt"><button ng-click="editTime(data)">Edit</button></td>
+                                    </tr>
+                                </table>
+                                <!-- <div class="editIt">
+                                    <button ng-click="editTime()">Edit</button>
+                                </div> -->
+                                <p class="lastp" style="color: red;" ng-show="timeChanged">{{timeChangedval}}</p>
+                            </div>
+
+                            <div class="box">
+
+                                <h3 class="borderbottom">Add Menu/Photos</h3>
+
+                                <div class="row over" style="overflow:hidden">
+                                    <!-- <div class="imagebox"  >
+                                    <img ng-src="{{data.image}}" alt="Menu" ng-repeat="data in pics" >
+                                </div>
+                                <div class="imagebox" >
+                                    <img ng-src="{{data.image}}" alt="Menu" ng-repeat="data in pics">
+                                </div> -->
+
+                                <div class="wrapper">
+                                        <div class="scrolls">
+                                             <img ng-src="{{data.image}}" ng-repeat="data in pics" />
+                                        </div>
+                                        </div>
+                                      
+                                
+
+                                <div class="col-sm-3 col-6 imagebox extraimgbox">
+                                        <!-- <label class="custom-file-upload extraimg" ng-click="addImage()">
+                                    <input type="file" ng-model="inpu" onchange="angular.element(this).scope().fileNameChanged()" accept="image/*"> <p>+</p>
+                                    </label> -->
+                                    <!-- <button type="file" ng-model="file" ngf-select="uploadFiles($file, $invalidFiles)"
+          accept="image/*" ngf-max-height="1000" ngf-max-size="1MB" class="fileuploadbutton">
+      +</button>
+      <img ngf-thumbnail="file">  -->
+
+      <!-- <input type="file" id="file" name="file"/>
+<button ng-click="add()">Add</button> -->
+
+    <input type="file" id="file" ng-model="files2" name="file" />
+
+    <input type="button" ng-click="uploadFiles()" value="Upload" />
+    <p><progress id="pro" value="0"></progress></p>
+
+
+                                
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="box">
+
+                                <h3 class="borderbottom">Highlights</h3>
+                                
+                                <p>{{prof.highlight}}</p>
+
+                            </div>
+
+                            <div class="box nobottom">
+                                <div class="borderbottom">
+                                    <h3>Team</h3>
+                                    <p ng-click="Verify()" ng-model="verifymember"><b>Add Member</b></p>
+                                    <!-- <p ng-model="file3" ngf-select="uploadFiles2($file2, $invalidFiles)"><b>Add Member</b></p> -->
+                                </div>
+
+                                <form class="addmember" name="myform">
+                                    <div class="photo">
+                                        <label class="custom-file-upload extraimg uploader">
+                                             <i class="fa fa-user"></i>
+                                       </label>
+                                       <div class="namerole">
+                                           <input type="text" ng-model="mem.name" placeholder="Enter your name">
+                                           <br>
+                                           <select name="role" ng-model="mem.role" ng-init="mem.role='Employee'" id="">
+                                               <!-- <option disabled selected>Role</option> -->
+                                               <option value="Owner">Owner</option>
+                                               <option value="Manager">Manager</option>
+                                               <option value="Employee">Employee</option>
+                                           </select>
+                                       </div>
+                                    </div>
+
+                                    <div class="details">
+                                        <label for="" class="toplabel">Phone: 
+                                            <input type="text" ng-model="mem.phone" name="" placeholder="Enter your phone number" id="phone">
+                                        </label>
+                                        <br>
+                                        <label for="">Email:  
+                                            <input type="email" ng-model="mem.email" name="" placeholder="Enter your Email Id" id="email">
+                                        </label>
+                                    </div>
+
+                                    <div style="text-align: center;" ng-show="showedit">
+                                        <p style="color: red;font-size: 15px;
+                                        font-weight: 600;">{{errorinedit}}</p>
+                                    </div>
+
+                                    <div style="text-align: center;" ng-show="!triedAdding">
+                                        <p style="color: red;font-size: 15px;
+                                        font-weight: 600;">{{whathpn}}</p>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <div class="box">
+                                <div class="addmember" ng-repeat="data in members">
+                                    <div class="photo">
+                                        <div class="addphoto" ng-style="{{data.img}}?{'display':'block'}:{'disable':'none'}" style="background-image: url({{data.img}});background-repeat: no-repeat;background-size: contain;background-position: center">
+                                               <h1 ng-style="{{data.img}}?{'display':'none'}:{'diplay':'block'}"> <i class="fa fa-user"></i> </h1>
+                                        </div>
+                                       <div class="namerole">
+                                           <!-- <h4>{{data.name}}</h4> -->
+                                           <!-- <h4>{{data.role}}</h4> -->
+                                           <input type="text" ng-model="data.name">
+                                           <input type="email" ng-model="data.role">
+                                       </div>
+                                    </div>
+
+                                    <div class="details">
+                                        <label for="" class="toplabel">Phone: 
+                                            <!-- <h5>{{data.phone}}</h5>     -->
+                                            <input type="text" ng-model="data.phone">
+                                        </label>
+                                        <label for="">Email:  
+                                            <!-- <h5>{{data.email}}</h5> -->
+                                            <input type="email" ng-model="data.email">
+                                        </label>
+                                    </div>
+
+                                    <button ng-click="EditTeam(data.id,data)" class="btn-danger">Edit</button>
+
+                                </div>
+                                <div style="text-align: center;" ng-show="!editted">
+                                    <p style="color: red;font-size: 15px;
+                                    font-weight: 600;">{{whatedit}}</p>
+                                </div>
+                                <!-- <div class="addmember" ng-show="newm">
+                                    <div class="photo">
+                                        <div class="addphoto" ng-style="{{newm.img}}?{'display':'block'}:{'disable':'none'}" style="background-image: url({{data.img}});background-repeat: no-repeat;background-size: contain;background-position: center">
+                                               <h1 ng-style="{{newm.img}}?{'display':'none'}:{'diplay':'block'}"> <i class="fa fa-user"></i> </h1>
+                                        </div>
+                                       <div class="namerole">
+                                           <!-- <h4>{{data.name}}</h4> -->
+                                           <!-- <h4>{{data.role}}</h4> -->
+                                           <!-- <input type="text" value="{{newm.name}}">
+                                           <input type="email" value="{{newm.role}}">
+                                       </div>
+                                    </div>
+
+                                    <div class="details">
+                                        <label for="" class="toplabel">Phone:  -->
+                                            <!-- <h5>{{data.phone}}</h5>     -->
+                                            <!-- <input type="text" value="{{newm.phone}}">
+                                        </label>
+                                        <label for="">Email:   -->
+                                            <!-- <h5>{{data.email}}</h5> -->
+                                            <!-- <input type="email" value="{{newm.email}}">
+                                        </label>
+                                    </div>
+
+                                    <button ng-click="EditTeam(data)">Edit</button>
+                                </div> --> 
+                            </div>
+                        
+                    </div>
+
+
+
+                    <div class="fade tab-pane" id="menu6">
+                        <div class="row">
+                            <div class="col-sm-8 col-xs-8">
+                                <div class="leftside">
+                                    
+                                    <div class="coverpic" style="background-image : url({{coverpic}})">
+                                        <div class="info">
+                                            <img ng-src="{{tophome.profile_pic_url}}" alt="Logo">
+                                            <div class="heads">
+                                                <h3>{{tophome.name}}</h3>
+                                                <!-- <br> -->
+                                                <h3>{{tophome.city}}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sponsored">
+                                        <h1>Create Sponsored Post</h1>
+
+                                        <div class="boxes row">
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="box nobor">
+                                                    <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, distinctio. Ab quasi natus iure praesentium.</p> -->
+                                                    <textarea name="" id="" cols="30" rows="4" ng-model="spopost"></textarea>  
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="box" style="max-height: 100px;padding: 0 !important">
+                                                    <img  ngf-thumbnail="filess" style="width: 100%;max-height: 98px;">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-xs-4">
+                                                <div class="box addbanner">
+                                                    <label class="custom-file-upload extraimg uploader">
+                                                        <input type="file" ngf-select ng-model="filess" name="filess" ngf-pattern="'image/*'"
+                                                        ngf-accept="'image/*'" ngf-max-size="20MB" accept="image/*">  <i class="fa fa-user"></i>  
+                                                        <p>Add Banner</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                    </div>
+
+                                    <button ng-click="uploadFiles2()">Publish</button>
+                                    </div>
+
+                                    <div class="postsection">
+                                        <div class="post" ng-repeat="data in stats.results">
+                                            <div class="info">
+                                                <img ng-src="{{data.post.customer.profile_pic_thumbnail_url}}" alt="Logo">
+                                                <div class="heads">
+                                                    <h4> <b>{{data.post.customer.user.first_name}} {{data.post.customer.user.last_name}}</b></h4>
+                                                    <!-- <br> -->
+                                                    <h4>{{data.post.posted_since}}</h4>
+                                                </div>
+                                                <h4>{{data.post.checkin.rating}} <i class="fa fa-star" aria-hidden="true"></i> &nbsp; {{data.post.content}}</h4>
+                                            </div>
+
+                                            <div class="selfiebg" style="background-image: url({{data.post.media[0].media}})">
+
+                                            </div>
+
+                                            <!-- <img ng-src="../images/become shopper.jpg" class="selfie" alt="Selfie"> -->
+
+                                            <div class="row">
+                                                <div class="col-sm-4 col-xs-4">
+                                                    <div class="content">
+
+                                                        <p>No.of Visits : {{data.visits}}5</p>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4 col-xs-4">
+                                                    <div class="content">
+
+                                                        <p>Total Spent : {{data.total_spent}}&#8377;500</p>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4 col-xs-4">
+                                                    <div class="content">
+
+                                                        <p>Bill : &#8377;{{data.bill}}237</p>
+                                                        <p class="modallink" data-toggle="modal" data-target="#myModal2">View</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <hr class="linebw">
+                                            <!-- MODAL -->
+                                        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                  <h4 class="modal-title" id="myModalLabel">Bill</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <img ng-src="../images/22.jpg" alt="Bill">
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                  <!-- <button type="button" class="btn btn-alert">Report</button> -->
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="row">
+                                              <div class="col-sm-6 col-xs-6">
+                                                <div class="cont">
+                                                    <p> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp; Like ({{data.post.likes[0] || '0'}})</p>
+                                                </div>
+                                              </div>
+
+                                              <div class="col-sm-6 col-xs-6">
+                                                <div class="cont">
+                                                    <p data-toggle="modal" data-target="#myModal3"> <i class="fa fa-comment-o" aria-hidden="true"></i>&nbsp; Comment</p>
+                                                </div>
+
+                                              </div>
+                                          </div>
+
+                                          <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                  <h4 class="modal-title" id="myModalLabel">Comments</h4>
+                                                </div>
+                                                <div class="modal-body" >
+                                                  <!-- <img ng-src="../images/22.jpg" alt="Bill"> -->
+                                                  <div ng-repeat="dat in data.post.comments" style="margin-bottom: 2.5%">
+                                                  <div class="info">
+                                                    <img ng-src="{{dat.customer.profile_pic_thumbnail_url}}" style="width: 10% !important" alt="Logo">
+                                                    <div class="heads">
+                                                        <h4> <b>{{dat.customer.user.first_name}} {{dat.customer.user.last_name}}</b> <span style="font-size: 12px;">&nbsp; &nbsp; {{dat.timestamp}}</span> </h4>
+                                                        <!-- <br> -->
+                                                        <h4>{{dat.msg}}</h4>
+                                                    </div>
+                                                </div>
+                                                   </div>
+                                               
+                                               
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                  <!-- <button type="button" class="btn btn-alert">Report</button> -->
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+<!-- YEHI H -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 col-xs-4">
+                                <div class="rightside">
+
+                                    <div class="box">
+                                        <h3 class="borderbottom">Contact Us</h3>
+
+                                        <p><i class="fa fa-envelope-o" aria-hidden="true"></i> support@halanx.com</p>
+                                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{prof.phone_no}}</p>
+                                    </div>
+
+                                    <div class="box">
+                                        <h3>About</h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum enim at, obcaecati tenetur soluta magnam commodi prov.</p>
+                                        <br>
+                                        <h3>Timing</h3>
+                                        <p></p>
+                                        <br>
+                                        <h3>Address</h3>
+                                        <p>{{prof.street_address}}</p>
+                                    </div>
+
+                                    <div class="box">
+                                        <h3>Top Profiles</h3>
+
+<!-- CAROUSEL -->
+
+<div id="carousel-home" class="carousel slide" data-ride="carousel">
+        
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img ng-src="../images/22.jpg" alt="...">
+          </div>
+          <div class="item">
+            <img ng-src="../images/22.jpg" alt="...">
+          </div>
+          
+        </div>
+      
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-home" data-toggle="tab" onclick="event.preventDefault();" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-home" data-toggle="tab" onclick="event.preventDefault();" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
+      </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="fade tab-pane" id="menu7">
+
+                        <div class="first">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="box nobox">
+                                        <h3 class="borderbottom">Ratings</h3>
+                                        <div class="row boxit">
+                                            <div class="col-sm-6 col-xs-12 center">
+                                                <h4>{{Business.rating.avg}}</h4>
+                                                <input-stars max="5" ng-model="Business.rating.avg" readonly></input-stars>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="bars">
+                                                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': p1}" style="min-width: 1em"></div><p>{{v1}}</p><p class="left">1 <i class="fa fa-star" aria-hidden="true"></i></p></div>
+                                                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': p2}" style="min-width: 1em"></div><p>{{v2}}</p><p class="left">2 <i class="fa fa-star" aria-hidden="true"></i></p></div>
+                                                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': p3}" style="min-width: 1em"></div><p>{{v3}}</p><p class="left">3 <i class="fa fa-star" aria-hidden="true"></i></p></div>
+                                                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': p4}" style="min-width: 1em"></div><p>{{v4}}</p><p class="left">4 <i class="fa fa-star" aria-hidden="true"></i></p></div>
+                                                    <div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': p5}" style="min-width: 1em"></div><p>{{v5}}</p><p class="left">5 <i class="fa fa-star" aria-hidden="true"></i></p></div>
+                                                </div>     
+                                         </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="box nobox">
+
+                                        <h3 class="borderbottom">ROI</h3>
+                                        <p class='roi boxit'>{{roi}}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="second">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="secondcont box nobox">
+                                        <h3 class="borderbottom">Wallet</h3>
+                                        <div class="walletamt boxit">
+                                            <p>&#8377; {{walletAmt}} </p>
+                                            <p><i data-toggle="tab" onclick="event.preventDefault(); setVal('Wallet Summary')" ng-click="getWalletSummary()" href="#menu4" class="fa fa-long-arrow-right" aria-hidden="true"></i></p>
+                                        </div>
+                                        <button>Add Money</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="secondcont box">
+                                            <div id="piechart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="sales box nobox">
+                            <div class="row borderbottom">
+                                <div class="col-sm-3 col-xs-4">
+                                    <h3>Sales</h3>
+                                </div>
+
+                                <div class="col-sm-9 col-xs-8">
+                                    <label for="">From 
+                                            <datepicker date-format="MM/dd/yyyy" date-max-limit="{{maxdates}}">
+                                                <input ng-model="mindates"  ng-change="getSalesBarValue(mindates,maxdates)" type="text"/>
+                                            </datepicker>
+                                    </label>
+                                    <label for="">To 
+                                            <datepicker date-format="MM/dd/yyyy" date-min-limit="{{mindates}}">
+                                                <input ng-model="maxdates"  ng-change="getSalesBarValue(mindates,maxdates)" type="text"/>
+                                            </datepicker>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="bargraph boxit">
+                                <div id="chart_div0"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="visits box nobox">
+                            <div class="row borderbottom">
+                                <div class="col-sm-3 col-xs-4">
+                                    <h3>Visits</h3>
+                                </div>
+
+                                <div class="col-sm-9 col-xs-8">
+                                    <label for="">From 
+                                            <datepicker date-format="MM/dd/yyyy" date-max-limit="{{maxvisitdates}}">
+                                                <input ng-model="minvisitdates"  ng-change="getVisitsBarValue(minvisitdates,maxvisitdates)" type="text"/>
+                                            </datepicker>
+                                    </label>
+                                    <label for="">To 
+                                            <datepicker date-format="MM/dd/yyyy" date-min-limit="{{minorderdates}}">
+                                                <input ng-model="maxvisitdates"  ng-change="getVisitsBarValue(minvisitdates,maxvisitdates)" type="text"/>
+                                            </datepicker>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="bargraph boxit">
+                                <div id="chart_div2"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="orders box nobox">
+                            <div class="row borderbottom">
+                                <div class="col-sm-3 col-xs-4">
+                                    <h3>Orders</h3>
+                                </div>
+
+                                <div class="col-sm-9 col-xs-8">
+                                    <label for="">From 
+                                        <datepicker date-format="MM/dd/yyyy" date-max-limit="{{maxorderdates}}">
+                                            <input ng-model="minorderdates"  ng-change="getOrdersBarValue(minorderdates,maxorderdates)" type="text"/>
+                                        </datepicker>
+                                    </label>
+                                    <label for="">To 
+                                        <datepicker date-format="MM/dd/yyyy" date-min-limit="{{minorderdates}}">
+                                            <input ng-model="maxorderdates" ng-change="getOrdersBarValue(minorderdates,maxorderdates)" type="text"/>
+                                        </datepicker>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="bargraph boxit">
+                                <div id="chart_div3"></div>
+                            </div>
+
+                        </div>
+
+                        <!-- <div class="vtod box">
+                                <div class="row borderbottom">
+                                    <div class="col-sm-7 col-xs-5">
+                                        <h3>Time of Day</h3>
+                                    </div>
+    
+                                    <div class="col-sm-5 col-xs-7">
+                                        <label for="">From 
+                                                <datepicker date-format="MM/dd/yyyy" date-max-limit="{{maxtoddates}}">
+                                                    <input ng-model="mintoddates"  ng-change="gettodBarValue(mintoddates,maxtoddates)" type="text"/>
+                                                </datepicker>
+                                        </label>
+                                        <label for="">To 
+                                                <datepicker date-format="MM/dd/yyyy" date-min-limit="{{mintoddates}}">
+                                                    <input ng-model="maxtoddates"  ng-change="gettodBarValue(mintoddates,maxtoddates)" type="text"/>
+                                                </datepicker>
+                                        </label>
+                                    </div>
+                                </div>
+    
+                                <div class="bargraph">
+                                    <div id="chart_div4"></div>
+                                </div>
+    
+                            </div> -->
+
+
+
+                        <!-- last menu7 div -->
+                        </div>
+
+
+
+                        <div class="fade tab-pane" id="menu8">
+
+                            <!-- <div class="box">
+                                <div class="notifications row">
+                                    <div class="img col-sm-1 col-xs-2" style="background-image: url('../images/favicon.jpg')"></div>
+                                    <div class="info col-sm-11 col-xs-10">
+                                        <p class="content">asfjkhbaskjfghsadjkghcsajgnchas kjh fhj hjdhf ahasjkd hasjkdhkjhd d</p>
+                                        <p class="timestamp">2018-05-07T19:26:45.835428+05:30</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                    <div class="notifications row">
+                                        <div class="img col-sm-1 col-xs-2" style="background-image: url('../images/favicon.jpg')"></div>
+                                        <div class="info col-sm-11 col-xs-10">
+                                            <p class="content">asfjkhbaskjfghsadjkghcsajgnchas kjh fhj hjdhf ahasjkd hasjkdhkjhd d</p>
+                                            <p class="timestamp">2018-05-07T19:26:45.835428+05:30</p>
+                                        </div>
+                                    </div>
+                            </div> -->
+
+                            <div class="repeat" ng-repeat="not in noti">
+                                <div class="box" ng-repeat="data in not.results">
+                                    <div class="notifications row">
+                                        <div class="img col-sm-1 col-xs-2" style="background-image: url('{{data.image}}')"></div>
+                                        <div class="info col-sm-11 col-xs-10">
+                                            <p class="content">{{data.content}}</p>
+                                            <p class="timestamp">{{data.timestamp}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+   <script>
+       hom = document.getElementById("hom");
+       hom.click();
+
+       function setVal(value) {
+            head_data = document.getElementById("head-data");
+           head_data.innerHTML = value;
+       }
+
+       togglecheck = false;
+       sizecheck = false;
+       sm = document.getElementById("sm-m");
+       order_table = document.getElementById("order-table");
+
+       side_shadow = document.getElementById("hide-side-shadow");
+
+       window.addEventListener("resize", function(){
+           if(window.innerWidth > 767) {
+                sm.style.left = "0px";
+                sizecheck=true;
+                side_shadow.style.display = "none";
+           } else if(window.innerWidth<767 && sizecheck==true) {
+                sm.style.left = "-75%";
+                sizecheck=false;
+                togglecheck = false;
+           }
+       });
+
+        function sidemenufunc() {
+            if(togglecheck == false) {
+                sm.style.left = "0px";
+                order_table.style.zIndex = "-1";
+                side_shadow.style.display = "block";
+                order_table.style.position = "relative";
+                togglecheck = true;
+            } else {
+                sm.style.left = "-75%";
+                side_shadow.style.display = "none";
+                setTimeout(function(){
+                    order_table.style.zIndex = "1";
+                    order_table.style.position = "static";
+                },501);
+                togglecheck = false;
+            } 
+        }
+
+        locvalcheck = localStorage.getItem("locvalcheck");
+        locval = localStorage.getItem("locval");
+
+        if(locvalcheck == "true") {
+            location.reload();
+            localStorage.removeItem("locvalcheck");
+        }
+
+        if(locval != null && locvalcheck != "true") {
+                if(locval == "menu1") {
+                    paym = document.getElementById("paym");
+                    paym.click();
+                    // if(window.innerWidth <= 767) {
+                    //     sidemenufunc();
+                    // }
+                } else if (locval == "menu2") {
+                    inv = document.getElementById("inv");
+                    inv.click();
+                    // if(window.innerWidth <= 767) {
+                    //     sidemenufunc();
+                    // }
+                }
+
+            localStorage.removeItem("locval");
+        }
+
+        console.log("========================", locval);
+
+   </script>
+
+   
+
+
+<script>
+    $( function() {
+      $( "#datepicker2" ).datepicker();
+      $( "#datepicker1" ).datepicker();
+    } );
+    </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+    
+
+<!-- 
+<script>
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'Date');
+      data.addColumn('number', 'Sales');
+
+    //   data.addRows([
+    //     [{v: [5, 0, 0], f: '8 am'}, 5],   // Coordinates [x,y,z]  Hover krne pr kya aata => f  Height is the last value
+    //     [{v: [9, 0, 0], f: '9 am'}, 2],
+    //     [{v: [10, 0, 0], f:'10 am'}, 3],
+    //     [{v: [11, 0, 0], f: '11 am'}, 4],
+    //     [{v: [12, 0, 0], f: '12 pm'}, 5],
+    //     [{v: [13, 0, 0], f: '1 pm'}, 6],
+    //     [{v: [14, 0, 0], f: '2 pm'}, 7],
+    //     [{v: [15, 0, 0], f: '3 pm'}, 8],
+    //     [{v: [16, 0, 0], f: '4 pm'}, 9],
+    //     [{v: [17, 0, 0], f: '5 pm'}, 10],
+    //   ]);
+
+    
+    data.addRow([new Date(2011, 0, 1), 10])  // Year, Month, Date
+    data.addRow([new Date(2011, 0, 5), 15])
+    data.addRow([new Date(2011, 0, 10), 40])
+    data.addRow([new Date(2011, 0, 13), 50])
+
+      var options = {
+        title: '',
+        hAxis: {
+          title: '',
+        //   format: 'MMM/DD,YYYY'
+          viewWindow: {
+            min: new Date(2010, 0, 0),
+            max: new Date(2018, 11, 30)
+          }
+        },
+        vAxis: {
+          title: 'Sales'
+        },
+        'width': 900,
+        'height': 250
+      };
+
+      var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+</script> -->
+
+
+
+
+<!-- FOR STACKED GRAPH -->
+<!-- <script>
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawStacked);
+
+function drawStacked() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Sales from Cashback');
+      data.addColumn('number', 'Sales from Voucher');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 1, .25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, .5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 1],
+        [{v: [11, 0, 0], f: '11 am'}, 4, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 5, 2.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 7, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 8, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 10, 10],
+      ]);
+
+      var options = {
+        title: '',
+        isStacked: true,
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Sum'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+</script> -->
+
+
+
+
+
+   <!-- <script>
+   
+   google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'First Time vs Repeat'],
+          ['First Time',   11 ],
+          ['Repeat',      89]
+        ]);
+
+        var options = {
+          title: ''
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+
+   </script> -->
+
+
+
