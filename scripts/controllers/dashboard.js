@@ -18,6 +18,7 @@ angular.module('halanxApp')
 			'720kb.datepicker',
 			'ngMaterial'
 		];
+		$scope.showProducts = true;
 		var token = localStorage.getItem("store_token");
 		console.log("TOken is--------", token);
 		// $interval(()=>{
@@ -812,14 +813,20 @@ angular.module('halanxApp')
 		};
 
 
-
 		$scope.searchProVal = "";
 		$scope.searchPro = () => {
+			var x;
 			var len = $scope.searchProVal.length;
 			$scope.productsSer = [];
 			if (len == 0) {
 				$scope.getProduct();
 				$scope.searchMsg = "";
+				$scope.showProducts = true;
+				console.log("show products");
+				x = document.querySelectorAll(".banner_prod.main");
+				for (let i = 0; i < x.length; i++) {
+					x[i].style.display = "block";
+				}
 			} else {
 				$scope.products.forEach(element => {
 					if ((element.name.slice(0, len)).toLowerCase() == ($scope.searchProVal).toLowerCase()) {
@@ -830,6 +837,13 @@ angular.module('halanxApp')
 					$scope.searchMsg = "No Products found";
 				} else {
 					$scope.searchMsg = $scope.productsSer.length + " item(s) found.";
+				}
+				$scope.showProducts = false;
+				console.log("dont show products");
+				x = document.querySelectorAll(".banner_prod.main");
+				for (let i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+					console.log(x[i].style.display);
 				}
 			}
 			console.log($scope.searchProVal);

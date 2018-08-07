@@ -568,9 +568,6 @@
                         <br>
                         <br>
                         <div class="row banner_prod" ng-repeat="product in productsSer">
-                            <!-- <div class="col-md-4 logo">
-                                    <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
-                                </div> -->
                             <div class="col-md-8 product_content">
                                 <label for="prdouct_name">Product Name</label>
                                 <input type="text" name="prdouct_name" class="form-control" ng-model="product.name" ng-disabled="product.disable">
@@ -615,10 +612,7 @@
 
                             </div>
                         </div>
-                        <div class="banner_prod" ng-repeat="product in products">
-                            <!-- <div class="col-md-4 logo">
-                                <img class="img_prod" ng-src="{{product.ProductImage}}" alt="">
-                            </div> -->
+                        <div class="banner_prod main" ng-repeat="product in products">
                             <div class="product_content">
                                 <label for="prdouct_name">Product Name</label>
                                 <input type="text" name="prdouct_name" class="form-control" ng-model="product.name" ng-disabled="product.disable">
@@ -681,7 +675,6 @@
                                     <div>
                                         <input type="text" placeholder="Enter voucher" ng-model="voucherCode">
                                         <button type="submit" ng-click="checkCode()" class="btn-danger redeeming">Redeem</button>
-                                        <!--   data-toggle="modal"   data-target="#myModal"   -->
                                         <p class="redeemed" ng-show="cantRedeem">This Voucher Code is not valid</p>
                                     </div>
 
