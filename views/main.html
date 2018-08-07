@@ -127,6 +127,13 @@
         margin: 0 50px;
     }
 
+    .dapp {
+        margin-top: 80px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 200px;
+    }
+
     @media(max-width: 767px) {
         .phoneSection {
             height: auto;
@@ -141,6 +148,11 @@
             margin-bottom: 30px !important;
             text-align: center;
         }
+        .dapp {
+            margin-top: 780px;
+            font-size: 24px;
+            font-weight: bold;
+        }
     }
 
     .iphoneImg {
@@ -154,9 +166,8 @@
     }
 
     .textWrapper {
-        height: 350px;
+        height: 250px;
         margin-top: -40px;
-
     }
 
     #slider-wrapper1 {
@@ -206,11 +217,6 @@
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: 23px;
-    }
-
-    .apple-p {
-        width: 168px !important;
-        height: 48px !important;
     }
 
     @media (max-width: 767px) {
@@ -331,14 +337,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 250px;
+        margin-top: 24px;
     }
 
     .play-heading {}
 
     .play-heading img {
         height: 48px;
-        width: 190px;
+        width: 164px;
         cursor: pointer;
     }
 
@@ -381,14 +387,13 @@
         }
         .play-heading img {
             margin: auto;
-        }
-        .play-heading img.apple-p {
-            margin-top: 0px !important;
+            width: 124px;
+            height: 40px;
         }
 
         .app-phone7 {
             height: auto;
-            margin-top: 810px;
+            margin-top: 24px;
             width: auto;
             justify-content: space-around;
         }
@@ -499,8 +504,6 @@
 <div id="slider-wrapper-bgg" style="margin-top: -20px" ng-cloak>
     <div id="slider-wrapper-bg">
         <div id="slider-wrapper">
-
-
         </div>
     </div>
     <div id="slider-shadow">
@@ -662,16 +665,19 @@
         <div class="col-sm-6 textWrapper">
             <h1 id="slider-heading1"> Feed </h1>
             <h3 id="slider-tag1"> Read news and buzz around you </h3>
-            <div class="app-phone7">
-                <div class="play-heading">
-                    <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp" target="_blank">
-                        <img src="https://storage.googleapis.com/support-kms-prod/D90D94331E54D2005CC8CEE352FF98ECF639" class="img-responsive img1">
-                    </a>
-                </div>
-                <div class="play-heading">
-                    <a href="#" target="_blank">
-                        <img src="../images/appstoreicon.png" class="img-responsive img1 apple-p">
-                    </a>
+            <div>
+                <p class="dapp">Download App Now</p>
+                <div class="app-phone7">
+                    <div class="play-heading">
+                        <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp" target="_blank">
+                            <img src="https://storage.googleapis.com/support-kms-prod/D90D94331E54D2005CC8CEE352FF98ECF639" class="img-responsive img1">
+                        </a>
+                    </div>
+                    <div class="play-heading">
+                        <a href="#" target="_blank">
+                            <img src="../images/appstoreicon.png" class="img-responsive img1 apple-p">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

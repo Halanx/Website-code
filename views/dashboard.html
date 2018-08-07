@@ -379,7 +379,7 @@
                             <i class="fa fa-tag"></i> Vouchers</a>
                     </li>
                     <li>
-                        <a data-toggle="tab" onclick="event.preventDefault(); setVal('Deliveries')" href="#home" id="clickexp">
+                        <a data-toggle="tab" onclick="event.preventDefault(); setVal('Deliveries')" href="#home" id="clickexp" ng-click="storeDelivery()">
                             <i class="fa fa-shopping-cart"></i> Deliveries</a>
                     </li>
                     <li>
@@ -416,7 +416,7 @@
                             <i class="fa fa-tag"></i> Vouchers</a>
                     </li>
                     <li>
-                        <a data-toggle="tab" onclick="event.preventDefault(); setVal('Deliveries')" href="#home" id="clickexp">
+                        <a data-toggle="tab" onclick="event.preventDefault(); setVal('Deliveries')" href="#home" id="clickexp" ng-click="storeDelivery()">
                             <i class="fa fa-shopping-cart"></i> Deliveries</a>
                     </li>
                     <li>
@@ -471,16 +471,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="data in dashdata|orderBy:'delivery_time':true">
-                                    <td>{{data.order_id}}</td>
-                                    <td>{{data.batch_id}}</td>
-                                    <td>{{data.placing_time}}</td>
-                                    <td>{{data.product}}</td>
+                                <tr ng-repeat="data in deliveries.results | orderBy:'delivery_time':true">
+                                    <td>{{data.order}}</td>
+                                    <td>{{data.batch}}</td>
+                                    <td>{{data.timestamp}}</td>
+                                    <td>{{data.product.name}}</td>
                                     <td>{{data.quantity}}</td>
-                                    <td>{{data.customer}}</td>
+                                    <td>{{data.customer.user.first_name + data.customer.user.last_name}}</td>
                                     <td>{{data.shopper}}</td>
-                                    <td>{{data.price}}</td>
-                                    <td>{{data.dt}}</td>
+                                    <td>{{data.sub_total}}</td>
+                                    <td>{{data.delivery_start_time}}</td>
                                     <td class="o-stat o-pending" ng-hide="data.is_delivered">
                                         <span class="glyphicon glyphicon-remove"></span>
                                     </td>
@@ -532,7 +532,7 @@
                                             </div>
                                             <h4 class="what_we_do_title">Amount Pending</h4>
                                             <div class="what_we_do_content">
-                                                <i class="fa fa-inr" aria-hidden="true"></i> {{pending}}</div>
+                                                <i class="fa fa-inr" aria-hidden="true"></i> {{wallet.balance}}</div>
 
                                         </div>
                                     </div>
@@ -546,8 +546,8 @@
                                             </div>
                                             <h4 class="what_we_do_title">Total Amount Paid till now</h4>
                                             <div class="what_we_do_content">
-                                                <i class="fa fa-inr" aria-hidden="true"></i> {{paid}}</div>
-
+                                                <i class="fa fa-inr" aria-hidden="true"></i> {{wallet.credit}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -573,21 +573,22 @@
                                 </div> -->
                             <div class="col-md-8 product_content">
                                 <label for="prdouct_name">Product Name</label>
-                                <input type="text" name="prdouct_name" class="form-control" ng-model="product.ProductName" ng-disabled="product.disable">
+                                <input type="text" name="prdouct_name" class="form-control" ng-model="product.name" ng-disabled="product.disable">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <label for="price">MRP (Rs.)</label>
-                                        <input type="number" name="price" class="form-control" ng-model="product.MRP" ng-disabled="product.disable">
+                                        <input type="number" name="price" class="form-control" ng-model="product.mrp" ng-disabled="product.disable">
                                     </div>
                                     <div class="col-md-2"></div>
                                     <div class="col-md-5">
                                         <label for="price">Selling Price (Rs.)</label>
-                                        <input type="number" name="price" class="form-control" ng-model="product.Price" ng-disabled="product.disable">
+                                        <input type="number" name="price" class="form-control" ng-model="product.price" ng-disabled="product.disable">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <label for="">Choose Category</label>
-                                    <select class="form-control" ng-model="product.Category" ng-disabled="product.disable">
+                                    <select class="form-control" ng-model="product.category" ng-disabled="product.disable">
+                                        <option value="">{{producy.category}}</option>
                                         <option ng-repeat="category in categories" value="{{category}}">{{category}}</option>
                                     </select>
 
@@ -595,7 +596,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label for="">Description</label>
-                                        <textarea ng-model="product.Features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
+                                        <textarea ng-model="product.features" ng-disabled="product.disable" class="form-control" name="" id="" cols="6" rows="5">
     
                                             </textarea>
                                     </div>
@@ -603,7 +604,7 @@
                                 <div class="row">
                                     <div class="col-md-2">
                                         <label>Available</label>
-                                        <input class="form-control check1" type="checkbox" ng-disabled="product.disable" ng-model="product.Active">
+                                        <input class="form-control check1" type="checkbox" ng-disabled="product.disable" ng-model="product.active">
                                     </div>
                                 </div>
                                 <h5 style="margin-bottom:-10px;color:red;" class="dont" ng-class="{'show':product.disable==true}">{{product.msg}}</h5>

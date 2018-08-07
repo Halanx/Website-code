@@ -711,49 +711,6 @@ angular.module('halanxApp')
 		$scope.loadMore_c = false;
 		$scope.BTN = "Edit";
 
-		var promise = dashboard.DashCall(token);
-		$scope.Pname = true;
-		$scope.dashdata = [];
-		$scope.payment = [];
-		promise.then(function (data) {
-			console.log(data);
-			$scope.paid = data.data.paid;
-			$scope.pending = data.data.pending;
-			localStorage.setItem("paid_amount", data.data.paid);
-			localStorage.setItem("pending_amount", data.data.pending);
-			for (var i = 0; i < data.data.items.length; i++) {
-				data.data.items[i].placing_time = getDate(data.data.items[i].placing_time) + " & " + formatAMPM(data.data.items[i].placing_time);
-				data.data.items[i].dt = getDate(data.data.items[i].delivery_time) + " & " + formatAMPM(data.data.items[i].delivery_time);
-			}
-			$scope.dashdata = data.data.items;
-			$scope.storeName = data.data.store_name;
-			$scope.lodRip = true;
-
-
-			console.log("data is:", data.data.items);
-		}, function (err) {
-			console.log(err);
-		})
-		// DashCall
-
-		setInterval(function () {
-			var promise = dashboard.DashCallRealTime(token);
-			promise.then(function (data) {
-				// console.log(data);
-				$scope.paid = data.data.paid;
-				$scope.pending = data.data.pending;
-				localStorage.setItem("paid_amount", data.data.paid);
-				localStorage.setItem("pending_amount", data.data.pending);
-				for (var i = 0; i < data.data.items.length; i++) {
-					data.data.items[i].placing_time = getDate(data.data.items[i].placing_time) + " & " + formatAMPM(data.data.items[i].placing_time);
-					data.data.items[i].dt = getDate(data.data.items[i].delivery_time) + " & " + formatAMPM(data.data.items[i].delivery_time);
-				}
-				$scope.dashdata = data.data.items;
-			}, function (err) {
-				console.log(err);
-			})
-		}, 10000);
-
 		$scope.visit = () => {
 			$window.location.assign("#business");
 			$window.location.reload();
@@ -782,6 +739,14 @@ angular.module('halanxApp')
 			return day + "/" + month + "/" + year;
 		}
 
+		$scope.storeDelivery = () => {
+			dashboard.StoreItems(token).then(data => {
+				$scope.deliveries = data.data;
+				console.log($scope.deliveries);
+				$scope.lodRip = true;
+			});
+		}
+
 		$scope.openMe = () => {
 			console.log("running function openMe : ", token);
 			dashboard.PaymentCall(token).then((data) => {
@@ -791,9 +756,10 @@ angular.module('halanxApp')
 					data.data[i].timestamp = ele;
 				}
 				$scope.payment = data.data;
-				console.log(data.data);
-
 			})
+			dashboard.StoreWallet(token).then(data => {
+				$scope.wallet = data.data;
+			});
 			// for(var i=0;i<20;i++){
 			// $scope.payment.push({id: i, amount: 1000*i, paid_on: "2018-01-11T12:30:00Z", store: 78});
 			// }
@@ -855,10 +821,9 @@ angular.module('halanxApp')
 				$scope.getProduct();
 				$scope.searchMsg = "";
 			} else {
-				$scope.tempProducts.forEach(element => {
-					if ((element.ProductName.slice(0, len)).toLowerCase() == ($scope.searchProVal).toLowerCase()) {
+				$scope.products.forEach(element => {
+					if ((element.name.slice(0, len)).toLowerCase() == ($scope.searchProVal).toLowerCase()) {
 						$scope.productsSer.push(element);
-						console.log(element.ProductName);
 					}
 				});
 				if ($scope.productsSer.length == 0) {
@@ -1507,7 +1472,7 @@ angular.module('halanxApp')
 		//       var data = e.target.result;
 		//       console.log(data);
 		//       var pr = $q.defer();
-		//       var url = "http://35.154.255.124:8000/places/place/"+$scope.store+"/menu/";
+		//       var url = "https://api.halanx.com/places/place/"+$scope.store+"/menu/";
 		//       $http.post(url,{data:f},{
 		//         headers:{
 		//           'Authorization':'Token '+'0d82010691295e6a779560dd06e9213eebaaed15',
@@ -1535,7 +1500,7 @@ angular.module('halanxApp')
 		//     console.log(file);
 		//     if (file) {
 		//         file.upload = Upload.upload({
-		//             url: 'http://35.154.255.124:8000/places/place/'+$scope.store+'/menu/',
+		//             url: 'https://api.halanx.com/places/place/'+$scope.store+'/menu/',
 		//             file: file,
 		//             headers: {'Authorization': 'token '+'0d82010691295e6a779560dd06e9213eebaaed15'}
 		//         });
@@ -1552,7 +1517,7 @@ angular.module('halanxApp')
 		//   $scope.uploadFiles2 = function(file, errFiles) {
 		//     if (file) {
 		//         file.upload = Upload.upload({
-		//             url: 'http://35.154.255.124:8000/stores/team/members/',
+		//             url: 'https://api.halanx.com/stores/team/members/',
 		//             data: {file: file,},
 		//             headers: {'Authorization': 'token '+'0d82010691295e6a779560dd06e9213eebaaed15'}
 		//         });
@@ -1598,7 +1563,7 @@ angular.module('halanxApp')
 
 			// SEND FILE DETAILS TO THE API.
 
-			objXhr.open("POST", "http://35.154.255.124:8000/places/place/9/menu/");
+			objXhr.open("POST", "https://api.halanx.com/places/place/9/menu/");
 			objXhr.setRequestHeader('Authorization', 'Token ' + '0d82010691295e6a779560dd06e9213eebaaed15')
 			objXhr.send(data);
 		}
@@ -1634,7 +1599,7 @@ angular.module('halanxApp')
 
 			// SEND FILE DETAILS TO THE API.
 
-			objXhr.open("POST", "http://35.154.255.124:8000/places/place/9/menu/");
+			objXhr.open("POST", "https://api.halanx.com/places/place/9/menu/");
 			objXhr.setRequestHeader('Authorization', 'Token ' + '0d82010691295e6a779560dd06e9213eebaaed15')
 			objXhr.send(data);
 		}
