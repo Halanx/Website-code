@@ -22,12 +22,12 @@ angular.module('halanxApp')
     $scope.submitform = () => {
 
       var obj = {
-        "FirstName": $scope.firstname,
-        "LastName": $scope.lastname,
-        "dealer-designation": $scope.desig,
+        "first_name": $scope.firstname,
+        "last_name": $scope.lastname,
+        "dealer_designation": $scope.desig,
         "email": $scope.email,
         "password": $scope.password,
-        "dealer-contact-number": $scope.mobilenumber
+        "dealer_contact": $scope.mobilenumber
       };
 
       // obj.FirstName = $scope.firstname;
