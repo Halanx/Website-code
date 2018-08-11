@@ -24,6 +24,7 @@ angular.module('halanxApp')
 		console.log("TOken is--------", token);
 
 		$scope.$on("$routeChangeStart", function ($event, next, current) {
+			console.log("changing route from dashboard");
 			document.querySelector("footer").classList.remove("dash");
 		});
 
