@@ -23,6 +23,10 @@ angular.module('halanxApp')
 		var token = localStorage.getItem("store_token");
 		console.log("TOken is--------", token);
 
+		$scope.$on("$routeChangeStart", function ($event, next, current) {
+			document.querySelector("footer").classList.remove("dash");
+		});
+
 		if (!token) {
 			console.log("login first");
 			$location.path('/hxpalogin');
