@@ -477,7 +477,7 @@
                                     <td>{{data.timestamp}}</td>
                                     <td>{{data.product.name}}</td>
                                     <td>{{data.quantity}}</td>
-                                    <td>{{data.customer.user.first_name + data.customer.user.last_name}}</td>
+                                    <td>{{data.customer.user.first_name + " " + data.customer.user.last_name}}</td>
                                     <td>{{data.shopper}}</td>
                                     <td>{{data.sub_total}}</td>
                                     <td>{{data.delivery_start_time}}</td>
@@ -945,21 +945,11 @@
                                 <h3 class="borderbottom">Add Menu/Photos</h3>
 
                                 <div class="row over" style="overflow:hidden">
-                                    <!-- <div class="imagebox"  >
-                                    <img ng-src="{{data.image}}" alt="Menu" ng-repeat="data in pics" >
-                                </div>
-                                <div class="imagebox" >
-                                    <img ng-src="{{data.image}}" alt="Menu" ng-repeat="data in pics">
-                                </div> -->
-
                                     <div class="wrapper">
                                         <div class="scrolls">
                                             <img ng-src="{{data.image}}" ng-repeat="data in pics" />
                                         </div>
                                     </div>
-
-
-
                                     <div class="col-sm-3 col-6 imagebox extraimgbox">
                                         <!-- <label class="custom-file-upload extraimg" ng-click="addImage()">
                                     <input type="file" ng-model="inpu" onchange="angular.element(this).scope().fileNameChanged()" accept="image/*"> <p>+</p>
@@ -1456,12 +1446,11 @@
                                                     <h4>{{data.post.posted_since}}</h4>
                                                 </div>
                                                 <h4>{{data.post.checkin.rating}}
-                                                    <i class="fa fa-star" aria-hidden="true"></i> &nbsp; {{data.post.content}}</h4>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    &nbsp; {{data.post.content}}</h4>
                                             </div>
 
-                                            <div class="selfiebg" style="background-image: url({{data.post.media[0].media}})">
-
-                                            </div>
+                                            <div ng-show="data.post.media[0].media" class="selfiebg" style="background-image: url({{data.post.media[0].media}})"></div>
 
                                             <!-- <img ng-src="../images/become shopper.jpg" class="selfie" alt="Selfie"> -->
 

@@ -98,8 +98,15 @@ body {
 /**Footer**/
 footer {
     margin-top: 30px;
-    z-index: -1 !important;
+    z-index: 0 !important;
+    overflow: hidden;
 }
+
+footer.dash {
+    width: calc(250% / 3);
+    float: right;
+  }
+  
 
 footer .row_11 {
     padding: 20px 0;

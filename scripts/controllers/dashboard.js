@@ -8,7 +8,7 @@
  * Controller of the halanxApp
  */
 angular.module('halanxApp')
-	.controller('DashboardCtrl', function ($interval, $scope, dashboard, business, $window, $filter, Upload, $timeout, $http, $q) {
+	.controller('DashboardCtrl', function ($interval, $scope, dashboard, business, $window, $filter, Upload, $timeout, $http, $q, $location) {
 		this.awesomeThings = [
 			'HTML5 Boilerplate',
 			'AngularJS',
@@ -18,9 +18,15 @@ angular.module('halanxApp')
 			'720kb.datepicker',
 			'ngMaterial'
 		];
+		document.querySelector("footer").classList.add("dash");
 		$scope.showProducts = true;
 		var token = localStorage.getItem("store_token");
 		console.log("TOken is--------", token);
+
+		if (!token) {
+			console.log("login first");
+			$location.path('/hxpalogin');
+		}
 		// $interval(()=>{
 		//   console.log($scope.prof.highlights);
 		// },1000);
@@ -1138,7 +1144,7 @@ angular.module('halanxApp')
 			pr.then(success, fail);
 			function success(data) {
 				$scope.highChanged = true;
-				$scope.highChangedval = "Successfully done";
+				$scope.highChangedval = "Successfully added!";
 			}
 			function fail(err) {
 				$scope.highChanged = true;
@@ -1580,6 +1586,7 @@ angular.module('halanxApp')
 			objXhr.open("POST", "https://api.halanx.com/places/place/9/menu/");
 			objXhr.setRequestHeader('Authorization', 'Token ' + '0d82010691295e6a779560dd06e9213eebaaed15')
 			objXhr.send(data);
+			getPics($scope.store);
 		}
 
 		// UPDATE PROGRESS BAR.
