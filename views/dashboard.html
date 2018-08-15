@@ -962,15 +962,9 @@
                                         <!-- <input type="file" id="file" name="file"/>
 <button ng-click="add()">Add</button> -->
 
-                                        <input type="file" id="file" ng-model="files2" name="file" />
+                                        <input type="file" id="file" file-to-upload="mimage" name="file" />
 
                                         <input type="button" ng-click="uploadFiles()" value="Upload" />
-                                        <p style="display: none;">
-                                            <progress id="pro" value="0"></progress>
-                                        </p>
-
-
-
                                     </div>
                                 </div>
                             </div>
@@ -1000,7 +994,6 @@
                                     <p ng-click="Verify()" ng-model="verifymember">
                                         <b>Add Member</b>
                                     </p>
-                                    <!-- <p ng-model="file3" ngf-select="uploadFiles2($file2, $invalidFiles)"><b>Add Member</b></p> -->
                                 </div>
 
                                 <form class="addmember" name="myform">
@@ -1077,32 +1070,6 @@
                                     <p style="color: red;font-size: 15px;
                                     font-weight: 600;">{{whatedit}}</p>
                                 </div>
-                                <!-- <div class="addmember" ng-show="newm">
-                                    <div class="photo">
-                                        <div class="addphoto" ng-style="{{newm.img}}?{'display':'block'}:{'disable':'none'}" style="background-image: url({{data.img}});background-repeat: no-repeat;background-size: contain;background-position: center">
-                                               <h1 ng-style="{{newm.img}}?{'display':'none'}:{'diplay':'block'}"> <i class="fa fa-user"></i> </h1>
-                                        </div>
-                                       <div class="namerole">
-                                           <!-- <h4>{{data.name}}</h4> -->
-                                <!-- <h4>{{data.role}}</h4> -->
-                                <!-- <input type="text" value="{{newm.name}}">
-                                           <input type="email" value="{{newm.role}}">
-                                       </div>
-                                    </div>
-
-                                    <div class="details">
-                                        <label for="" class="toplabel">Phone:  -->
-                                <!-- <h5>{{data.phone}}</h5>     -->
-                                <!-- <input type="text" value="{{newm.phone}}">
-                                        </label>
-                                        <label for="">Email:   -->
-                                <!-- <h5>{{data.email}}</h5> -->
-                                <!-- <input type="email" value="{{newm.email}}">
-                                        </label>
-                                    </div>
-
-                                    <button ng-click="EditTeam(data)">Edit</button>
-                                </div> -->
                             </div>
                         </div>
                         <div ng-show="!editable" class="EditStyle">
@@ -1205,7 +1172,7 @@
 
                             <div class="box">
 
-                                <h3 class="borderbottom">Add Menu/Photos</h3>
+                                <h3 class="borderbottom">Menu/Photos</h3>
 
                                 <div class="row over" style="overflow:hidden">
                                     <!-- <div class="imagebox"  >
@@ -1214,36 +1181,10 @@
                             <div class="imagebox" >
                                 <img ng-src="{{data.image}}" alt="Menu" ng-repeat="data in pics">
                             </div> -->
-
                                     <div class="wrapper">
                                         <div class="scrolls">
                                             <img ng-src="{{data.image}}" ng-repeat="data in pics" />
                                         </div>
-                                    </div>
-
-
-
-                                    <div class="col-sm-3 col-6 imagebox extraimgbox">
-                                        <!-- <label class="custom-file-upload extraimg" ng-click="addImage()">
-                                <input type="file" ng-model="inpu" onchange="angular.element(this).scope().fileNameChanged()" accept="image/*"> <p>+</p>
-                                </label> -->
-                                        <!-- <button type="file" ng-model="file" ngf-select="uploadFiles($file, $invalidFiles)"
-      accept="image/*" ngf-max-height="1000" ngf-max-size="1MB" class="fileuploadbutton">
-  +</button>
-  <img ngf-thumbnail="file">  -->
-
-                                        <!-- <input type="file" id="file" name="file"/>
-<button ng-click="add()">Add</button> -->
-
-                                        <input type="file" id="file" ng-model="files2" name="file" />
-
-                                        <input type="button" ng-click="uploadFiles()" value="Upload" />
-                                        <p>
-                                            <progress id="pro" value="0"></progress>
-                                        </p>
-
-
-
                                     </div>
                                 </div>
                             </div>
@@ -1260,54 +1201,6 @@
                                 </div>
 
                             </div>
-
-                            <!--<div class="box nobottom">
-                            <div class="borderbottom">
-                                <h3>Team</h3>
-                                <p ng-click="Verify()" ng-model="verifymember"><b>Add Member</b></p>
-                                // <p ng-model="file3" ngf-select="uploadFiles2($file2, $invalidFiles)"><b>Add Member</b></p>
-                            </div>
-
-                             <form class="addmember" name="myform">
-                                <div class="photo">
-                                    <label class="custom-file-upload extraimg uploader">
-                                         <i class="fa fa-user"></i>
-                                   </label>
-                                   <div class="namerole">
-                                       // <input type="text" ng-model="mem.name" placeholder="Enter your name">
-                                       <br>
-                                       <select name="role" ng-model="mem.role" ng-init="mem.role='Employee'" id="">
-                                       //    <option disabled selected>Role</option>
-                                           <option value="Owner">Owner</option>
-                                           <option value="Manager">Manager</option>
-                                           <option value="Employee">Employee</option>
-                                       </select>
-                                   </div>
-                                </div>
-
-                                <div class="details">
-                                    <label for="" class="toplabel">Phone: 
-                                        <input type="text" ng-model="mem.phone" name="" placeholder="Enter your phone number" id="phone">
-                                    </label>
-                                    <br>
-                                    <label for="">Email:  
-                                        <input type="email" ng-model="mem.email" name="" placeholder="Enter your Email Id" id="email">
-                                    </label>
-                                </div>
-
-                                <div style="text-align: center;" ng-show="showedit">
-                                    <p style="color: red;font-size: 15px;
-                                    font-weight: 600;">{{errorinedit}}</p>
-                                </div>
-
-                                <div style="text-align: center;" ng-show="!triedAdding">
-                                    <p style="color: red;font-size: 15px;
-                                    font-weight: 600;">{{whathpn}}</p>
-                                </div>
-
-                            </form> 
-                        </div> -->
-
                             <div class="box">
                                 <div>
                                     <h3 class="borderbottom">Team</h3>
@@ -1341,45 +1234,9 @@
                                     <!-- <button ng-click="EditTeam(data.id,data)" class="btn-danger">Edit</button> -->
 
                                 </div>
-                                <!-- <div style="text-align: center;" ng-show="!editted">
-                                <p style="color: red;font-size: 15px;
-                                font-weight: 600;">{{whatedit}}</p>
-                            </div> -->
-                                <!-- <div class="addmember" ng-show="newm">
-                                <div class="photo">
-                                    <div class="addphoto" ng-style="{{newm.img}}?{'display':'block'}:{'disable':'none'}" style="background-image: url({{data.img}});background-repeat: no-repeat;background-size: contain;background-position: center">
-                                           <h1 ng-style="{{newm.img}}?{'display':'none'}:{'diplay':'block'}"> <i class="fa fa-user"></i> </h1>
-                                    </div>
-                                   <div class="namerole">
-                                       <!-- <h4>{{data.name}}</h4> -->
-                                <!-- <h4>{{data.role}}</h4> -->
-                                <!-- <input type="text" value="{{newm.name}}">
-                                       <input type="email" value="{{newm.role}}">
-                                   </div>
-                                </div>
-
-                                <div class="details">
-                                    <label for="" class="toplabel">Phone:  -->
-                                <!-- <h5>{{data.phone}}</h5>     -->
-                                <!-- <input type="text" value="{{newm.phone}}">
-                                    </label>
-                                    <label for="">Email:   -->
-                                <!-- <h5>{{data.email}}</h5> -->
-                                <!-- <input type="email" value="{{newm.email}}">
-                                    </label>
-                                </div>
-
-                                <button ng-click="EditTeam(data)">Edit</button>
-                            </div> -->
                             </div>
-
                         </div>
-
-
                     </div>
-
-
-
                     <div class="fade tab-pane" id="menu6">
                         <div class="row">
                             <div class="col-sm-8 col-xs-8">
@@ -1428,8 +1285,7 @@
                                                 </div>
                                             </div> -->
                                         </div>
-
-                                        <button ng-click="uploadFiles2()">Publish</button>
+                                        <button ng-click="publishSponsoredPost()">Publish</button>
                                     </div>
 
                                     <div class="postsection">
@@ -2026,12 +1882,9 @@
         localStorage.removeItem("locval");
     }
 
-    console.log("========================", locval);
-
 </script>
 
 <!-- Google Maps API -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnunhscL2jKBg62KkqAhJwSMXhDoN9DE&libraries=places"></script>
 
 <!-- <script>
         // Initialize and add the map

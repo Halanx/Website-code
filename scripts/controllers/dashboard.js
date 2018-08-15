@@ -24,19 +24,13 @@ angular.module('halanxApp')
 		console.log("TOken is--------", token);
 
 		$scope.$on("$routeChangeStart", function ($event, next, current) {
-			console.log("changing route from dashboard");
 			document.querySelector("footer").classList.remove("dash");
 		});
 
 		if (!token) {
-			console.log("login first");
 			$location.path('/hxpalogin');
 		}
-		// $interval(()=>{
-		//   console.log($scope.prof.highlights);
-		// },1000);
 		$scope.getTChange = () => {
-			console.log($scope.prof.highlights);
 			$scope.editHighlights();
 		}
 		// $scope.memv;
@@ -45,7 +39,6 @@ angular.module('halanxApp')
 		$scope.editable = false;
 		// $scope.mem.role = 'Employee';
 		$(window).resize(function () {
-			console.log("CALLED RESIZE DATE");
 			if ($window.innerWidth > 768) {
 				$scope.chartwidth = $window.innerWidth - 300;
 			}
@@ -55,26 +48,21 @@ angular.module('halanxApp')
 			else {
 				$scope.chartwidth = $window.innerWidth - 100;
 			}
-			console.log($scope.mindates, $scope.maxdates, $scope.minvisitdates, $scope.maxvisitdates, $scope.minorderdates, $scope.maxorderdates);
 			$scope.getSalesBarValue($scope.mindates, $scope.maxdates);
 			$scope.getVisitsBarValue($scope.minvisitdates, $scope.maxvisitdates);
 			$scope.getOrdersBarValue($scope.minorderdates, $scope.maxorderdates);
-			console.log("Inside chartwidth", $scope.chartwidth);
 		});
 		$scope.loadStore = () => {
-			console.log("CAlLEDASDKNANDJNDKN");
 			var pr = dashboard.loadStore(token);
 			pr.then(success, fail);
 			function success(data) {
 				$scope.store = data.place.id;
 				$scope.storeName = data.name;
-				console.log(data);
-				console.log("---------------- Data " + $scope.store + "------------------");
+				console.log("Load Store : ", $scope.store, $scope.storeName);
 				$scope.getProfile();
 			}
 			function fail(err) {
 				$scope.errstore = err;
-				console.log("---------------------ERror  " + err);
 			}
 		};
 		$scope.loadStore();
@@ -92,15 +80,12 @@ angular.module('halanxApp')
 		};
 
 
-		// $interval(()=>{
-		//   // console.log($window.innerWidth);
-		// },100);
 
 		// var $scope.chartwidth;
 		// function resizeGraphs(){
 		//   if($(window).width()>768){
 		//     $scope.chartwidth=$(window).width()-400;
-		//   }// console.log($scope.chartwidth);
+		//   }
 		//     getSalesbar();
 		//     $scope.getVisitbar();
 		//     $scope.getOrderbar();
@@ -123,11 +108,7 @@ angular.module('halanxApp')
 		var itemsmonth2;
 		$scope.getDatesForGraphs = () => {
 			$scope.newdate = new Date();
-			// console.log("DATE IS -=-=-=-" , $scope.newdate);
 			itemdate = $filter('date')($scope.newdate, "dd-MM-yyyy");
-			// console.log("DATE IS -=-=-=-" , itemdate);
-
-
 			itemdates = itemdate.split('-');
 			itemsdate = itemdates[0];
 			itemsmonth = itemdates[1];
@@ -153,9 +134,6 @@ angular.module('halanxApp')
 			$scope.maxorderdates = itemsmonth + '/' + itemsdate + '/' + itemsyear;
 			// $scope.mintoddates= itemsmonth2+'/'+itemsdate2+'/'+itemsyear;
 			// $scope.maxtoddates = itemsmonth+'/'+itemsdate+'/'+itemsyear;
-			console.log("Mindatess is is is " + $scope.mindates);
-			console.log("Maxdatess is is is " + $scope.maxdates);
-			console.log("ALL DATES", $scope.minvisitdates, $scope.maxvisitdates, $scope.minorderdates, $scope.maxorderdates);
 		}
 
 		$scope.getDatesForGraphs();
@@ -193,12 +171,11 @@ angular.module('halanxApp')
 			else {
 				$scope.chartwidth = $window.innerWidth - 100;
 			}
-			console.log($scope.chartwidth, "chartwidth");
 		}
 		findChartWidth();
 		$scope.getSalesBarValue = (mindate, maxdate) => {
 			if (mindate.includes('/') && maxdate.includes('/')) {
-				console.log("MINDATE", mindate, "MAXDATE", maxdate);
+				// console.log("MINDATE", mindate, "MAXDATE", maxdate);
 				var min = mindate.split('/');
 				var date1 = min[1];
 				var month1 = min[0];
@@ -209,12 +186,11 @@ angular.module('halanxApp')
 				var month2 = max[0];
 				var year2 = max[2];
 				var to = year2 + '-' + month2 + '-' + date2;
-				console.log(from, "FROM", to, "TO");
+				// console.log(from, "FROM", to, "TO");
 				var pr = dashboard.getSalesBar(token, from, to);
 				pr.then(success, fail);
 				function success(data) {
 					$scope.salesbar = data.data.sales;
-					console.log($scope.salesbar);
 					$scope.getSalesbar(mindate, maxdate);
 				}
 				function fail(err) {
@@ -224,21 +200,11 @@ angular.module('halanxApp')
 		};
 		$scope.getSalesbar = (mind, maxd) => {
 			$scope.mindates = mind;
-			console.log("ISNIDE CHART DRAWOING", mind, maxd);
 
 
-			console.log(mind, maxd, "MINDATE && MAXDATE ON SCREEN =>", $scope.mindates, $scope.maxdates);
 			google.charts.load('current', { packages: ['corechart', 'bar'] });
 			google.charts.setOnLoadCallback(drawBasic);
 
-
-
-			// console.log("Mindates   "+mindates);
-
-			// ||
-			// $scope.getSalesBarValue(mind,maxd);
-			// console.log("Mind is   ",mind);
-			// console.log("Maxd is   ",maxd);
 			function drawBasic() {
 				$scope.maxdates = maxd;
 				var data = new google.visualization.DataTable();
@@ -754,15 +720,14 @@ angular.module('halanxApp')
 		$scope.storeDelivery = () => {
 			dashboard.StoreItems(token).then(data => {
 				$scope.deliveries = data.data;
-				console.log($scope.deliveries);
+				// console.log($scope.deliveries);
 				$scope.lodRip = true;
 			});
 		}
 
 		$scope.openMe = () => {
-			console.log("running function openMe : ", token);
+			// console.log("running function openMe : ", token);
 			dashboard.PaymentCall(token).then((data) => {
-				console.log("aakash", data.data);
 				for (var i = 0; i < data.data.length; i++) {
 					var ele = getDate(data.data[i].timestamp) + " & " + formatAMPM(data.data[i].timestamp);
 					data.data[i].timestamp = ele;
@@ -781,20 +746,22 @@ angular.module('halanxApp')
 			promise.then((data) => {
 				sid = data[0].id;
 				$scope.categories = data[0].CategoriesAvailable;
-				console.log(sid);
+				// console.log(sid);
 				$scope.openMe();
 				$scope.getProduct();
 			}, (err) => {
-				console.log(err);
+				console.error(err);
 			});
 		}
 
 		showMeData();
 
+		$scope.products = [];
+
 		$scope.getProduct = () => {
 			var promise = dashboard.getProduct(page_no, token);
 			promise.then((data) => {
-				console.log(data);
+				// console.log(data);
 				if (data.next == null) {
 					flag = false;
 					$scope.loadMore_c = true;
@@ -819,7 +786,7 @@ angular.module('halanxApp')
 				console.log($scope.products);
 				$scope.tempProducts = $scope.products;
 			}, (err) => {
-				console.log("err");
+				console.error("err");
 			});
 		};
 
@@ -833,7 +800,6 @@ angular.module('halanxApp')
 				$scope.getProduct();
 				$scope.searchMsg = "";
 				$scope.showProducts = true;
-				console.log("show products");
 				x = document.querySelectorAll(".banner_prod.main");
 				for (let i = 0; i < x.length; i++) {
 					x[i].style.display = "block";
@@ -850,14 +816,11 @@ angular.module('halanxApp')
 					$scope.searchMsg = $scope.productsSer.length + " item(s) found.";
 				}
 				$scope.showProducts = false;
-				console.log("dont show products");
 				x = document.querySelectorAll(".banner_prod.main");
 				for (let i = 0; i < x.length; i++) {
 					x[i].style.display = "none";
-					console.log(x[i].style.display);
 				}
 			}
-			console.log($scope.searchProVal);
 		}
 
 		$scope.edit = (product) => {
@@ -908,7 +871,6 @@ angular.module('halanxApp')
 		}
 
 		$scope.getVouchers = () => { //ye function load kb kr rha h?  voucher pr click ok
-			console.log("TOKEN YEHI H", token);
 			getVoucherStats();
 			getVoucherOffers();
 			$scope.nodat = true;
@@ -933,7 +895,6 @@ angular.module('halanxApp')
 						data.data.results[i].timestamp = getDate(data.data.results[i].timestamp);
 					}
 					$scope.result = data.data;
-					console.log("----", data.data, "-----", );
 				}
 				//  console.log("---------------",data);
 			}
@@ -952,7 +913,7 @@ angular.module('halanxApp')
 				else {
 					$scope.nooff = false;
 					$scope.offers = data.data;
-					console.log("VOICHER OFFERS", data.data);
+					// console.log("VOICHER OFFERS", data.data);
 				}
 			}
 			function fail(err) {
@@ -974,7 +935,7 @@ angular.module('halanxApp')
 
 		$scope.checkCode = () => {
 			if ($scope.voucherCode) {
-				console.log($scope.voucherCode);
+				// console.log($scope.voucherCode);
 				var pr = dashboard.getVoucherRedeemed($scope.voucherCode, token);
 				pr.then(success, fail);
 				function success(data) {
@@ -1004,7 +965,6 @@ angular.module('halanxApp')
 
 		$scope.getProfile = () => {
 			console.log("Inside getprofile");
-			// loadStore();
 			getPlaceMenu($scope.store);
 			getTimings($scope.store);
 			getPics($scope.store);
@@ -1015,9 +975,9 @@ angular.module('halanxApp')
 			pr.then(success, fail);
 			function success(data) {
 				$scope.prof = data.data;
-				console.log($scope.prof);
+				// console.log($scope.prof);
 				initMap($scope.prof.latitude, $scope.prof.longitude);
-				console.log("Profile is this", $scope.prof)
+				// console.log("Profile is this", $scope.prof)
 				$scope.tophome = data.data;
 				$scope.coverpic = data.data.cover_pic_url;
 			}
@@ -1028,7 +988,6 @@ angular.module('halanxApp')
 		};
 
 		$scope.getTopProfileLoad = (id) => {
-			console.log("inside profile load", id);
 			// loadStore();
 			getPlaceMenu(id);
 			getTimings(id);
@@ -1041,7 +1000,6 @@ angular.module('halanxApp')
 				$scope.prof = data.data;
 
 				initMap($scope.prof.latitude, $scope.prof.longitude);
-				console.log("Profile is this", $scope.prof)
 				$scope.tophome = data.data;
 				$scope.coverpic = data.data.cover_pic_url;
 			}
@@ -1050,8 +1008,6 @@ angular.module('halanxApp')
 				$scope.errth = err;
 			}
 		};
-
-
 
 		$timeout(function () {
 			$scope.getProfile();
@@ -1063,7 +1019,6 @@ angular.module('halanxApp')
 			pr.then(success, fail);
 			function success(data) {
 				$scope.prof = data.data;
-				console.log("Profile", $scope.prof);
 			}
 			function fail(err) {
 				$scope.errprof = err;
@@ -1075,7 +1030,6 @@ angular.module('halanxApp')
 			pr.then(success, fail);
 			function success(data) {
 				$scope.time = data.data;
-				console.log("time", $scope.time);
 			}
 			function fail(err) {
 				$scope.errtime = err;
@@ -1087,7 +1041,6 @@ angular.module('halanxApp')
 			pr.then(success, fail);
 			function success(data) {
 				$scope.pics = data.data;
-				console.log("Pics", $scope.pics);
 			}
 			function fail(err) {
 				$scope.errpics = err;
@@ -1099,7 +1052,6 @@ angular.module('halanxApp')
 			pr.then(success, fail);
 			function success(data) {
 				$scope.members = data.data;
-				console.log("members", $scope.members);
 			}
 			function fail(err) {
 				$scope.errmem = err;
@@ -1107,7 +1059,6 @@ angular.module('halanxApp')
 		}
 
 		function getPlaceStats(store) {
-			console.log("I am getting called");
 			var pr = dashboard.getStats(token, store);
 			pr.then(success, fail);
 			function success(data) {
@@ -1117,11 +1068,9 @@ angular.module('halanxApp')
 					}
 				}
 				$scope.stats = data.data;
-				console.log("This is stats read it", data.data);
 			}
 			function fail(err) {
 				$scope.errstat = err;
-				console.log("Error of stats is", err);
 			}
 		};
 
@@ -1130,7 +1079,6 @@ angular.module('halanxApp')
 			pr.then(success, fail);
 			function success(data) {
 				$scope.pics = data.data;
-				console.log(data);
 			}
 			function fail(err) {
 				$scope.errpics = err;
@@ -1147,6 +1095,9 @@ angular.module('halanxApp')
 			obj.highlights = $scope.prof.highlights;
 			var pr = dashboard.editOutletDetails(obj, $scope.store, token);
 			pr.then(success, fail);
+			$timeout(function () {
+				$scope.highChangedval = "";
+			}, 3000);
 			function success(data) {
 				$scope.highChanged = true;
 				$scope.highChangedval = "Successfully added!";
@@ -1172,6 +1123,9 @@ angular.module('halanxApp')
 			// console.log(value);
 			var pr = dashboard.editOutletDetails(obj, $scope.store, token);
 			pr.then(success, fail);
+			$timeout(function () {
+				$scope.detailsChangedval = "";
+			}, 3000);
 			function success(data) {
 				$scope.detailsChanged = true;
 				$scope.detailsChangedval = "Successfully Changed";
@@ -1183,10 +1137,8 @@ angular.module('halanxApp')
 		};
 
 		$scope.editTime = (value) => {
-			// var value = $scope.time
-			// console.log(value);
 			value = [value];
-			console.log(value);
+			// console.log(value);
 			var pr = dashboard.editTime(value, $scope.store, token);
 			pr.then(success, fail);
 			function success(data) {
@@ -1202,13 +1154,11 @@ angular.module('halanxApp')
 		}
 
 		$scope.loadStoreDetails = () => {
-			console.log("inside loadstore");
 			$scope.getTopProfiles();
 			var pr = dashboard.loadStore(token);
 			pr.then(success, fail);
 			function success(data) {
 				$scope.storeDetails = data;
-				console.log("-------------------", data);
 			}
 			function fail(err) {
 				$scope.errsd = err;
@@ -1216,19 +1166,16 @@ angular.module('halanxApp')
 		};
 		$scope.topone;
 		$scope.getTopProfiles = () => {
-			//  console.log("Inside top profiles");
-
 			var pr = dashboard.getTop(token);
 			pr.then(success, fail);
 			function success(data) {
-				// 
 				// if($scope.topProfiles.length!=data.data.results.length){
 
 				$scope.topProfiles = data.data.results;
-				console.log("INSIDE TOP PROFILE ISNIDE DOUBLE", $scope.topProfiles.length, data.data.results.length);
+				// console.log("INSIDE TOP PROFILE ISNIDE DOUBLE", $scope.topProfiles.length, data.data.results.length);
 
 				// }
-				console.log("inside top profiles", $scope.topProfiles);
+				// console.log("inside top profiles", $scope.topProfiles);
 				if (!$scope.topone) {
 					$scope.topone = $scope.topProfiles[0];
 				}
@@ -1246,25 +1193,6 @@ angular.module('halanxApp')
 				$scope.errtp = err;
 			}
 		}
-
-		//  function getTopUrl(url){
-		//   var pr= dashboard.getTopUrl(url,token);
-		//   pr.then(success,fail);
-		//   function success(data){
-		//     // $scope.topProfiles.push(data.data.results);
-		//     for(let i =0;i<data.data.results.length;i++){
-		//       $scope.topProfiles.push(data.data.results[i]);
-		//     }
-		//     console.log('This is top profile',$scope.topProfiles);
-		//     if(data.data.next){
-		//       getTopUrl(data.data.next);
-		//     }
-		//   }
-		//   function fail(err){
-		//     $scope.errtpu=err;
-		//   }
-
-		//  }
 
 		$scope.getBusiness = () => {
 			getROI();
@@ -1288,14 +1216,11 @@ angular.module('halanxApp')
 			for (let i = 1; i < 6; i++) {
 				if ($scope.Business.rating.list[i]) {
 					sum += $scope.Business.rating.list[i];
-					// console.log("I is",i," Defined  Value is",$scope.Business.rating.list[i]);
 				}
 				else {
-					// console.log("I is",i,"    Value is",$scope.Business.rating.list[i]);
 					sum += 0;
 				}
 			}
-			// console.log("SUM is ",sum);
 			$scope.p1 = $scope.Business.rating.list[1] / sum * 100;
 			$scope.p2 = $scope.Business.rating.list[2] / sum * 100;
 			$scope.p3 = $scope.Business.rating.list[3] / sum * 100;
@@ -1383,7 +1308,6 @@ angular.module('halanxApp')
 			var pr = dashboard.getNot(token);
 			pr.then(success, fail);
 			function success(data) {
-				console.log(data);
 				// data.data.forEach(element => {
 				//   element.timestamp=element.timestamp.toDateString();
 				// });
@@ -1391,7 +1315,6 @@ angular.module('halanxApp')
 					data.data.results[i].timestamp = getDate(data.data.results[i].timestamp);
 				}
 				$scope.noti[i] = data.data;
-				console.log("NOtifcation1 " + i, $scope.noti[i]);
 				while ($scope.noti[i].next) {
 					var pr = dashboard.getNoturl($scope.noti[i].next, token);
 					i++;
@@ -1408,7 +1331,6 @@ angular.module('halanxApp')
 					function fail(err) {
 						$scope.errnoti = err;
 					}
-					console.log("NOtifcations " + i, $scope.noti[i]);
 				}
 			}
 			function fail(err) {
@@ -1447,7 +1369,6 @@ angular.module('halanxApp')
 		}
 		$scope.triedAdding = false;
 		function AddMember() {
-			console.log($scope.mem);
 			var pr = dashboard.AddMember(token, $scope.mem);
 			pr.then(success, fail);
 			function success(data) {
@@ -1504,8 +1425,6 @@ angular.module('halanxApp')
 		//           "Cache-Control": "no-cache",
 		//           "contentType" : false,
 		//           "mimeType": "multipart/form-data"
-
-
 		//         }
 		//       }).then(success,fail);
 		//       function success(data){
@@ -1519,44 +1438,6 @@ angular.module('halanxApp')
 
 		//     r.readAsBinaryString(f);
 		// }
-
-
-		//   $scope.uploadFiles = function(file, errFiles) {
-		//     console.log(file);
-		//     if (file) {
-		//         file.upload = Upload.upload({
-		//             url: 'https://api.halanx.com/places/place/'+$scope.store+'/menu/',
-		//             file: file,
-		//             headers: {'Authorization': 'token '+'0d82010691295e6a779560dd06e9213eebaaed15'}
-		//         });
-
-		//         file.upload.then(function (response) {
-		//             $timeout(function () {
-		//                 file.result = response.data;
-		//             });
-		//         });
-
-		//     }
-		//   };
-
-		//   $scope.uploadFiles2 = function(file, errFiles) {
-		//     if (file) {
-		//         file.upload = Upload.upload({
-		//             url: 'https://api.halanx.com/stores/team/members/',
-		//             data: {file: file,},
-		//             headers: {'Authorization': 'token '+'0d82010691295e6a779560dd06e9213eebaaed15'}
-		//         });
-
-		//         file.upload.then(function (response) {
-		//             $timeout(function () {
-		//                 file.result = response.data;
-		//             });
-		//         });
-
-		//     }
-		//   };
-
-
 
 		//   $scope.getFileDetails = function (e) {
 
@@ -1573,77 +1454,42 @@ angular.module('halanxApp')
 
 
 		$scope.uploadFiles = function () {
-			// $scope.files
-			//FILL FormData WITH FILE DETAILS.
 			var data = new FormData();
+			data.append("image", $scope.mimage);
+			console.log($scope.mimage);
+			console.log(data);
+			dashboard.uploadMenuImages("https://api.halanx.com/places/place/" + $scope.store + "/menu/", data, token).then(function (data) {
+				alert("Image Uploaded Successfully!");
+				console.log(data);
+				getPics($scope.store);
 
-			// for (var i in $scope.files) {
-			data.append("uploadedFile", $scope.files2);
-			// }
-
-			// ADD LISTENERS.
-			var objXhr = new XMLHttpRequest();
-			objXhr.addEventListener("progress", updateProgress, false);
-			objXhr.addEventListener("load", transferComplete, false);
-
-			// SEND FILE DETAILS TO THE API.
-
-			objXhr.open("POST", "https://api.halanx.com/places/place/9/menu/");
-			objXhr.setRequestHeader('Authorization', 'Token ' + '0d82010691295e6a779560dd06e9213eebaaed15')
-			objXhr.send(data);
-			getPics($scope.store);
+			})
 		}
 
-		// UPDATE PROGRESS BAR.
-		function updateProgress(e) {
-			if (e.lengthComputable) {
-				document.getElementById('pro').setAttribute('value', e.loaded);
-				document.getElementById('pro').setAttribute('max', e.total);
+		// // UPDATE PROGRESS BAR.
+		// function updateProgress(e) {
+		// 	if (e.lengthComputable) {
+		// 		document.getElementById('pro').setAttribute('value', e.loaded);
+		// 		document.getElementById('pro').setAttribute('max', e.total);
+		// 	}
+		// }
+
+		// // CONFIRMATION.
+		// function transferComplete(e) {
+		// 	alert("Files uploaded successfully.");
+		// }
+
+		$scope.publishSponsoredPost = function () {
+			// data.append("uploadedFile", $scope.filess);
+			var data = {
+				content: $scope.spopost,
+				distance: "100"
 			}
+
+			dashboard.PostRequest('https://api.halanx.com/posts/sponsored/create/', data, token).then(function (data) {
+				alert("Published!");
+			})
 		}
-
-		// CONFIRMATION.
-		function transferComplete(e) {
-			alert("Files uploaded successfully.");
-		}
-
-
-		$scope.uploadFiles2 = function () {
-			// $scope.files
-			//FILL FormData WITH FILE DETAILS.
-			var data = new FormData();
-
-			// for (var i in $scope.files) {
-			data.append("uploadedFile", $scope.filess);
-			data.append("uploadedText", $scope.spopost);
-			// }
-
-			// ADD LISTENERS.
-			var objXhr = new XMLHttpRequest();
-			// objXhr.addEventListener("progress", updateProgress, false);
-			// objXhr.addEventListener("load", transferComplete, false);
-
-			// SEND FILE DETAILS TO THE API.
-
-			objXhr.open("POST", "https://api.halanx.com/places/place/9/menu/");
-			objXhr.setRequestHeader('Authorization', 'Token ' + '0d82010691295e6a779560dd06e9213eebaaed15')
-			objXhr.send(data);
-		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		$scope.editted = false;
 		$scope.EditTeam = (id, data) => {

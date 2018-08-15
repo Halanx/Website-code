@@ -569,6 +569,34 @@ angular.module('halanxApp')
           pr.reject(err);
         }
         return pr.promise;
+      },
+      PostRequest(url, data, token) {
+        var pr = $q.defer();
+        $http.post(url, data, {
+          headers: {
+            'Authorization': 'Token ' + token
+          }
+        }).then(function (data) {
+          pr.resolve(data);
+        }, function (err) {
+          pr.reject(err);
+        });
+        return pr.promise;
+      },
+      uploadMenuImages(url, data, token) {
+        var pr = $q.defer();
+        $http.post(url, data, {
+          transformRequest: angular.identity,
+          headers: {
+            'Authorization': 'Token ' + token,
+            'Content-Type': undefined
+          }
+        }).then(function (data) {
+          pr.resolve(data);
+        }, function (err) {
+          pr.reject(err);
+        });
+        return pr.promise;
       }
       // ,
       // gettodBar(token,from,to){
