@@ -14,7 +14,7 @@ angular.module('halanxApp')
       'AngularJS',
       'Karma'
     ];
-    var  deliveryadd = "";
+    var deliveryadd = "";
     var totalAmount = 0;
     $scope.hashData = {};
     function getAmount(){
