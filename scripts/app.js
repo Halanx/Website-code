@@ -32,28 +32,15 @@ angular
             })
             .when('/terms', {
                 templateUrl: 'views/terms.html',
-                // controller: 'TermsCtrl',
-                // controllerAs: 'terms'
             })
             .when('/contactus', {
                 templateUrl: 'views/contactus.html',
-                // controller: 'ContactusCtrl',
-                // controllerAs: 'contactus'
             })
             .when('/xyz', {
                 templateUrl: 'views/xyz.html',
-                // controller: 'ContactusCtrl',
-                // controllerAs: 'contactus'
             })
-            // .when('/abc', {
-            //   templateUrl: 'views/abc.html',
-            //   // controller: 'ContactusCtrl',
-            //   // controllerAs: 'contactus'
-            // })
             .when('/privacy', {
                 templateUrl: 'views/privacy.html',
-                // controller: 'PrivacyCtrl',
-                // controllerAs: 'privacy'
             })
             .when('/halanx-homes', {
                 templateUrl: 'views/halanx-homes.html'
@@ -212,11 +199,6 @@ angular
                 templateUrl: 'views/refundpolicy.html',
                 controller: 'CareerCtrl',
                 controllerAs: 'career'
-            })
-            .when('/payment', {
-                templateUrl: 'views/payment.html',
-                controller: 'PaymentCtrl',
-                controllerAs: 'payment'
             })
             .when('/payment', {
                 templateUrl: 'views/payment.html',

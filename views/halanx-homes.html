@@ -1,32 +1,116 @@
 <style>
+    #banner {
+        height: calc(100vh - 64px);
+        color: #fff;
+        position: relative;
+        background: url(images/apartment.jpg);
+        background-size: cover;
+    }
 
+    .overlay {
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(circle, #000, transparent);
+        opacity: 0.5;
+    }
+
+    .banner-text {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+    }
+
+    .banner-text h1 {
+        font-size: 48px;
+        padding: 20px;
+    }
+
+    .banner-text p {
+        font-size: 20px;
+        width: 60%;
+        padding: 20px;
+        line-height: 1.3;
+        color: #eee;
+    }
+
+    #about {
+        padding: 32px 100px;
+    }
+
+    #about p {
+        margin: 32px;
+        font-size: 18px;
+    }
+
+    .btn-theme {
+        border-radius: 6px;
+        color: #fff;
+        background-color: #e52222;
+        border: none;
+        padding: 12px 20px;
+        box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        outline: none;
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .btn-theme:hover {
+        background-color: #fa5b5b !important;
+    }
+
+    .btn-theme:active {
+        transform: translateY(1px);
+        box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.1);
+    }
+
+
+    @media screen and (max-width:576px) {
+        #about {
+            padding: 32px;
+        }
+    }
 </style>
-<div class="container md-padding">
-    <p>
-        Halanx homes me reh lo fraands.
-    </p>
-    <a href="https://halanxhomes.com" style="font-size: 40px;">Homes</a>
-    <ol>
-        <li>
-            Halanx Homes is the next step on the way of our mission to make our neighborhood
-            easily accessible, connected, affordable & secure.
-        </li>
-        <li>
+<main>
+    <div id="banner">
+        <div class="overlay"></div>
+        <div class="banner-text">
+            <h1>Introducing Halanx Homes</h1>
+            <p>
+                Halanx Homes is the next step on the way of our mission to make our neighborhood
+                easily accessible, connected, affordable & secure.
+            </p>
+            <div class="btn-theme" onclick="window.open('https://halanxhomes.com','_blank');">
+                Visit Halanx Homes
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <p>
             Through Halanx Homes, students, working people & families can rent fully furnished
             houses with all amenities in a good locality.
-        </li>
-        <li>
+        </p>
+        <p>
             Our generation doesn’t believe in buying mediocre houses. We want to have beautiful
             homes as soon as possible. Our generation is fan of on demand fulfillment, sharing
             economy and complete freedom to live our today to the fullest.
-        </li>
-        <li>
+        </p>
+        <p>
             Halanx Homes onboards house owners, prepare the agreement for tenants, take care of
             house with frequent cleaning, maintenance and online rent collection.
-        </li>
-        <li>
+        </p>
+        <p>
             This way Halanx Homes makes house owners earn more and have stable source of
             income, while giving tenants convenience, affordability and high living standard.
-        </li>
-    </ol>
-</div>
+        </p>
+    </div>
+</main>

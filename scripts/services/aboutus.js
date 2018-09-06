@@ -25,35 +25,3 @@ angular.module('halanxApp')
       }
     };
   });
-
-angular.module('halanxApp').service("PaymentService", function ($http, $q) {
-  this.createHash = function (data, token) {
-    var pr = $q.defer();
-    $http.post('https://api.halanx.com/transactions/payu/generate_hash/web/', data, {
-      headers: {
-        "Authorization": "Token " + token
-      }
-    })
-      .then(function (data) {
-        pr.resolve(data);
-      }, function (err) {
-        pr.reject(err);
-      }).catch(function (err) {
-        console.log("ERROR");
-      });
-    return pr.promise;
-  };
-
-  this.requestGateway = function (url, data, token) {
-    var pr = $q.defer();
-    $http.post(url, data)
-      .then(function (data) {
-        pr.resolve(data);
-      }, function (err) {
-        pr.reject(err);
-      }).catch(function (err) {
-        console.log("ERROR");
-      });
-    return pr.promise;
-  }
-});
