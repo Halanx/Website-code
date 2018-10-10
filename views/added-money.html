@@ -1,0 +1,13 @@
+<div>
+    <div class="md-padding" ng-show="success">
+        <div class="md-headline">Payment Successful <span style="color:rgb(35, 248, 35);"><i class="fa fa-check-circle"></i></span></div>
+        <div class="md-padding">
+            {{message}}
+        </div>
+        <a href="/">Go to dashboard.</a>
+    </div>
+    <div class="md-padding" ng-hide="success">
+        <div class="md-headline">Payment Failed <span style="color: red;"><i class="fa fa-warning"></i></span></div>
+        <a href="/">Go to dashboard.</a>
+    </div>
+</div>

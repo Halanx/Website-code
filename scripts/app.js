@@ -30,6 +30,11 @@ angular
                 controller: 'AboutusCtrl',
                 controllerAs: 'aboutus'
             })
+            .when('/added-money', {
+                templateUrl: 'views/added-money.html',
+                controller: 'AddedMoneyCtrl',
+                controllerAs: 'addedmoney'
+            })
             .when('/terms', {
                 templateUrl: 'views/terms.html',
             })
