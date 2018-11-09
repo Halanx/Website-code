@@ -1,5 +1,18 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 <style>
+    #slave {
+        padding: 20px 64px;
+        background-color: #e52222;
+        color: #fff;
+    }
+
+    #slave h1 {
+        padding-bottom: 16px;
+    }
+
+    #slave img {
+        margin-top: 16px;
+    }
     .searchbar {
         position: relative;
         top: 170px;
@@ -118,7 +131,12 @@
             font-weight: 400;
             text-align: center;
         }
+
+        #slave {
+            padding: 20px!important;
+        }
     }
+
 
     .phoneSection {
         height: 455px;
@@ -512,21 +530,23 @@
                 <div id="custom-search-input">
                     <div class="input-group col-md-offset-3">
                         <span id="pac-container">
-                            <input style="height: 42px;" type="text" id="txtPlaces" ng-model="location" class="form-control input-md" placeholder="Enter your location"
-                            />
+                            <input style="height: 42px;" type="text" id="txtPlaces" ng-model="location" class="form-control input-md"
+                                placeholder="Enter your location" />
                         </span>
                         <span class="input-group-btn">
                             <!--<center id="cur-loc">
         <!--<span onclick="getLocation()">Detect current location</span>-->
                             <!--<span class="glyphicon glyphicon-screenshot" onclick="getLocation()" data-toggle="modal" data-target="#myModal"></span>
                  </center>-->
-                            <button style="height: 42px; border-radius: 0px; background:rgb(255,29,33)" class="btn btn-danger btn-md" style="border-radius: 0;"
-                                type="button" id="search" onclick="getLocation()" data-toggle="modal" data-target="#myModal">
+                            <button style="height: 42px; border-radius: 0px; background:rgb(255,29,33)" class="btn btn-danger btn-md"
+                                style="border-radius: 0;" type="button" id="search" onclick="getLocation()" data-toggle="modal"
+                                data-target="#myModal">
                                 <span class="glyphicon glyphicon-screenshot"></span>
                             </button>
                         </span>
                         <span class="input-group-btn">
-                            <button style="height: 42px;background:rgb(255,29,33)" class="btn btn-danger btn-md" type="button" id="search" ng-click="checkLocation()">
+                            <button style="height: 42px;background:rgb(255,29,33)" class="btn btn-danger btn-md" type="button"
+                                id="search" ng-click="checkLocation()">
                                 Find Stores
                             </button>
                         </span>
@@ -670,7 +690,8 @@
                 <div class="app-phone7">
                     <div class="play-heading">
                         <a href="https://play.google.com/store/apps/details?id=com.halanx.userapp" target="_blank">
-                            <img src="https://storage.googleapis.com/support-kms-prod/D90D94331E54D2005CC8CEE352FF98ECF639" class="img-responsive img1">
+                            <img src="https://storage.googleapis.com/support-kms-prod/D90D94331E54D2005CC8CEE352FF98ECF639"
+                                class="img-responsive img1">
                         </a>
                     </div>
                     <div class="play-heading">
@@ -874,6 +895,14 @@
       </a>
   </div>-->
 
+<div id="slave">
+    <p>Introducing</p>
+    <h2><a style="color:#fff;" href="https://halanxhomes.com">Halanx Homes</a></h2>
+    <p>
+        Live happily at Halanx Homes. Rent furnished houses with all amenities. Zero Brokerage.
+    </p>
+    <img src="images/halanx-homes.jpg" width="100%">
+</div>
 
 <div class="fb-messengermessageus" messenger_app_id="305219616568944" page_id="XYZ" color="blue">
 </div>
