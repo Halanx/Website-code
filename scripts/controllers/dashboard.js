@@ -1353,6 +1353,7 @@ angular.module('halanxApp')
 
         function getWalletAmt() {
             var pr = dashboard.getWalletAmt(token);
+            console.warn("getting wallet amount");
             pr.then(success, fail);
             function success(data) {
                 $scope.walletAmt = data.data.balance;
