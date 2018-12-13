@@ -3,7 +3,7 @@
 
 <head>
     <!-- Title -->
-    <title>Halanx </title>
+    <title>Halanx | Neighborhood news and cashback at nearby stores</title>
 
     <!-- Meta Data -->
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -258,17 +258,14 @@
         <div ng-controller="FinalizeCtrl"> </div>
     </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130114108-1"></script>
     <script>
-        !function (A, n, g, u, l, a, r) {
-            A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-                (A[l].q = A[l].q || []).push(arguments)
-            }, A[l].l = +new Date, a = n.createElement(g),
-                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        ga('create', 'UA-XXXXX-X');
-        ga('send', 'pageview');
+        gtag('config', 'UA-130114108-1');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
