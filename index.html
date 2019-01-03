@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <!-- Title -->
@@ -67,7 +67,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!-- Google Charts -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!-- JQUERY UI -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -167,12 +167,12 @@
 
     <!--Navbar Starts Here-->
     <div ng-controller="IndexCtrl" ng-cloak>
-        <nav class="navbar navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand navbar-bg" ng-click="showMe()">
                         <img id="brand-logo" src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png" class="img-responsive"
-                            width="50" height="50">
+                            width="50" height="50" alt="Halanx logo">
                         <span id="brand-name">Halanx</span>
                     </a>
                 </div>
@@ -235,7 +235,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="logo text-center">
-                                <img src="images/logo_white.png" height="90" alt="">
+                                <img src="images/logo_white.png" height="90" alt="white logo">
                             </div>
                         </div>
                         <div class="row">
@@ -585,7 +585,6 @@
             location.reload();
         }
     </script>
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
@@ -593,8 +592,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
 
     <!-- Google Maps API -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnunhscL2jKBg62KkqAhJwSMXhDoN9DE&libraries=places"></script>
-    <script type="text/javascript">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnunhscL2jKBg62KkqAhJwSMXhDoN9DE&libraries=places"></script>
+    <script>
         google.maps.event.addDomListener(window, 'load', function () {
             var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
             google.maps.event.addListener(places, 'place_changed', function () {
