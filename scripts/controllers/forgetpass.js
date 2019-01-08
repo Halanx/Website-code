@@ -1,30 +1,29 @@
 'use strict';
 
- 
+
 angular.module('halanxApp')
-  .controller('ForgetpassCtrl', function ($scope,forgetpass) {
-       
-    $scope.submitform = ()=>{
-    
-        var obj = {};
-        
-        obj.FirstName=$scope.mobilenumber;
-        obj.username =$scope.password;
-        
-         
-        console.log(obj)
-    
-       
-          var promise = forgetpass.callserver(obj);
-          promise.then((data)=>
-          {
-          console.log(data);
-          if(data.key){
-              $window.location.href="#/forgetpassotp";
-          }
-          },(err)=>{
-          alert("error");
-          })
-       
+  .controller('ForgetpassCtrl', function ($scope, forgetpass) {
+
+    $scope.submitform = () => {
+
+      var obj = {};
+
+      obj.FirstName = $scope.mobilenumber;
+      obj.username = $scope.password;
+
+
+      console.log(obj)
+
+
+      var promise = forgetpass.callserver(obj);
+      promise.then((data) => {
+        console.log(data);
+        if (data.key) {
+          $window.location.href = "/forgetpassotp";
+        }
+      }, (err) => {
+        alert("error");
+      })
+
     }
   });
