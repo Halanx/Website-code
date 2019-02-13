@@ -18,13 +18,17 @@ angular
         'ngMaterial'
     ])
     .config(function ($routeProvider, $locationProvider) {
-        // $locationProvider.hashPrefix('');
-        $locationProvider.html5Mode(true);
+        $locationProvider.hashPrefix('');
+        // $locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl',
                 controllerAs: 'main'
+            })
+            .when('/engifest-2019', {
+                templateUrl: 'views/engifest.html',
+                controller: 'EngifestCtrl'
             })
             .when('/aboutus', {
                 templateUrl: 'views/aboutus.html',

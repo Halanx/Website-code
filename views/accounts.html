@@ -320,19 +320,19 @@ transition: 1s;
                     </div>
                     <div class="userlist" ng-class={"move":movex}>
                      <ul>
-                            <li><a href="/accounts"><i class="far fa-user"></i> My Account</a></li>
-                            <li><a href="/orders"><i class="fa fa-file-text-o" aria-hidden="true"></i> My Orders</a></li>
-                            <li><a href="/favourite"><i class="fa fa-heart-o" aria-hidden="true"> </i>Favourites</a></li>
+                            <li><a href="#/accounts"><i class="far fa-user"></i> My Account</a></li>
+                            <li><a href="#/orders"><i class="fa fa-file-text-o" aria-hidden="true"></i> My Orders</a></li>
+                            <li><a href="#/favourite"><i class="fa fa-heart-o" aria-hidden="true"> </i>Favourites</a></li>
                             <li><a href=""><i class="fa fa-star-o" aria-hidden="true"> </i> Points</a></li>
                             <li><a href=""><i class="fa fa-bell-o" aria-hidden="true"> </i> Notification</a></li>
-                            <li><a href="/logout" ng-click="logout()"><i class="fa fa-power-off" aria-hidden="true"> </i> Logout</a></li>
+                            <li><a href="#/logout" ng-click="logout()"><i class="fa fa-power-off" aria-hidden="true"> </i> Logout</a></li>
                             
                          
                      </ul>
                     </div>
                 </div>
                     <div class="cart-icon">
-                       <a href="/cart">
+                       <a href="#/cart">
                       <button type="button" class="btn btn-md b23"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
 <span ng-model = "counter" class="testt" ng-if="counter">{{counter}}</span>
                         </button>

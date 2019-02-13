@@ -8,7 +8,7 @@
  * Controller of the halanxApp
  */
 angular.module('halanxApp')
-  .controller('MainCtrl', function ($scope,common,$window) {
+  .controller('MainCtrl', function ($scope,$location,$window) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -37,6 +37,8 @@ angular.module('halanxApp')
       }
     }
 
-   
+    $scope.engi1 =()=>{
+      $location.path('/engifest-2019');
+    }   
 
   });

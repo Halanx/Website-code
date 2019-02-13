@@ -1,0 +1,100 @@
+<style>
+    main {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .engi-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .dialog-wrapper {
+        padding: 16px;
+        padding-top: 44px;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 15;
+        display: flex;
+        align-items: center;
+        display: none;
+    }
+
+    .dialog-wrapper .dialog {
+        margin: 0 auto;
+        width: 60%;
+        max-height: 100%;
+        overflow-y: auto;
+        height: fit-content;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+    }
+
+    .dialog-wrapper .cross {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 16px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .dialog-content .passcode {
+        background-color: #e52222;
+        color: #fff;
+        /* border: 1px solid #eee; */
+        font-weight: bold;
+        font-size: 24px;
+        padding: 16px;
+        margin: 0 auto;
+        width: 75%;
+        text-align: center;
+    }
+
+    @media screen and (max-width:768px) {
+        .engi-wrapper {
+            flex-direction: column;
+        }
+
+        .dialog-wrapper .dialog {
+            width: 100% !important;
+        }
+    }
+</style>
+<main>
+    <div id="desc">
+        <h1 style="text-align:center;">Engifest 2019 Passes are available on Halanx iOS and Android Apps</h1>
+    </div>
+    <div class="engi-wrapper">
+        <div id="engi1" ng-click="engi_booking()">
+            <img src="/images/HalanxAppBanner1.png" width="90%" style="display:block; box-shadow: 0 0 8px 2px rgba(0,0,0,0.1); margin:12px auto;"
+                alt="">
+        </div>
+        <div id="engi2" onclick="location.href='https://halanxhomes.com/booking-advanced-offer'">
+            <img src="/images/HalanxAppBanner2.png" width="90%" style="display:block; box-shadow: 0 0 8px 2px rgba(0,0,0,0.1); margin:12px auto;"
+                alt="">
+        </div>
+    </div>
+    <div id="engifest-2019-pass" class="dialog-wrapper">
+        <div class="dialog">
+            <div class="dialog-content">
+                <img src="/images/logo.png" width="56px" style="display:block; margin:6px auto;" alt="">
+                <img src="/images/EngiLogo200x370.png" width="100%" alt="">
+                <div class="passcode">{{pass.entry_pass}}</div>
+                <h2 style="font-size: 20px; text-align: center;">Show this pass at the entry gate to gain entry for Engifest 2019.</h2>
+                <p style="padding-top: 32px; text-align: center; font-weight: bold;">Thanks for being on Halanx! : )</p>
+            </div>
+        </div>
+        <div class="cross" ng-click="modalClose('engifest-2019-pass')">
+            &#9932;
+        </div>
+    </div>
+</main>
