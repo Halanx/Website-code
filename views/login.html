@@ -64,9 +64,10 @@
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     position: relative;
-    top: 30px;
+    top: 0px;
     left: 2px;
-    color: #999;
+    font-weight: 500;
+    color: #333;
 }
 
 .login-wrapper input {
@@ -217,7 +218,7 @@
                     <div class="form-group">
                         <label for="mobilenumber" id="mobileLabel">Mobile Number</label>
                         <input type="number" name="mobilenumber" placeholder="" id="mobilenumber" class="form-control"
-                            ng-model="mobilenumber" onFocus="mobLabelEffect()" onBlur="mobLabelEffect()" autofocus />
+                            ng-model="mobilenumber" autofocus />
                         <p class="err" ng-show="mobileError">Mobile number cannot be left empty</p>
                     </div>
 
@@ -225,7 +226,7 @@
                     <div class="form-group">
                         <label for="password" id="passLabel">Password</label>
                         <input type="password" name="password" placeholder="" id="password" class="form-control"
-                            ng-model="password" onFocus="passLabelEffect()" onBlur="passLabelEffect()" />
+                            ng-model="password" />
                         <p class="err" ng-show="passwordError">Password cannot be left empty</p>
                     </div>
 
@@ -277,47 +278,47 @@
 
 
 
-    mobCheck = true;
-    passCheck = true;
+    // mobCheck = false;
+    // passCheck = false;
 
-    function mobLabelEffect() {
-        mobileLabel = document.getElementById("mobileLabel");
-        var mobilenumber = document.getElementById("mobilenumber");
-        pass = document.getElementById("password");
-        passLabel = document.getElementById("passLabel");
-        if (mobCheck == false) {
-            mobileLabel.style.top = "0";
-            mobileLabel.style.color = "#333";
-            mobileLabel.style.fontWeight = "500";
-            mobCheck = true;
-        } else {
-            if (mobilenumber.value == "") {
-                mobileLabel.style.top = "30px";
-                mobileLabel.style.color = "#999";
-                mobileLabel.style.fontWeight = "400";
-                // mobCheck = false;
-            }
-        }
-    }
+    // function mobLabelEffect() {
+    //     mobileLabel = document.getElementById("mobileLabel");
+    //     var mobilenumber = document.getElementById("mobilenumber");
+    //     pass = document.getElementById("password");
+    //     passLabel = document.getElementById("passLabel");
+    //     if (mobCheck == false) {
+    //         mobileLabel.style.top = "0";
+    //         mobileLabel.style.color = "#333";
+    //         mobileLabel.style.fontWeight = "500";
+    //         mobCheck = true;
+    //     } else {
+    //         if (mobilenumber.value == "") {
+    //             mobileLabel.style.top = "30px";
+    //             mobileLabel.style.color = "#999";
+    //             mobileLabel.style.fontWeight = "400";
+    //             mobCheck = false;
+    //         }
+    //     }
+    // }
 
-    function passLabelEffect() {
-        mobileLabel = document.getElementById("mobileLabel");
-        var mobilenumber = document.getElementById("mobilenumber");
-        pass = document.getElementById("password");
-        passLabel = document.getElementById("passLabel");
-        if (passCheck == false) {
-            passLabel.style.top = "0";
-            passLabel.style.color = "#333";
-            passLabel.style.fontWeight = "500";
-            passCheck = true;
-        } else {
-            if (pass.value == "") {
-                passLabel.style.top = "30px";
-                passLabel.style.color = "#999";
-                passLabel.style.fontWeight = "400";
-                // passCheck = false;
-            }
-        }
-    }
+    // function passLabelEffect() {
+    //     mobileLabel = document.getElementById("mobileLabel");
+    //     var mobilenumber = document.getElementById("mobilenumber");
+    //     pass = document.getElementById("password");
+    //     passLabel = document.getElementById("passLabel");
+    //     if (passCheck == false) {
+    //         passLabel.style.top = "0";
+    //         passLabel.style.color = "#333";
+    //         passLabel.style.fontWeight = "500";
+    //         passCheck = true;
+    //     } else {
+    //         if (pass.value == "") {
+    //             passLabel.style.top = "30px";
+    //             passLabel.style.color = "#999";
+    //             passLabel.style.fontWeight = "400";
+    //             passCheck = false;
+    //         }
+    //     }
+    // }
 
 </script>
