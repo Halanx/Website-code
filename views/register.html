@@ -1,6 +1,6 @@
 <style>
 
-        body {
+    body {
             padding-top: 0;
         }
     
@@ -64,9 +64,10 @@
         font-family: "Roboto", sans-serif;
         font-weight: 400;
         position: relative;
-        top: 30px;
+        top: 0px;
         left: 2px;
-        color: #999;
+        font-weight: 500;
+        color: #333;
     }
     
     .login-wrapper input {
@@ -192,69 +193,75 @@
     <!-- ================================ -->
     <!-- Login Form -->
     <div class="row">
-            <div class="col-md-4 col-md-offset-4 well container login-wrapper">
-                <!-- Brand Image -->
-                <div class="logo-container">
-                    <a href="/"><img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png"> <span class="brand-name">Halanx</span></a>
-                </div>
-                <!-- Form -->
-                <form role="form"  method="post" name="loginform">
-                    <fieldset>
-    
-                        <!-- Form Heading -->
-                        <legend>New User? <br><span class="login-tag">Register Here</span></legend>
-                        <p class="err" ng-show="mismatchError">Mobile Number/Password does not match</p>
+        <div class="col-md-4 col-md-offset-4 well container login-wrapper">
+            <!-- Brand Image -->
+            <div class="logo-container">
+                <a href="/"><img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png"> <span class="brand-name">Halanx</span></a>
+            </div>
+            <!-- Form -->
+            <form role="form" method="post" name="loginform">
+                <fieldset>
 
-                        <div class="form-group">
-                            <label for="firstname" id="sfname">First Name</label>
-                            <input type="text" name="firstname" placeholder=""   class="form-control" id="firstname" ng-model="firstname" onFocus="fnameLabelEffect()" onBlur="fnameLabelEffect()"/>
-                            <p class="err" ng-show="firstnameError">Firstname cannot be left empty</p>
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="lastname" id="slname">Last Name</label>
-                            <input type="text" name="lastname" placeholder=""  class="form-control" id="lastname" ng-model="lastname" onFocus="lnameLabelEffect()" onBlur="lnameLabelEffect()"/>
-                            <p class="err" ng-show="lastnameError">Lastname cannot be left empty</p> 
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" id="semail">Email</label>
-                            <input type="text" name="email" placeholder=""  class="form-control" id="email" ng-model="email" onFocus="emailLabelEffect()" onBlur="emailLabelEffect()"/>
-                            <p class="err" ng-show="emailError">Email cannot be left empty</p>
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="password" id="spass">Password</label>
-                            <input type="password" name="password" placeholder="" class="form-control" id="password" ng-model="password" onFocus="passLabelEffect()" onBlur="passLabelEffect()" />
-                            <p class="err" ng-show="passwordError">Password cannot be left empty</p>
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="mobilenumber" id="smobile">Mobile Number</label>
-                            <input type="mobilenumber" name="mobilenumber" placeholder="" class="form-control" id="mobilenumber" ng-model="mobilenumber" onFocus="mobLabelEffect()" onBlur="mobLabelEffect()"/>
-                            <p class="err" ng-show="mobileError">Please enter a valid mobile number</p>
-                        </div>
-    
-                        <div class="form-group submit-form">
-                            <div class="row">
-                                <!-- Forgot Password Option -->
-                                <div class="col-sm-6">
-                                        Already Registered? <br><a href="#/login" class="other-links">Login Here</a>
-                                </div>
-                                <!-- Submit Login Data -->
-                                <div class="col-sm-6" style="text-align: right; padding-right: 15px;">
-                                    <input type="submit" name="login" ng-click="submitform()" value="Continue" class="btn btn-danger" id="submit" />
-                                </div>
+                    <!-- Form Heading -->
+                    <legend>New User? <br><span class="login-tag">Register Here</span></legend>
+                    <p class="err" ng-show="mismatchError">Mobile Number/Password does not match</p>
+
+                    <div class="form-group">
+                        <label for="firstname" id="sfname">First Name</label>
+                        <input type="text" name="firstname" placeholder="" class="form-control" id="firstname" ng-model="firstname" />
+                        <p class="err" ng-show="firstnameError">Firstname cannot be left empty</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname" id="slname">Last Name</label>
+                        <input type="text" name="lastname" placeholder="" class="form-control" id="lastname" ng-model="lastname" />
+                        <p class="err" ng-show="lastnameError">Lastname cannot be left empty</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" id="semail">Email</label>
+                        <input type="text" name="email" placeholder="" class="form-control" id="email" ng-model="email" />
+                        <!-- <input type="text" name="email" placeholder="" class="form-control" id="email" ng-model="email"
+                            onFocus="emailLabelEffect()" onBlur="emailLabelEffect()" /> -->
+                        <p class="err" ng-show="emailError">Email cannot be left empty</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" id="spass">Password</label>
+                        <input type="password" name="password" placeholder="" class="form-control" id="password"
+                            ng-model="password" />
+                        <p class="err" ng-show="passwordError">Password cannot be left empty</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobilenumber" id="smobile">Mobile Number</label>
+                        <input type="mobilenumber" name="mobilenumber" placeholder="" class="form-control" id="mobilenumber"
+                            ng-model="mobilenumber" />
+                        <!-- <input type="mobilenumber" name="mobilenumber" placeholder="" class="form-control" id="mobilenumber" ng-model="mobilenumber" onFocus="mobLabelEffect()" onBlur="mobLabelEffect()"/> -->
+                        <p class="err" ng-show="mobileError">Please enter a valid mobile number</p>
+                    </div>
+
+                    <div class="form-group submit-form">
+                        <div class="row">
+                            <!-- Forgot Password Option -->
+                            <div class="col-sm-6">
+                                Already Registered? <br><a href="#/login" class="other-links">Login Here</a>
+                            </div>
+                            <!-- Submit Login Data -->
+                            <div class="col-sm-6" style="text-align: right; padding-right: 15px;">
+                                <input type="submit" name="login" ng-click="submitform()" value="Continue" class="btn btn-danger"
+                                    id="submit" />
                             </div>
                         </div>
-    
-                    </fieldset>
-                </form>
-            </div>
+                    </div>
+
+                </fieldset>
+            </form>
         </div>
-        <!-- Login Form Ends -->
-        <!-- =====xxxx===== -->
-    
+    </div>
+    <!-- Login Form Ends -->
+    <!-- =====xxxx===== -->
+
     <!-- <div class="row">
         <div class="col-md-4 col-md-offset-4 well signup-wrapper">
             <form role="form"  method="post" name="signupform">
@@ -306,104 +313,104 @@
 </div>
 
 <script>
-        
-        fnameLabel = document.getElementById("sfname");
-        lnameLabel = document.getElementById("slname");
-        emailLabel = document.getElementById("semail");
-        mobileLabel = document.getElementById("smobile");
-        passLabel = document.getElementById("spass");
-        
-        fname = document.getElementById("firstname");
-        lname = document.getElementById("lastname");
-        email = document.getElementById("email");
-        mobile = document.getElementById("mobilenumber");
-        pass = document.getElementById("password");
 
-        
-        sfnamecheck = false;
-        slnamecheck = false;
-        semailcheck = false;
-        spasscheck = false;
-        smobilecheck = false;
+        // fnameLabel = document.getElementById("sfname");
+        // lnameLabel = document.getElementById("slname");
+        // emailLabel = document.getElementById("semail");
+        // mobileLabel = document.getElementById("smobile");
+        // passLabel = document.getElementById("spass");
 
-        function mobLabelEffect() {
-            if(smobilecheck == false) {
-                    mobileLabel.style.top = "0";
-                    mobileLabel.style.color = "#333";
-                    mobileLabel.style.fontWeight = "500";
-                smobilecheck = true;
-            } else {
-                if(mobilenumber.value== "") {
-                    mobileLabel.style.top = "30px";
-                mobileLabel.style.color = "#999";
-                mobileLabel.style.fontWeight = "400";
-                    smobilecheck = false;
-                }
-            }
-        }
-        
-        function passLabelEffect() {
-            if(spasscheck == false) {
-                passLabel.style.top = "0";
-                    passLabel.style.color = "#333";
-                    passLabel.style.fontWeight = "500";
-                spasscheck = true;
-            } else {
-                if(pass.value== "") {
-                    passLabel.style.top = "30px";
-                passLabel.style.color = "#999";
-                passLabel.style.fontWeight = "400";
-                    spasscheck = false;
-                }
-            }
-        }
+        // fname = document.getElementById("firstname");
+        // lname = document.getElementById("lastname");
+        // email = document.getElementById("email");
+        // mobile = document.getElementById("mobilenumber");
+        // pass = document.getElementById("password");
 
-        function emailLabelEffect() {
-            if(semailcheck == false) {
-                emailLabel.style.top = "0";
-                    emailLabel.style.color = "#333";
-                    emailLabel.style.fontWeight = "500";
-                semailcheck = true;
-            } else {
-                if(email.value== "") {
-                    emailLabel.style.top = "30px";
-                emailLabel.style.color = "#999";
-                emailLabel.style.fontWeight = "400";
-                    semailcheck = false;
-                }
-            }
-        }
 
-        function fnameLabelEffect() {
-            if(sfnamecheck == false) {
-                fnameLabel.style.top = "0";
-                    fnameLabel.style.color = "#333";
-                    fnameLabel.style.fontWeight = "500";
-                sfnamecheck = true;
-            } else {
-                if(fname.value== "") {
-                    fnameLabel.style.top = "30px";
-                fnameLabel.style.color = "#999";
-                fnameLabel.style.fontWeight = "400";
-                    sfnamecheck = false;
-                }
-            }
-        }
+        // sfnamecheck = false;
+        // slnamecheck = false;
+        // semailcheck = false;
+        // spasscheck = false;
+        // smobilecheck = false;
 
-        function lnameLabelEffect() {
-            if(slnamecheck == false) {
-                lnameLabel.style.top = "0";
-                    lnameLabel.style.color = "#333";
-                    lnameLabel.style.fontWeight = "500";
-                slnamecheck = true;
-            } else {
-                if(lname.value== "") {
-                    lnameLabel.style.top = "30px";
-                lnameLabel.style.color = "#999";
-                lnameLabel.style.fontWeight = "400";
-                    slnamecheck = false;
-                }
-            }
-        }
-        
-        </script>
+        // function mobLabelEffect() {
+        //     if(smobilecheck == false) {
+        //             mobileLabel.style.top = "0";
+        //             mobileLabel.style.color = "#333";
+        //             mobileLabel.style.fontWeight = "500";
+        //         smobilecheck = true;
+        //     } else {
+        //         if(mobilenumber.value== "") {
+        //             mobileLabel.style.top = "30px";
+        //         mobileLabel.style.color = "#999";
+        //         mobileLabel.style.fontWeight = "400";
+        //             smobilecheck = false;
+        //         }
+        //     }
+        // }
+
+        // function passLabelEffect() {
+        //     if(spasscheck == false) {
+        //         passLabel.style.top = "0";
+        //             passLabel.style.color = "#333";
+        //             passLabel.style.fontWeight = "500";
+        //         spasscheck = true;
+        //     } else {
+        //         if(pass.value== "") {
+        //             passLabel.style.top = "30px";
+        //         passLabel.style.color = "#999";
+        //         passLabel.style.fontWeight = "400";
+        //             spasscheck = false;
+        //         }
+        //     }
+        // }
+
+        // function emailLabelEffect() {
+        //     if(semailcheck == false) {
+        //         emailLabel.style.top = "0";
+        //             emailLabel.style.color = "#333";
+        //             emailLabel.style.fontWeight = "500";
+        //         semailcheck = true;
+        //     } else {
+        //         if(email.value== "") {
+        //             emailLabel.style.top = "30px";
+        //         emailLabel.style.color = "#999";
+        //         emailLabel.style.fontWeight = "400";
+        //             semailcheck = false;
+        //         }
+        //     }
+        // }
+
+        // function fnameLabelEffect() {
+        //     if(sfnamecheck == false) {
+        //         fnameLabel.style.top = "0";
+        //             fnameLabel.style.color = "#333";
+        //             fnameLabel.style.fontWeight = "500";
+        //         sfnamecheck = true;
+        //     } else {
+        //         if(fname.value== "") {
+        //             fnameLabel.style.top = "30px";
+        //         fnameLabel.style.color = "#999";
+        //         fnameLabel.style.fontWeight = "400";
+        //             sfnamecheck = false;
+        //         }
+        //     }
+        // }
+
+        // function lnameLabelEffect() {
+        //     if(slnamecheck == false) {
+        //         lnameLabel.style.top = "0";
+        //             lnameLabel.style.color = "#333";
+        //             lnameLabel.style.fontWeight = "500";
+        //         slnamecheck = true;
+        //     } else {
+        //         if(lname.value== "") {
+        //             lnameLabel.style.top = "30px";
+        //         lnameLabel.style.color = "#999";
+        //         lnameLabel.style.fontWeight = "400";
+        //             slnamecheck = false;
+        //         }
+        //     }
+        // }
+
+</script>
