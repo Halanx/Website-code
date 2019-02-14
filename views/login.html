@@ -206,24 +206,26 @@
                 <a href="/"><img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png"> <span class="brand-name">Halanx</span></a>
             </div>
             <!-- Form -->
-            <form role="form"  method="post" name="loginform">
+            <form role="form" method="post" name="loginform">
                 <fieldset>
 
                     <!-- Form Heading -->
-                    <legend>Login <br><span class="login-tag">to order at Halanx</span></legend>
+                    <legend>Login <br></legend>
                     <p class="err" ng-show="mismatchError">Mobile Number/Password does not match</p>
 
                     <!-- Enter Mobile Number -->
                     <div class="form-group">
                         <label for="mobilenumber" id="mobileLabel">Mobile Number</label>
-                        <input type="number" name="mobilenumber" placeholder="" id="mobilenumber" class="form-control" ng-model="mobilenumber" onFocus="mobLabelEffect()" onBlur="mobLabelEffect()"/>
+                        <input type="number" name="mobilenumber" placeholder="" id="mobilenumber" class="form-control"
+                            ng-model="mobilenumber" onFocus="mobLabelEffect()" onBlur="mobLabelEffect()" autofocus />
                         <p class="err" ng-show="mobileError">Mobile number cannot be left empty</p>
                     </div>
 
                     <!-- Enter Password -->
                     <div class="form-group">
                         <label for="password" id="passLabel">Password</label>
-                        <input type="password" name="password" placeholder="" id="password" class="form-control" ng-model="password" onFocus="passLabelEffect()" onBlur="passLabelEffect()"/>
+                        <input type="password" name="password" placeholder="" id="password" class="form-control"
+                            ng-model="password" onFocus="passLabelEffect()" onBlur="passLabelEffect()" />
                         <p class="err" ng-show="passwordError">Password cannot be left empty</p>
                     </div>
 
@@ -231,11 +233,12 @@
                         <div class="row">
                             <!-- Forgot Password Option -->
                             <div class="col-sm-6 forgot-pass">
-                                 <a href="#/forgetpass" class="other-links">Forgot Password?</a>
+                                <a href="#/forgetpass" class="other-links">Forgot Password?</a>
                             </div>
                             <!-- Submit Login Data -->
                             <div class="col-sm-6" style="text-align: right; padding-right: 15px;">
-                                <input type="submit" name="login" ng-click="submitform()" value="Login" class="btn btn-danger" id="submit" />
+                                <input type="submit" name="login" ng-click="submitform()" value="Login" class="btn btn-danger"
+                                    id="submit" />
                             </div>
                         </div>
                     </div>
@@ -244,11 +247,11 @@
                         <div class="row">
                             <!-- Create Account -->
                             <div class="col-sm-6">
-                                    Don't have an Account? <br><a href="#/register" class="other-links">Sign Up Here</a>
+                                Don't have an Account? <br><a href="#/register" class="other-links">Sign Up Here</a>
                             </div>
                             <!-- Login as Store -->
                             <div class="col-sm-6" style="text-align:right;">
-                                    <a href="#/hxpalogin" class="other-links">Login as Store</a>
+                                <a href="#/hxpalogin" class="other-links">Login as Store</a>
                             </div>
                         </div>
                     </div>
@@ -270,51 +273,51 @@
     </div>
 </div>
 <script>
-localStorage.setItem("mobilenumber",mobilenumber.value);
+    localStorage.setItem("mobilenumber", mobilenumber.value);
 
 
 
-mobCheck = false;
-passCheck = false;
+    mobCheck = true;
+    passCheck = true;
 
-function mobLabelEffect() {
-    mobileLabel = document.getElementById("mobileLabel");
-    var mobilenumber=document.getElementById("mobilenumber");
-    pass = document.getElementById("password");
-    passLabel = document.getElementById("passLabel");
-    if(mobCheck == false) {
-        mobileLabel.style.top = "0";
+    function mobLabelEffect() {
+        mobileLabel = document.getElementById("mobileLabel");
+        var mobilenumber = document.getElementById("mobilenumber");
+        pass = document.getElementById("password");
+        passLabel = document.getElementById("passLabel");
+        if (mobCheck == false) {
+            mobileLabel.style.top = "0";
             mobileLabel.style.color = "#333";
             mobileLabel.style.fontWeight = "500";
-        mobCheck = true;
-    } else {
-        if(mobilenumber.value== "") {
-            mobileLabel.style.top = "30px";
-        mobileLabel.style.color = "#999";
-        mobileLabel.style.fontWeight = "400";
-            mobCheck = false;
+            mobCheck = true;
+        } else {
+            if (mobilenumber.value == "") {
+                mobileLabel.style.top = "30px";
+                mobileLabel.style.color = "#999";
+                mobileLabel.style.fontWeight = "400";
+                mobCheck = false;
+            }
         }
     }
-}
 
-function passLabelEffect() {
-    mobileLabel = document.getElementById("mobileLabel");
-    var mobilenumber=document.getElementById("mobilenumber");
-    pass = document.getElementById("password");
-    passLabel = document.getElementById("passLabel");
-    if(passCheck == false) {
-        passLabel.style.top = "0";
+    function passLabelEffect() {
+        mobileLabel = document.getElementById("mobileLabel");
+        var mobilenumber = document.getElementById("mobilenumber");
+        pass = document.getElementById("password");
+        passLabel = document.getElementById("passLabel");
+        if (passCheck == false) {
+            passLabel.style.top = "0";
             passLabel.style.color = "#333";
             passLabel.style.fontWeight = "500";
-        passCheck = true;
-    } else {
-        if(pass.value== "") {
-            passLabel.style.top = "30px";
-        passLabel.style.color = "#999";
-        passLabel.style.fontWeight = "400";
-            passCheck = false;
+            passCheck = true;
+        } else {
+            if (pass.value == "") {
+                passLabel.style.top = "30px";
+                passLabel.style.color = "#999";
+                passLabel.style.fontWeight = "400";
+                passCheck = false;
+            }
         }
     }
-}
 
 </script>
