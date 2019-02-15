@@ -116,13 +116,18 @@ angular.module('halanxApp')
                   localStorage.setItem("isLogin", common.isLogin);
                   if (common.isLocated == true) {
                     localStorage.setItem("isLocated", false);
-                    $window.location.href = "#cart";
+                    // $window.location.href = "#cart";
                   }
 
 
                   else {
-                    $window.location.href = "#stores";
+                    // $window.location.href = "#stores";
                   }
+                  if ($routeParams.ref == 'engifest2019') {
+                    console.log("hi ref");
+                    $location.path('/engifest-2019');
+                  }
+                  else $location.path('/');
                 }
               }, function (err) {
                 console.log(err);

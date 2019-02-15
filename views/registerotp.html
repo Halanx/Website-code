@@ -1,6 +1,6 @@
 <style>
 
-        body {
+    body {
             padding-top: 0;
         }
     
@@ -64,9 +64,10 @@
         font-family: "Roboto", sans-serif;
         font-weight: 400;
         position: relative;
-        top: 30px;
+        top: 0px;
         left: 2px;
-        color: #999;
+        color: #333;
+        font-weight: bold;
     }
     
     .login-wrapper input {
@@ -180,47 +181,47 @@
             color: #ec4f4b;
         }
     
-    </style> 
-    <div class="container-fluid bg1">
+    </style>
+<div class="container-fluid bg1">
 
-    
+
     <div class="row">
-            <div class="col-md-4 col-md-offset-4 well container login-wrapper">
-                <!-- Brand Image -->
-                <div class="logo-container">
-                    <a href="/"><img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png"> <span class="brand-name">Halanx</span></a>
-                </div>
-                <!-- Form -->
-                <form role="form"  method="post" name="loginform">
-                    <fieldset>
-    
-                        <!-- Form Heading -->
-                        <legend>OTP <br><span class="login-tag">has been sent to your registered Mobile Number</span></legend>
-                        <p class="err" ng-show="mismatchError">Mobile Number/Password does not match</p>
-    
-                        <div class="form-group">
-                            <label for="otp" id="sotp">Enter OTP</label>
-                            <input type="text" name="otp" placeholder=""   class="form-control" id="otp" ng-model="otp" onfocus="otpLabelEffect()" onblur="otpLabelEffect()"/>
-                        </div>
-    
-                        <div class="form-group submit-form">
-                            <div class="row">
-                                <!-- Forgot Password Option -->
-                                <div class="col-sm-6 forgot-pass">
-                                </div>
-                                <!-- Submit Login Data -->
-                                <div class="col-sm-6" style="text-align: right; padding-right: 15px;">
-                                    <input type="submit" ng-click="submitform()" value="Verify" class="btn btn-danger" id="submit" />
-                                </div>
+        <div class="col-md-4 col-md-offset-4 well container login-wrapper">
+            <!-- Brand Image -->
+            <div class="logo-container">
+                <a href="/"><img src="https://s3-us-west-2.amazonaws.com/halanx-web/logo.png"> <span class="brand-name">Halanx</span></a>
+            </div>
+            <!-- Form -->
+            <form role="form" method="post" name="loginform">
+                <fieldset>
+
+                    <!-- Form Heading -->
+                    <legend>OTP <br><span class="login-tag">has been sent to your registered Mobile Number</span></legend>
+                    <p class="err" ng-show="mismatchError">Mobile Number/Password does not match</p>
+
+                    <div class="form-group">
+                        <label for="otp" id="sotp">Enter OTP</label>
+                        <input type="text" name="otp" placeholder="" class="form-control" id="otp" ng-model="otp" />
+                    </div>
+
+                    <div class="form-group submit-form">
+                        <div class="row">
+                            <!-- Forgot Password Option -->
+                            <div class="col-sm-6 forgot-pass">
+                            </div>
+                            <!-- Submit Login Data -->
+                            <div class="col-sm-6" style="text-align: right; padding-right: 15px;">
+                                <input type="submit" ng-click="submitform()" value="Verify" class="btn btn-danger" id="submit" />
                             </div>
                         </div>
-    
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+                    </div>
 
-        <!-- <div class="row">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <!-- <div class="row">
             <div class="col-md-4 col-md-offset-4 well signupotp-wrapper">
                 <form role="form"  method="post" name="signupform">
                     <fieldset>
@@ -243,24 +244,24 @@
 
     <script>
 
-    otpCheck = false;
+//     otpCheck = false;
 
-function otpLabelEffect() {
-    otpLabel = document.getElementById("sotp");
-    otp = document.getElementById("otp");
-    if(otpCheck == false) {
-        otpLabel.style.top = "0";
-            otpLabel.style.color = "#333";
-            otpLabel.style.fontWeight = "500";
-        otpCheck = true;
-    } else {
-        if(otp.value== "") {
-            otpLabel.style.top = "30px";
-        otpLabel.style.color = "#999";
-        otpLabel.style.fontWeight = "400";
-            otpCheck = false;
-        }
-    }
-}
-    
+// function otpLabelEffect() {
+//     otpLabel = document.getElementById("sotp");
+//     otp = document.getElementById("otp");
+//     if(otpCheck == false) {
+//         otpLabel.style.top = "0";
+//             otpLabel.style.color = "#333";
+//             otpLabel.style.fontWeight = "500";
+//         otpCheck = true;
+//     } else {
+//         if(otp.value== "") {
+//             otpLabel.style.top = "30px";
+//         otpLabel.style.color = "#999";
+//         otpLabel.style.fontWeight = "400";
+//             otpCheck = false;
+//         }
+//     }
+// }
+
     </script>
