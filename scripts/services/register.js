@@ -15,7 +15,7 @@ angular.module('halanxApp')
         callserver : function(obj){
             console.log(obj)
             var pr = $q.defer();
-				var url = "https://api.halanx.com/users/getotp/" + obj.PhoneNo+"/";
+				var url = "https://api.halanx.com/users/get_otp/" + obj.PhoneNo+"/";
             console.log(obj);
 				$http.post(url,obj).then(function(data){
 					pr.resolve(data.data);
