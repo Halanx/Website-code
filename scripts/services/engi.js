@@ -11,10 +11,10 @@ angular.module('halanxApp')
     .factory('engiService', function ($http, $q) {
 
         return {
-            getPass: function (token) {
-                let url = "https://api.halanx.com/promotions/campaign/1/";
+            getEngiPass: function (token) {
+                let url = "https://api.halanx.com/promotions/campaign/1/entrypass/";
                 let pr = $q.defer();
-                $http.get(url, {
+                $http.post(url, { platform: "web" }, {
                     headers: {
                         "Authorization": "Token " + token
                     }

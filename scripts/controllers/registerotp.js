@@ -8,7 +8,7 @@
  * Controller of the halanxApp
  */
 angular.module('halanxApp')
-  .controller('RegisterotpCtrl', function ($scope, registerotp, $window, common) {
+  .controller('RegisterotpCtrl', function ($scope, registerotp, $location, $routeParams, common) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -30,7 +30,7 @@ angular.module('halanxApp')
       var password = localStorage.getItem('password');
       obj.password = password;
       obj.otp = parseInt($scope.otp);
-      obj.username = "c" + phone_no;
+      obj.username = "c" + obj.phone_no;
 
 
       console.log(obj)
@@ -45,7 +45,11 @@ angular.module('halanxApp')
         localStorage.setItem("isLogin", common.isLogin);
 
         // $window.location.href = "https://www.halanx.com/halanx-final/new1big-kfc/frontpage/login.html";
-        $window.location.assign("#stores");
+        // $window.location.assign("#stores");
+        if ($routeParams.ref == 'engifest2019') {
+          console.log("hi ref");
+          $location.path('/engifest-2019');
+        }
       }, (err) => {
 
         alert("error");

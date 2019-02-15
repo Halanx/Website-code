@@ -29,7 +29,7 @@ angular.module('halanxApp')
       }
       else {
         console.log("logged in");
-        engiService.getPass(token)
+        engiService.getEngiPass(token)
           .then(
             function (data) {
               console.log(data.data);
@@ -37,6 +37,7 @@ angular.module('halanxApp')
               $scope.modalView('engifest-2019-pass');
             },
             function (err) {
+              ;
               console.log(err.data);
             }
           );

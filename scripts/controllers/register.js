@@ -8,7 +8,7 @@
  * Controller of the halanxApp
  */
 angular.module('halanxApp')
-  .controller('RegisterCtrl', function ($scope, register, $window) {
+  .controller('RegisterCtrl', function ($scope, register, $window, $location, $routeParams) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -85,12 +85,7 @@ angular.module('halanxApp')
         promise.then((data) => {
           console.log(data);
           // $window.location.href="http://localhost/test2/halanx-final/new1big-kfc/frontpage/registerotp.html";
-          $window.location.assign("#registerotp")
-
-
-
-
-
+          $location.path("/registerotp").search($routeParams);
         }, (err) => {
           $scope.registerError = true;
         })
