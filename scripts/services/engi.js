@@ -12,7 +12,21 @@ angular.module('halanxApp')
 
         return {
             getEngiPass: function (token) {
-                let url = "https://api.halanx.com/promotions/campaign/1/entrypass/";
+                let url = "https://api.halanx.com/promotions/campaigns/1/entrypass/";
+                let pr = $q.defer();
+                $http.post(url, { platform: "web" }, {
+                    headers: {
+                        "Authorization": "Token " + token
+                    }
+                }).then((data) => {
+                    pr.resolve(data);
+                }, (err) => {
+                    pr.reject(err);
+                });
+                return pr.promise;
+            },
+            getSplashPass: function (token) {
+                let url = "https://api.halanx.com/promotions/campaigns/2/entrypass/";
                 let pr = $q.defer();
                 $http.post(url, { platform: "web" }, {
                     headers: {

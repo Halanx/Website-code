@@ -50,6 +50,10 @@ angular.module('halanxApp')
           console.log("hi ref");
           $location.path('/engifest-2019');
         }
+        else if ($routeParams.ref == 'splash2019') {
+          console.log("hi ref");
+          $location.path('/splash-2019');
+        }
       }, (err) => {
 
         alert("error");

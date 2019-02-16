@@ -516,13 +516,80 @@
         margin-top: 5px;
     }
 
+    .promo-wrapper {
+        display: flex;
+    }
+
+    .promo-wrapper > div {
+        width: 50%;
+    }
+
+    @media screen and (max-width:768px) {
+        .promo-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .promo-wrapper > div {
+            width: 100%; 
+        }
+    }
+
     /*.tryme::before{
     content:"";position:absolute; width:110%; height:100%;  background:url("https://static.pexels.com/photos/247599/pexels-photo-247599.jpeg") no-repeat 0 0; background-size:cover; filter: blur(10px); z-index:0; transform: scale(2);-ms-transform: scale(2); -webkit-transform: scale(2);
 }*/
 </style>
-<div id="engi1" ng-click="engi1()">
-    <img src="/images/HalanxAppBanner1.png" width="100%" alt="">
+<div class="promo-wrapper">
+    <div id="engi" ng-click="engi()">
+        <img src="/images/HalanxAppBanner1.png" width="100%" alt="">
+    </div>
+    <div id="splash" ng-click="splash()">
+        <img src="https://d28fujbigzf56k.cloudfront.net/media/public/Info/HomeBox/7/20190215_182210_0001.png" width="100%"
+            alt="">
+    </div>
 </div>
+<!-- <style>
+    #bannerCarousel .ui-carousel {
+        margin-bottom: 0;
+    }
+
+    #bannerCarousel .bann {
+        height: calc(100vh - var(--nav-height));
+        color: #fff;
+        position: relative;
+    }
+
+    #bannerCarousel .bann h1 {
+        width: 80%;
+    }
+
+    #bannerCarousel .ui-carousel .carousel-next .carousel-btn {
+        right: 24px;
+        top: 50%;
+    }
+
+    #bannerCarousel .ui-carousel .carousel-prev .carousel-btn {
+        left: 24px;
+        top: 50%;
+    }
+
+    #bannerCarousel [class*=" ui-icon-"]:before,
+    #bannerCarousel [class^=ui-icon-]:before,
+    #bannerCarousel [data-icon]:before {
+        font-size: 40px;
+        color: #fff;
+    }
+</style>
+<div id="bannerCarousel">
+    <ui-carousel slides="banner" on-init="carouselOnInit()" slides-to-show="1" slides-to-scroll="1" initial-slide="0"
+        autoplay="true" autoplay-speed="3000">
+        <carousel-item>
+            <div id="{{item.name}}" ng-click="{{item.name}}()">
+                <img ng-src="{{item.img}}" width="100%" alt="">
+            </div>
+        </carousel-item>
+    </ui-carousel>
+</div> -->
 <div id="slider-wrapper-bgg" style="margin-top: -20px" ng-cloak>
     <div id="slider-wrapper-bg">
         <div id="slider-wrapper">

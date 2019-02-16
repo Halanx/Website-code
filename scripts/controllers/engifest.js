@@ -43,4 +43,27 @@ angular.module('halanxApp')
           );
       }
     }
+
+    $scope.splash_booking = () => {
+      var token = localStorage.getItem("token");
+      if (!token) {
+        console.log("!logged in");
+        $location.path('/login').search({ ref: 'splash2019' });
+      }
+      else {
+        console.log("logged in");
+        engiService.getSplashPass(token)
+          .then(
+            function (data) {
+              console.log(data.data);
+              $scope.pass = data.data;
+              $scope.modalView('splash-2019-pass');
+            },
+            function (err) {
+              ;
+              console.log(err.data);
+            }
+          );
+      }
+    }
   });

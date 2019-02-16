@@ -69,6 +69,11 @@ angular.module('halanxApp')
               $location.path('/engifest-2019');
             }
 
+            if ($routeParams.ref == 'splash2019') {
+              console.log("hi ref");
+              $location.path('/splash-2019');
+            }
+
             common.isLogin = true;
             localStorage.setItem("isLogin", common.isLogin);
             console.log(common.isLocated);
@@ -91,6 +96,10 @@ angular.module('halanxApp')
         })
       }
     };
+
+    $scope.register = ()=>{
+      $location.path('/register');
+    }
 
     $scope.fbLogin = () => {
       FB.login(function (response) {
@@ -126,6 +135,10 @@ angular.module('halanxApp')
                   if ($routeParams.ref == 'engifest2019') {
                     console.log("hi ref");
                     $location.path('/engifest-2019');
+                  }
+                  else if ($routeParams.ref == 'splash2019') {
+                    console.log("hi ref");
+                    $location.path('/splash-2019');
                   }
                   else $location.path('/');
                 }

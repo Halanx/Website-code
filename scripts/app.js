@@ -30,6 +30,10 @@ angular
                 templateUrl: 'views/engifest.html',
                 controller: 'EngifestCtrl'
             })
+            .when('/splash-2019', {
+                templateUrl: 'views/splash.html',
+                controller: 'EngifestCtrl'
+            })
             .when('/aboutus', {
                 templateUrl: 'views/aboutus.html',
                 controller: 'AboutusCtrl',
