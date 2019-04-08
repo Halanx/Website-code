@@ -13,6 +13,7 @@
     #slave img {
         margin-top: 16px;
     }
+
     .searchbar {
         position: relative;
         top: 170px;
@@ -92,6 +93,7 @@
         from {
             top: 100%;
         }
+
         to {
             top: 52%;
         }
@@ -115,6 +117,7 @@
         from {
             top: 110%
         }
+
         to {
             top: 55%;
         }
@@ -124,6 +127,7 @@
         #slider-heading {
             font-size: 25px;
         }
+
         #slider-tag {
             font-size: 20px;
             position: relative;
@@ -134,7 +138,7 @@
         }
 
         #slave {
-            padding: 20px!important;
+            padding: 20px !important;
         }
     }
 
@@ -158,15 +162,18 @@
             height: auto;
             border-bottom: none;
         }
+
         .phoneContainer {
             float: none !important;
             margin: 10px auto 0px !important;
         }
+
         .textWrapper {
             margin-top: -210px !important;
             margin-bottom: 30px !important;
             text-align: center;
         }
+
         .dapp {
             margin-top: 780px;
             font-size: 24px;
@@ -224,6 +231,7 @@
         from {
             opacity: 0;
         }
+
         to {
             opacity: 1;
         }
@@ -242,10 +250,12 @@
         .textWrapper {
             height: 325px;
         }
+
         #slider-heading1 {
             font-size: 27px;
             top: 68%;
         }
+
         #slider-tag1 {
             font-size: 20px;
             top: 67%;
@@ -261,6 +271,7 @@
         from {
             opacity: 0;
         }
+
         to {
             opacity: 1;
         }
@@ -404,6 +415,7 @@
         .play-heading {
             padding-top: 10px;
         }
+
         .play-heading img {
             margin: auto;
             width: 124px;
@@ -416,6 +428,7 @@
             width: auto;
             justify-content: space-around;
         }
+
         .play-phone {
             height: 430px;
             width: 415px;
@@ -423,6 +436,7 @@
             top: 40px;
             z-index: 2;
         }
+
         .play-ss {
             height: 317px;
             border-radius: 2px;
@@ -432,6 +446,7 @@
             left: 76px;
             top: 87px;
         }
+
         .app-phone {
             height: 363px;
             overflow: hidden;
@@ -439,17 +454,21 @@
             margin: auto;
             border-bottom: 1px solid #e1e1e1;
         }
+
         .play-heading h2 {
             text-align: center;
             margin-left: 0;
         }
+
         .play-shadow {
             display: none;
         }
+
         .about-container {
             padding-top: 10px !important;
             padding-bottom: 30px;
         }
+
         .about-content {
             width: 50%;
             margin: auto;
@@ -520,7 +539,7 @@
         display: flex;
     }
 
-    .promo-wrapper > div {
+    .promo-wrapper>div {
         /* width: 50%; */
         width: 100%;
     }
@@ -531,8 +550,8 @@
             flex-direction: column;
         }
 
-        .promo-wrapper > div {
-            width: 100%; 
+        .promo-wrapper>div {
+            width: 100%;
         }
     }
 
@@ -599,23 +618,23 @@
                 <div id="custom-search-input">
                     <div class="input-group col-md-offset-3">
                         <span id="pac-container">
-                            <input style="height: 42px;" type="text" id="txtPlaces" ng-model="location" class="form-control input-md"
-                                placeholder="Enter your location" />
+                            <input style="height: 42px;" type="text" id="txtPlaces" ng-model="location"
+                                class="form-control input-md" placeholder="Enter your location" />
                         </span>
                         <span class="input-group-btn">
                             <!--<center id="cur-loc">
         <!--<span onclick="getLocation()">Detect current location</span>-->
                             <!--<span class="glyphicon glyphicon-screenshot" onclick="getLocation()" data-toggle="modal" data-target="#myModal"></span>
                  </center>-->
-                            <button style="height: 42px; border-radius: 0px; background:rgb(255,29,33)" class="btn btn-danger btn-md"
-                                style="border-radius: 0;" type="button" id="search" onclick="getLocation()" data-toggle="modal"
-                                data-target="#myModal">
+                            <button style="height: 42px; border-radius: 0px; background:rgb(255,29,33)"
+                                class="btn btn-danger btn-md" style="border-radius: 0;" type="button" id="search"
+                                onclick="getLocation()" data-toggle="modal" data-target="#myModal">
                                 <span class="glyphicon glyphicon-screenshot"></span>
                             </button>
                         </span>
                         <span class="input-group-btn">
-                            <button style="height: 42px;background:rgb(255,29,33)" class="btn btn-danger btn-md" type="button"
-                                id="search" ng-click="checkLocation()">
+                            <button style="height: 42px;background:rgb(255,29,33)" class="btn btn-danger btn-md"
+                                type="button" id="search" ng-click="checkLocation()">
                                 Find Stores
                             </button>
                         </span>
@@ -640,14 +659,16 @@
                         <div class="">
                             <div id="mapholder" style="height: 300px;"></div>
                         </div>
-                        <button type="button" style="display: block; margin:10px auto 0;background:#f1413e" class="btn btn-md btn-danger class1"
-                            id="class1" onclick="savedata()">Confirm Location</button>
+                        <button type="button" style="display: block; margin:10px auto 0;background:#f1413e"
+                            class="btn btn-md btn-danger class1" id="class1" onclick="savedata()">Confirm
+                            Location</button>
                     </div>
                 </div>
             </div>
         </div>
         <h1 id="slider-heading"> Know your neighborhood happenings</h1>
-        <h3 id="slider-tag"> Like crime & safety alerts, local news, local service recommendations, lost pets and more</h3>
+        <h3 id="slider-tag"> Like crime & safety alerts, local news, local service recommendations, lost pets and more
+        </h3>
     </div>
 </div>
 <script type="text/javascript">
@@ -747,7 +768,98 @@
     }(document, 'script', 'facebook-jssdk'));
 
 </script>
+<style>
+    #newoffer {
+        padding: 48px;
+        text-align: center;
+    }
 
+    .steps {
+        margin-top: 32px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 264px;
+    }
+
+    .steps .step {
+        padding-top: 12px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 25%;
+        padding: 8px;
+        margin: 0 20px;
+        transition: 0.2s;
+    }
+
+    #working .steps .step:not(:last-child):after {
+        position: absolute;
+        right: -36px;
+        top: 24%;
+        content: '\203a';
+        font-size: 56px;
+    }
+
+    .step img.icon {
+        display: block;
+        min-height: 100px;
+        width: 100px;
+    }
+
+    #newoffer .step img.icon {
+        min-height: 150px;
+        width: 150px;
+    }
+
+    .step .content {
+        padding-top: 12px;
+    }
+
+    .tt {
+        padding-bottom: 6px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        font-weight: bold;
+    }
+
+    .st {
+        color: #555;
+        font-size: 14px;
+    }
+
+    @media screen and (max-width:576px) {
+        .steps {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .steps .step {
+            width: 100%;
+            margin: 14px 0;
+        }
+
+        .step .content {
+            width: 100%;
+            justify-content: center;
+            position: relative;
+        }
+
+        .num {
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+
+        .st {
+            padding: 0 10%;
+        }
+    }
+</style>
 <div class="phoneSection">
     <div class="row">
         <div class="col-sm-1"></div>
@@ -773,7 +885,8 @@
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-4" style="margin-bottom: 185px;">
-            <div class="phoneContainer" style="background:url('../images/android2.png'); width:260px; height: 477px; background-size: cover;">
+            <div class="phoneContainer"
+                style="background:url('../images/android2.png'); width:260px; height: 477px; background-size: cover;">
                 <div id="slider-wrapper1" style="margin-top: -20px">
                 </div>
             </div>
@@ -963,14 +1076,48 @@
           <i class="fa fa-comments" aria-hidden="true" style="font-size: 30px;color: white;"></i>
       </a>
   </div>-->
-
+<div id="newoffer">
+    <h2>What Halanx Homes offers?</h2>
+    <div class="steps">
+        <div class="step">
+            <img src="/images/hh-cashback-icon.png" alt="" class="icon">
+            <div class="content">
+                <p class="tt">Zero Brokerage</p>
+                <p class="st">Brokerage? Whats that?</p>
+            </div>
+        </div>
+        <div class="step">
+            <img src="/images/hh-amenities-icon.png" alt="" class="icon">
+            <div class="content">
+                <p class="tt">Essential Amenities</p>
+                <p class="st">Find houses with amenities like WiFi, AC Geyser, Smart Security etc.</p>
+            </div>
+        </div>
+        <div class="step">
+            <img src="/images/hh-bed-icon.png" alt="" class="icon">
+            <div class="content">
+                <p class="tt">Fully Furnished Spaces</p>
+                <p class="st">Don't worry about furnishing your Halanx Home</p>
+            </div>
+        </div>
+        <div class="step">
+            <img src="/images/hh-headphone-icon.png" alt="" class="icon">
+            <div class="content">
+                <p class="tt">24x7 Halanx Support</p>
+                <p class="st">Always there for your support</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr width="60%">
 <div id="slave">
     <p>Introducing</p>
     <h2><a style="color:#fff;" href="https://halanxhomes.com">Halanx Homes</a></h2>
     <p>
         Live happily at Halanx Homes. Rent furnished houses with all amenities. Zero Brokerage.
     </p>
-    <button class="btn" style="color:#333;" onclick="location.href='https://halanxhomes.com'">Visit Halanx Homes</button>
+    <button class="btn" style="color:#333;" onclick="location.href='https://halanxhomes.com'">Visit Halanx
+        Homes</button>
     <img src="images/halanx-homes.jpg" width="100%">
 </div>
 
